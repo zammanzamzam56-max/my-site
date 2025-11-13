@@ -124,7 +124,7 @@ label{font-size:.9rem;color:var(--muted)}
 :root{
   --bg:#0b1220;         /* deep navy background */
   --card:#0f1b33;       /* panels/cards */
-  --text:#eaf2ff;       /* main text */
+  --text:black;       /* main text */
   --muted:#9fb0c8;      /* secondary text */
   --accent:#2563eb;     /* primary blue */
   --accent2:#fa700e;    /* secondary orange */
@@ -282,3 +282,4 @@ hr, .divider{ border-color: rgba(255,255,255,.10); }
   .spk-avatar{ width:110px; height:110px; border-width:5px; }
 
 }
+
