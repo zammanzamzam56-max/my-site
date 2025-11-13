@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head><link rel="stylesheet" href="assets/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Salecompass</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">Salecompass</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="menu" role="navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="research.html">R&amp;D</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a class="btn active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Contact us</h1>
+      <p class="muted">Tell us about your needs. We’ll respond within 1 business day.</p>
+      <form method="POST" action="https://formspree.io/f/your-id">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your full name">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="name@company.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Company LLC">
+          </div>
+          <div>
+            <label for="role">Role</label>
+            <input id="role" name="role" type="text" placeholder="CTO, HR, etc.">
+          </div>
+        </div>
+        <div>
+          <label for="message">What do you need?</label>
+          <textarea id="message" name="message" rows="6" placeholder="Briefly describe your goals…"></textarea>
+        </div>
+        <div>
+          <label for="slot">Preferred time for a call</label>
+          <select id="slot" name="slot">
+            <option value="">Select…</option>
+            <option>Mon–Fri, 09:00–12:00</option>
+            <option>Mon–Fri, 13:00–17:00</option>
+            <option>Mon–Fri, 18:00–20:00</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      <div class="card" style="margin-top:22px">
+        <h3>Book directly</h3>
+        <p>Add your <strong>Calendly</strong> or booking link here.</p>
+        <a class="btn ghost" href="#">Open calendar</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">Salecompass</div>
+        <p>Innovation. Leadership. Social impact. We build solutions that move society forward.</p>
+        <p class="muted">© <span id="year"></span> Salecompass. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="research.html">Research &amp; Development</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:@salecompass.uk">@salecompass.uk</a></li>
+          <li><a href="tel:+1234567890">+44 7482 771421</a></li>
+        </ul>
+        <a class="btn ghost" href="contact.html">Book a call</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+<script src="assets/script.js"></script></body>
+</html>
