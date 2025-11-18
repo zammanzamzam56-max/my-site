@@ -310,89 +310,95 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 .footer-contact p {
   margin: 5px 0;
 }
-/* ========== Services / Pricing (clean cards) ========== */
+/* ===== Services / Pricing — readable, wide cards ===== */
 :root{
-  --card-bg:#ffffff;
+  --card-bg:#fff;
   --card-text:#0b1220;
   --card-muted:#64748b;
-  --good:#16a34a;      /* ✔ */
-  --bad:#ef4444;       /* ✖ */
+  --good:#16a34a;
+  --bad:#ef4444;
   --shadow:0 10px 28px rgba(2,8,23,.10);
 }
 
-/* Grid */
+/* Grid: fewer columns sooner so each card is wider */
 .plans-grid{
   display:grid;
-  gap:24px;
-  grid-template-columns:repeat(4, minmax(240px,1fr));
+  gap:28px;
+  grid-template-columns:repeat(4, minmax(280px,1fr));
 }
-@media (max-width:1280px){ .plans-grid{ grid-template-columns:repeat(3,1fr); } }
-@media (max-width:960px){  .plans-grid{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:620px){  .plans-grid{ grid-template-columns:1fr; } }
+@media (max-width: 1400px){ .plans-grid{ grid-template-columns:repeat(3, minmax(320px,1fr)); } }
+@media (max-width: 1120px){ .plans-grid{ grid-template-columns:repeat(2, minmax(320px,1fr)); } }
+@media (max-width: 680px){  .plans-grid{ grid-template-columns:1fr; } }
 
 /* Card */
 .plan{
   position:relative;
   background:var(--card-bg);
   color:var(--card-text);
-  border:1px solid rgba(2,8,23,.08);
+  border:1px solid rgba(2,8,23,.10);
   border-radius:16px;
   box-shadow:var(--shadow);
-  padding:20px 20px 18px;
+  padding:26px 26px 22px;
 }
 .plan .plan-stripe{
   position:absolute; inset:0 0 auto 0; height:8px; border-radius:16px 16px 0 0;
 }
-/* top color strip for each tier */
-.plan-free    .plan-stripe{ background:#2563eb; }  /* blue */
-.plan-starter .plan-stripe{ background:#10b981; }  /* green */
-.plan-growth  .plan-stripe{ background:#f59e0b; }  /* orange */
-.plan-premium .plan-stripe{ background:#ef4444; }  /* red */
+.plan-free    .plan-stripe{ background:#2563eb; }
+.plan-starter .plan-stripe{ background:#10b981; }
+.plan-growth  .plan-stripe{ background:#f59e0b; }
+.plan-premium .plan-stripe{ background:#ef4444; }
 
-/* Header + price */
-.plan-head{ margin-top:12px; margin-bottom:10px; }
-.plan-head h3{ margin:0 0 6px; font-weight:800; letter-spacing:.2px; }
-.plan .price{ margin:0; font-weight:800; font-size:2rem; line-height:1.1; }
+/* Header & price */
+.plan-head{ margin-top:14px; margin-bottom:12px; }
+.plan-head h3{ margin:0 0 6px; font-weight:800; }
+.plan .price{ margin:0; font-weight:800; font-size:2rem; line-height:1.15; }
 .plan .price span{ font-size:.95rem; font-weight:500; color:var(--card-muted); }
 
-/* “Most Popular / Best Option” chips */
+/* Badge */
 .badge{
   position:absolute; top:14px; right:14px;
-  background:#f59e0b; color:#111; font-weight:800;
-  padding:4px 10px; border-radius:999px; font-size:.78rem;
+  padding:4px 10px; border-radius:999px; font-size:.78rem; font-weight:800;
+  background:#f59e0b; color:#111;
 }
 .badge.alt{ background:#ef4444; color:#fff; }
 
-/* Features list */
+/* Features */
 .features{
-  list-style:none; padding:0; margin:16px 0 18px;
-  display:grid; gap:10px;
+  list-style:none; padding:0; margin:18px 0 20px;
+  display:block;
 }
 .features li{
-  display:flex; gap:10px;
-  font-size:.98rem; line-height:1.45;
+  position:relative;
+  padding-left:26px;
+  margin:0 0 12px;
+  font-size:1rem;
+  line-height:1.55;            /* ← more breathing room */
   color:var(--card-text);
+  word-break:normal; hyphens:auto;
 }
 .features li::before{
-  content:"✔";
+  content:"✔"; position:absolute; left:0; top:2px;
   font-weight:900; color:var(--good);
-  margin-top:1px; flex:0 0 auto;
 }
 .features li.bad{ color:#6b7280; }
 .features li.bad::before{ content:"✖"; color:var(--bad); }
 
+/* Split features into two columns only on very wide screens */
+@media (min-width: 1500px){
+  .features{ column-count:2; column-gap:28px; }
+  .features li{ break-inside:avoid; }
+}
+
 /* Buttons */
-.plan .btn{ margin-top:6px; }
+.plan .btn{ margin-top:8px; }
 .btn.full{ width:100%; }
 .plan .btn{ background:#0ea5e9; color:#fff; border:none; }
 .plan .btn:hover{ transform:translateY(-1px); }
-.plan .btn.ghost{
-  background:#f1f5f9; color:#0b1220; border:1px solid #e5e7eb;
-}
+.plan .btn.ghost{ background:#f1f5f9; color:#0b1220; border:1px solid #e5e7eb; }
 
-/* Small-screen polish */
+/* Small screens */
 @media (max-width:640px){
-  .plan{ padding:16px; }
-  .plan .price{ font-size:1.65rem; }
-  .features li{ font-size:.97rem; }
+  .plan{ padding:18px; }
+  .plan .price{ font-size:1.7rem; }
+  .features li{ font-size:.98rem; }
 }
