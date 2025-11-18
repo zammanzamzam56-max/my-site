@@ -179,3 +179,36 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
   .footer-grid{ grid-template-columns:1fr }
   .site-footer{ padding:24px 0 16px }
 }
+/* 1) Header brand: make "Salecompass" a bit larger */
+.site-header .logo{
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* 2) Hide the hamburger next to the logo on desktop, keep it on mobile */
+.menu-toggle{ display:none; }
+@media (max-width: 860px){
+  .menu-toggle{ display:block; }
+}
+
+/* 3) Make "Contact" look like a normal link (remove the pill/button look) */
+.menu a.btn{
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  color: var(--text) !important;
+}
+.menu a.btn:hover{
+  text-decoration: underline;
+  transform: none;
+}
+
+/* Optional: keep even spacing for all nav links after removing the button box */
+.menu a{ padding: .5rem .75rem; }
+
+/* 4) Footer: make the Salecompass brand white */
+.site-footer .logo{ color: #fff !important; }
+
