@@ -444,3 +444,57 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 @media (max-width: 640px){
   .pricing .plans-grid{ grid-template-columns: 1fr !important; }
 }
+/* ==== DESKTOP FIX FOR SERVICES CARDS (put at very end) ==== */
+
+/* Make each card wide enough on desktop so text can breathe */
+@media (min-width: 1024px){
+  .pricing .plans-grid{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(360px, 1fr)) !important; /* 3 roomy cards */
+  }
+  .pricing .plan-card{ min-width: 360px !important; }
+}
+
+/* Kill any multi-column/grid layout applied to the features list */
+.pricing .plan-card ul,
+.pricing .plan-features,
+section.pricing article ul{
+  display: block !important;
+  column-count: 1 !important;
+  columns: auto !important;
+  grid-template-columns: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+/* Lay out each feature as: [icon] [text] and allow normal wrapping */
+.pricing .plan-card ul li,
+section.pricing article ul li{
+  display: grid !important;
+  grid-template-columns: 20px 1fr !important;
+  align-items: start;
+  gap: 10px;
+  line-height: 1.35;
+  width: auto !important;           /* undo any tiny fixed widths */
+  max-width: none !important;
+}
+
+/* Keep buttons aligned at the bottom of each card */
+.pricing .plan-card{
+  display: flex;
+  flex-direction: column;
+}
+.pricing .plan-body{ flex: 1 1 auto; }
+.pricing .plan-actions{ margin-top: auto; }
+
+/* Tablet & mobile remain comfortable */
+@media (max-width: 900px){
+  .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(280px, 1fr)) !important; }
+}
+@media (max-width: 640px){
+  .pricing .plans-grid{ grid-template-columns: 1fr !important; }
+}
+
