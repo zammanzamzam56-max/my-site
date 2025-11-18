@@ -497,4 +497,42 @@ section.pricing article ul li{
 @media (max-width: 640px){
   .pricing .plans-grid{ grid-template-columns: 1fr !important; }
 }
+/* --- Services > Pricing desktop readability fix --- */
+
+/* 1) Give each card real width on laptop/desktop */
+@media (min-width: 1024px){
+  .pricing .plans-grid{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(420px, 1fr)) !important;  /* wider text column */
+  }
+  .pricing .plan-card{ min-width: 420px !important; }
+}
+
+/* 2) Make feature lines wrap at spaces (not one word per line) */
+.pricing .plan-card ul,
+.pricing .plan-features{
+  display: block !important;
+  column-count: 1 !important;           /* kill any multi-column list */
+}
+
+.pricing .plan-card ul li{
+  display: grid !important;
+  grid-template-columns: 20px 1fr !important; /* icon + text */
+  align-items: start;
+  gap: 10px;
+  white-space: normal !important;
+  word-break: normal !important;        /* don't break inside words */
+  overflow-wrap: break-word !important; /* only break long tokens if needed */
+  line-height: 1.35;
+}
+
+/* Keep subscribe buttons aligned */
+.pricing .plan-card{ display:flex; flex-direction:column; }
+.pricing .plan-body{ flex:1 1 auto; }
+.pricing .plan-actions{ margin-top:auto; }
+
+/* Tablet / mobile stay comfortable */
+@media (max-width: 900px){ .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(280px,1fr)) !important; } }
+@media (max-width: 640px){ .pricing .plans-grid{ grid-template-columns: 1fr !important; } }
 
