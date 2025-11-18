@@ -310,4 +310,62 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 .footer-contact p {
   margin: 5px 0;
 }
+/* ========== Services / Pricing ========== */
+.plans-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:22px;
+}
+@media (max-width: 1024px){ .plans-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width: 640px){ .plans-grid{grid-template-columns:1fr;} }
+
+.plan{
+  position:relative;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:20px 18px 18px;
+  backdrop-filter: blur(2px);
+}
+.plan .plan-stripe{
+  position:absolute; inset:0 0 auto 0; height:6px; border-radius:16px 16px 0 0;
+}
+/* color accents */
+.plan-free   .plan-stripe{ background:#2563eb; }   /* blue */
+.plan-starter .plan-stripe{ background:#10b981; }  /* green */
+.plan-growth .plan-stripe{ background:#f59e0b; }   /* orange */
+.plan-premium .plan-stripe{ background:#ef4444; }  /* red */
+
+.plan-head{ margin-top:10px; margin-bottom:12px; }
+.plan-head h3{ margin:0 0 6px; font-size:1.25rem; font-weight:700; }
+.plan .price{ font-size:1.75rem; font-weight:800; margin:0; }
+.plan .price span{ font-size:.95rem; font-weight:500; opacity:.75; }
+
+.badge{
+  position:absolute; top:12px; right:12px;
+  background:#f59e0b; color:#000; font-weight:700;
+  padding:4px 10px; border-radius:999px; font-size:.8rem;
+}
+.badge.alt{ background:#ef4444; color:#fff; }
+
+.features{ list-style:none; padding:0; margin:16px 0 18px; display:grid; gap:8px; }
+.features li{ display:flex; align-items:flex-start; gap:10px; line-height:1.35; }
+.features li::before{
+  content:"✔"; font-weight:900; margin-top:1px;
+}
+.features li.bad{ opacity:.8; }
+.features li.bad::before{ content:"✖"; opacity:.85; }
+
+/* buttons */
+.btn.full{ width:100%; }
+.plan .btn{ margin-top:6px; }
+.plan .btn.ghost{
+  background:transparent; color:var(--text, #fff);
+  border:1px solid rgba(255,255,255,.25);
+}
+.plan .btn.ghost:hover{ transform:translateY(-1px); }
+
+/* Minor polish */
+.section .muted{ color:var(--muted, rgba(255,255,255,.7)); }
+
 
