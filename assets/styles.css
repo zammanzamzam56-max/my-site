@@ -391,31 +391,56 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
   .pricing .price{ font-size:1.7rem; }
   .pricing .features li{ font-size:.98rem; }
 }
-/* Fix: keep words intact, wrap only at spaces, improve readability */
-.plan-card ul {
-  text-align: left;
-  margin: 15px 0;
-  padding: 0;
-  list-style: none;
-  flex: 1 1 auto;          /* keeps buttons aligned at the bottom */
+/* ===== PRICING FIX: stop broken words + make cards readable ===== */
+
+/* 1) Ensure the plan grid can shrink to fewer columns instead of squeezing text */
+.pricing .plans-grid{
+  display:grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
 }
 
-.plan-card ul li {
-  padding: 8px 0;
-  font-size: 0.98rem;
-  line-height: 1.55;
-  border-bottom: 1px solid #eef1f6;
+/* 2) Cards: let body grow; keep actions stuck to bottom */
+.pricing .plan-card{
+  display:flex;
+  flex-direction:column;
+  min-width:300px;               /* prevents ultra-narrow cards */
+}
+.pricing .plan-body{ flex:1 1 auto; }
+.pricing .plan-actions{ margin-top:auto; }
 
-  /* ✨ the important bits */
-  white-space: normal;     /* allow normal wrapping */
-  word-break: normal;      /* do NOT break inside words */
-  overflow-wrap: break-word; /* only break long tokens if needed */
-  hyphens: none;           /* no automatic hyphens */
+/* 3) Feature list: reset any multi-column or weird wrapping */
+.pricing .plan-features{
+  display:block !important;
+  column-count: 1 !important;
+  column-gap: 0 !important;
+  width:100%;
 }
 
-/* Safety override in case a global rule is forcing breaks elsewhere */
-.pricing, .plan-card, .plan-card * {
+/* 4) Each feature row: icon + text in two columns, with sane wrapping */
+.pricing .plan-features li{
+  display:grid;
+  grid-template-columns: 20px 1fr;
+  align-items:start;
+  gap:10px;
+  line-height:1.3;
+  white-space: normal !important;
   word-break: normal !important;
+  overflow-wrap: normal !important; /* aka word-wrap */
+  hyphens: none !important;
 }
 
+/* 5) Tighten long words a touch without breaking them into pieces */
+.pricing .plan-features li span,
+.pricing .plan-features li p{
+  word-break: keep-all;
+  overflow-wrap: anywhere; /* only if a single ultra-long token appears */
+}
 
+/* 6) Mobile: single column so text stays roomy */
+@media (max-width: 900px){
+  .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(280px, 1fr)) !important; }
+}
+@media (max-width: 640px){
+  .pricing .plans-grid{ grid-template-columns: 1fr !important; }
+}
