@@ -296,3 +296,34 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
   .pricing .price{ font-size:1.7rem; }
   .pricing .features li{ font-size:.98rem; }
 }
+/* ==== PRICING: keep each feature on one line (desktop) ==== */
+
+/* 1) Give each card enough width so text can fit */
+@media (min-width: 1024px){
+  .pricing .plans-grid{
+    /* force wider cards: 2 per row on laptops */
+    grid-template-columns: repeat(2, minmax(520px, 1fr)) !important;
+  }
+}
+
+/* 2) Make each bullet stay on one line (with ellipsis if too long) */
+.pricing .features li,
+.pricing .plan-features li{
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: start;
+  gap: 10px;
+
+  white-space: nowrap;        /* <— single line */
+  overflow: hidden;           /* prevent spill */
+  text-overflow: ellipsis;    /* show … if still too long */
+}
+
+/* 3) On tablets/phones let text wrap normally */
+@media (max-width: 900px){
+  .pricing .features li,
+  .pricing .plan-features li{
+    white-space: normal;
+    text-overflow: clip;
+  }
+}
