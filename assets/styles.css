@@ -331,3 +331,48 @@ select {
   font-size: 1.1rem; /* Increase font size of the dropdown */
   padding: .9rem; /* Increase padding for mobile */
 }
+/* --- Mobile-friendly base --- */
+html{scroll-padding-top:72px}
+img, svg, canvas, video{max-width:100%; height:auto}
+.container{max-width:1120px; margin:auto; padding:0 20px}
+.menu-toggle{display:none} /* hidden on desktop */
+
+/* Grids default (desktop) — keep as-is if you already have these */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+.grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:24px}
+
+/* ---- Responsive: tablets & phones ---- */
+@media (max-width: 860px){
+  .site-header{position:sticky; top:0; z-index:50}
+
+  /* Hamburger */
+  .menu-toggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 12px; margin-left:auto; border-radius:10px;
+    background:#E3ECFF; border:1px solid var(--accent);
+  }
+  /* Turn links into dropdown */
+  .menu{position:relative}
+  .menu a{display:block; padding:12px 14px; margin:0}
+  .menu:not(.open) a{display:none}                 /* closed state hides links */
+  .menu.open{                                       /* dropdown panel */
+    background:#fff; border:1px solid rgba(43,111,255,.2);
+    border-radius:12px; position:absolute; right:20px; top:56px;
+    min-width:220px; box-shadow:0 12px 28px rgba(0,0,0,.12)
+  }
+
+  /* Stack content */
+  .hero-grid, .grid-3, .grid-2, .footer-grid, .form-row{grid-template-columns:1fr}
+  .card{padding:16px}
+  .btn{width:100%}          /* big tap targets */
+  .logo{font-size:18px}
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 540px){
+  h1{font-size:clamp(1.6rem, 6vw, 2rem)}
+  h2{font-size:1.25rem}
+  p, li{font-size:.95rem}
+  .site-header{padding:10px 0}
+}
+
