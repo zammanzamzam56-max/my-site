@@ -1,14 +1,18 @@
-// Mobile menu toggle & year
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu toggle
+  const btn = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu');
+  if (btn && nav){
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
 
-const btn = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
-if (btn) {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-    btn.setAttribute('aria-expanded', String(!expanded));
-    nav.classList.toggle('open');
-  });
-}
+  // Footer year
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+});
 const y = document.getElementById('year');
 
 if (y) { y.textContent = new Date().getFullYear(); }
@@ -21,3 +25,4 @@ if (btn && nav){
     nav.classList.toggle('open');
   });
 }
+
