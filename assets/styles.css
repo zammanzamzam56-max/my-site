@@ -391,4 +391,31 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
   .pricing .price{ font-size:1.7rem; }
   .pricing .features li{ font-size:.98rem; }
 }
+/* Fix: keep words intact, wrap only at spaces, improve readability */
+.plan-card ul {
+  text-align: left;
+  margin: 15px 0;
+  padding: 0;
+  list-style: none;
+  flex: 1 1 auto;          /* keeps buttons aligned at the bottom */
+}
+
+.plan-card ul li {
+  padding: 8px 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  border-bottom: 1px solid #eef1f6;
+
+  /* ✨ the important bits */
+  white-space: normal;     /* allow normal wrapping */
+  word-break: normal;      /* do NOT break inside words */
+  overflow-wrap: break-word; /* only break long tokens if needed */
+  hyphens: none;           /* no automatic hyphens */
+}
+
+/* Safety override in case a global rule is forcing breaks elsewhere */
+.pricing, .plan-card, .plan-card * {
+  word-break: normal !important;
+}
+
 
