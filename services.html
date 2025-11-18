@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Salecompass</title>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -11,150 +11,138 @@
   <header class="site-header">
     <div class="container nav">
       <h1 class="logo">Salecompass</h1>
-      <nav class="menu" id="primary-menu" role="navigation">
+      <nav class="menu" role="navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a class="active" href="services.html">Services</a>
         <a href="case-studies.html">Case Studies</a>
-        <a href="research.html">R&amp;D</a>
+        <a href="research.html">R&D</a>
         <a href="success-stories.html">Success Stories</a>
-        <!-- contact kept as a normal link (no button box) -->
-        <a href="contact.html">Contact</a>
+        <a class="btn" href="contact.html">Contact</a>
       </nav>
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Open menu">☰</button>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
     </div>
   </header>
 
-  <!-- Main -->
   <main class="section">
     <div class="container">
-      <h1 style="margin-bottom:.25rem;">Pricing Plans</h1>
-      <p class="muted" style="margin-bottom:2rem;">Choose the plan that fits your stage and scale.</p>
+      <h1 style="margin-bottom: .25rem;">Pricing Plans</h1>
+      <p class="muted" style="margin-bottom: 2rem;">Choose the plan that fits your stage and scale.</p>
+      <section class="pricing container">
+  <div class="plans-grid">
+    <!-- Free -->
+    <article class="plan plan-free">
+      <div class="plan-stripe"></div>
+      <header class="plan-head">
+        <h3>Free</h3>
+        <p class="price">£0 <span>/ month</span></p>
+      </header>
 
-      <!-- NOTE: no extra .container here -->
-      <section class="pricing">
-        <div class="plans-grid">
-          <!-- Free -->
-          <article class="plan plan-free plan-card">
-            <div class="plan-stripe"></div>
-            <header class="plan-head">
-              <h3>Free</h3>
-              <p class="price">£0 <span>/ month</span></p>
-            </header>
+      <ul class="features">
+        <li>Multi-Channel Dashboard (Basic)</li>
+        <li>1 Marketing Channel Integration</li>
+        <li>200 Monthly AI Insights</li>
+        <li>Basic Attribution Model</li>
+        <li>POS Upload (Manual)</li>
+        <li>Access to Review &amp; Sentiment Summary</li>
+        <li>Email Support</li>
+        <li class="bad">Predictive Analytics</li>
+        <li class="bad">Automated Recommendations</li>
+        <li class="bad">Real-Time Alerts</li>
+      </ul>
 
-            <div class="plan-body">
-              <ul class="features plan-features">
-                <li><span></span>Multi-Channel Dashboard (Basic)</li>
-                <li><span></span>1 Marketing Channel Integration</li>
-                <li><span></span>200 Monthly AI Insights</li>
-                <li><span></span>Basic Attribution Model</li>
-                <li><span></span>POS Upload (Manual)</li>
-                <li><span></span>Access to Review &amp; Sentiment Summary</li>
-                <li><span></span>Email Support</li>
-                <li class="bad"><span></span>Predictive Analytics</li>
-                <li class="bad"><span></span>Automated Recommendations</li>
-                <li class="bad"><span></span>Real-Time Alerts</li>
-              </ul>
-            </div>
+      <div class="plan-actions">
+        <button class="btn ghost full">Current Plan</button>
+      </div>
+    </article>
 
-            <div class="plan-actions">
-              <button class="btn ghost full">Current Plan</button>
-            </div>
-          </article>
+    <!-- Starter -->
+    <article class="plan plan-starter">
+      <div class="plan-stripe"></div>
+      <header class="plan-head">
+        <h3>Starter</h3>
+        <p class="price">£29 <span>/ month</span></p>
+      </header>
 
-          <!-- Starter -->
-          <article class="plan plan-starter plan-card">
-            <div class="plan-stripe"></div>
-            <header class="plan-head">
-              <h3>Starter</h3>
-              <p class="price">£29 <span>/ month</span></p>
-            </header>
+      <ul class="features">
+        <li>All Free Features</li>
+        <li>5 Marketing Channel Integrations</li>
+        <li>1,000 Monthly AI Insights</li>
+        <li>Standard Attribution Model</li>
+        <li>POS / CRM Auto-Sync</li>
+        <li>AI Trend Detection (Basic)</li>
+        <li>Sentiment Analysis (Full)</li>
+        <li>Automated Weekly Reports</li>
+        <li>Priority Email Support</li>
+        <li class="bad">Real-Time Alerts</li>
+        <li class="bad">Predictive Demand Forecasting</li>
+      </ul>
 
-            <div class="plan-body">
-              <ul class="features plan-features">
-                <li><span></span>All Free Features</li>
-                <li><span></span>5 Marketing Channel Integrations</li>
-                <li><span></span>1,000 Monthly AI Insights</li>
-                <li><span></span>Standard Attribution Model</li>
-                <li><span></span>POS / CRM Auto-Sync</li>
-                <li><span></span>AI Trend Detection (Basic)</li>
-                <li><span></span>Sentiment Analysis (Full)</li>
-                <li><span></span>Automated Weekly Reports</li>
-                <li><span></span>Priority Email Support</li>
-                <li class="bad"><span></span>Real-Time Alerts</li>
-                <li class="bad"><span></span>Predictive Demand Forecasting</li>
-              </ul>
-            </div>
+      <div class="plan-actions">
+        <button class="btn full">Subscribe</button>
+      </div>
+    </article>
 
-            <div class="plan-actions">
-              <button class="btn full">Subscribe</button>
-            </div>
-          </article>
+    <!-- Growth -->
+    <article class="plan plan-growth">
+      <div class="plan-stripe"></div>
+      <div class="badge">Most Popular</div>
+      <header class="plan-head">
+        <h3>Growth</h3>
+        <p class="price">£59 <span>/ month</span></p>
+      </header>
 
-          <!-- Growth -->
-          <article class="plan plan-growth plan-card">
-            <div class="plan-stripe"></div>
-            <div class="badge">Most Popular</div>
-            <header class="plan-head">
-              <h3>Growth</h3>
-              <p class="price">£59 <span>/ month</span></p>
-            </header>
+      <ul class="features">
+        <li>All Starter Features</li>
+        <li>10 Marketing Channel Integrations</li>
+        <li>5,000 Monthly AI Insights</li>
+        <li>Advanced Multi-Touch Attribution</li>
+        <li>Predictive Analytics (Demand + Behaviour)</li>
+        <li>Real-Time Alerts &amp; Insights</li>
+        <li>Campaign Optimisation Suggestions</li>
+        <li>AI Menu Trend Detection</li>
+        <li>Unlimited POS + Offline Data Imports</li>
+        <li>Chat + Priority Support</li>
+      </ul>
 
-            <div class="plan-body">
-              <ul class="features plan-features">
-                <li><span></span>All Starter Features</li>
-                <li><span></span>10 Marketing Channel Integrations</li>
-                <li><span></span>5,000 Monthly AI Insights</li>
-                <li><span></span>Advanced Multi-Touch Attribution</li>
-                <li><span></span>Predictive Analytics (Demand + Behaviour)</li>
-                <li><span></span>Real-Time Alerts &amp; Insights</li>
-                <li><span></span>Campaign Optimisation Suggestions</li>
-                <li><span></span>AI Menu Trend Detection</li>
-                <li><span></span>Unlimited POS + Offline Data Imports</li>
-                <li><span></span>Chat + Priority Support</li>
-              </ul>
-            </div>
+      <div class="plan-actions">
+        <button class="btn full">Subscribe</button>
+      </div>
+    </article>
 
-            <div class="plan-actions">
-              <button class="btn full">Subscribe</button>
-            </div>
-          </article>
+    <!-- Premium -->
+    <article class="plan plan-premium">
+      <div class="plan-stripe"></div>
+      <div class="badge alt">Best Option</div>
+      <header class="plan-head">
+        <h3>Premium</h3>
+        <p class="price">£99 <span>/ month</span></p>
+      </header>
 
-          <!-- Premium -->
-          <article class="plan plan-premium plan-card">
-            <div class="plan-stripe"></div>
-            <div class="badge alt">Best Option</div>
-            <header class="plan-head">
-              <h3>Premium</h3>
-              <p class="price">£99 <span>/ month</span></p>
-            </header>
+      <ul class="features">
+        <li>All Growth Features</li>
+        <li>Unlimited Marketing Channels</li>
+        <li>Unlimited AI Insights</li>
+        <li>Personalised AI Recommendations Engine</li>
+        <li>Full Customer Journey Mapping</li>
+        <li>Intelligent Loyalty Analytics</li>
+        <li>Competitor Trend Monitoring</li>
+        <li>API Access (Full)</li>
+        <li>Custom Reports &amp; Data Exports</li>
+        <li>Dedicated Account Support</li>
+        <li>Onboarding &amp; Strategy Call</li>
+      </ul>
 
-            <div class="plan-body">
-              <ul class="features plan-features">
-                <li><span></span>All Growth Features</li>
-                <li><span></span>Unlimited Marketing Channels</li>
-                <li><span></span>Unlimited AI Insights</li>
-                <li><span></span>Personalised AI Recommendations Engine</li>
-                <li><span></span>Full Customer Journey Mapping</li>
-                <li><span></span>Intelligent Loyalty Analytics</li>
-                <li><span></span>Competitor Trend Monitoring</li>
-                <li><span></span>API Access (Full)</li>
-                <li><span></span>Custom Reports &amp; Data Exports</li>
-                <li><span></span>Dedicated Account Support</li>
-                <li><span></span>Onboarding &amp; Strategy Call</li>
-              </ul>
-            </div>
-
-            <div class="plan-actions">
-              <button class="btn full">Subscribe</button>
-            </div>
-          </article>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- Footer -->
+      <div class="plan-actions">
+        <button class="btn full">Subscribe</button>
+      </div>
+    </article>
+  </div>
+    </div>     
+</section>
+      
+      
+  <!-- Footer (same style you’re using elsewhere) -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-logo">
@@ -180,17 +168,5 @@
   </footer>
 
   <script src="assets/script.js"></script>
-  <script>
-    // Fallback mobile menu toggle (in case assets/script.js doesn't add it)
-    (function () {
-      const btn = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
-      if (!btn || !menu) return;
-      btn.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
 </body>
 </html>
