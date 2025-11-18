@@ -310,62 +310,89 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 .footer-contact p {
   margin: 5px 0;
 }
-/* ========== Services / Pricing ========== */
+/* ========== Services / Pricing (clean cards) ========== */
+:root{
+  --card-bg:#ffffff;
+  --card-text:#0b1220;
+  --card-muted:#64748b;
+  --good:#16a34a;      /* ✔ */
+  --bad:#ef4444;       /* ✖ */
+  --shadow:0 10px 28px rgba(2,8,23,.10);
+}
+
+/* Grid */
 .plans-grid{
   display:grid;
-  grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:22px;
+  gap:24px;
+  grid-template-columns:repeat(4, minmax(240px,1fr));
 }
-@media (max-width: 1024px){ .plans-grid{grid-template-columns:repeat(2,1fr);} }
-@media (max-width: 640px){ .plans-grid{grid-template-columns:1fr;} }
+@media (max-width:1280px){ .plans-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:960px){  .plans-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:620px){  .plans-grid{ grid-template-columns:1fr; } }
 
+/* Card */
 .plan{
   position:relative;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  border:1px solid rgba(255,255,255,.12);
+  background:var(--card-bg);
+  color:var(--card-text);
+  border:1px solid rgba(2,8,23,.08);
   border-radius:16px;
-  padding:20px 18px 18px;
-  backdrop-filter: blur(2px);
+  box-shadow:var(--shadow);
+  padding:20px 20px 18px;
 }
 .plan .plan-stripe{
-  position:absolute; inset:0 0 auto 0; height:6px; border-radius:16px 16px 0 0;
+  position:absolute; inset:0 0 auto 0; height:8px; border-radius:16px 16px 0 0;
 }
-/* color accents */
-.plan-free   .plan-stripe{ background:#2563eb; }   /* blue */
+/* top color strip for each tier */
+.plan-free    .plan-stripe{ background:#2563eb; }  /* blue */
 .plan-starter .plan-stripe{ background:#10b981; }  /* green */
-.plan-growth .plan-stripe{ background:#f59e0b; }   /* orange */
+.plan-growth  .plan-stripe{ background:#f59e0b; }  /* orange */
 .plan-premium .plan-stripe{ background:#ef4444; }  /* red */
 
-.plan-head{ margin-top:10px; margin-bottom:12px; }
-.plan-head h3{ margin:0 0 6px; font-size:1.25rem; font-weight:700; }
-.plan .price{ font-size:1.75rem; font-weight:800; margin:0; }
-.plan .price span{ font-size:.95rem; font-weight:500; opacity:.75; }
+/* Header + price */
+.plan-head{ margin-top:12px; margin-bottom:10px; }
+.plan-head h3{ margin:0 0 6px; font-weight:800; letter-spacing:.2px; }
+.plan .price{ margin:0; font-weight:800; font-size:2rem; line-height:1.1; }
+.plan .price span{ font-size:.95rem; font-weight:500; color:var(--card-muted); }
 
+/* “Most Popular / Best Option” chips */
 .badge{
-  position:absolute; top:12px; right:12px;
-  background:#f59e0b; color:#000; font-weight:700;
-  padding:4px 10px; border-radius:999px; font-size:.8rem;
+  position:absolute; top:14px; right:14px;
+  background:#f59e0b; color:#111; font-weight:800;
+  padding:4px 10px; border-radius:999px; font-size:.78rem;
 }
 .badge.alt{ background:#ef4444; color:#fff; }
 
-.features{ list-style:none; padding:0; margin:16px 0 18px; display:grid; gap:8px; }
-.features li{ display:flex; align-items:flex-start; gap:10px; line-height:1.35; }
+/* Features list */
+.features{
+  list-style:none; padding:0; margin:16px 0 18px;
+  display:grid; gap:10px;
+}
+.features li{
+  display:flex; gap:10px;
+  font-size:.98rem; line-height:1.45;
+  color:var(--card-text);
+}
 .features li::before{
-  content:"✔"; font-weight:900; margin-top:1px;
+  content:"✔";
+  font-weight:900; color:var(--good);
+  margin-top:1px; flex:0 0 auto;
 }
-.features li.bad{ opacity:.8; }
-.features li.bad::before{ content:"✖"; opacity:.85; }
+.features li.bad{ color:#6b7280; }
+.features li.bad::before{ content:"✖"; color:var(--bad); }
 
-/* buttons */
-.btn.full{ width:100%; }
+/* Buttons */
 .plan .btn{ margin-top:6px; }
+.btn.full{ width:100%; }
+.plan .btn{ background:#0ea5e9; color:#fff; border:none; }
+.plan .btn:hover{ transform:translateY(-1px); }
 .plan .btn.ghost{
-  background:transparent; color:var(--text, #fff);
-  border:1px solid rgba(255,255,255,.25);
+  background:#f1f5f9; color:#0b1220; border:1px solid #e5e7eb;
 }
-.plan .btn.ghost:hover{ transform:translateY(-1px); }
 
-/* Minor polish */
-.section .muted{ color:var(--muted, rgba(255,255,255,.7)); }
-
-
+/* Small-screen polish */
+@media (max-width:640px){
+  .plan{ padding:16px; }
+  .plan .price{ font-size:1.65rem; }
+  .features li{ font-size:.97rem; }
+}
