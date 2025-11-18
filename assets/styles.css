@@ -1,59 +1,90 @@
-/* ===== Salecompass — One-Tone Blue, Mobile-First ===== */
+/* ================================
+   Salecompass — One-Tone Blue Theme
+   Mobile-first, accessible, compact
+   ================================ */
 
-/* Theme tokens */
+/* ---------- Theme tokens ---------- */
 :root{
-  --bg:#ffffff;                 /* page bg */
+  --bg:#ffffff;                 /* page background */
   --card:#F2F6FF;               /* light blue surfaces */
-  --text:#111111;               /* black text everywhere */
+  --text:#111111;               /* primary text */
   --muted:#5c6375;              /* secondary text */
   --accent:#2B6FFF;             /* single blue tone */
   --ring:rgba(43,111,255,.35);  /* focus ring */
   --footer:#0f1f3a;             /* deep blue footer */
 }
 
-/* Base */
+/* ---------- Base ---------- */
 *{ box-sizing:border-box }
 html{ scroll-behavior:smooth; scroll-padding-top:72px }
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color:var(--text);
+  line-height:1.55;
   background:
     radial-gradient(1000px 700px at 80% -20%, rgba(43,111,255,.08), transparent) no-repeat,
-    radial-gradient(900px 600px at 0% 0%,   rgba(43,111,255,.06), transparent) no-repeat,
+    radial-gradient(900px 600px at   0%   0%, rgba(43,111,255,.06), transparent) no-repeat,
     var(--bg);
-  line-height:1.55;
 }
+img, video{ max-width:100%; height:auto; display:block }
 a{ color:var(--text); text-decoration-color: rgba(43,111,255,.35); text-underline-offset:3px }
 a:hover{ color:var(--accent); text-decoration-color: currentColor }
-img, video{ max-width:100%; height:auto; display:block }
+:focus-visible{ outline:2px solid var(--ring); outline-offset:2px }
 
-/* Layout helpers */
+/* ---------- Layout helpers ---------- */
 .container{ max-width:1120px; margin-inline:auto; padding-inline:20px }
-.section{ padding: 28px 0 }
+.section{ padding:28px 0 }
 h1,h2,h3,h4{ margin:0 0 .5rem }
 .muted{ color:var(--muted) }
 .small{ font-size:.95rem }
 .tiny{ font-size:.85rem }
 
-/* Header */
+/* ---------- Header / Nav ---------- */
 .site-header{
   position:sticky; top:0; z-index:50;
   background:rgba(255,255,255,.88);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  border-bottom:1px solid rgba(255,255,255,.95);    /* white line */
+  border-bottom:1px solid rgba(255,255,255,.95);
   box-shadow:0 1px 0 rgba(255,255,255,.95), 0 8px 24px rgba(0,0,0,.04);
 }
 .site-header .nav{ display:flex; align-items:center; gap:18px; min-height:60px; position:relative }
 .logo{ font-weight:800; letter-spacing:.2px; color:var(--text); text-decoration:none }
+.site-header .logo{ font-size: clamp(1.35rem, 2.2vw, 1.85rem); }
 
 /* Desktop menu */
 .menu{ display:flex; gap:16px; align-items:center }
-.menu a{ color:var(--text); text-decoration:none; padding:8px 10px; border-radius:10px }
+.menu a{ color:var(--text); text-decoration:none; padding:.5rem .75rem; border-radius:10px }
 .menu a:hover, .menu .active{ color:var(--accent) }
 
-/* Buttons (black text) */
+/* Make “Contact” look like a normal link (if it uses .btn) */
+.menu a.btn{
+  background: transparent !important; border: none !important;
+  padding: 0 !important; box-shadow: none !important; border-radius: 0 !important;
+  color: var(--text) !important;
+}
+.menu a.btn:hover{ text-decoration: underline; transform: none; }
+
+/* Mobile toggle */
+.menu-toggle{ display:none; }
+@media (max-width: 860px){
+  .menu-toggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 12px; margin-left:auto; border-radius:10px;
+    background:#E3ECFF; border:1px solid var(--accent); color:#111;
+  }
+  .menu{
+    display:none; position:absolute; right:20px; top:60px; z-index:999;
+    background:#fff; border:1px solid rgba(43,111,255,.20); border-radius:12px;
+    min-width:220px; box-shadow:0 12px 28px rgba(0,0,0,.12); padding:6px;
+    flex-direction:column; gap:0;
+  }
+  .menu.open{ display:flex }
+  .menu a{ display:block; padding:12px 14px; margin:0 }
+}
+
+/* ---------- Buttons (black text) ---------- */
 .btn{
   display:inline-block; cursor:pointer;
   background:#E3ECFF; color:#111; border:1px solid var(--accent);
@@ -66,7 +97,7 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 .btn.ghost{ background:transparent; color:#111; border-color:var(--accent) }
 .btn.big{ font-size:1.05rem; padding:.9rem 1.25rem }
 
-/* Cards & grids */
+/* ---------- Cards & simple grids ---------- */
 .card{
   background:linear-gradient(180deg, #FFFFFF, #F2F6FF);
   border:1px solid rgba(43,111,255,.20); border-radius:14px; padding:16px;
@@ -74,7 +105,7 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 .grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px }
 .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px }
 
-/* Home hero & blocks */
+/* ---------- Home hero & blocks ---------- */
 .hero{ padding:56px 0 24px }
 .hero h1{ font-size:clamp(2.1rem, 3.4vw, 3.2rem) }
 .hero .lead{ font-size:1.1rem; color:var(--muted); max-width:78ch }
@@ -86,19 +117,19 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 .bullets{ padding-left:1.1rem }
 .bullets li{ margin:.35rem 0 }
 
-/* Checklist with ticks (no crosses/dashes) */
+/* ---------- Checklists (ticks; no crosses/dashes) ---------- */
 .checklist{ margin:.8rem 0 0; padding:0; list-style:none }
 .checklist li{ position:relative; padding-left:26px; margin:.45rem 0 }
 .checklist li::before{
   content:"✓"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700
 }
 
-/* Features grid */
+/* ---------- Generic features grid ---------- */
 .features{ display:grid; gap:16px; grid-template-columns:repeat(3,1fr); margin-top:14px }
 .feature{ background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px }
 .feature h3{ margin-top:0; font-size:1.05rem }
 
-/* R&D (speaker circles / key points) – keeps your page working */
+/* ---------- R&D (speaker circles / key points) ---------- */
 .rd-title{ font-size:clamp(1.6rem,1.2rem + 2vw,2.2rem); margin:8px 0 18px }
 .rd-speakers{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:6px 0 18px }
 .spk{ text-align:center }
@@ -117,16 +148,37 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 .rd-cta{ padding:.55rem .9rem; line-height:1.1 }
 .rd-cta strong{ font-size:1rem } .rd-cta small{ font-size:.8rem }
 
-/* Footer */
+/* ---------- Contact page ---------- */
+.contact-page{ padding:80px 20px; text-align:center; max-width:1000px; margin:0 auto }
+.contact-hero h2{ font-size:2.2rem; margin-bottom:10px }
+.contact-hero p{ font-size:1rem; color:#555; max-width:650px; margin:0 auto 40px }
+.contact-container{ display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap }
+.contact-form,.contact-info{ flex:1 1 45%; text-align:left }
+.contact-form label{ display:block; margin-top:10px; font-weight:600 }
+.contact-form input,.contact-form textarea{
+  width:100%; padding:10px 12px; margin-top:6px; border:1px solid #ccc; border-radius:6px; font-size:1rem;
+}
+.contact-form .btn{
+  background:var(--accent); color:#fff; border:none; margin-top:15px; padding:10px 20px; border-radius:6px; cursor:pointer;
+}
+.contact-form .btn:hover{ background:#174fe0 }
+@media (max-width:768px){
+  .contact-container{ flex-direction:column }
+  .contact-form,.contact-info{ flex:1 1 100% }
+  .contact-hero h2{ font-size:1.8rem }
+}
+
+/* ---------- Footer ---------- */
 .site-footer{
   margin-top:48px; color:#d9e2ff; background:
     radial-gradient(600px at 85% 40%, rgba(155,140,255,.10), transparent),
     var(--footer);
   border-top:1px solid rgba(255,255,255,.10);
-  padding: 32px 0 24px;
+  padding:32px 0 24px;
+  text-align:left;
 }
-.footer-grid{ display:grid; gap:24px 32px; grid-template-columns:1.2fr 1fr 1fr 1fr; align-items:start }
-.site-footer .logo{ font-weight:800; font-size:1.25rem; margin-bottom:.25rem }
+.footer-grid,.footer-container{ display:grid; gap:24px 32px; grid-template-columns:1.2fr 1fr 1fr 1fr; align-items:start }
+.site-footer .logo{ font-weight:800; font-size:1.25rem; margin-bottom:.25rem; color:#fff !important }
 .site-footer h4{ margin:0 0 .5rem; font-size:1rem; color:#ffffff }
 .footer-links{ list-style:none; padding:0; margin:0 }
 .footer-links li{ margin:.35rem 0 }
@@ -139,251 +191,104 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
 }
 .footer-bottom{ margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.10); display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap }
 
-/* Accessibility */
-:focus-visible{ outline:2px solid var(--ring); outline-offset:2px }
-
-/* ===== Responsive tweaks ===== */
-@media (max-width: 1120px){
-  .container{ padding-inline:16px }
-}
-@media (max-width: 980px){
+/* ---------- Responsive tweaks ---------- */
+@media (max-width:1120px){ .container{ padding-inline:16px } }
+@media (max-width:980px){
   .features{ grid-template-columns:1fr 1fr }
-  .footer-grid{ grid-template-columns:1fr 1fr }
+  .footer-grid,.footer-container{ grid-template-columns:1fr 1fr }
 }
-@media (max-width: 860px){
-  /* Mobile nav toggle */
-  .menu-toggle{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding:10px 12px; margin-left:auto; border-radius:10px;
-    background:#E3ECFF; border:1px solid var(--accent); color:#111;
-  }
-  /* Hide menu panel by default; show when .open is added */
-  .menu{
-    display:none; position:absolute; right:20px; top:60px; z-index:999;
-    background:#fff; border:1px solid rgba(43,111,255,.20); border-radius:12px;
-    min-width:220px; box-shadow:0 12px 28px rgba(0,0,0,.12); padding:6px;
-    flex-direction:column; gap:0;
-  }
-  .menu.open{ display:flex }
-  .menu a{ display:block; padding:12px 14px; margin:0 }
-
-  /* Stack content */
-  .grid-3, .grid-2{ grid-template-columns:1fr }
+@media (max-width:860px){
+  .grid-3,.grid-2{ grid-template-columns:1fr }
   .hero{ padding-top:40px }
-  .btn{ width:100% }                 /* bigger tap targets */
+  .btn{ width:100% }
   .rd-speakers{ grid-template-columns:1fr 1fr; gap:14px }
   .spk-avatar{ width:110px; height:110px; border-width:5px }
 }
-@media (max-width: 560px){
+@media (max-width:560px){
   .features{ grid-template-columns:1fr }
-  .footer-grid{ grid-template-columns:1fr }
+  .footer-grid,.footer-container{ grid-template-columns:1fr }
   .site-footer{ padding:24px 0 16px }
 }
-/* 1) Header brand: make "Salecompass" a bit larger */
-.site-header .logo{
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
-  font-weight: 800;
-  letter-spacing: .2px;
-}
 
-/* 2) Hide the hamburger next to the logo on desktop, keep it on mobile */
-.menu-toggle{ display:none; }
-@media (max-width: 860px){
-  .menu-toggle{ display:block; }
-}
+/* =======================================================
+   SERVICES / PRICING  (clean, de-duped, laptop friendly)
+   ======================================================= */
 
-/* 3) Make "Contact" look like a normal link (remove the pill/button look) */
-.menu a.btn{
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  color: var(--text) !important;
-}
-.menu a.btn:hover{
-  text-decoration: underline;
-  transform: none;
-}
-
-/* Optional: keep even spacing for all nav links after removing the button box */
-.menu a{ padding: .5rem .75rem; }
-
-/* 4) Footer: make the Salecompass brand white */
-.site-footer .logo{ color: #fff !important; }
-/* CONTACT PAGE */
-.contact-page {
-  padding: 80px 20px;
-  text-align: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.contact-hero h2 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-.contact-hero p {
-  font-size: 1rem;
-  color: #555;
-  max-width: 650px;
-  margin: 0 auto 40px;
-}
-
-.contact-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.contact-form, .contact-info {
-  flex: 1 1 45%;
-  text-align: left;
-}
-.contact-form label {
-  display: block;
-  margin-top: 10px;
-  font-weight: 600;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-.contact-form .btn {
-  background: var(--accent, #2b6eff);
-  color: #fff;
-  border: none;
-  margin-top: 15px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.contact-form .btn:hover {
-  background: #174fe0;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-  .contact-form, .contact-info {
-    flex: 1 1 100%;
-  }
-  .contact-hero h2 {
-    font-size: 1.8rem;
-  }
-}
-
-/* FOOTER */
-.site-footer {
-  background: #0a2540;
-  color: #fff;
-  padding: 50px 20px 30px;
-  text-align: center;
-}
-.site-footer .logo {
-  color: #fff;
-}
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-links a {
-  color: #fff;
-  text-decoration: none;
-}
-.footer-links a:hover {
-  text-decoration: underline;
-}
-.footer-contact p {
-  margin: 5px 0;
-}
-/* ===== Pricing (scoped) ===== */
+.pricing{ padding:24px 0; }
 .pricing *{ box-sizing:border-box; }
 
+/* Grid: mobile-first; widen as screen grows */
 .pricing .plans-grid{
   display:grid;
   gap:24px;
-  grid-template-columns:repeat(4, minmax(340px,1fr));
+  grid-template-columns: 1fr;                                  /* phones */
+}
+@media (min-width:700px){
+  .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(320px,1fr)); }
+}
+@media (min-width:1024px){
+  .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(420px,1fr)); } /* readable on laptops */
+}
+@media (min-width:1280px){
+  .pricing .plans-grid{ grid-template-columns: repeat(3, minmax(360px,1fr)); }
+}
+@media (min-width:1536px){
+  .pricing .plans-grid{ grid-template-columns: repeat(4, minmax(340px,1fr)); }
 }
 
-@media (max-width:1400px){ .pricing .plans-grid{ grid-template-columns:repeat(3, minmax(320px,1fr)); } }
-@media (max-width:1120px){ .pricing .plans-grid{ grid-template-columns:repeat(2, minmax(300px,1fr)); } }
-@media (max-width:680px){  .pricing .plans-grid{ grid-template-columns:1fr; } }
-
+/* Card */
 .pricing .plan{
   position:relative;
-  display:flex;                /* make interior stack */
-  flex-direction:column;
-  background:#fff;
-  color:#0b1220;
+  display:flex; flex-direction:column;
+  background:#fff; color:#0b1220;
   border:1px solid rgba(2,8,23,.10);
   border-radius:16px;
-  padding:24px;
-  box-shadow:0 10px 28px rgba(2,8,23,.10);
-  overflow:hidden;
-  height:100%;
+  padding:22px;
+  box-shadow:0 10px 28px rgba(2,8,23,.08);
 }
 
-.pricing .plan-stripe{
-  position:absolute; left:0; right:0; top:0; height:8px;
-  border-radius:16px 16px 0 0; pointer-events:none;
-}
+/* Color stripe + badges */
+.pricing .plan-stripe{ position:absolute; left:0; right:0; top:0; height:8px; border-radius:16px 16px 0 0; }
 .plan-free    .plan-stripe{ background:#2563eb; }
 .plan-starter .plan-stripe{ background:#10b981; }
 .plan-growth  .plan-stripe{ background:#f59e0b; }
 .plan-premium .plan-stripe{ background:#ef4444; }
-
 .pricing .badge{
   position:absolute; top:12px; right:12px;
   padding:4px 10px; border-radius:999px; font-size:.78rem; font-weight:800;
   background:#f59e0b; color:#111;
 }
-.pricing .badge.alt{ background:#ef4444; color:#fff; }
 
+/* Headings / price */
 .pricing .plan-head{ margin-top:12px; margin-bottom:12px; }
 .pricing .plan-head h3{ margin:0 0 6px; font-weight:800; }
 .pricing .price{ margin:0; font-weight:800; font-size:2rem; line-height:1.15; }
 .pricing .price span{ font-size:.95rem; font-weight:500; color:#64748b; }
 
+/* Features list — single column, normal wrapping */
 .pricing .features{
   list-style:none; padding:0; margin:16px 0 20px;
-  flex:1 1 auto;               /* take available height */
-  overflow-wrap:anywhere;      /* keep long words inside */
+  flex:1 1 auto;
 }
 .pricing .features li{
-  position:relative;
-  padding-left:26px;
+  display:grid; grid-template-columns:20px 1fr; align-items:start; gap:10px;
   margin:0 0 10px;
-  font-size:1rem;
-  line-height:1.55;
+  line-height:1.45;
+  white-space:normal;            /* no forced line breaks */
+  word-break:normal;
+  overflow-wrap:break-word;      /* only break very long tokens if needed */
 }
 .pricing .features li::before{
-  content:"✔";
-  position:absolute; left:0; top:2px;
-  font-weight:900; color:#16a34a;
+  content:"✓"; color:#16a34a; font-weight:900; margin-top:2px;
 }
 .pricing .features li.bad{ color:#6b7280; }
 .pricing .features li.bad::before{ content:"✖"; color:#ef4444; }
 
-/* CTA locked to bottom and aligned across cards */
+/* CTA pinned to bottom & aligned */
 .pricing .plan-actions{ margin-top:auto; }
 .pricing .btn.full{ width:100%; }
 .pricing .btn{ background:#0ea5e9; color:#fff; border:none; }
 .pricing .btn:hover{ transform:translateY(-1px); }
-.pricing .btn.ghost{ background:#f1f5f9; color:#0b1220; border:1px solid #e5e7eb; }
 
 /* Mobile tweaks */
 @media (max-width:640px){
@@ -391,148 +296,3 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
   .pricing .price{ font-size:1.7rem; }
   .pricing .features li{ font-size:.98rem; }
 }
-/* ===== PRICING FIX: stop broken words + make cards readable ===== */
-
-/* 1) Ensure the plan grid can shrink to fewer columns instead of squeezing text */
-.pricing .plans-grid{
-  display:grid;
-  gap: 22px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-}
-
-/* 2) Cards: let body grow; keep actions stuck to bottom */
-.pricing .plan-card{
-  display:flex;
-  flex-direction:column;
-  min-width:300px;               /* prevents ultra-narrow cards */
-}
-.pricing .plan-body{ flex:1 1 auto; }
-.pricing .plan-actions{ margin-top:auto; }
-
-/* 3) Feature list: reset any multi-column or weird wrapping */
-.pricing .plan-features{
-  display:block !important;
-  column-count: 1 !important;
-  column-gap: 0 !important;
-  width:100%;
-}
-
-/* 4) Each feature row: icon + text in two columns, with sane wrapping */
-.pricing .plan-features li{
-  display:grid;
-  grid-template-columns: 20px 1fr;
-  align-items:start;
-  gap:10px;
-  line-height:1.3;
-  white-space: normal !important;
-  word-break: normal !important;
-  overflow-wrap: normal !important; /* aka word-wrap */
-  hyphens: none !important;
-}
-
-/* 5) Tighten long words a touch without breaking them into pieces */
-.pricing .plan-features li span,
-.pricing .plan-features li p{
-  word-break: keep-all;
-  overflow-wrap: anywhere; /* only if a single ultra-long token appears */
-}
-
-/* 6) Mobile: single column so text stays roomy */
-@media (max-width: 900px){
-  .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(280px, 1fr)) !important; }
-}
-@media (max-width: 640px){
-  .pricing .plans-grid{ grid-template-columns: 1fr !important; }
-}
-/* ==== DESKTOP FIX FOR SERVICES CARDS (put at very end) ==== */
-
-/* Make each card wide enough on desktop so text can breathe */
-@media (min-width: 1024px){
-  .pricing .plans-grid{
-    display: grid;
-    gap: 24px;
-    grid-template-columns: repeat(3, minmax(360px, 1fr)) !important; /* 3 roomy cards */
-  }
-  .pricing .plan-card{ min-width: 360px !important; }
-}
-
-/* Kill any multi-column/grid layout applied to the features list */
-.pricing .plan-card ul,
-.pricing .plan-features,
-section.pricing article ul{
-  display: block !important;
-  column-count: 1 !important;
-  columns: auto !important;
-  grid-template-columns: none !important;
-  white-space: normal !important;
-  word-break: normal !important;
-  overflow-wrap: normal !important;
-  hyphens: none !important;
-}
-
-/* Lay out each feature as: [icon] [text] and allow normal wrapping */
-.pricing .plan-card ul li,
-section.pricing article ul li{
-  display: grid !important;
-  grid-template-columns: 20px 1fr !important;
-  align-items: start;
-  gap: 10px;
-  line-height: 1.35;
-  width: auto !important;           /* undo any tiny fixed widths */
-  max-width: none !important;
-}
-
-/* Keep buttons aligned at the bottom of each card */
-.pricing .plan-card{
-  display: flex;
-  flex-direction: column;
-}
-.pricing .plan-body{ flex: 1 1 auto; }
-.pricing .plan-actions{ margin-top: auto; }
-
-/* Tablet & mobile remain comfortable */
-@media (max-width: 900px){
-  .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(280px, 1fr)) !important; }
-}
-@media (max-width: 640px){
-  .pricing .plans-grid{ grid-template-columns: 1fr !important; }
-}
-/* --- Services > Pricing desktop readability fix --- */
-
-/* 1) Give each card real width on laptop/desktop */
-@media (min-width: 1024px){
-  .pricing .plans-grid{
-    display: grid;
-    gap: 24px;
-    grid-template-columns: repeat(3, minmax(420px, 1fr)) !important;  /* wider text column */
-  }
-  .pricing .plan-card{ min-width: 420px !important; }
-}
-
-/* 2) Make feature lines wrap at spaces (not one word per line) */
-.pricing .plan-card ul,
-.pricing .plan-features{
-  display: block !important;
-  column-count: 1 !important;           /* kill any multi-column list */
-}
-
-.pricing .plan-card ul li{
-  display: grid !important;
-  grid-template-columns: 20px 1fr !important; /* icon + text */
-  align-items: start;
-  gap: 10px;
-  white-space: normal !important;
-  word-break: normal !important;        /* don't break inside words */
-  overflow-wrap: break-word !important; /* only break long tokens if needed */
-  line-height: 1.35;
-}
-
-/* Keep subscribe buttons aligned */
-.pricing .plan-card{ display:flex; flex-direction:column; }
-.pricing .plan-body{ flex:1 1 auto; }
-.pricing .plan-actions{ margin-top:auto; }
-
-/* Tablet / mobile stay comfortable */
-@media (max-width: 900px){ .pricing .plans-grid{ grid-template-columns: repeat(2, minmax(280px,1fr)) !important; } }
-@media (max-width: 640px){ .pricing .plans-grid{ grid-template-columns: 1fr !important; } }
-
