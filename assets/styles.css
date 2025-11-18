@@ -327,3 +327,47 @@ h1,h2,h3,h4{ margin:0 0 .5rem }
     text-overflow: clip;
   }
 }
+/* ===== FINAL FIX: Pricing bullets must wrap normally (no word splitting) ===== */
+section.pricing .plan .features,
+section.pricing .plan .features * {
+  white-space: normal !important;
+  word-break: normal !important;       /* don't break inside words */
+  overflow-wrap: normal !important;    /* undo 'anywhere' */
+  hyphens: manual !important;          /* no automatic hyphenation */
+}
+
+/* Make sure the list itself isn't turned into columns or a grid */
+section.pricing .plan .features {
+  display: block !important;
+  column-count: 1 !important;
+  columns: auto !important;
+  grid-template-columns: none !important;
+  width: 100% !important;
+  margin: 16px 0 20px !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Each line = [tick] [text] with ample space for normal wrapping */
+section.pricing .plan .features li {
+  display: grid !important;
+  grid-template-columns: 22px 1fr !important;  /* icon + text */
+  align-items: start !important;
+  gap: 10px !important;
+  width: auto !important;
+  max-width: none !important;
+  line-height: 1.45 !important;
+}
+
+/* Keep cards wide enough on desktop so phrases fit comfortably */
+@media (min-width: 1024px){
+  section.pricing .plans-grid{
+    grid-template-columns: repeat(2, minmax(520px, 1fr)) !important; /* two roomy cards per row */
+    gap: 28px !important;
+  }
+}
+
+/* On tablets/phones, allow normal wrapping with single-column cards */
+@media (max-width: 900px){
+  section.pricing .plans-grid{ grid-template-columns: 1fr !important; }
+}
