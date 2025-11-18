@@ -1,79 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="assets/styles.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services — Salecompass</title>
-  <link rel="stylesheet" href="assets/styles.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Salecompass</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
-      <a class="logo" href="index.html">Salecompass</a>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <h1 class="logo">Salecompass</h1>
       <nav class="menu" role="navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a class="active" href="services.html">Services</a>
         <a href="case-studies.html">Case Studies</a>
-        <a href="research.html">R&amp;D</a>
+        <a href="research.html">R&D</a>
         <a href="success-stories.html">Success Stories</a>
         <a class="btn" href="contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
     </div>
   </header>
 
   <main class="section">
     <div class="container">
-      <h1>Services</h1>
-      <div class="card" style="margin-top:16px">
-        <h3>Flagship Service</h3>
-        <p>Describe your primary service offering in 3–5 bullet points.</p>
-        <ul class="list">
-          <li>• Clear outcome #1</li>
-          <li>• Clear outcome #2</li>
-          <li>• Clear outcome #3</li>
-        </ul>
-        <a class="btn" href="contact.html">Start a project</a>
+      <h1 style="margin-bottom: .25rem;">Pricing Plans</h1>
+      <p class="muted" style="margin-bottom: 2rem;">Choose the plan that fits your stage and scale.</p>
+
+      <div class="plans-grid">
+        <!-- FREE -->
+        <article class="plan plan-free">
+          <div class="plan-stripe"></div>
+          <header class="plan-head">
+            <h3>Free</h3>
+            <p class="price">£0 <span>/ month</span></p>
+          </header>
+          <ul class="features">
+            <li class="good">Multi-Channel Dashboard (Basic)</li>
+            <li class="good">1 Marketing Channel Integration</li>
+            <li class="good">200 Monthly AI Insights</li>
+            <li class="good">Basic Attribution Model</li>
+            <li class="good">POS Upload (Manual)</li>
+            <li class="good">Access to Review & Sentiment Summary</li>
+            <li class="good">Email Support</li>
+            <li class="bad">Predictive Analytics</li>
+            <li class="bad">Automated Recommendations</li>
+            <li class="bad">Real-Time Alerts</li>
+          </ul>
+          <button class="btn ghost full">Current Plan</button>
+        </article>
+
+        <!-- STARTER -->
+        <article class="plan plan-starter">
+          <div class="plan-stripe"></div>
+          <header class="plan-head">
+            <h3>Starter</h3>
+            <p class="price">£29 <span>/ month</span></p>
+          </header>
+          <ul class="features">
+            <li class="good">All Free Features</li>
+            <li class="good">5 Marketing Channel Integrations</li>
+            <li class="good">1,000 Monthly AI Insights</li>
+            <li class="good">Standard Attribution Model</li>
+            <li class="good">POS / CRM Auto-Sync</li>
+            <li class="good">AI Trend Detection (Basic)</li>
+            <li class="good">Sentiment Analysis (Full)</li>
+            <li class="good">Automated Weekly Reports</li>
+            <li class="good">Priority Email Support</li>
+            <li class="bad">Real-Time Alerts</li>
+            <li class="bad">Predictive Demand Forecasting</li>
+          </ul>
+          <button class="btn full">Subscribe</button>
+        </article>
+
+        <!-- GROWTH -->
+        <article class="plan plan-growth">
+          <div class="plan-stripe"></div>
+          <div class="badge">Most Popular</div>
+          <header class="plan-head">
+            <h3>Growth</h3>
+            <p class="price">£59 <span>/ month</span></p>
+          </header>
+          <ul class="features">
+            <li class="good">All Starter Features</li>
+            <li class="good">10 Marketing Channel Integrations</li>
+            <li class="good">5,000 Monthly AI Insights</li>
+            <li class="good">Advanced Multi-Touch Attribution</li>
+            <li class="good">Predictive Analytics (Demand + Behaviour)</li>
+            <li class="good">Real-Time Alerts & Insights</li>
+            <li class="good">Campaign Optimisation Suggestions</li>
+            <li class="good">AI Menu Trend Detection</li>
+            <li class="good">Unlimited POS + Offline Data Imports</li>
+            <li class="good">Chat + Priority Support</li>
+          </ul>
+          <button class="btn full">Subscribe</button>
+        </article>
+
+        <!-- PREMIUM -->
+        <article class="plan plan-premium">
+          <div class="plan-stripe"></div>
+          <div class="badge alt">Best Option</div>
+          <header class="plan-head">
+            <h3>Premium</h3>
+            <p class="price">£99 <span>/ month</span></p>
+          </header>
+          <ul class="features">
+            <li class="good">All Growth Features</li>
+            <li class="good">Unlimited Marketing Channels</li>
+            <li class="good">Unlimited AI Insights</li>
+            <li class="good">Personalised AI Recommendations Engine</li>
+            <li class="good">Full Customer Journey Mapping</li>
+            <li class="good">Intelligent Loyalty Analytics</li>
+            <li class="good">Competitor Trend Monitoring</li>
+            <li class="good">API Access (Full)</li>
+            <li class="good">Custom Reports & Data Exports</li>
+            <li class="good">Dedicated Account Support</li>
+            <li class="good">Onboarding & Strategy Call</li>
+          </ul>
+          <button class="btn full">Subscribe</button>
+        </article>
       </div>
     </div>
   </main>
 
+  <!-- Footer (same style you’re using elsewhere) -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="logo">Salecompass</div>
-        <p>Innovation. Leadership. Social impact. We build solutions that move society forward.</p>
-        <p class="muted">© <span id="year"></span> Salecompass. All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2 class="logo">Salecompass</h2>
+        <p>Know what works. Invest where it matters.</p>
       </div>
-      <div>
-        <h4>Company</h4>
+      <div class="footer-links">
+        <h4>Links</h4>
         <ul>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="research.html">Research &amp; Development</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <ul>
-          <li><a href="mailto:@salecompass.uk">@salecompass.uk</a></li>
-          <li><a href="tel:+1234567890">+44 7482 771421</a></li>
-        </ul>
-        <a class="btn ghost" href="contact.html">Book a call</a>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>info@salecompass.uk</p>
+        <p>+44 7380 732477</p>
       </div>
     </div>
+    <p class="copyright">© 2025 Salecompass. All rights reserved.</p>
   </footer>
 
   <script src="assets/script.js"></script>
-<script src="assets/script.js"></script></body>
+</body>
 </html>
