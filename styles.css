@@ -45,48 +45,129 @@ a { color: inherit; text-decoration: none; }
 .bullets li,
 .checklist li { margin: 8px 0; }
 
-/* ===== CORE FEATURES SECTION (2 COLUMNS, LIKE YOUR SCREENSHOT) ===== */
+<ul class="core-list">
 
-.core-features { margin: 70px 0; }
-.core-title {
-  text-align: left;
-  font-size: 1.9rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-}
+  <!-- Multi-Channel Attribution -->
+  <li class="core-item">
+    <div class="core-icon" aria-hidden="true">
+      <!-- Bar chart icon -->
+      <svg viewBox="0 0 24 24">
+        <path d="M4 19h2V10H4v9zm7 0h2V5h-2v14zm7 0h-2v-7h2v7z" />
+      </svg>
+    </div>
+    <div class="core-content">
+      <h3>Multi-Channel Attribution Engine</h3>
+      <p>
+        Know exactly how much each channel—Instagram, Google, email, TikTok, SMS, or in-store—
+        contributes to your revenue.
+      </p>
+    </div>
+  </li>
 
-.core-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* TWO columns */
-  gap: 22px;
-}
+  <!-- Predictive Analytics -->
+  <li class="core-item">
+    <div class="core-icon" aria-hidden="true">
+      <!-- AI / robot icon -->
+      <svg viewBox="0 0 24 24">
+        <rect x="5" y="7" width="14" height="10" rx="3" ry="3" />
+        <circle cx="10" cy="12" r="1.3" />
+        <circle cx="14" cy="12" r="1.3" />
+        <path d="M9 16h6" />
+        <path d="M12 4v2" />
+      </svg>
+    </div>
+    <div class="core-content">
+      <h3>Predictive Analytics</h3>
+      <p>
+        AI models forecast demand, detect trending dishes and products, predict high-volume periods,
+        and optimise ad timing.
+      </p>
+    </div>
+  </li>
 
-.feature-box {
-  background: #ffffff;
-  border: 1px solid #e1e5ef;
-  padding: 20px 22px;
-  border-radius: 14px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-}
+  <!-- POS + Offline Integration -->
+  <li class="core-item">
+    <div class="core-icon" aria-hidden="true">
+      <!-- POS terminal icon -->
+      <svg viewBox="0 0 24 24">
+        <rect x="5" y="5" width="14" height="12" rx="2" ry="2" />
+        <rect x="8" y="8" width="8" height="3" />
+        <rect x="8" y="12.5" width="2" height="2" />
+        <rect x="11" y="12.5" width="2" height="2" />
+        <rect x="14" y="12.5" width="2" height="2" />
+      </svg>
+    </div>
+    <div class="core-content">
+      <h3>POS + Offline Integration</h3>
+      <p>
+        Connect POS systems, order data, footfall metrics, and offline promotions so you can see the
+        full picture—not just online clicks.
+      </p>
+    </div>
+  </li>
 
-.feature-box h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
+  <!-- Customer Sentiment -->
+  <li class="core-item">
+    <div class="core-icon" aria-hidden="true">
+      <!-- Chat / sentiment icon -->
+      <svg viewBox="0 0 24 24">
+        <path d="M5 6h14v8H9l-4 4V6z" />
+        <circle cx="11" cy="10" r="1" />
+        <circle cx="15" cy="10" r="1" />
+      </svg>
+    </div>
+    <div class="core-content">
+      <h3>Customer Sentiment &amp; Review Analysis</h3>
+      <p>
+        Analyse customer feedback from delivery apps, social media, and Google reviews to understand
+        what people really think and spot issues early.
+      </p>
+    </div>
+  </li>
 
-.feature-box p {
-  color: #555;
-  margin-bottom: 10px;
-}
+  <!-- Real-Time Dashboards -->
+  <li class="core-item">
+    <div class="core-icon" aria-hidden="true">
+      <!-- Line chart icon -->
+      <svg viewBox="0 0 24 24">
+        <path d="M5 18h14" />
+        <path d="M7 14l3-4 3 3 4-6" />
+        <circle cx="7" cy="14" r="0.9" />
+        <circle cx="10" cy="10" r="0.9" />
+        <circle cx="13" cy="13" r="0.9" />
+        <circle cx="17" cy="7" r="0.9" />
+      </svg>
+    </div>
+    <div class="core-content">
+      <h3>Real-Time Performance Dashboards</h3>
+      <p>
+        Track every campaign’s performance live and get alerts when something needs attention,
+        so you can react before money is wasted.
+      </p>
+    </div>
+  </li>
 
-.feature-box ul {
-  padding-left: 20px;
-}
+  <!-- Seamless Integrations -->
+  <li class="core-item">
+    <div class="core-icon" aria-hidden="true">
+      <!-- Link / integration icon -->
+      <svg viewBox="0 0 24 24">
+        <path d="M9 7h-2.5a3.5 3.5 0 0 0 0 7H9" />
+        <path d="M15 7h2.5a3.5 3.5 0 0 1 0 7H15" />
+        <path d="M9 12h6" />
+      </svg>
+    </div>
+    <div class="core-content">
+      <h3>Seamless Integrations</h3>
+      <p>
+        Works with tools you already use: Google and Meta ads, TikTok, delivery apps, POS systems,
+        and CRM platforms like HubSpot and Salesforce.
+      </p>
+    </div>
+  </li>
 
-.feature-box ul li {
-  margin-bottom: 6px;
-}
+</ul>
+
 
 /* CTA */
 .center { text-align: center; }
@@ -124,3 +205,4 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
