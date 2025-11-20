@@ -4,62 +4,64 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Salecompass — Know What Works. Invest Where It Matters</title>
-  <meta name="description" content="Salecompass unifies online + offline data to show what truly drives revenue." />
+  <meta name="description"
+        content="Salecompass unifies online + offline data to show what truly drives revenue." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a class="logo" href="index.html">Salecompass</a>
-    <button class="menu-toggle">☰</button>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">Salecompass</a>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
 
-    <nav class="menu">
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="research.html">R&amp;D</a>
-      <a href="success-stories.html">Success Stories</a>
-      <a class="btn primary" href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+      <nav class="menu">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="research.html">R&amp;D</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a class="btn primary" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main content -->
+  <main>
 
-<main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-
-      <!-- IMAGE -->
-      <div class="hero-image">
-        <img src="assets/img/Ai Image.jpg" alt="AI-powered ads dashboard">
-      </div>
-
-      <!-- TEXT OVERLAY / BELOW -->
-      <div class="hero-copy">
-        <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
-
-        <p class="lead">
-          Make smarter marketing decisions with one platform that unifies your digital and offline insights.
-          Understand which channels drive real sales and optimise every pound you spend.
-        </p>
-
-        <div class="cta">
-          <a class="btn primary" href="contact.html">Book a demo</a>
-          <a class="btn outline" href="services.html">Explore features</a>
+        <!-- IMAGE -->
+        <div class="hero-image">
+          <img src="assets/img/Ai Image.jpg" alt="AI-powered ads dashboard" />
         </div>
+
+        <!-- TEXT -->
+        <div class="hero-copy">
+          <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
+
+          <p class="lead">
+            Make smarter marketing decisions with one platform that unifies your digital and offline insights.
+            Understand which channels drive real sales and optimise every pound you spend.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="contact.html">Book a demo</a>
+            <a class="btn outline" href="services.html">Explore features</a>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-  </div>
-</section>
-
-
-
-
+    <!-- All following sections are wrapped in one container
+         so the whole page stays centered and aligned -->
+    <div class="container">
 
       <!-- Problem -->
       <section class="block">
@@ -107,7 +109,7 @@
             <div class="core-content">
               <h3>Multi-Channel Attribution Engine</h3>
               <p>
-                Know exactly how much each channel Instagram, Google, email, TikTok, SMS, or in-store 
+                Know exactly how much each channel—Instagram, Google, email, TikTok, SMS, or in-store—
                 contributes to your revenue.
               </p>
             </div>
@@ -130,7 +132,7 @@
               <h3>POS + Offline Integration</h3>
               <p>
                 Connect POS systems, order data, footfall metrics, and offline promotions so you can see the
-                full picture not just online clicks.
+                full picture, not just online clicks.
               </p>
             </div>
           </li>
@@ -176,7 +178,8 @@
         <a class="btn primary big" href="contact.html">Start with Salecompass</a>
       </section>
 
-    </div>
+    </div> <!-- /.container (for all sections below hero) -->
+
   </main>
 
   <!-- Footer -->
@@ -215,7 +218,10 @@
         </ul>
       </div>
     </div>
-    <div class="container tiny muted">© <span id="year"></span> Salecompass. All rights reserved.</div>
+
+    <div class="container tiny muted">
+      © <span id="year"></span> Salecompass. All rights reserved.
+    </div>
   </footer>
 
   <script>
@@ -224,9 +230,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
