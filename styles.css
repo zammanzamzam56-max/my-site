@@ -282,11 +282,11 @@ hr, .divider{ border-color: rgba(255,255,255,.10); }
   .spk-avatar{ width:110px; height:110px; border-width:5px; }
 
 }
-/* === Core Features Section === */
+/* === Core Features Section (Dark Theme Compatible) === */
 
 .core-features {
   padding: 80px 0;
-  background: #f7f9fc;              /* light background like in the reference */
+  background: transparent;      /* keeps your radial gradient background */
 }
 
 .core-features-container {
@@ -300,9 +300,10 @@ hr, .divider{ border-color: rgba(255,255,255,.10); }
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 40px;
+  color: var(--text);
 }
 
-/* Grid layout for the cards */
+/* Grid layout */
 .core-features-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -311,54 +312,60 @@ hr, .divider{ border-color: rgba(255,255,255,.10); }
 
 /* Individual card */
 .feature-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 24px 20px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
-  display: flex;
-  flex-direction: column;
+  background: var(--card);   /* your dark theme card */
+  border-radius: 16px;
+  padding: 24px 22px;
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 10px 28px rgba(0,0,0,.25);
+  transition: transform .2s ease, box-shadow .3s ease;
 }
 
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 34px rgba(0,0,0,.35);
+}
+
+/* Heading + text */
 .feature-card h3 {
-  font-size: 1.05rem;
-  margin: 8px 0 6px;
+  color: var(--text);
+  font-size: 1.15rem;
+  margin: 10px 0 8px;
 }
 
-.feature-card p {
-  font-size: 0.92rem;
-  line-height: 1.5;
-  margin-bottom: 8px;
+.feature-card p,
+.feature-card ul {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .feature-card ul {
   list-style: disc;
-  padding-left: 18px;
-  margin: 0;
-  font-size: 0.9rem;
+  padding-left: 20px;
 }
 
-/* Icon container + icon size (to match your reference) */
+/* Icon */
 .feature-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,.06);     /* light border bg */
+  border: 1px solid rgba(255,255,255,.12);
 }
 
 .feature-icon img {
-  max-width: 70%;
-  max-height: 70%;
-  display: block;
+  max-width: 65%;
+  max-height: 65%;
 }
 
-/* Responsive: 2 columns on tablet, 1 on mobile */
+/* Responsive */
 @media (max-width: 992px) {
   .core-features-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -366,9 +373,7 @@ hr, .divider{ border-color: rgba(255,255,255,.10); }
   .core-features-grid {
     grid-template-columns: 1fr;
   }
-
   .core-features {
     padding: 60px 0;
   }
 }
-
