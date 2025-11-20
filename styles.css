@@ -304,6 +304,67 @@ a {
     font-size: 1.8rem;
   }
 }
+/* ---------------------------------------------------
+   HERO FIX — CLEAN & Tested
+--------------------------------------------------- */
+
+.hero-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating card under image */
+.hero-card {
+  width: 100%;
+  margin-top: -60px;        /* moves card upward */
+}
+
+.hero-card .container {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.hero-card h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.hero-card .lead {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+}
+
+.hero-card .cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-image img {
+    height: 300px;
+  }
+
+  .hero-card {
+    margin-top: -40px;
+  }
+
+  .hero-card .container {
+    padding: 22px 18px;
+  }
+
+  .hero-card h1 {
+    font-size: 1.8rem;
+  }
+}
+
 
 
 
