@@ -66,7 +66,7 @@ a {
   background: none;
   border: 1px solid #d0d7e2;
   border-radius: 999px;
-  padding: 6px 10px;
+  padding: 4px 10px;
   cursor: pointer;
 }
 
@@ -102,42 +102,32 @@ a {
   background: #ffffff;
 }
 
-/* Full-bleed image (edge to edge like on phone) */
-.hero-image-wrapper {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-.hero-image-wrapper img {
+/* IMAGE – always full browser width, like on phone */
+.hero-img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 480px;
   object-fit: cover;
 }
 
-/* Text part in normal centered container */
-.hero-card {
-  padding: 24px 0 24px;
+/* TEXT – in centered container under the image */
+.hero-text {
+  padding: 24px 0;
 }
 
-.hero-card h1 {
+.hero-text h1 {
   font-size: 2.6rem;
   font-weight: 800;
   margin-bottom: 12px;
 }
 
-.hero-card .lead {
+.hero-text .lead {
   font-size: 1.1rem;
   max-width: 720px;
   color: #444444;
 }
 
-.hero-card .cta {
+.hero-text .cta {
   margin-top: 20px;
   display: flex;
   gap: 14px;
@@ -240,8 +230,8 @@ a {
     display: none;
     position: absolute;
     top: 100%;
-    right: 0;
     left: 0;
+    right: 0;
     background: #ffffff;
     flex-direction: column;
     align-items: flex-start;
@@ -256,11 +246,11 @@ a {
 }
 
 @media (max-width: 768px) {
-  .hero-card h1 {
+  .hero-text h1 {
     font-size: 2rem;
   }
 
-  .hero-card .lead {
+  .hero-text .lead {
     font-size: 1rem;
   }
 
@@ -270,7 +260,7 @@ a {
 }
 
 @media (max-width: 540px) {
-  .hero-card h1 {
+  .hero-text h1 {
     font-size: 1.8rem;
   }
 }
