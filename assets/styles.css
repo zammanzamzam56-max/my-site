@@ -399,5 +399,38 @@ section.pricing .plan .features li {
 .menu.show {
   display: flex !important;
 }
+/* ==========================
+   FIXED HERO IMAGE (CENTERED)
+   ========================== */
+
+.hero-image {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* Desktop spacing fix */
+@media (min-width: 860px){
+  .hero {
+    padding-top: 64px;     /* match your sticky header spacing */
+  }
+}
+
+/* Mobile spacing fix */
+@media (max-width: 860px){
+  .hero-image {
+    margin-bottom: 20px;
+  }
+}
+
 
 
