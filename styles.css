@@ -337,5 +337,53 @@ a {
   border-radius: 12px;
   object-fit: cover;
 }
+/* HERO — IMAGE ABOVE TEXT */
+.hero {
+  padding: 0;                  /* remove extra top spacing */
+  margin: 0 auto 60px;
+  max-width: 1000px;
+}
+
+.hero-image img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 28px;         /* spacing between image and text */
+}
+
+.hero-copy {
+  text-align: left;
+  padding: 0 10px;
+}
+
+.hero-copy h1 {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-copy .lead {
+  max-width: 720px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.cta {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .hero-copy h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-image img {
+    margin-bottom: 20px;
+  }
+}
+
 
 
