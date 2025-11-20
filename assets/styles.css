@@ -393,4 +393,11 @@ section.pricing .plan .features li {
   .contact-hero{ margin-bottom: 20px; }
   .contact-info{ margin-top: 8px; }
 }
+.menu {
+  transition: all 0.3s ease;
+}
+.menu.show {
+  display: flex !important;
+}
+
 
