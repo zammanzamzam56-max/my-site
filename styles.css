@@ -91,18 +91,20 @@ a {
    HERO  (REPLACED / FIXED)
 ========================================= */
 
-.hero {
-  margin: 0;
-  padding: 40px 0 60px;
-  background: #ffffff;
+.hero-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
 
-/* use the same width + centering as .container */
 .hero-inner {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 20px;
 }
+
 
 /* IMAGE – full width inside hero-inner */
 .hero-image {
@@ -273,3 +275,4 @@ a {
     font-size: 1.8rem;
   }
 }
+
