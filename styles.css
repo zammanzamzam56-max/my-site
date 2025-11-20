@@ -163,3 +163,64 @@ a {
     font-size: 2.2rem;
   }
 }
+/* ================= HERO FIX (FINAL) ================= */
+
+.hero {
+  padding: 0;
+  margin: 0;
+}
+
+.hero .container {
+  padding: 0;
+}
+
+/* IMAGE without space above it */
+.hero-image img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  object-fit: cover;
+  max-height: 420px;
+}
+
+/* TEXT SECTION – beautiful soft overlay */
+.hero-copy {
+  background: linear-gradient(to top, #ffffff 60%, rgba(255,255,255,0.6));
+  padding: 30px 0 10px;
+  margin-top: -40px;
+  text-align: left;
+}
+
+.hero-copy h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.hero-copy .lead {
+  font-size: 1.15rem;
+  color: #444;
+  max-width: 700px;
+}
+
+.cta {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero-copy {
+    margin-top: -20px;
+    padding: 20px 10px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.1rem;
+  }
+}
+
+
