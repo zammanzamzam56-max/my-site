@@ -1,208 +1,293 @@
-/* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: system-ui, sans-serif; color: #1b1b1b; background: #ffffff; line-height: 1.6; }
+/* ========== RESET & GLOBAL ========== */
 
-.container { max-width: 1120px; margin: auto; padding: 0 20px; }
-a { color: inherit; text-decoration: none; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* HEADER */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #1b1b1b;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========== HEADER ========== */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
   background: #ffffff;
-  border-bottom: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e5e5e5;
 }
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-.logo { font-weight: 800; font-size: 1.8rem; }
 
-/* MENU */
-.menu { display: flex; gap: 20px; align-items: center; }
-.menu a { font-weight: 500; color: #333; }
-.menu a.active { color: #007aff; }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
 
-.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; }
+.logo {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
 
-/* BUTTONS */
+.menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu a {
+  font-weight: 500;
+  color: #333;
+}
+
+.menu a.active {
+  color: #007aff;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+}
+
+/* ========== BUTTONS ========== */
+
 .btn {
-  padding: .7rem 1rem; border-radius: 10px; font-weight: 600; display: inline-block;
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
 }
-.btn.primary { background: #007aff; color: #fff; }
-.btn.outline { border: 2px solid #007aff; color: #007aff; }
-.btn.big { font-size: 1.1rem; padding: .9rem 1.3rem; }
+
+.btn.primary {
+  background: #007aff;
+  color: #ffffff;
+}
+
+.btn.outline {
+  border: 2px solid #007aff;
+  color: #007aff;
+  background: transparent;
+}
+
+.btn.big {
+  font-size: 1.1rem;
+  padding: 0.9rem 1.3rem;
+}
+
+/* ========== MAIN LAYOUT ========== */
+
+.section.home {
+  padding: 40px 0 60px;
+}
 
 /* HERO */
-.hero { padding: 80px 0; }
-.hero h1 { font-size: 2.6rem; margin-bottom: 10px; }
-.hero .lead { max-width: 600px; color: #555; }
-.cta { margin-top: 20px; display: flex; gap: 12px; }
 
-/* BLOCK SECTIONS */
-.block { margin: 60px 0; }
-.block h2 { font-size: 2rem; margin-bottom: 10px; }
-.subhead { margin: 15px 0 5px; font-size: 1.2rem; font-weight: 600; }
+.hero {
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.hero .lead {
+  max-width: 600px;
+  color: #555;
+}
+
+.cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+/* GENERIC BLOCK SECTIONS */
+
+.block {
+  margin: 60px 0;
+}
+
+.block h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subhead {
+  margin: 15px 0 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.bullets,
+.checklist {
+  padding-left: 20px;
+}
 
 .bullets li,
-.checklist li { margin: 8px 0; }
+.checklist li {
+  margin: 8px 0;
+}
 
-<ul class="core-list">
+/* CENTER HELPER */
 
-  <!-- Multi-Channel Attribution -->
-  <li class="core-item">
-    <div class="core-icon" aria-hidden="true">
-      <!-- Bar chart icon -->
-      <svg viewBox="0 0 24 24">
-        <path d="M4 19h2V10H4v9zm7 0h2V5h-2v14zm7 0h-2v-7h2v7z" />
-      </svg>
-    </div>
-    <div class="core-content">
-      <h3>Multi-Channel Attribution Engine</h3>
-      <p>
-        Know exactly how much each channel—Instagram, Google, email, TikTok, SMS, or in-store—
-        contributes to your revenue.
-      </p>
-    </div>
-  </li>
+.center {
+  text-align: center;
+}
 
-  <!-- Predictive Analytics -->
-  <li class="core-item">
-    <div class="core-icon" aria-hidden="true">
-      <!-- AI / robot icon -->
-      <svg viewBox="0 0 24 24">
-        <rect x="5" y="7" width="14" height="10" rx="3" ry="3" />
-        <circle cx="10" cy="12" r="1.3" />
-        <circle cx="14" cy="12" r="1.3" />
-        <path d="M9 16h6" />
-        <path d="M12 4v2" />
-      </svg>
-    </div>
-    <div class="core-content">
-      <h3>Predictive Analytics</h3>
-      <p>
-        AI models forecast demand, detect trending dishes and products, predict high-volume periods,
-        and optimise ad timing.
-      </p>
-    </div>
-  </li>
+/* ========== CORE FEATURES (HIGH DETAIL) ========== */
 
-  <!-- POS + Offline Integration -->
-  <li class="core-item">
-    <div class="core-icon" aria-hidden="true">
-      <!-- POS terminal icon -->
-      <svg viewBox="0 0 24 24">
-        <rect x="5" y="5" width="14" height="12" rx="2" ry="2" />
-        <rect x="8" y="8" width="8" height="3" />
-        <rect x="8" y="12.5" width="2" height="2" />
-        <rect x="11" y="12.5" width="2" height="2" />
-        <rect x="14" y="12.5" width="2" height="2" />
-      </svg>
-    </div>
-    <div class="core-content">
-      <h3>POS + Offline Integration</h3>
-      <p>
-        Connect POS systems, order data, footfall metrics, and offline promotions so you can see the
-        full picture—not just online clicks.
-      </p>
-    </div>
-  </li>
+.core-features {
+  margin: 60px 0;
+}
 
-  <!-- Customer Sentiment -->
-  <li class="core-item">
-    <div class="core-icon" aria-hidden="true">
-      <!-- Chat / sentiment icon -->
-      <svg viewBox="0 0 24 24">
-        <path d="M5 6h14v8H9l-4 4V6z" />
-        <circle cx="11" cy="10" r="1" />
-        <circle cx="15" cy="10" r="1" />
-      </svg>
-    </div>
-    <div class="core-content">
-      <h3>Customer Sentiment &amp; Review Analysis</h3>
-      <p>
-        Analyse customer feedback from delivery apps, social media, and Google reviews to understand
-        what people really think and spot issues early.
-      </p>
-    </div>
-  </li>
+.core-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
 
-  <!-- Real-Time Dashboards -->
-  <li class="core-item">
-    <div class="core-icon" aria-hidden="true">
-      <!-- Line chart icon -->
-      <svg viewBox="0 0 24 24">
-        <path d="M5 18h14" />
-        <path d="M7 14l3-4 3 3 4-6" />
-        <circle cx="7" cy="14" r="0.9" />
-        <circle cx="10" cy="10" r="0.9" />
-        <circle cx="13" cy="13" r="0.9" />
-        <circle cx="17" cy="7" r="0.9" />
-      </svg>
-    </div>
-    <div class="core-content">
-      <h3>Real-Time Performance Dashboards</h3>
-      <p>
-        Track every campaign’s performance live and get alerts when something needs attention,
-        so you can react before money is wasted.
-      </p>
-    </div>
-  </li>
+.core-list {
+  list-style: none;
+  max-width: 780px;
+  margin: 0 auto;
+}
 
-  <!-- Seamless Integrations -->
-  <li class="core-item">
-    <div class="core-icon" aria-hidden="true">
-      <!-- Link / integration icon -->
-      <svg viewBox="0 0 24 24">
-        <path d="M9 7h-2.5a3.5 3.5 0 0 0 0 7H9" />
-        <path d="M15 7h2.5a3.5 3.5 0 0 1 0 7H15" />
-        <path d="M9 12h6" />
-      </svg>
-    </div>
-    <div class="core-content">
-      <h3>Seamless Integrations</h3>
-      <p>
-        Works with tools you already use: Google and Meta ads, TikTok, delivery apps, POS systems,
-        and CRM platforms like HubSpot and Salesforce.
-      </p>
-    </div>
-  </li>
+.core-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
 
-</ul>
+.core-item:last-child {
+  border-bottom: none;
+}
 
+.core-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #f3f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* CTA */
-.center { text-align: center; }
+/* SVG icons inside the core-icon box */
+.core-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #111827;   /* dark grey icon colour */
+  stroke: none;
+}
 
-/* FOOTER */
+.core-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.core-content p {
+  margin: 0;
+  color: #555;
+}
+
+/* ========== FOOTER ========== */
+
 .site-footer {
   background: #fafafa;
+  border-top: 1px solid #e5e5e5;
   padding: 50px 0;
-  margin-top: 40px;
 }
+
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 24px;
 }
-.footer-links li { margin: 6px 0; }
-.tiny { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e5e5; font-size: 0.9rem; color: #777; }
 
-/*============== RESPONSIVE ==============*/
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li {
+  margin: 6px 0;
+}
+
+.muted {
+  color: #777;
+}
+
+.small {
+  font-size: 0.9rem;
+}
+
+.tiny {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ========== RESPONSIVE ========== */
 
 @media (max-width: 880px) {
-  .core-wrapper {
-    grid-template-columns: 1fr; /* STACK on mobile */
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: #ffffff;
+    padding: 16px 0;
   }
 
-  .menu { display: none; flex-direction: column; gap: 12px; background: #fff; padding: 20px; }
-  .menu.show { display: flex; }
-  .menu-toggle { display: block; }
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .core-list {
+    padding: 0 4px;
+  }
 }
 
-@media (max-width: 600px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
+@media (max-width: 540px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 
-@media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
-
