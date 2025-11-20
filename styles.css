@@ -1,4 +1,6 @@
-/* ========== RESET & GLOBAL ========== */
+/* =========================================
+   RESET & GLOBAL
+========================================= */
 
 * {
   box-sizing: border-box;
@@ -24,7 +26,9 @@ a {
   text-decoration: none;
 }
 
-/* ========== HEADER ========== */
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
   position: sticky;
@@ -57,7 +61,9 @@ a {
   font-size: 1.6rem;
 }
 
-/* ========== BUTTONS ========== */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .btn {
   display: inline-block;
@@ -78,72 +84,63 @@ a {
   background: transparent;
 }
 
-.hero {
-  padding: 0 0 40px;
-}
+/* =========================================
+   HERO SECTION — FINAL CLEAN VERSION
+========================================= */
 
-.hero-image img {
-  width: 100%;
-  display: block;
-  margin: 0;
-  max-height: 420px;
-  object-fit: cover;
-}
-
-.hero-copy {
-  padding-top: 24px;
-}
-
-.hero-copy h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-/* Fix hero image size and alignment */
 .hero {
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
-.hero .container {
-  padding-top: 20px;
-}
-
+/* IMAGE — centered, full width, no left shift */
 .hero-image img {
   width: 100%;
-  max-height: 380px;      /* CONTROL HEIGHT HERE */
-  object-fit: cover;      /* Crop nicely */
+  height: 420px;
+  object-fit: cover;
   display: block;
-  border-radius: 14px;    /* clean rounded look */
-  margin: 0 auto;
+  margin: 0;
+  border-radius: 0;
 }
 
-.hero-copy {
-  margin-top: 24px;       /* Pull heading closer to image */
-  text-align: left;
+/* FLOATING CARD */
+.hero-card {
+  width: 100%;
+  margin-top: -60px;               /* pulls card upward */
+  z-index: 20;
+  position: relative;
 }
 
-.hero-copy h1 {
+.hero-card .container {
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.hero-card h1 {
   font-size: 2.6rem;
   font-weight: 800;
-  line-height: 1.2;
   margin-bottom: 12px;
+  line-height: 1.2;
 }
 
-.hero-copy .lead {
+.hero-card .lead {
   font-size: 1.1rem;
-  max-width: 720px;
+  max-width: 700px;
   color: #555;
 }
 
-
-.cta {
+.hero-card .cta {
+  margin-top: 18px;
   display: flex;
-  justify-content: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-/* ========== BLOCKS, CORE FEATURES, FOOTER (unchanged) ========== */
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
 
 .block {
   margin: 60px 0;
@@ -156,16 +153,25 @@ a {
 
 .subhead {
   font-size: 1.2rem;
+  font-weight: 600;
   margin-top: 16px;
+}
+
+.bullets,
+.checklist {
+  padding-left: 20px;
 }
 
 .footer-grid {
   display: grid;
-  gap: 20px;
+  gap: 24px;
   grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
-/* MOBILE FIXES */
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 880px) {
   .menu {
     display: none;
@@ -177,177 +183,10 @@ a {
   .menu.show {
     display: flex;
   }
-  .hero-copy-wrapper h1 {
-    font-size: 2.2rem;
-  }
-}
-/* ================= HERO FIX (FINAL) ================= */
-
-.hero {
-  padding: 0;
-  margin: 0;
 }
 
-.hero .container {
-  padding: 0;
-}
-
-/* IMAGE without space above it */
-.hero-image img {
-  width: 100%;
-  display: block;
-  margin: 0;
-  border-radius: 0;
-  object-fit: cover;
-  max-height: 420px;
-}
-
-/* TEXT SECTION – beautiful soft overlay */
-.hero-copy {
-  background: linear-gradient(to top, #ffffff 60%, rgba(255,255,255,0.6));
-  padding: 30px 0 10px;
-  margin-top: -40px;
-  text-align: left;
-}
-
-.hero-copy h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-.hero-copy .lead {
-  font-size: 1.15rem;
-  color: #444;
-  max-width: 700px;
-}
-
-.cta {
-  margin-top: 18px;
-  display: flex;
-  gap: 14px;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .hero-copy {
-    margin-top: -20px;
-    padding: 20px 10px;
-  }
-
-  .hero-copy h1 {
-    font-size: 2.1rem;
-  }
-}
-/* --- Floating Card Hero Styling --- */
-
-.hero {
-  position: relative;
-  margin-bottom: 80px;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-floating-card {
-  position: relative;
-  width: 100%;
-  margin-top: -120px;               /* pulls card upward OVER image */
-  z-index: 10;
-}
-
-.hero-floating-card .container {
-  background: #ffffff;
-  padding: 35px 28px;
-  border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.hero-floating-card h1 {
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.hero-floating-card .lead {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
-}
-
-.hero-floating-card .cta {
-  margin-top: 20px;
-  display: flex;
-  gap: 14px;
-}
-
-/* MOBILE FIX */
 @media (max-width: 768px) {
-  .hero-image img {
-    height: 300px;
-  }
-
-  .hero-floating-card {
-    margin-top: -80px;
-  }
-
-  .hero-floating-card .container {
-    padding: 24px 18px;
-  }
-
-  .hero-floating-card h1 {
-    font-size: 1.8rem;
-  }
-}
-/* ---------------------------------------------------
-   HERO FIX — CLEAN & Tested
---------------------------------------------------- */
-
-.hero-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Floating card under image */
-.hero-card {
-  width: 100%;
-  margin-top: -60px;        /* moves card upward */
-}
-
-.hero-card .container {
-  background: #fff;
-  padding: 30px 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
-
-.hero-card h1 {
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.hero-card .lead {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
-}
-
-.hero-card .cta {
-  margin-top: 20px;
-  display: flex;
-  gap: 14px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
+  
   .hero-image img {
     height: 300px;
   }
@@ -361,13 +200,12 @@ a {
   }
 
   .hero-card h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 }
 
-
-
-
-
-
-
+@media (max-width: 540px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
