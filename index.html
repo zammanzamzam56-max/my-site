@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Salecompass — Know What Works. Invest Where It Matters</title>
-  <meta name="description" content="Salecompass unifies online + offline data to show what truly drives revenue." />
+  <meta name="description"
+        content="Salecompass unifies online + offline data to show what truly drives revenue." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -28,8 +29,9 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
+
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-image">
@@ -38,10 +40,12 @@
 
         <div class="hero-card">
           <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
+
           <p class="lead">
             Make smarter marketing decisions with one platform that unifies your digital and offline insights.
             Understand which channels drive real sales and optimise every pound you spend.
           </p>
+
           <div class="cta">
             <a class="btn primary" href="contact.html">Book a demo</a>
             <a class="btn outline" href="services.html">Explore features</a>
@@ -50,7 +54,7 @@
       </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- MAIN CONTENT WRAPPED IN CONTAINER -->
     <div class="container">
 
       <!-- Problem -->
@@ -97,7 +101,9 @@
             <div class="core-icon">📊</div>
             <div class="core-content">
               <h3>Multi-Channel Attribution Engine</h3>
-              <p>Know exactly how much each channel—Instagram, Google, email, TikTok, SMS, or in-store—contributes to your revenue.</p>
+              <p>
+                Know exactly how much each channel—Instagram, Google, email, TikTok, SMS, or in-store—contributes to your revenue.
+              </p>
             </div>
           </li>
 
@@ -105,9 +111,124 @@
             <div class="core-icon">🤖</div>
             <div class="core-content">
               <h3>Predictive Analytics</h3>
-              <p>AI models forecast demand, detect trending dishes and products, predict high-volume periods, and optimise ad timing.</p>
+              <p>
+                AI models forecast demand, detect trending dishes and products, predict high-volume periods,
+                and optimise ad timing.
+              </p>
             </div>
           </li>
 
           <li class="core-item">
-            <div class
+            <div class="core-icon">🧾</div>
+            <div class="core-content">
+              <h3>POS + Offline Integration</h3>
+              <p>
+                Connect POS systems, order data, footfall metrics, and offline promotions so you can see the
+                full picture—not just online clicks.
+              </p>
+            </div>
+          </li>
+
+          <li class="core-item">
+            <div class="core-icon">💬</div>
+            <div class="core-content">
+              <h3>Customer Sentiment &amp; Review Analysis</h3>
+              <p>
+                Analyse customer feedback from delivery apps, social media, and Google reviews to understand
+                what people really think and spot issues early.
+              </p>
+            </div>
+          </li>
+
+          <li class="core-item">
+            <div class="core-icon">📈</div>
+            <div class="core-content">
+              <h3>Real-Time Performance Dashboards</h3>
+              <p>
+                Track every campaign’s performance live and get alerts when something needs attention,
+                so you can react before money is wasted.
+              </p>
+            </div>
+          </li>
+
+          <li class="core-item">
+            <div class="core-icon">🔗</div>
+            <div class="core-content">
+              <h3>Seamless Integrations</h3>
+              <p>
+                Works with tools you already use: Google &amp; Meta ads, TikTok, delivery apps, POS systems,
+                and CRMs like HubSpot and Salesforce.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <section class="block center">
+        <a class="btn primary big" href="contact.html">Start with Salecompass</a>
+      </section>
+
+    </div> <!-- /.container -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">Salecompass</div>
+        <p class="muted small">Know What Works. Invest Where It Matters.</p>
+      </div>
+
+      <div>
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="research.html">R&amp;D</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Attribution Engine</a></li>
+          <li><a href="services.html">Predictive Analytics</a></li>
+          <li><a href="services.html">Dashboards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container tiny muted">
+      ©️ <span id="year"></span> Salecompass. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // year in footer
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    // mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('show');
+      });
+    }
+  </script>
+
+</body>
+</html>
