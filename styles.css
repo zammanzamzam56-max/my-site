@@ -268,4 +268,12 @@ a {
     font-size: 1.8rem;
   }
 }
+.hero-image,
+.hero-image img {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
 
