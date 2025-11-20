@@ -56,11 +56,17 @@ a {
   align-items: center;
 }
 
+.menu a {
+  font-size: 0.95rem;
+}
+
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
   background: none;
-  border: none;
+  border: 1px solid #d0d7e2;
+  border-radius: 999px;
+  padding: 6px 10px;
   cursor: pointer;
 }
 
@@ -74,6 +80,7 @@ a {
   border-radius: 10px;
   font-weight: 600;
   text-align: center;
+  font-size: 0.95rem;
 }
 
 .btn.primary {
@@ -91,36 +98,31 @@ a {
    HERO
 ========================================= */
 
-/* =========================================
-   HERO
-========================================= */
-
 .hero {
   background: #ffffff;
-  padding: 24px 0;
 }
 
-/* image wrapper takes full container width */
-.hero-image {
-  width: 100%;
+/* Full-bleed image (edge to edge like on phone) */
+.hero-image-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
-/* THIS IS THE IMPORTANT PART */
-.hero-image img {
+.hero-image-wrapper img {
   display: block;
-  width: 100% !important;     /* force full width of container */
-  max-width: 100% !important;
-  height: auto !important;    /* remove fixed 420px height */
+  width: 100%;
+  height: auto;
+  max-height: 480px;
   object-fit: cover;
-  border-radius: 12px;
-  margin: 0 auto;             /* just in case, keep it centered */
 }
 
-/* text below image */
+/* Text part in normal centered container */
 .hero-card {
-  width: 100%;
-  margin-top: 24px;
-  background: #ffffff;
+  padding: 24px 0 24px;
 }
 
 .hero-card h1 {
@@ -198,14 +200,16 @@ a {
   margin-bottom: 6px;
 }
 
-/* Footer layout */
+/* =========================================
+   FOOTER
+========================================= */
+
 .footer-grid {
   display: grid;
   gap: 24px;
   grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
-/* Tiny muted text */
 .tiny {
   font-size: 0.8rem;
   padding: 12px 0 24px;
@@ -228,24 +232,26 @@ a {
 ========================================= */
 
 @media (max-width: 880px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 12px 0 16px;
-  }
-
   .menu-toggle {
     display: block;
   }
 
-  .menu.show {
-    display: flex;
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px 16px;
+    gap: 10px;
+    border-bottom: 1px solid #e5e5e5;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  .menu.show {
+    display: flex;
   }
 }
 
@@ -268,12 +274,3 @@ a {
     font-size: 1.8rem;
   }
 }
-.hero-image,
-.hero-image img {
-  display: block;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-}
-
-
