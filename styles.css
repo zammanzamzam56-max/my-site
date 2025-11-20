@@ -92,37 +92,25 @@ a {
 ========================================= */
 
 .hero {
-  padding: 32px 0 24px;
   background: #ffffff;
 }
 
-.hero-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Image container – ALWAYS centered */
+/* full-width image, no container */
 .hero-image {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-/* Image – fills hero width and stays centered */
 .hero-image img {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: auto;           /* no weird stretching */
-  border-radius: 12px;
+  height: auto;          /* keep proportions */
+  object-fit: cover;
 }
 
-/* Text block directly under image */
+/* hero text is inside container so it aligns with rest of page */
 .hero-card {
-  width: 100%;
-  margin-top: 24px;
-  background: #ffffff;
+  margin: 24px auto 24px;
 }
 
 .hero-card h1 {
