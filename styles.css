@@ -91,26 +91,36 @@ a {
    HERO
 ========================================= */
 
+/* =========================================
+   HERO
+========================================= */
+
 .hero {
   background: #ffffff;
+  padding: 24px 0;
 }
 
-/* full-width image, no container */
+/* image wrapper takes full container width */
 .hero-image {
   width: 100%;
 }
 
+/* THIS IS THE IMPORTANT PART */
 .hero-image img {
   display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;          /* keep proportions */
+  width: 100% !important;     /* force full width of container */
+  max-width: 100% !important;
+  height: auto !important;    /* remove fixed 420px height */
   object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto;             /* just in case, keep it centered */
 }
 
-/* hero text is inside container so it aligns with rest of page */
+/* text below image */
 .hero-card {
-  margin: 24px auto 24px;
+  width: 100%;
+  margin-top: 24px;
+  background: #ffffff;
 }
 
 .hero-card h1 {
@@ -258,3 +268,4 @@ a {
     font-size: 1.8rem;
   }
 }
+
