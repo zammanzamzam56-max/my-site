@@ -88,15 +88,12 @@ a {
 }
 
 /* =========================================
-   HERO  (REPLACED / FIXED)
+   HERO
 ========================================= */
 
-.hero-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
+.hero {
+  padding: 32px 0 24px;
+  background: #ffffff;
 }
 
 .hero-inner {
@@ -105,21 +102,23 @@ a {
   padding: 0 20px;
 }
 
-
-/* IMAGE – full width inside hero-inner */
+/* Image container – ALWAYS centered */
 .hero-image {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
+/* Image – fills hero width and stays centered */
 .hero-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;           /* no weird stretching */
   border-radius: 12px;
 }
 
-/* TEXT block directly under image, same left/right as image */
+/* Text block directly under image */
 .hero-card {
   width: 100%;
   margin-top: 24px;
@@ -253,10 +252,6 @@ a {
 }
 
 @media (max-width: 768px) {
-  .hero-image img {
-    height: 300px;
-  }
-
   .hero-card h1 {
     font-size: 2rem;
   }
@@ -275,4 +270,3 @@ a {
     font-size: 1.8rem;
   }
 }
-
