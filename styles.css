@@ -280,4 +280,52 @@ hr, .divider{ border-color: rgba(255,255,255,.10); }
 
 @media (max-width:860px){
   .spk-avatar{ width:110px; height:110px; border-width:5px; }
+
+}
+/* ===== Core Features (Home) ===== */
+.core-title{
+  text-align:center;
+  font-size:clamp(1.8rem, 1.2rem + 2.6vw, 3rem);
+  margin: 6px 0 18px;
+}
+
+.core-grid{
+  display:grid;
+  gap:22px;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+}
+
+.core-card{
+  background:#fff;
+  border:1px solid rgba(43,111,255,.18);
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(2,8,23,.06);
+  padding:18px 18px 16px;
+  display:flex;
+  flex-direction:column;
+  min-height: 210px;
+}
+.core-card h3{
+  margin:10px 0 6px;
+  font-size:1.05rem;
+}
+.core-card p{ margin:0 0 8px; color:var(--muted,#5c6375) }
+
+.feature-icon{
+  width:56px; height:56px;
+  color:var(--accent,#2B6FFF);
+}
+
+/* small dotted list */
+.dotlist{ margin:6px 0 0; padding:0 0 0 18px; }
+.dotlist li{ margin:4px 0; color:var(--muted,#5c6375) }
+.dotlist li::marker{ color:var(--accent,#2B6FFF); }
+
+/* Responsive */
+@media (max-width: 980px){
+  .core-grid{ grid-template-columns: repeat(2, minmax(240px,1fr)); }
+}
+@media (max-width: 620px){
+  .core-grid{ grid-template-columns: 1fr; }
+  .core-card{ padding:16px; }
 }
