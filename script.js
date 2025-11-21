@@ -1,38 +1,17 @@
-@media (max-width: 880px) {
-  .menu-toggle {
-    display: block;
-  }
+// Mobile menu toggle & year
 
-  /* base mobile state: menu hidden */
-  .menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    flex-direction: column;
-    align-items: stretch;          /* full width links */
-    padding: 12px 20px 16px;
-    gap: 0;
-    border-bottom: 1px solid #e5e5e5;
-  }
+const btn = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
 
-  /* when nav has .open (from JS), show the menu */
-  .nav.open .menu {
-    display: flex;
-  }
+if (btn && nav) {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+    btn.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open');
+  });
+}
 
-  .menu a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    text-align: left;
-    border-bottom: 1px solid #f2f2f5;
-    font-size: 0.95rem;
-  }
-
-  .menu a:last-child {
-    border-bottom: none;
-  }
+const y = document.getElementById('year');
+if (y) {
+  y.textContent = new Date().getFullYear();
 }
