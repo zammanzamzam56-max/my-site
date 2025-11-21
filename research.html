@@ -1,16 +1,24 @@
 <!doctype html>
 <html lang="en">
-<head><link rel="stylesheet" href="assets/styles.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research & Development — Salecompass</title>
-  <link rel="stylesheet" href="assets/styles.css">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research &amp; Development | Salecompass</title>
+  <meta name="description"
+        content="How Salecompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
+
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">Salecompass</a>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+      </button>
+
       <nav class="menu" role="navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -18,100 +26,199 @@
         <a href="case-studies.html">Case Studies</a>
         <a class="active" href="research.html">R&amp;D</a>
         <a href="success-stories.html">Success Stories</a>
-        <a class="btn" href="contact.html">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
+  <main>
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="kicker">Research &amp; Development</p>
+        <h1>Built on real market needs. Backed by scientific research. Powered by innovation.</h1>
+        <p class="lead">
+          Salecompass combines hands-on interviews with SMEs and peer-reviewed AI research
+          to build marketing intelligence that actually moves revenue for small and
+          medium-sized businesses.
+        </p>
+      </div>
+    </section>
 
-  <h1 class="rd-title">Learning Research by Doing</h1>
+    <!-- SECTION 1 – Market Interviews & Need Analysis -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">SECTION 1 — Market Interviews &amp; Need Analysis</h2>
+        <h3>Understanding the Real Problems Before Building the Solution</h3>
 
-  <!-- Speakers (placeholders until you have photos) -->
-  <div class="rd-speakers">
+        <div class="grid-2">
+          <div>
+            <p>
+              At Salecompass, research began long before a single line of code was written.
+              Our founder, <strong>Danyal Mohiuddin</strong>, conducted extensive
+              <strong>market interviews, discovery meetings, and need-analysis surveys</strong>
+              with individuals across the marketing, food, and retail ecosystem. This included:
+            </p>
 
-      <figure class="spk">
-  <div class="spk-avatar">
-    <img src="assets/img/mahnoor.jpg" alt="Mahnoor Abdullah">
-  </div>
-  <figcaption>Mahnoor Abdullah <span>Sr. Researcher </span></figcaption>
-</figure>
+            <ul>
+              <li>CEOs of food businesses</li>
+              <li>Restaurant owners &amp; managers</li>
+              <li>Marketing teams &amp; digital agencies</li>
+              <li>Product teams &amp; growth strategists</li>
+              <li>UK SME founders in the retail &amp; hospitality sector</li>
+            </ul>
 
-<figure class="spk">
-  <div class="spk-avatar">
-    <img src="assets/img/umar.png" alt="Muhammad Umar">
-  </div>
-  <figcaption>Muhammad Umar <span>Lecturer </span></figcaption>
-</figure>
+            <p>
+              These conversations validated a recurring problem:
+              <strong>Small and medium-sized businesses have data everywhere —
+              but almost no clarity about which marketing channels actually drive results.</strong>
+            </p>
 
-<figure class="spk">
-  <div class="spk-avatar">
-    <img src="assets/img/danyal.jpg" alt="Danyal Mohiuddin">
-  </div>
-  <figcaption>Danyal Mohiuddin <span>Researcher </span></figcaption>
+            <p>
+              To deeply understand customer pain points, Danyal participated in and observed
+              professional workshops across:
+            </p>
 
-    
-  </div>
+            <ul class="flag-list">
+              <li>🇬🇧 United Kingdom</li>
+              <li>🇫🇷 France</li>
+              <li>🇵🇰 Pakistan</li>
+              <li>🇳🇱 Netherlands</li>
+            </ul>
 
-  <!-- Key Points -->
-  <div class="rd-card">
-    <h3>Key Points</h3>
-    <ul class="rd-points">
-      <li>How AI is reshaping questions, data collection, and knowledge-building.</li>
-      <li>Learn by doing—from problem framing to real-world application.</li>
-      <li>Handle data gaps, bias, and ethics with smart practices.</li>
-      <li>How AI integration transforms design, analysis, and innovation.</li>
-    </ul>
-  </div>
+            <p>
+              Each workshop refined the direction of Salecompass and shaped the product’s core
+              features such as multi-touch attribution, sentiment analysis, AI trend detection,
+              POS integration, and predictive analytics.
+            </p>
 
-  
-  <div class="rd-cta-row">
-    <a class="btn rd-cta" href="#" target="_blank" rel="noopener">
-      <strong>FREE Workshop</strong><br><small>Join Now</small>
-    </a>
-    <div class="rd-meta">
-    
-    </div>
-    
+            <p><strong>This section on your website includes real screenshots from those sessions.</strong></p>
+          </div>
 
+          <!-- Interview screenshots -->
+          <div class="media-stack">
+            <figure class="media-card">
+              <img src="assets/img/photo1.png"
+                   alt="Screenshot from an online market interview session" />
+            </figure>
+            <figure class="media-card">
+              <img src="assets/img/photo2.png"
+                   alt="Screenshot from a discovery call with SMEs" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture / Technical diagram -->
+    <section class="section section-alt">
+      <div class="container">
+        <h3>From Interviews to Architecture</h3>
+        <p>
+          Insights from interviews and workshops were translated into a robust technical
+          architecture. The diagram below illustrates how mobile apps, web dashboards,
+          data pipelines, third-party integrations, and AI services connect inside the
+          Salecompass platform.
+        </p>
+
+        <figure class="diagram-card">
+          <img src="assets/img/photo3.jpg"
+               alt="High-level technical architecture diagram of the Salecompass.ai platform" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Founder section -->
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <h2 class="section-title">About the Founder</h2>
+          <p>
+            Danyal Mohiuddin is a researcher and AI practitioner with expertise in marketing
+            analytics and ethical AI. His academic work in IEEE publications and his field
+            interviews with SMEs across the UK and Europe led directly to the creation of
+            Salecompass, a platform designed to make data-driven marketing accessible for
+            small businesses.
+          </p>
+        </div>
+
+        <figure class="media-card founder-photo">
+          <img src="assets/img/photo4.jpg"
+               alt="Salecompass founder at a technology conference" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECTION 2 – Scientific Foundations -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">SECTION 2 — Research, Development &amp; Scientific Foundations</h2>
+        <h3>Academic Rigor That Fuels Technological Innovation</h3>
+
+        <p>
+          Salecompass is rooted in the founder’s scientific research in
+          <strong>AI, machine learning, marketing analytics, ethics, and consumer behaviour</strong>,
+          published and presented in IEEE conferences and journals.
+        </p>
+
+        <p>
+          These publications provide the conceptual and analytical backbone that shaped the
+          architecture, ethical framework, and analytical engine behind Salecompass.
+        </p>
+
+        <div class="grid-3 highlights">
+          <div class="card">
+            <h4>Ethical AI &amp; Governance</h4>
+            <p>
+              Privacy-aware data handling, transparent attribution logic, and safeguards
+              designed to keep decision-making explainable and fair.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Marketing Analytics at Scale</h4>
+            <p>
+              Algorithms that connect online and offline touchpoints so SMEs can finally see
+              which campaigns truly drive sales.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Continuous R&amp;D</h4>
+            <p>
+              Ongoing experiments in trend detection, sentiment analysis, and predictive
+              modelling ensure the platform keeps improving with new data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer (same style as index) -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="logo">Salecompass</div>
-        <p>Innovation. Leadership. Social impact. We build solutions that move society forward.</p>
-        <p class="muted">© <span id="year"></span> Salecompass. All rights reserved.</p>
+        <p class="logo">Salecompass</p>
+        <p class="footer-text">
+          Know what works. Invest where it matters.
+        </p>
       </div>
       <div>
         <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="research.html">Research &amp; Development</a></li>
-        </ul>
+        <nav class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="research.html">R&amp;D</a>
+          <a href="case-studies.html">Case Studies</a>
+        </nav>
       </div>
       <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <ul>
-          <li><a href="mailto:@salecompass.uk">@salecompass.uk</a></li>
-          <li><a href="tel:+1234567890">+44 7482 771421</a></li>
-        </ul>
-        <a class="btn ghost" href="contact.html">Book a call</a>
+        <h4>Contact</h4>
+        <p>Email: hello@salecompass.com</p>
+        <p>© <span id="year"></span> Salecompass. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script src="assets/script.js"></script>
-<script src="assets/script.js"></script></body>
+</body>
 </html>
