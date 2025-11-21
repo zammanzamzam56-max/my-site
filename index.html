@@ -11,7 +11,7 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- Header (fixed + matching index) -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">Salecompass</a>
@@ -58,7 +58,7 @@
       </div>
     </section>
 
-    <!-- MAIN CONTENT WRAPPED IN CONTAINER -->
+    <!-- MAIN CONTENT -->
     <div class="container">
 
       <!-- Problem -->
@@ -106,7 +106,7 @@
             <div class="core-content">
               <h3>Multi-Channel Attribution Engine</h3>
               <p>
-                Know exactly how much each channel—Instagram, Google, email, TikTok, SMS, or in-store—contributes to your revenue.
+                Know exactly how much each channel contributes to your revenue.
               </p>
             </div>
           </li>
@@ -116,8 +116,7 @@
             <div class="core-content">
               <h3>Predictive Analytics</h3>
               <p>
-                AI models forecast demand, detect trending dishes and products, predict high-volume periods,
-                and optimise ad timing.
+                AI models forecast demand and detect trends in real time.
               </p>
             </div>
           </li>
@@ -127,8 +126,7 @@
             <div class="core-content">
               <h3>POS + Offline Integration</h3>
               <p>
-                Connect POS systems, order data, footfall metrics, and offline promotions so you can see the
-                full picture—not just online clicks.
+                Connect POS systems and footfall data for full visibility.
               </p>
             </div>
           </li>
@@ -136,10 +134,9 @@
           <li class="core-item">
             <div class="core-icon">💬</div>
             <div class="core-content">
-              <h3>Customer Sentiment &amp; Review Analysis</h3>
+              <h3>Customer Sentiment Analysis</h3>
               <p>
-                Analyse customer feedback from delivery apps, social media, and Google reviews to understand
-                what people really think and spot issues early.
+                Analyse reviews and feedback to understand customers deeply.
               </p>
             </div>
           </li>
@@ -147,10 +144,9 @@
           <li class="core-item">
             <div class="core-icon">📈</div>
             <div class="core-content">
-              <h3>Real-Time Performance Dashboards</h3>
+              <h3>Real-Time Dashboards</h3>
               <p>
-                Track every campaign’s performance live and get alerts when something needs attention,
-                so you can react before money is wasted.
+                Track live performance and get alerts instantly.
               </p>
             </div>
           </li>
@@ -160,8 +156,7 @@
             <div class="core-content">
               <h3>Seamless Integrations</h3>
               <p>
-                Works with tools you already use: Google &amp; Meta ads, TikTok, delivery apps, POS systems,
-                and CRMs like HubSpot and Salesforce.
+                Works with Google Ads, Meta Ads, TikTok, POS systems & CRMs.
               </p>
             </div>
           </li>
@@ -173,11 +168,12 @@
         <a class="btn primary big" href="contact.html">Start with Salecompass</a>
       </section>
 
-    </div> <!-- /.container -->
+    </div>
 
   </main>
 
-  <!-- Footer -->
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -214,30 +210,28 @@
       </div>
     </div>
 
-    <div class="container tiny muted">
-      ©️ <span id="year"></span> Salecompass. All rights reserved.
+    <div class="container tiny muted" style="padding-top:12px;">
+      © <span id="year"></span> Salecompass. All rights reserved.
     </div>
   </footer>
 
-  <!-- Inline JS so path issues can't break the toggle -->
+
+  <!-- TOGGLE MENU SCRIPT (fixed) -->
   <script>
-    // Mobile menu toggle
     const btn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
+    const menu = document.querySelector('.menu');
 
-    if (btn && nav) {
+    if (btn && menu) {
       btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', (!expanded).toString());
-        nav.classList.toggle('open');
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        menu.classList.toggle("open");
       });
     }
 
-    // Footer year
-    const y = document.getElementById('year');
-    if (y) {
-      y.textContent = new Date().getFullYear();
-    }
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
   </script>
 
 </body>
