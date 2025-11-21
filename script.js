@@ -1,17 +1,19 @@
-// Mobile menu toggle & year
+// FINAL FIXED SCRIPT — WORKS ON ALL PAGES
 
-const btn = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
 
-if (btn && nav) {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-    btn.setAttribute('aria-expanded', String(!expanded));
-    nav.classList.toggle('open');
-  });
-}
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', (!expanded).toString());
+      menu.classList.toggle('open');
+    });
+  }
 
-const y = document.getElementById('year');
-if (y) {
-  y.textContent = new Date().getFullYear();
-}
+  const y = document.getElementById('year');
+  if (y) {
+    y.textContent = new Date().getFullYear();
+  }
+});
