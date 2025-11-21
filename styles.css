@@ -43,7 +43,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  position: relative; /* anchor mobile menu */
+  position: relative; /* anchor mobile dropdown */
 }
 
 .logo {
@@ -97,25 +97,35 @@ a {
   background: transparent;
 }
 
+.btn.big {
+  padding: 0.9rem 1.4rem;
+  font-size: 1rem;
+}
+
 /* =========================================
    HERO
 ========================================= */
 
 .hero {
   background: #ffffff;
+  padding: 16px 0 32px;
 }
 
-/* Full-width hero image (nice on mobile + laptop) */
-.hero-img {
+/* Hero image: aligned with text, responsive on laptop + mobile */
+.hero-image {
+  margin-bottom: 24px;
+}
+
+.hero-image img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-/* Text container under the image */
+/* Text under image */
 .hero-text {
-  padding: 24px 0 32px;
+  max-width: 720px;
 }
 
 /* Tagline – constrained so it breaks into ~2 lines on desktop */
@@ -123,20 +133,13 @@ a {
   font-size: 2.6rem;
   font-weight: 800;
   margin-bottom: 12px;
-  max-width: 22ch;        /* visually about two lines */
+  max-width: 24ch;       /* about 2 lines */
   line-height: 1.15;
-}
-
-/* Center the heading block while keeping normal paragraph width */
-.hero-text h1,
-.hero-text .lead,
-.hero-text .cta {
-  /* everything lines up nicely with container padding */
 }
 
 .hero-text .lead {
   font-size: 1.1rem;
-  max-width: 720px;
+  max-width: 40rem;
   color: #444444;
 }
 
@@ -203,9 +206,21 @@ a {
   margin-bottom: 6px;
 }
 
+/* center helper */
+.center {
+  text-align: center;
+}
+
 /* =========================================
    FOOTER
 ========================================= */
+
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 32px;
+  padding-bottom: 16px;
+  background: #fafafa;
+}
 
 .footer-grid {
   display: grid;
@@ -216,6 +231,10 @@ a {
 .tiny {
   font-size: 0.8rem;
   padding: 12px 0 24px;
+}
+
+.small {
+  font-size: 0.85rem;
 }
 
 .muted {
@@ -240,7 +259,7 @@ a {
     display: block;
   }
 
-  /* hide desktop menu & make it dropdown */
+  /* default mobile state: menu hidden */
   .menu {
     display: none;
     position: absolute;
@@ -249,14 +268,14 @@ a {
     right: 0;
     background: #ffffff;
     flex-direction: column;
-    align-items: stretch;          /* full-width links */
+    align-items: stretch;         /* full-width links */
     padding: 12px 20px 16px;
     gap: 0;
     border-bottom: 1px solid #e5e5e5;
   }
 
-  /* shown when JS adds .show */
-  .menu.show {
+  /* when nav has .open (toggled from JS), show menu */
+  .nav.open .menu {
     display: flex;
   }
 
@@ -278,7 +297,7 @@ a {
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2.1rem;
-    max-width: 22ch;
+    max-width: 24ch;
   }
 
   .hero-text .lead {
@@ -294,6 +313,6 @@ a {
 @media (max-width: 540px) {
   .hero-text h1 {
     font-size: 1.8rem;
-    max-width: 22ch;
+    max-width: 24ch;
   }
 }
