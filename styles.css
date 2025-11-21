@@ -333,4 +333,25 @@ a {
   display: inline-block;
   border-radius: 8px;
 }
+@media (max-width: 860px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 12px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    z-index: 999;
+    border-radius: 12px;
+    border: 1px solid rgba(43,111,255,.25);
+  }
+
+  .menu.open {
+    display: flex !important;
+  }
+}
+
+
 
