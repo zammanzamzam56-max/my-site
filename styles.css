@@ -43,7 +43,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  position: relative; /* anchor mobile dropdown */
+  position: relative;
 }
 
 .logo {
@@ -62,7 +62,7 @@ a {
   font-size: 0.95rem;
 }
 
-/* hamburger */
+/* hamburger button */
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -111,7 +111,6 @@ a {
   padding: 16px 0 32px;
 }
 
-/* Hero image: desktop – inside container; mobile – full width (edge-to-edge) */
 .hero-image {
   margin-bottom: 24px;
 }
@@ -123,17 +122,15 @@ a {
   object-fit: cover;
 }
 
-/* Text under image */
 .hero-text {
   max-width: 720px;
 }
 
-/* Tagline – constrained so it breaks into ~2 lines on desktop */
 .hero-text h1 {
   font-size: 2.6rem;
   font-weight: 800;
   margin-bottom: 12px;
-  max-width: 24ch;       /* about 2 lines */
+  max-width: 24ch;
   line-height: 1.15;
 }
 
@@ -250,59 +247,52 @@ a {
 }
 
 /* =========================================
-   MOBILE / RESPONSIVE
+   MOBILE DROPDOWN (FINAL WORKING VERSION)
 ========================================= */
 
-/* Mobile nav + dropdown */
 @media (max-width: 880px) {
+
   .menu-toggle {
-    display: block;
+    display: block !important;
   }
 
-  /* default mobile state: menu hidden */
   .menu {
-    display: none;
+    display: none !important;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: #ffffff;
+    padding: 15px 20px;
     flex-direction: column;
-    align-items: stretch;         /* full-width links */
-    padding: 12px 20px 16px;
-    gap: 0;
     border-bottom: 1px solid #e5e5e5;
+    z-index: 9999;
+    gap: 0;
   }
 
-  /* when nav has .open (toggled from JS), show menu */
-  .nav.open .menu {
-    display: flex;
+  .menu.open {
+    display: flex !important;
   }
 
   .menu a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    text-align: left;
+    padding: 12px 0;
     border-bottom: 1px solid #f2f2f5;
-    font-size: 0.95rem;
   }
 
   .menu a:last-child {
     border-bottom: none;
   }
 
-  /* FULL-WIDTH HERO IMAGE ON MOBILE (edge-to-edge) */
+  /* full-width hero image on mobile */
   .hero-image {
-    margin: 0 -20px 24px;   /* cancel container padding → reach viewport edges */
+    margin: 0 -20px 24px;
   }
 }
 
-/* Tablet / small laptop */
+/* Tablet */
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2.1rem;
-    max-width: 24ch;
   }
 
   .hero-text .lead {
@@ -314,13 +304,14 @@ a {
   }
 }
 
-/* Small phones */
+/* Phones */
 @media (max-width: 540px) {
   .hero-text h1 {
     font-size: 1.8rem;
-    max-width: 24ch;
   }
 }
+
+/* Founder image */
 .founder-photo {
   margin-top: 2rem;
   text-align: center;
@@ -333,25 +324,3 @@ a {
   display: inline-block;
   border-radius: 8px;
 }
-@media (max-width: 860px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background: white;
-    padding: 12px;
-    position: absolute;
-    right: 20px;
-    top: 60px;
-    z-index: 999;
-    border-radius: 12px;
-    border: 1px solid rgba(43,111,255,.25);
-  }
-
-  .menu.open {
-    display: flex !important;
-  }
-}
-
-
-
