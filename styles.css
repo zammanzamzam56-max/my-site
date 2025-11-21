@@ -111,7 +111,7 @@ a {
   padding: 16px 0 32px;
 }
 
-/* Hero image: aligned with text, responsive on laptop + mobile */
+/* Hero image: desktop – inside container; mobile – full width (edge-to-edge) */
 .hero-image {
   margin-bottom: 24px;
 }
@@ -290,6 +290,11 @@ a {
 
   .menu a:last-child {
     border-bottom: none;
+  }
+
+  /* FULL-WIDTH HERO IMAGE ON MOBILE (edge-to-edge) */
+  .hero-image {
+    margin: 0 -20px 24px;   /* cancel container padding → reach viewport edges */
   }
 }
 
