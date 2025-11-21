@@ -43,6 +43,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
+  position: relative; /* anchor mobile menu */
 }
 
 .logo {
@@ -50,6 +51,7 @@ a {
   font-size: 1.8rem;
 }
 
+/* desktop menu */
 .menu {
   display: flex;
   gap: 20px;
@@ -60,6 +62,7 @@ a {
   font-size: 0.95rem;
 }
 
+/* hamburger */
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -102,7 +105,7 @@ a {
   background: #ffffff;
 }
 
-/* IMAGE – always full browser width, like on phone */
+/* Full-width hero image (nice on mobile + laptop) */
 .hero-img {
   display: block;
   width: 100%;
@@ -110,15 +113,25 @@ a {
   object-fit: cover;
 }
 
-/* TEXT – in centered container under the image */
+/* Text container under the image */
 .hero-text {
-  padding: 24px 0;
+  padding: 24px 0 32px;
 }
 
+/* Tagline – constrained so it breaks into ~2 lines on desktop */
 .hero-text h1 {
   font-size: 2.6rem;
   font-weight: 800;
   margin-bottom: 12px;
+  max-width: 22ch;        /* visually about two lines */
+  line-height: 1.15;
+}
+
+/* Center the heading block while keeping normal paragraph width */
+.hero-text h1,
+.hero-text .lead,
+.hero-text .cta {
+  /* everything lines up nicely with container padding */
 }
 
 .hero-text .lead {
@@ -218,14 +231,16 @@ a {
 }
 
 /* =========================================
-   MOBILE
+   MOBILE / RESPONSIVE
 ========================================= */
 
+/* Mobile nav + dropdown */
 @media (max-width: 880px) {
   .menu-toggle {
     display: block;
   }
 
+  /* hide desktop menu & make it dropdown */
   .menu {
     display: none;
     position: absolute;
@@ -234,20 +249,36 @@ a {
     right: 0;
     background: #ffffff;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;          /* full-width links */
     padding: 12px 20px 16px;
-    gap: 10px;
+    gap: 0;
     border-bottom: 1px solid #e5e5e5;
   }
 
+  /* shown when JS adds .show */
   .menu.show {
     display: flex;
   }
+
+  .menu a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+    border-bottom: 1px solid #f2f2f5;
+    font-size: 0.95rem;
+  }
+
+  .menu a:last-child {
+    border-bottom: none;
+  }
 }
 
+/* Tablet / small laptop */
 @media (max-width: 768px) {
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
+    max-width: 22ch;
   }
 
   .hero-text .lead {
@@ -259,8 +290,10 @@ a {
   }
 }
 
+/* Small phones */
 @media (max-width: 540px) {
   .hero-text h1 {
     font-size: 1.8rem;
+    max-width: 22ch;
   }
 }
