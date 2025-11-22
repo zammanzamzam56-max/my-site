@@ -96,72 +96,74 @@
         </ul>
       </section>
 
-      <!-- Core Features -->
-      <section class="core-features">
-        <h2 class="core-title">Core Features (High Detail)</h2>
 
-        <ul class="core-list">
-          <li class="core-item">
-            <div class="core-icon">📊</div>
-            <div class="core-content">
+      <!-- ⭐⭐⭐ REPLACED CORE FEATURES SECTION ⭐⭐⭐ -->
+      <section class="core-features clean-features">
+        <div class="container">
+
+          <h2 class="core-title center">Core Features</h2>
+
+          <div class="features-grid">
+
+            <!-- CARD 1 -->
+            <div class="feature-card">
+              <img src="assets/img/icon1.png" alt="Attribution Engine" class="feature-icon" />
               <h3>Multi-Channel Attribution Engine</h3>
               <p>
-                Know exactly how much each channel contributes to your revenue.
+                Know the true value of every channel including Instagram, Google, TikTok, SMS, email & in-store sources.
               </p>
             </div>
-          </li>
 
-          <li class="core-item">
-            <div class="core-icon">🤖</div>
-            <div class="core-content">
+            <!-- CARD 2 -->
+            <div class="feature-card">
+              <img src="assets/img/icon2.png" alt="Predictive Analytics" class="feature-icon" />
               <h3>Predictive Analytics</h3>
               <p>
-                AI models forecast demand and detect trends in real time.
+                AI-powered forecasting, trend detection and demand prediction to optimise your entire marketing strategy.
               </p>
             </div>
-          </li>
 
-          <li class="core-item">
-            <div class="core-icon">🧾</div>
-            <div class="core-content">
-              <h3>POS + Offline Integration</h3>
+            <!-- CARD 3 -->
+            <div class="feature-card">
+              <img src="assets/img/icon3.png" alt="Sentiment Intelligence" class="feature-icon" />
+              <h3>Sentiment & Review Intelligence</h3>
               <p>
-                Connect POS systems and footfall data for full visibility.
+                Analyse customer feelings instantly from delivery apps, Google, social media & reviews to detect insights.
               </p>
             </div>
-          </li>
 
-          <li class="core-item">
-            <div class="core-icon">💬</div>
-            <div class="core-content">
-              <h3>Customer Sentiment Analysis</h3>
+            <!-- CARD 4 -->
+            <div class="feature-card">
+              <img src="assets/img/icon4.png" alt="Real-Time Dashboards" class="feature-icon" />
+              <h3>Real-Time Performance Dashboards</h3>
               <p>
-                Analyse reviews and feedback to understand customers deeply.
+                Live insights as your campaigns run. Get instant visibility, performance alerts, and ROI tracking.
               </p>
             </div>
-          </li>
 
-          <li class="core-item">
-            <div class="core-icon">📈</div>
-            <div class="core-content">
-              <h3>Real-Time Dashboards</h3>
-              <p>
-                Track live performance and get alerts instantly.
-              </p>
-            </div>
-          </li>
-
-          <li class="core-item">
-            <div class="core-icon">🔗</div>
-            <div class="core-content">
+            <!-- CARD 5 -->
+            <div class="feature-card">
+              <img src="assets/img/icon5.png" alt="Integrations" class="feature-icon" />
               <h3>Seamless Integrations</h3>
               <p>
-                Works with Google Ads, Meta Ads, TikTok, POS systems & CRMs.
+                Integrates with Google, Meta, TikTok, POS systems, CRMs & more to unify all your marketing sources.
               </p>
             </div>
-          </li>
-        </ul>
+
+            <!-- CARD 6 -->
+            <div class="feature-card">
+              <img src="assets/img/icon6.png" alt="Automation Engine" class="feature-icon" />
+              <h3>Notification & Automation Engine</h3>
+              <p>
+                Smart marketing assistant providing alerts, recommendations, and automated insights from sentiment data.
+              </p>
+            </div>
+
+          </div>
+        </div>
       </section>
+      <!-- ⭐⭐⭐ END CORE FEATURES ⭐⭐⭐ -->
+
 
       <!-- CTA -->
       <section class="block center">
@@ -219,13 +221,10 @@
   <!-- TOGGLE MENU SCRIPT (fixed) -->
   <script>
     const btn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
     const menu = document.querySelector('.menu');
 
     if (btn && menu) {
       btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
         menu.classList.toggle("open");
       });
     }
