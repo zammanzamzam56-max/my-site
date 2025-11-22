@@ -11,7 +11,7 @@
 
 <body>
 
-  <!-- Header (fixed + matching index) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">Salecompass</a>
@@ -96,74 +96,50 @@
         </ul>
       </section>
 
+      <!-- NEW CORE FEATURES GRID (with your icons) -->
+      <section class="core-features">
+        <h2 class="core-title">Core Features</h2>
 
-      <!-- ⭐⭐⭐ REPLACED CORE FEATURES SECTION ⭐⭐⭐ -->
-      <section class="core-features clean-features">
-        <div class="container">
+        <div class="features-grid">
 
-          <h2 class="core-title center">Core Features</h2>
-
-          <div class="features-grid">
-
-            <!-- CARD 1 -->
-            <div class="feature-card">
-              <img src="assets/img/icon1.png" alt="Attribution Engine" class="feature-icon" />
-              <h3>Multi-Channel Attribution Engine</h3>
-              <p>
-                Know the true value of every channel including Instagram, Google, TikTok, SMS, email & in-store sources.
-              </p>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="feature-card">
-              <img src="assets/img/icon2.png" alt="Predictive Analytics" class="feature-icon" />
-              <h3>Predictive Analytics</h3>
-              <p>
-                AI-powered forecasting, trend detection and demand prediction to optimise your entire marketing strategy.
-              </p>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="feature-card">
-              <img src="assets/img/icon3.png" alt="Sentiment Intelligence" class="feature-icon" />
-              <h3>Sentiment & Review Intelligence</h3>
-              <p>
-                Analyse customer feelings instantly from delivery apps, Google, social media & reviews to detect insights.
-              </p>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="feature-card">
-              <img src="assets/img/icon4.png" alt="Real-Time Dashboards" class="feature-icon" />
-              <h3>Real-Time Performance Dashboards</h3>
-              <p>
-                Live insights as your campaigns run. Get instant visibility, performance alerts, and ROI tracking.
-              </p>
-            </div>
-
-            <!-- CARD 5 -->
-            <div class="feature-card">
-              <img src="assets/img/icon5.png" alt="Integrations" class="feature-icon" />
-              <h3>Seamless Integrations</h3>
-              <p>
-                Integrates with Google, Meta, TikTok, POS systems, CRMs & more to unify all your marketing sources.
-              </p>
-            </div>
-
-            <!-- CARD 6 -->
-            <div class="feature-card">
-              <img src="assets/img/icon6.png" alt="Automation Engine" class="feature-icon" />
-              <h3>Notification & Automation Engine</h3>
-              <p>
-                Smart marketing assistant providing alerts, recommendations, and automated insights from sentiment data.
-              </p>
-            </div>
-
+          <div class="feature-card">
+            <img src="assets/img/icon1.jpg" alt="Attribution Engine">
+            <h3>Multi-Channel Attribution Engine</h3>
+            <p>Know the true value of every channel including Instagram, Google, TikTok, SMS, email & in-store sources.</p>
           </div>
+
+          <div class="feature-card">
+            <img src="assets/img/icon2.jpg" alt="Predictive Analytics">
+            <h3>Predictive Analytics</h3>
+            <p>AI-powered forecasting, trend detection and demand prediction to optimise your entire marketing strategy.</p>
+          </div>
+
+          <div class="feature-card">
+            <img src="assets/img/icon3.jpg" alt="Sentiment Intelligence">
+            <h3>Sentiment & Review Intelligence</h3>
+            <p>Analyse customer feelings instantly from delivery apps, Google, social media & reviews to detect insights.</p>
+          </div>
+
+          <div class="feature-card">
+            <img src="assets/img/icon4.jpg" alt="Real-Time Dashboards">
+            <h3>Real-Time Performance Dashboards</h3>
+            <p>Live insights as your campaigns run. Get instant visibility, alerts & ROI tracking at any moment.</p>
+          </div>
+
+          <div class="feature-card">
+            <img src="assets/img/icon5.jpg" alt="Integrations">
+            <h3>Seamless Integrations</h3>
+            <p>Integrates with Google, Meta, TikTok, POS systems, CRMs & more to unify all your marketing sources.</p>
+          </div>
+
+          <div class="feature-card">
+            <img src="assets/img/icon6.jpg" alt="Automation Engine">
+            <h3>Notification & Automation Engine</h3>
+            <p>Your smart marketing assistant: high-performing channels, wasted ad spend alerts, and AI content ideas.</p>
+          </div>
+
         </div>
       </section>
-      <!-- ⭐⭐⭐ END CORE FEATURES ⭐⭐⭐ -->
-
 
       <!-- CTA -->
       <section class="block center">
@@ -173,7 +149,6 @@
     </div>
 
   </main>
-
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -217,17 +192,16 @@
     </div>
   </footer>
 
-
-  <!-- TOGGLE MENU SCRIPT (fixed) -->
+  <!-- WORKING MENU TOGGLE -->
   <script>
     const btn = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
 
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        menu.classList.toggle("open");
-      });
-    }
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      menu.classList.toggle("open");
+    });
 
     const y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
