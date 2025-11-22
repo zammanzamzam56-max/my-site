@@ -324,3 +324,32 @@ a {
   display: inline-block;
   border-radius: 8px;
 }
+/* Mobile Menu */
+.menu {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  left: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 25px 0;
+  text-align: center;
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Menu links */
+.menu a {
+  display: block;
+  font-size: 20px;
+  padding: 15px 0;
+}
