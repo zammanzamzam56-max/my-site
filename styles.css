@@ -247,7 +247,7 @@ a {
 }
 
 /* =========================================
-   MOBILE DROPDOWN (FINAL WORKING VERSION)
+   MOBILE DROPDOWN (NEW FIXED & CENTERED)
 ========================================= */
 
 @media (max-width: 880px) {
@@ -256,36 +256,47 @@ a {
     display: block !important;
   }
 
+  /* ✨ Floating centered dropdown menu */
   .menu {
     display: none !important;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    padding: 15px 20px;
-    flex-direction: column;
-    border-bottom: 1px solid #e5e5e5;
+    top: 70px;
+    left: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 16px;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
     z-index: 9999;
-    gap: 0;
+    flex-direction: column;
   }
 
   .menu.open {
     display: flex !important;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .menu a {
-    padding: 12px 0;
-    border-bottom: 1px solid #f2f2f5;
+    display: block;
+    font-size: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #efefef;
   }
 
   .menu a:last-child {
     border-bottom: none;
   }
 
-  /* full-width hero image on mobile */
+  /* 📱 Full-width hero image like screenshot */
   .hero-image {
-    margin: 0 -20px 24px;
+    margin: 0 -20px 24px;  /* Removes container padding so image touches both edges */
   }
 }
 
@@ -323,33 +334,4 @@ a {
   height: auto;
   display: inline-block;
   border-radius: 8px;
-}
-/* Mobile Menu */
-.menu {
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  left: 20px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  padding: 25px 0;
-  text-align: center;
-  transform: translateY(-20px);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.25s ease;
-}
-
-.menu.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Menu links */
-.menu a {
-  display: block;
-  font-size: 20px;
-  padding: 15px 0;
 }
