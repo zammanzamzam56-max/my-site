@@ -247,7 +247,7 @@ a {
 }
 
 /* =========================================
-   MOBILE DROPDOWN (NEW FIXED & CENTERED)
+   PREMIUM MOBILE DROPDOWN MENU
 ========================================= */
 
 @media (max-width: 880px) {
@@ -256,30 +256,36 @@ a {
     display: block !important;
   }
 
-  /* ✨ Floating centered dropdown menu */
+  /* ✨ Premium floating blurred menu */
   .menu {
     display: none !important;
     position: absolute;
     top: 70px;
     left: 20px;
     right: 20px;
-    background: white;
-    border-radius: 16px;
-    padding: 25px 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 28px 0;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    transform: translateY(-20px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+
+    transform: translateY(-18px);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
+
     z-index: 9999;
-    flex-direction: column;
+    
+    /* ⭐ FIX: ensure perfect vertical stacking */
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .menu.open {
     display: flex !important;
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
     pointer-events: auto;
   }
 
@@ -287,7 +293,13 @@ a {
     display: block;
     font-size: 20px;
     padding: 14px 0;
-    border-bottom: 1px solid #efefef;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: 0.2s;
+  }
+
+  .menu a:hover {
+    background: rgba(0,0,0,0.04);
   }
 
   .menu a:last-child {
@@ -296,7 +308,7 @@ a {
 
   /* 📱 Full-width hero image like screenshot */
   .hero-image {
-    margin: 0 -20px 24px;  /* Removes container padding so image touches both edges */
+    margin: 0 -20px 24px;
   }
 }
 
@@ -373,7 +385,7 @@ a {
   line-height: 1.45;
 }
 
-/* Mobile */
+/* Mobile Features Grid */
 @media (max-width: 860px) {
   .features-grid {
     grid-template-columns: 1fr;
