@@ -335,3 +335,78 @@ a {
   display: inline-block;
   border-radius: 8px;
 }
+/* =========================================
+   NEW CORE FEATURES (GRID STYLE)
+========================================= */
+
+.clean-features {
+  margin: 70px 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 16px;
+  padding: 26px 22px;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  transition: all .25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 14px;
+  object-fit: contain;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0b0b0b;
+}
+
+.feature-card p {
+  font-size: 0.97rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+
+/* ----------- MOBILE (TABLET) ----------- */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ----------- MOBILE (PHONES) ----------- */
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 22px 18px;
+  }
+
+  .feature-icon {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+
