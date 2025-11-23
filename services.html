@@ -5,17 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Salecompass</title>
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Pricing Animations -->
+  <style>
+    /* Fade animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .delay-1 { animation-delay: .2s; }
+    .delay-2 { animation-delay: .4s; }
+    .delay-3 { animation-delay: .6s; }
+    .delay-4 { animation-delay: .8s; }
+
+    /* Modern Pricing Grid */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .plan {
+      background: #fff;
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: all .3s ease;
+      position: relative;
+    }
+
+    .plan:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .plan-head h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .plan .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #007aff;
+      margin-top: 8px;
+    }
+
+    .badge, .badge.alt {
+      background: #007aff;
+      color: white;
+      font-size: .75rem;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      position: absolute;
+      top: -12px;
+      right: 12px;
+    }
+
+    .badge.alt {
+      background: #333;
+    }
+
+    .features {
+      margin: 18px 0;
+      padding-left: 18px;
+      line-height: 1.45;
+    }
+
+    .features li.bad {
+      opacity: 0.45;
+      text-decoration: line-through;
+    }
+
+    .plan-actions .btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    @media(max-width: 1100px) {
+      .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 700px) {
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Header (matched with index) -->
-  <header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header fade-up">
     <div class="container nav">
       <a class="logo" href="index.html">Salecompass</a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
 
-      <nav class="menu" role="navigation">
+      <nav class="menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a class="active" href="services.html">Services</a>
@@ -27,16 +128,18 @@
     </div>
   </header>
 
-  <main class="section">
+  <main class="section fade-up delay-1">
     <div class="container">
-      <h1 style="margin-bottom: .25rem;">Pricing Plans</h1>
-      <p class="muted" style="margin-bottom: 2rem;">Choose the plan that fits your stage and scale.</p>
+      <h1 style="margin-bottom:.25rem;font-weight:800;">Pricing Plans</h1>
+      <p class="muted" style="margin-bottom:2rem;">
+        Choose the plan that fits your stage and scale.
+      </p>
 
-      <section class="pricing container">
+      <section class="pricing container fade-up delay-2">
         <div class="plans-grid">
-          <!-- Free -->
-          <article class="plan plan-free">
-            <div class="plan-stripe"></div>
+
+          <!-- FREE -->
+          <article class="plan fade-up delay-2">
             <header class="plan-head">
               <h3>Free</h3>
               <p class="price">£0 <span>/ month</span></p>
@@ -44,14 +147,14 @@
 
             <ul class="features">
               <li>Multi-Channel Dashboard (Basic)</li>
-              <li>1 Marketing Channel Integration</li>
-              <li>200 Monthly AI Insights</li>
-              <li>Basic Attribution Model</li>
-              <li>POS Upload (Manual)</li>
-              <li>Access to Review &amp; Sentiment Summary</li>
+              <li>1 Channel Integration</li>
+              <li>200 AI Insights</li>
+              <li>Basic Attribution</li>
+              <li>Manual POS Upload</li>
+              <li>Review Sentiment Summary</li>
               <li>Email Support</li>
               <li class="bad">Predictive Analytics</li>
-              <li class="bad">Automated Recommendations</li>
+              <li class="bad">Recommendations</li>
               <li class="bad">Real-Time Alerts</li>
             </ul>
 
@@ -60,9 +163,8 @@
             </div>
           </article>
 
-          <!-- Starter -->
-          <article class="plan plan-starter">
-            <div class="plan-stripe"></div>
+          <!-- STARTER -->
+          <article class="plan fade-up delay-3">
             <header class="plan-head">
               <h3>Starter</h3>
               <p class="price">£29 <span>/ month</span></p>
@@ -70,16 +172,16 @@
 
             <ul class="features">
               <li>All Free Features</li>
-              <li>5 Marketing Channel Integrations</li>
-              <li>1,000 Monthly AI Insights</li>
-              <li>Standard Attribution Model</li>
-              <li>POS / CRM Auto-Sync</li>
-              <li>AI Trend Detection (Basic)</li>
-              <li>Sentiment Analysis (Full)</li>
-              <li>Automated Weekly Reports</li>
+              <li>5 Channel Integrations</li>
+              <li>1,000 AI Insights</li>
+              <li>Standard Attribution</li>
+              <li>POS / CRM Sync</li>
+              <li>Basic Trend Detection</li>
+              <li>Full Sentiment Analysis</li>
+              <li>Weekly Reports</li>
               <li>Priority Email Support</li>
               <li class="bad">Real-Time Alerts</li>
-              <li class="bad">Predictive Demand Forecasting</li>
+              <li class="bad">Demand Forecasting</li>
             </ul>
 
             <div class="plan-actions">
@@ -87,9 +189,8 @@
             </div>
           </article>
 
-          <!-- Growth -->
-          <article class="plan plan-growth">
-            <div class="plan-stripe"></div>
+          <!-- GROWTH -->
+          <article class="plan fade-up delay-3">
             <div class="badge">Most Popular</div>
             <header class="plan-head">
               <h3>Growth</h3>
@@ -98,14 +199,14 @@
 
             <ul class="features">
               <li>All Starter Features</li>
-              <li>10 Marketing Channel Integrations</li>
-              <li>5,000 Monthly AI Insights</li>
-              <li>Advanced Multi-Touch Attribution</li>
-              <li>Predictive Analytics (Demand + Behaviour)</li>
-              <li>Real-Time Alerts &amp; Insights</li>
-              <li>Campaign Optimisation Suggestions</li>
-              <li>AI Menu Trend Detection</li>
-              <li>Unlimited POS + Offline Data Imports</li>
+              <li>10 Integrations</li>
+              <li>5,000 AI Insights</li>
+              <li>Advanced Attribution</li>
+              <li>Predictive Analytics</li>
+              <li>Real-Time Alerts</li>
+              <li>Campaign Suggestions</li>
+              <li>Menu Trend Detection</li>
+              <<li>Unlimited Offline Data Imports</li>
               <li>Chat + Priority Support</li>
             </ul>
 
@@ -114,9 +215,8 @@
             </div>
           </article>
 
-          <!-- Premium -->
-          <article class="plan plan-premium">
-            <div class="plan-stripe"></div>
+          <!-- PREMIUM -->
+          <article class="plan fade-up delay-4">
             <div class="badge alt">Best Option</div>
             <header class="plan-head">
               <h3>Premium</h3>
@@ -125,29 +225,30 @@
 
             <ul class="features">
               <li>All Growth Features</li>
-              <li>Unlimited Marketing Channels</li>
+              <li>Unlimited Channels</li>
               <li>Unlimited AI Insights</li>
-              <li>Personalised AI Recommendations Engine</li>
-              <li>Full Customer Journey Mapping</li>
-              <li>Intelligent Loyalty Analytics</li>
-              <li>Competitor Trend Monitoring</li>
-              <li>API Access (Full)</li>
-              <li>Custom Reports &amp; Data Exports</li>
-              <li>Dedicated Account Support</li>
-              <li>Onboarding &amp; Strategy Call</li>
+              <li>AI Recommendations Engine</li>
+              <li>Customer Journey Mapping</li>
+              <li>Loyalty Intelligence</li>
+              <li>Competitor Monitoring</li>
+              <li>Full API Access</li>
+              <li>Custom Reporting</li>
+              <li>Dedicated Support</li>
+              <li>Onboarding Call</li>
             </ul>
 
             <div class="plan-actions">
               <button class="btn full">Subscribe</button>
             </div>
           </article>
+
         </div>
       </section>
     </div>
   </main>
 
-  <!-- Footer (matching index.html structure) -->
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="site-footer fade-up delay-4">
     <div class="container footer-grid">
       <div>
         <div class="logo">Salecompass</div>
@@ -175,7 +276,7 @@
       </div>
 
       <div>
-        <h4>Get in touch</h4>
+        <h4>Get in Touch</h4>
         <ul class="footer-links">
           <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
           <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
@@ -183,27 +284,23 @@
       </div>
     </div>
 
-    <div class="container tiny muted" style="padding-top:12px;">
+    <div class="container tiny muted">
       © <span id="year"></span> Salecompass. All rights reserved.
     </div>
   </footer>
 
-  <!-- Toggle + year script (same as other pages) -->
+  <!-- MOBILE MENU -->
   <script>
     const btn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
     const menu = document.querySelector('.menu');
 
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        menu.classList.toggle("open");
-      });
-    }
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
+    });
 
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
