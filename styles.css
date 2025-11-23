@@ -1,11 +1,11 @@
-/* ============================================================
+/* =========================================
    RESET & GLOBAL
-============================================================ */
+========================================= */
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -13,7 +13,6 @@ body {
   color: #1b1b1b;
   background: #ffffff;
   line-height: 1.6;
-  scroll-behavior: smooth;
 }
 
 .container {
@@ -23,36 +22,46 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
+/* =========================================
+   LOGO STYLING
+========================================= */
 
-/* ============================================================
+.logo img,
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .logo img,
+  .logo-img {
+    height: 34px;
+  }
+}
+
+/* =========================================
    HEADER
-============================================================ */
+========================================= */
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 2000;
+  z-index: 200;
   background: #fff;
   border-bottom: 1px solid #e5e5e5;
-  backdrop-filter: blur(8px);
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-}
-
-.logo {
-  font-size: 1.9rem;
-  font-weight: 800;
-  opacity: 0;
-  animation: fadeDown 0.6s ease forwards;
+  justify-content: space-between;
+  padding: 14px 0;
+  position: relative;
 }
 
 .menu {
@@ -63,160 +72,159 @@ a {
 
 .menu-toggle {
   display: none;
-  font-size: 1.7rem;
-  padding: 5px 12px;
+  font-size: 1.6rem;
+  border: 1px solid #d0d7e2;
   border-radius: 999px;
-  border: 1px solid #cbd5e1;
+  padding: 4px 10px;
   background: none;
+  cursor: pointer;
 }
 
+/* =========================================
+   MOBILE
+========================================= */
 
-/* ============================================================
+@media (max-width: 880px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    width: 200px;
+    text-align: right;
+  }
+
+  .menu.open {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* =========================================
    BUTTONS
-============================================================ */
+========================================= */
 
 .btn {
   padding: 0.7rem 1rem;
-  font-weight: 600;
   border-radius: 10px;
+  font-weight: 600;
 }
 
 .btn.primary {
   background: #007aff;
-  color: white;
+  color: #fff;
 }
 
 .btn.outline {
   border: 2px solid #007aff;
   color: #007aff;
-  background: white;
 }
 
-
-/* ============================================================
-   HERO SECTION
-============================================================ */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
-  padding: 40px 0 30px;
+  padding: 16px 0 32px;
 }
 
 .hero-image img {
   width: 100%;
-  border-radius: 14px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
+  height: auto;
+  display: block;
 }
 
 .hero-text h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-top: 15px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease forwards;
+  font-size: 2.6rem;
+  margin: 12px 0;
+  max-width: 24ch;
 }
 
 .hero-text .lead {
   font-size: 1.1rem;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
+  max-width: 40rem;
+  color: #444;
 }
 
 .cta {
+  margin-top: 20px;
   display: flex;
   gap: 14px;
-  margin-top: 20px;
-  opacity: 0;
-  animation: fadeUp 1.15s ease forwards;
 }
 
+/* =========================================
+   GENERAL CONTENT
+========================================= */
 
-/* ============================================================
-   CORE FEATURES (NEW DESIGN)
-============================================================ */
+.block {
+  margin: 60px 0;
+}
+
+.subhead { 
+  font-weight: 600; 
+  margin-top: 16px; 
+}
+
+/* =========================================
+   CORE FEATURES
+========================================= */
 
 .core-features {
-  margin: 80px 0;
+  margin: 60px 0 80px;
   text-align: center;
-  opacity: 0;
-  animation: fadeUp 1.2s ease forwards;
 }
 
 .core-title {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 }
 
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+  gap: 28px;
 }
 
 .feature-card {
-  background: white;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
   text-align: left;
-  transition: 0.25s ease;
-  cursor: default;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.10);
 }
 
 .feature-card img {
-  width: 65px;
+  width: 72px;
+  height: auto;
   margin-bottom: 14px;
 }
 
 .feature-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .feature-card p {
+  color: #555;
   font-size: 0.95rem;
-  color: #444;
+  line-height: 1.45;
 }
-
-
-/* ============================================================
-   FOOTER
-============================================================ */
-
-.site-footer {
-  margin-top: 80px;
-  background: #fafafa;
-  padding: 40px 0;
-  border-top: 1px solid #e5e5e5;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 30px;
-}
-
-.footer-links {
-  list-style: none;
-}
-
-.tiny {
-  font-size: 0.85rem;
-  color: #777;
-}
-
-
-/* ============================================================
-   RESPONSIVE
-============================================================ */
 
 @media (max-width: 900px) {
   .feature-grid {
@@ -225,60 +233,132 @@ a {
 }
 
 @media (max-width: 600px) {
-  .feature-grid { grid-template-columns: 1fr; }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   CONTACT PAGE (NEW)
+========================================= */
+
+.contact-page {
+  padding: 60px 0;
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeUp .7s ease;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d7d7d7;
+  font-size: 1rem;
+}
+
+.contact-info {
+  background: #f8f9ff;
+  padding: 28px;
+  border-radius: 16px;
+  animation: fadeLeft .7s ease;
 }
 
 @media (max-width: 880px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: white;
-    padding: 15px;
-    border-radius: 14px;
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 200px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  .contact-container {
+    grid-template-columns: 1fr;
   }
-
-  .menu.open { display: flex !important; }
-
-  .menu-toggle { display: block; }
 }
 
+/* =========================================
+   FOOTER
+========================================= */
 
-/* ============================================================
+.site-footer {
+  background: #fafafa;
+  border-top: 1px solid #e5e5e5;
+  padding: 32px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.footer-links { 
+  list-style: none; 
+}
+
+.tiny { 
+  font-size: 0.8rem; 
+  margin-top: 16px; 
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
    ANIMATIONS
-============================================================ */
+========================================= */
 
 @keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(25px); }
-  100% { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeDown {
-  0% { opacity: 0; transform: translateY(-25px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-/* HEADER LOGO */
-.header-logo-img {
-  height: 42px;
-  width: auto;
-  display: block;
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* FOOTER LOGO */
-.footer-logo-img {
-  height: 46px;
-  width: auto;
-  display: block;
-  margin-bottom: 8px;
+.fade-up {
+  animation: fadeUp .7s ease both;
 }
 
-.footer-logo-block {
-  display: flex;
-  flex-direction: column;
+.fade-down {
+  animation: fadeDown .7s ease both;
 }
 
+/* =========================================
+   R&D Publication Cards
+========================================= */
 
+.pub-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  margin-bottom: 24px;
+  animation: fadeUp .7s ease;
+}
+
+.pub-card h4 {
+  margin-bottom: 10px;
+}
+
+.pub-list {
+  margin-top: 20px;
+}
