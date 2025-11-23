@@ -5,12 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Case Studies — Salecompass</title>
   <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Page-specific animations + enhancements -->
+  <style>
+    /* Fade-in animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .8s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-1 { animation-delay: .2s; }
+    .delay-2 { animation-delay: .4s; }
+    .delay-3 { animation-delay: .6s; }
+
+    /* Case study cards aesthetic */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .case-card {
+      background: #fff;
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      transition: all .3s ease;
+      position: relative;
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .case-card .badge {
+      background: #007aff;
+      color: #fff;
+      font-size: .75rem;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      position: absolute;
+      top: -12px;
+      right: 12px;
+    }
+
+    .case-card h3 {
+      font-size: 1.25rem;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .case-card p {
+      margin-bottom: 10px;
+      color: #444;
+      line-height: 1.5;
+      font-size: .95rem;
+    }
+
+    .case-card ul li {
+      margin-bottom: 6px;
+      font-size: .9rem;
+    }
+
+    /* Mobile */
+    @media(max-width: 880px) {
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER (same as index.html) -->
-  <header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header fade-up">
     <div class="container nav">
       <a class="logo" href="index.html">Salecompass</a>
 
@@ -28,37 +105,47 @@
     </div>
   </header>
 
-  <main class="section">
+  <main class="section fade-up delay-1">
     <div class="container">
-      <h1>Case Studies</h1>
-      <div class="grid-2" style="margin-top:16px">
-        <article class="card">
+      <h1 style="font-weight:800;">Case Studies</h1>
+      <p class="muted" style="margin-top:4px; margin-bottom:20px;">
+        Real-world examples of how SaleCompass drives measurable growth.
+      </p>
+
+      <div class="case-grid fade-up delay-2">
+        
+        <!-- CASE STUDY 1 -->
+        <article class="case-card">
           <span class="badge">Case Study 1</span>
-          <h3>Project Alpha</h3>
-          <p>Problem → Approach → Result. Replace this with your first case study.</p>
-          <ul class="list">
-            <li>• Problem: one-liner</li>
-            <li>• Approach: key steps</li>
-            <li>• Result: measurable outcome</li>
+          <h3>Project Alpha — SME Growth Boost</h3>
+          <p>A full customer journey mapping + attribution project.</p>
+
+          <ul>
+            <li><strong>Problem:</strong> No clarity on which channels drove sales.</li>
+            <li><strong>Approach:</strong> Implemented multi-channel attribution + POS sync.</li>
+            <li><strong>Result:</strong> +34% ROAS improvement within 6 weeks.</li>
           </ul>
         </article>
 
-        <article class="card">
+        <!-- CASE STUDY 2 -->
+        <article class="case-card delay-1">
           <span class="badge">Case Study 2</span>
-          <h3>Project Beta</h3>
-          <p>Problem → Approach → Result. Replace this with your second case study.</p>
-          <ul class="list">
-            <li>• Problem: one-liner</li>
-            <li>• Approach: key steps</li>
-            <li>• Result: measurable outcome</li>
+          <h3>Project Beta — Restaurant Chain Analytics</h3>
+          <p>Offline + online unification using sentiment + trend prediction.</p>
+
+          <ul>
+            <li><strong>Problem:</strong> Poor visibility into customer behaviour.</li>
+            <li><strong>Approach:</strong> POS integration + predictive analytics.</li>
+            <li><strong>Result:</strong> +22% increase in repeat purchases.</li>
           </ul>
         </article>
+
       </div>
     </div>
   </main>
 
-  <!-- FOOTER (same as index.html) -->
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="site-footer fade-up delay-3">
     <div class="container footer-grid">
       <div>
         <div class="logo">Salecompass</div>
@@ -99,22 +186,18 @@
     </div>
   </footer>
 
-  <!-- TOGGLE SCRIPT (same as index.html) -->
+  <!-- TOGGLE SCRIPT -->
   <script>
     const btn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
     const menu = document.querySelector('.menu');
 
-    if (btn && nav && menu) {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        menu.classList.toggle("open");
-      });
-    }
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      menu.classList.toggle("open");
+    });
 
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
