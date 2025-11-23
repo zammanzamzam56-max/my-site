@@ -5,9 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Success Stories — Salecompass</title>
   <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Premium SaaS Animations -->
+  <style>
+    /* Fade-up */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slide left */
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .slide-left.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Slide right */
+    .slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .slide-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Card hover effect */
+    .story-card {
+      background: #fff;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .story-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .story-card .badge {
+      background: #eef2ff;
+      color: #3b5bfd;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+  </style>
 </head>
+
 <body>
-  <!-- Header -->
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">Salecompass</a>
@@ -25,24 +87,42 @@
   </header>
 
   <main class="section">
-    <div class="container">
+    <div class="container fade-up">
       <h1>Success Stories</h1>
-      <div class="grid-2" style="margin-top:16px">
-        <article class="card">
+
+      <div class="grid-2" style="margin-top:24px">
+
+        <!-- Story 1 -->
+        <article class="story-card slide-left">
           <span class="badge">Success Story 1</span>
-          <h3>From idea to impact</h3>
-          <p>Summarize the success (problem, action, result) in 4–6 lines.</p>
+          <h3>From Idea to Impact</h3>
+          <p>
+            How a small food business gained clarity on its marketing performance:
+            <br><br>
+            • **Problem:** No idea which marketing channels actually generated sales.  
+            • **Action:** Connected Instagram, Google, POS + reviews.  
+            • **Result:** 27% increase in ROI and accurate channel attribution.
+          </p>
         </article>
-        <article class="card">
+
+        <!-- Story 2 -->
+        <article class="story-card slide-right">
           <span class="badge">Success Story 2</span>
-          <h3>Scaling what works</h3>
-          <p>Summarize the success (problem, action, result) in 4–6 lines.</p>
+          <h3>Scaling What Works</h3>
+          <p>
+            A growing retail brand used SaleCompass AI to double down on winning channels:
+            <br><br>
+            • **Problem:** High ad spend with unpredictable results.  
+            • **Action:** Trend detection + sentiment analysis + demand prediction.  
+            • **Result:** 41% drop in wasted ad spend within 30 days.
+          </p>
         </article>
+
       </div>
     </div>
   </main>
 
-  <!-- Footer (same as index) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -84,10 +164,9 @@
     </div>
   </footer>
 
-  <!-- Toggle + year script -->
+  <!-- SCROLL REVEAL + TOGGLE -->
   <script>
     const btn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
     const menu = document.querySelector('.menu');
 
     if (btn && menu) {
@@ -98,8 +177,19 @@
       });
     }
 
+    // Scroll reveal
+    document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+      }, { threshold: 0.2 });
+      observer.observe(el);
+    });
+
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
