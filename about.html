@@ -5,12 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Salecompass</title>
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Animation CSS -->
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-delay { animation-delay: 0.3s; }
+    .fade-delay-2 { animation-delay: 0.6s; }
+
+    /* Page cards */
+    .about-card {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+      margin-bottom: 40px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .about-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    /* Improved spacing */
+    .section {
+      padding: 60px 0;
+    }
+
+    /* Title aesthetic */
+    .page-title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .lead {
+      color: #555;
+      max-width: 720px;
+      font-size: 1.15rem;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER (MATCHING INDEX) -->
-  <header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header fade-up">
     <div class="container nav">
       <a class="logo" href="index.html">Salecompass</a>
 
@@ -30,11 +81,11 @@
 
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero fade-up fade-delay">
     <div class="container">
-      <h1>About SaleCompass</h1>
+      <h1 class="page-title">About SaleCompass</h1>
       <p class="lead">
-        A modern AI-powered marketing intelligence platform built to help SMEs understand
+        A modern AI-powered marketing intelligence platform helping SMEs understand
         what truly drives results across online and offline touchpoints.
       </p>
     </div>
@@ -42,60 +93,55 @@
 
 
   <!-- ABOUT SALECOMPASS -->
-  <section class="section">
-    <div class="container">
+  <section class="section fade-up fade-delay">
+    <div class="container about-card">
       <h2>What is SaleCompass?</h2>
       <p>
         SaleCompass is an AI-driven marketing intelligence platform designed for small
-        and medium sized businesses. In today’s world, customers move between Instagram,
-        Google, TikTok, delivery apps, websites, email, and physical stores. Traditional analytics
-        fail to explain what actually works.
+        and medium-sized businesses. Customers today move between Instagram, Google,
+        TikTok, delivery apps, email, websites and physical stores — making it nearly
+        impossible to understand what actually works.
       </p>
 
       <p>
-        SaleCompass solves that problem by unifying digital and offline data into a single,
-        real-time intelligence system. Through predictive analytics, sentiment analysis,
-        multi-touch attribution, and POS integration, SaleCompass helps businesses make smarter,
-        data-backed decisions. 
+        SaleCompass solves this by unifying all digital + offline data into one real-time
+        intelligence system. Through predictive analytics, sentiment analysis, multi-touch
+        attribution and POS integration, SaleCompass helps businesses make smarter,
+        data-driven decisions.
       </p>
     </div>
   </section>
 
 
   <!-- MISSION -->
-  <section class="section">
-    <div class="container">
-      <div class="card" style="padding:28px; border-radius:16px;">
-        <h2>Our Mission</h2>
-        <p>
-          To empower small and medium-sized businesses with intelligent, data-driven
-          marketing decisions by unifying online and offline customer insights. SaleCompass uses
-          advanced AI, machine learning, and attribution modelling to help brands invest in the
-          right channels, optimise campaigns in real time, and create meaningful customer
-          experiences that lead to measurable growth.
-        </p>
-      </div>
+  <section class="section fade-up fade-delay">
+    <div class="container about-card">
+      <h2>Our Mission</h2>
+      <p>
+        To empower SMEs with intelligent, data-driven marketing decisions by unifying online
+        and offline customer insights. Through advanced AI, machine learning, and attribution
+        modelling, SaleCompass helps businesses invest in the right channels, optimise in
+        real-time, and build meaningful customer experiences that drive measurable growth.
+      </p>
     </div>
   </section>
 
 
   <!-- VISION -->
-  <section class="section">
-    <div class="container">
-      <div class="card" style="padding:28px; border-radius:16px;">
-        <h2>Our Vision</h2>
-        <p>
-          To become the UK’s most trusted AI-powered marketing intelligence platform 
-          enabling every business, regardless of size, to understand its customers,
-          forecast demand, and make smarter, faster, and more profitable marketing decisions.
-        </p>
-      </div>
+  <section class="section fade-up fade-delay-2">
+    <div class="container about-card">
+      <h2>Our Vision</h2>
+      <p>
+        To become the UK’s most trusted AI-powered marketing intelligence platform — enabling
+        every business, regardless of size, to understand customers, forecast demand,
+        and make smarter, more profitable decisions.
+      </p>
     </div>
   </section>
 
 
-  <!-- FOOTER (MATCHING INDEX) -->
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="site-footer fade-up fade-delay-2">
     <div class="container footer-grid">
       <div>
         <div class="logo">Salecompass</div>
@@ -137,10 +183,9 @@
   </footer>
 
 
-  <!-- SCRIPT (MATCHING INDEX, FULLY WORKING TOGGLE) -->
+  <!-- MOBILE TOGGLE FIX -->
   <script>
     const btn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
     const menu = document.querySelector('.menu');
 
     if (btn && menu) {
