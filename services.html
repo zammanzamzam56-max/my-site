@@ -3,118 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services | Salecompass</title>
+  <title>Services | SaleCompass</title>
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Pricing Animations -->
+  <!-- Page-specific Animations -->
   <style>
-    /* Fade animations */
     .fade-up {
       opacity: 0;
-      transform: translateY(25px);
-      animation: fadeUp 0.9s ease forwards;
+      transform: translateY(30px);
+      transition: 0.7s ease;
     }
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .delay-1 { animation-delay: .2s; }
-    .delay-2 { animation-delay: .4s; }
-    .delay-3 { animation-delay: .6s; }
-    .delay-4 { animation-delay: .8s; }
-
-    /* Modern Pricing Grid */
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-      margin-top: 30px;
-    }
-
-    .plan {
-      background: #fff;
-      padding: 28px;
-      border-radius: 16px;
-      border: 1px solid #e5e5e5;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: all .3s ease;
-      position: relative;
-    }
-
-    .plan:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    .plan-head h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-
-    .plan .price {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #007aff;
-      margin-top: 8px;
-    }
-
-    .badge, .badge.alt {
-      background: #007aff;
-      color: white;
-      font-size: .75rem;
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-weight: 600;
-      position: absolute;
-      top: -12px;
-      right: 12px;
-    }
-
-    .badge.alt {
-      background: #333;
-    }
-
-    .features {
-      margin: 18px 0;
-      padding-left: 18px;
-      line-height: 1.45;
-    }
-
-    .features li.bad {
-      opacity: 0.45;
-      text-decoration: line-through;
-    }
-
-    .plan-actions .btn {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-    }
-
-    @media(max-width: 1100px) {
-      .plans-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media(max-width: 700px) {
-      .plans-grid {
-        grid-template-columns: 1fr;
-      }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header fade-up">
+  <!-- HEADER (Same as index) -->
+  <header class="site-header">
     <div class="container nav">
-      <a class="logo" href="index.html">Salecompass</a>
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" alt="Salecompass Logo">
+      </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
       <nav class="menu">
         <a href="index.html">Home</a>
@@ -123,23 +38,26 @@
         <a href="case-studies.html">Case Studies</a>
         <a href="research.html">R&amp;D</a>
         <a href="success-stories.html">Success Stories</a>
-        <a class="btn" href="contact.html">Contact</a>
+        <a class="btn primary" href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="section fade-up delay-1">
+  <!-- MAIN SECTION -->
+  <main class="section fade-up">
     <div class="container">
       <h1 style="margin-bottom:.25rem;font-weight:800;">Pricing Plans</h1>
       <p class="muted" style="margin-bottom:2rem;">
         Choose the plan that fits your stage and scale.
       </p>
 
-      <section class="pricing container fade-up delay-2">
-        <div class="plans-grid">
+      <!-- PRICING GRID -->
+      <section class="pricing fade-up">
 
+        <div class="plans-grid">
+          
           <!-- FREE -->
-          <article class="plan fade-up delay-2">
+          <article class="plan">
             <header class="plan-head">
               <h3>Free</h3>
               <p class="price">£0 <span>/ month</span></p>
@@ -164,7 +82,7 @@
           </article>
 
           <!-- STARTER -->
-          <article class="plan fade-up delay-3">
+          <article class="plan">
             <header class="plan-head">
               <h3>Starter</h3>
               <p class="price">£29 <span>/ month</span></p>
@@ -190,7 +108,7 @@
           </article>
 
           <!-- GROWTH -->
-          <article class="plan fade-up delay-3">
+          <article class="plan">
             <div class="badge">Most Popular</div>
             <header class="plan-head">
               <h3>Growth</h3>
@@ -206,7 +124,7 @@
               <li>Real-Time Alerts</li>
               <li>Campaign Suggestions</li>
               <li>Menu Trend Detection</li>
-              <<li>Unlimited Offline Data Imports</li>
+              <li>Unlimited Offline Data Imports</li>
               <li>Chat + Priority Support</li>
             </ul>
 
@@ -216,7 +134,7 @@
           </article>
 
           <!-- PREMIUM -->
-          <article class="plan fade-up delay-4">
+          <article class="plan">
             <div class="badge alt">Best Option</div>
             <header class="plan-head">
               <h3>Premium</h3>
@@ -227,7 +145,7 @@
               <li>All Growth Features</li>
               <li>Unlimited Channels</li>
               <li>Unlimited AI Insights</li>
-              <li>AI Recommendations Engine</li>
+              <li>AI Recommendation Engine</li>
               <li>Customer Journey Mapping</li>
               <li>Loyalty Intelligence</li>
               <li>Competitor Monitoring</li>
@@ -247,18 +165,20 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer fade-up delay-4">
+  <!-- FOOTER (Same as Index) -->
+  <footer class="site-footer fade-up">
     <div class="container footer-grid">
+
       <div>
-        <div class="logo">Salecompass</div>
-        <p class="small muted">Know What Works. Invest Where It Matters.</p>
+        <img src="assets/img/logo.svg" alt="SaleCompass Logo" class="logo-img">
+        <p class="tiny">Know What Works. Invest Where It Matters.</p>
       </div>
 
       <div>
         <h4>Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="success-stories.html">Success Stories</a></li>
           <li><a href="research.html">R&amp;D</a></li>
@@ -282,25 +202,47 @@
           <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
         </ul>
       </div>
+
     </div>
 
-    <div class="container tiny muted">
-      © <span id="year"></span> Salecompass. All rights reserved.
+    <div class="container tiny">
+      © <span id="year"></span> SaleCompass. All rights reserved.
     </div>
   </footer>
 
-  <!-- MOBILE MENU -->
+  <!-- UNIVERSAL JS (Works on all pages) -->
   <script>
-    const btn = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+    document.addEventListener('DOMContentLoaded', () => {
 
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
+      // MOBILE MENU
+      const btn = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('open');
+      });
+
+      // FOOTER YEAR
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // ANIMATIONS
+      const animated = document.querySelectorAll('.fade-up');
+
+      function reveal() {
+        animated.forEach(el => {
+          const pos = el.getBoundingClientRect().top;
+          if (pos < window.innerHeight - 60) {
+            el.classList.add('visible');
+          }
+        });
+      }
+
+      reveal();
+      window.addEventListener('scroll', reveal);
+
     });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
