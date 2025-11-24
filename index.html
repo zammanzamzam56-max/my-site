@@ -30,6 +30,7 @@
     </div>
   </header>
 
+  <!-- MAIN START -->
   <main>
 
     <!-- HERO -->
@@ -53,9 +54,7 @@
       </div>
     </section>
 
-    <!-- =========================================
-         PROBLEM SECTION
-    ========================================== -->
+    <!-- PROBLEM SECTION -->
     <section class="problem-section fade-up">
       <div class="container">
 
@@ -89,7 +88,111 @@
       </div>
     </section>
 
-    <!-- =========================================
-         CORE FEATURES
-    ========================================== -->
+    <!-- CORE FEATURES SECTION -->
     <section class="core-features fade-up">
+      <h2 class="core-title">Core Features</h2>
+
+      <div class="container feature-grid">
+
+        <div class="feature-card">
+          <img src="assets/img/icon1.jpg" alt="">
+          <h3>Multi-Channel Attribution Engine</h3>
+          <p>Know the true value of every channel across Instagram, Google, TikTok, email, SMS & in-store.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="assets/img/icon2.jpg" alt="">
+          <h3>Predictive Analytics</h3>
+          <p>AI forecasting to detect demand shifts, trending items, behaviour patterns, and ideal campaign timing.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="assets/img/icon3.jpg" alt="">
+          <h3>Sentiment & Review Intelligence</h3>
+          <p>Analyse reviews & conversations from delivery apps and social media to detect emerging customer needs.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="assets/img/icon4.jpg" alt="">
+          <h3>Real-Time Performance Dashboards</h3>
+          <p>Live insights, channel performance updates, instant visibility, and immediate alerts.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="assets/img/icon5.jpg" alt="">
+          <h3>Seamless Integrations</h3>
+          <p>Integrates with Google, Meta, TikTok, POS, CRMs, HubSpot, Salesforce & more.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="assets/img/icon6.jpg" alt="">
+          <h3>Notification & Automation Engine</h3>
+          <p>Auto insights: wasted spend alerts, top channels, sentiment-driven recommendations.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <!-- MAIN END -->
+
+  <!-- FOOTER START -->
+  <footer class="site-footer fade-up">
+    <div class="container footer-grid">
+
+      <div>
+        <img src="assets/img/logo.svg" alt="Salecompass Footer Logo" class="logo-img">
+        <p class="tiny">Know What Works. Invest Where It Matters.</p>
+      </div>
+
+      <div>
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="research.html">R&amp;D</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Attribution Engine</a></li>
+          <li><a href="services.html">Predictive Analytics</a></li>
+          <li><a href="services.html">Dashboards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container tiny">
+      © <span id="year"></span> Salecompass. All rights reserved.
+    </div>
+  </footer>
+  <!-- FOOTER END -->
+
+  <script>
+    const btn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
