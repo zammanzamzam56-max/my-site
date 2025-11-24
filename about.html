@@ -32,7 +32,7 @@
 
   <main>
 
-    <!-- HERO (Option H1 - Clean Minimal) -->
+    <!-- HERO (Clean Minimal) -->
     <section class="about-hero fade-up">
       <div class="container">
         <h1>About SaleCompass</h1>
@@ -43,7 +43,7 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section class="about-section fade-up">
       <div class="container about-card">
         <h2>What is SaleCompass?</h2>
@@ -59,7 +59,6 @@
         </p>
       </div>
     </section>
-
 
     <!-- MISSION & VISION -->
     <section class="mv-section fade-up">
@@ -84,11 +83,11 @@
       </div>
     </section>
 
-
-    <!-- VALUES SECTION -->
+    <!-- VALUES -->
     <section class="values-section fade-up">
       <div class="container">
         <h2 class="center-title">Our Core Values</h2>
+
         <div class="values-grid">
 
           <div class="value-card">
@@ -106,7 +105,7 @@
           <div class="value-card">
             <img src="assets/img/icon3.jpg" alt="">
             <h4>Accuracy</h4>
-            <p>Every insight is backed by AI models designed for precision and real-world reliability.</p>
+            <p>Every insight is backed by AI models built for precision and reliability.</p>
           </div>
 
           <div class="value-card">
@@ -119,8 +118,7 @@
       </div>
     </section>
 
-
-    <!-- TIMELINE / JOURNEY -->
+    <!-- JOURNEY -->
     <section class="timeline-section fade-up">
       <div class="container">
         <h2 class="center-title">Our Journey</h2>
@@ -148,12 +146,10 @@
           </div>
 
         </div>
-
       </div>
     </section>
 
-
-    <!-- WHY SALECOMPASS -->
+    <!-- WHY US -->
     <section class="why-section fade-up">
       <div class="container">
         <h2 class="center-title">Why Businesses Choose SaleCompass</h2>
@@ -185,7 +181,6 @@
     </section>
 
   </main>
-
 
   <!-- FOOTER -->
   <footer class="site-footer fade-up">
@@ -231,12 +226,11 @@
     </div>
   </footer>
 
-
+<!-- CLEAN FINAL JS -->
 <script>
-// ---------------------------
-// MOBILE MENU TOGGLE
-// ---------------------------
 document.addEventListener('DOMContentLoaded', () => {
+
+  // MOBILE MENU
   const btn = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
 
@@ -248,18 +242,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------------------------
-  // SET FOOTER YEAR
-  // ---------------------------
+  // FOOTER YEAR
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---------------------------
-  // ANIMATIONS ON SCROLL
-  // ---------------------------
-  const animatedEls = document.querySelectorAll(
-    '.fade-up, .slide-in-left, .slide-in-right, .scale-up'
-  );
+  // ANIMATIONS
+  const animatedEls = document.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right, .scale-up');
 
   function animateOnScroll() {
     animatedEls.forEach(el => {
@@ -271,6 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', animateOnScroll);
-  animateOnScroll(); // Trigger on load
+  animateOnScroll();
+
 });
 </script>
+
+</body>
+</html>
