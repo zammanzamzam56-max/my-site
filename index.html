@@ -196,4 +196,48 @@
 
 </body>
 </html>
+<script>
+// ---------------------------
+// MOBILE MENU TOGGLE
+// ---------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('open');
+    });
+  }
+
+  // ---------------------------
+  // SET FOOTER YEAR
+  // ---------------------------
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ---------------------------
+  // ANIMATIONS ON SCROLL
+  // ---------------------------
+  const animatedEls = document.querySelectorAll(
+    '.fade-up, .slide-in-left, .slide-in-right, .scale-up'
+  );
+
+  function animateOnScroll() {
+    animatedEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  animateOnScroll(); // Trigger on load
+});
+</script>
+
+
 
