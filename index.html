@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Salecompass — Know What Works. Invest Where It Matters</title>
   <meta name="description" content="Salecompass unifies online + offline data to show what truly drives revenue." />
-
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header fade-down">
     <div class="container nav">
 
-      <!-- LOGO FIXED HERE -->
+      <!-- LOGO -->
       <a class="logo" href="index.html">
         <img src="assets/img/logo.svg" alt="Salecompass Logo" class="logo-img">
       </a>
@@ -150,8 +149,7 @@
   <footer class="site-footer fade-up">
     <div class="container footer-grid">
       <div>
-        <!-- FOOTER LOGO UPDATED -->
-        <img src="assets/img/logo.svg" alt="Salecompass Logo" class="logo-img" style="margin-bottom:8px;">
+        <img src="assets/img/logo.svg" alt="Salecompass Footer Logo" class="logo-img" style="margin-bottom:12px;">
         <p class="muted small">Know What Works. Invest Where It Matters.</p>
       </div>
 
@@ -189,23 +187,19 @@
     </div>
   </footer>
 
-  <!-- MOBILE TOGGLE -->
+  <!-- MOBILE MENU SCRIPT -->
   <script>
     const btn = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
 
-    if (btn && menu) {
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        menu.classList.toggle("open");
-      });
-    }
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
+    });
 
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
-
