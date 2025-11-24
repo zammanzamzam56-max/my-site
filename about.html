@@ -195,6 +195,7 @@
         <h4>Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="success-stories.html">Success Stories</a></li>
           <li><a href="research.html">R&amp;D</a></li>
@@ -229,34 +230,32 @@
 
 <!-- CLEAN JS -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
 
-  // MOBILE MENU
-  const btn = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
-  btn?.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    menu.classList.toggle('open');
-  });
-
-  // FOOTER YEAR
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // ANIMATIONS
-  const animatedEls = document.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right, .scale-up');
-  function animateOnScroll() {
-    animatedEls.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) el.classList.add('visible');
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
     });
   }
-  window.addEventListener('scroll', animateOnScroll);
-  animateOnScroll();
 
+  // Footer Year
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Animations
+  const animated = document.querySelectorAll(".fade-up, .slide-in-left, .slide-in-right, .scale-up");
+  const animateOnScroll = () => {
+    animated.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+        el.classList.add("visible");
+      }
+    });
+  };
+  window.addEventListener("scroll", animateOnScroll);
+  animateOnScroll();
 });
 </script>
-
-</body>
-</html>
