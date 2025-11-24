@@ -12,8 +12,6 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
-
-      <!-- LOGO -->
       <a class="logo" href="index.html">
         <img src="assets/img/logo.svg" alt="Salecompass Logo">
       </a>
@@ -32,11 +30,10 @@
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-up">
       <div class="container">
 
         <div class="hero-image">
@@ -56,66 +53,43 @@
       </div>
     </section>
 
-    <!-- CORE FEATURES SECTION... (unchanged) -->
+    <!-- =========================================
+         PROBLEM SECTION
+    ========================================== -->
+    <section class="problem-section fade-up">
+      <div class="container">
 
-  </main>
+        <h2>What Problem Does SaleCompass Solve?</h2>
+        <p class="intro">
+          Marketing is complex. Customers jump between Instagram, Google, websites, email, delivery apps, and physical stores.
+          SMEs don’t have the tools or time to measure everything — so money is wasted on guesswork.
+        </p>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-
-      <div>
-        <img src="assets/img/logo.svg" alt="Salecompass Logo" class="logo-img">
-        <p class="tiny">Know What Works. Invest Where It Matters.</p>
-      </div>
-
-      <div>
-        <h4>Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="research.html">R&amp;D</a></li>
-          <li><a href="contact.html">Contact</a></li>
+        <ul class="problem-list">
+          <li>• Which channel brings the highest ROI</li>
+          <li>• What actually influences buying decisions</li>
+          <li>• How many touchpoints lead to a sale</li>
+          <li>• Why campaigns work or fail</li>
+          <li>• Which customer segments are changing trends</li>
         </ul>
+
+        <div class="solution-box">
+          <h3>The SaleCompass Solution</h3>
+          <p>SaleCompass unifies all marketing and sales data — digital and physical — into a single, real-time AI-powered dashboard.</p>
+
+          <ul style="margin-top:12px;">
+            <li>✔ Track customer journeys across all channels</li>
+            <li>✔ See which campaigns drive actual sales</li>
+            <li>✔ Predict preferences and menu trends</li>
+            <li>✔ Optimise spend with AI recommendations</li>
+            <li>✔ Measure offline + online behaviour together</li>
+          </ul>
+        </div>
+
       </div>
+    </section>
 
-      <div>
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">Attribution Engine</a></li>
-          <li><a href="services.html">Predictive Analytics</a></li>
-          <li><a href="services.html">Dashboards</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Get in touch</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="container tiny">
-      © <span id="year"></span> Salecompass. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    const btn = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
-
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+    <!-- =========================================
+         CORE FEATURES
+    ========================================== -->
+    <section class="core-features fade-up">
