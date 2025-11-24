@@ -1,47 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile menu toggle
+<script>
+  // Mobile Menu Toggle
   const btn = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.menu');
-  if (btn && nav){
+  const menu = document.querySelector('.menu');
+
+  if (btn && menu) {
     btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('open');
     });
   }
 
-  // Footer year
+  // Footer Year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
-});
-const y = document.getElementById('year');
 
-if (y) { y.textContent = new Date().getFullYear(); }
-const btn = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.menu');   // <-- use .menu, not .nav
-if (btn && nav){
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    nav.classList.toggle('open');
-  });
-}
-<script>
-const toggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-
-toggle.addEventListener('click', () => {
-  menu.classList.toggle('show');
-});
-</script>
-</body>
-</html>
-<script>
-  const animatedEls = document.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right, .scale-up');
+  // About Page Animations
+  const animatedEls = document.querySelectorAll(
+    '.fade-up, .slide-in-left, .slide-in-right, .scale-up'
+  );
 
   function animateOnScroll() {
     animatedEls.forEach(el => {
       const position = el.getBoundingClientRect().top;
-      if (position < window.innerHeight - 100) {
+      if (position < window.innerHeight - 120) {
         el.classList.add('visible');
       }
     });
@@ -50,7 +32,3 @@ toggle.addEventListener('click', () => {
   window.addEventListener('scroll', animateOnScroll);
   window.addEventListener('load', animateOnScroll);
 </script>
-
-
-
-
