@@ -59,9 +59,7 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
 }
 
-.menu a.active {
-  color: #0077ff;
-}
+.menu a.active { color: #0077ff; }
 
 .btn.primary {
   background: #0077ff;
@@ -103,9 +101,7 @@ img { max-width: 100%; display: block; }
     display: none;
   }
 
-  .menu.open {
-    display: flex;
-  }
+  .menu.open { display: flex; }
 }
 
 /* =========================================
@@ -136,7 +132,49 @@ img { max-width: 100%; display: block; }
 }
 
 /* =========================================
-   CORE FEATURES
+   PROBLEM + SOLUTION SECTION
+========================================= */
+.problem-section {
+  padding: 60px 0 30px;
+}
+
+.problem-section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.problem-section p.intro {
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #444;
+}
+
+.problem-list {
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
+
+.problem-list li {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.solution-box {
+  background: #f7f9ff;
+  border-left: 6px solid #0077ff;
+  padding: 22px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.solution-box h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+/* =========================================
+   CORE FEATURES — Like Your Screenshot
 ========================================= */
 .core-features {
   padding: 60px 0;
@@ -144,8 +182,9 @@ img { max-width: 100%; display: block; }
 
 .core-title {
   font-size: 32px;
-  margin-bottom: 30px;
+  font-weight: 800;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .feature-grid {
@@ -155,11 +194,11 @@ img { max-width: 100%; display: block; }
 }
 
 .feature-card {
-  background: #fff;
-  border: 1px solid #ebebeb;
-  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
   border-radius: 14px;
-  text-align: center;
+  padding: 22px;
+  text-align: left;
   transition: 0.25s ease;
 }
 
@@ -169,15 +208,21 @@ img { max-width: 100%; display: block; }
 }
 
 .feature-card img {
-  height: 48px;
-  margin: 0 auto 14px;
+  height: 52px;
+  margin-bottom: 14px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 /* =========================================
-   FOOTER — DARK NAVY (OPTION A)
+   FOOTER — DARK NAVY
 ========================================= */
 .site-footer {
-  background: #0b0f19;       /* Dark Navy */
+  background: #0b0f19;
   padding: 50px 0 25px;
   border-top: 1px solid #111827;
   margin-top: 50px;
@@ -193,7 +238,7 @@ img { max-width: 100%; display: block; }
 .site-footer .logo-img {
   height: 48px;
   width: auto;
-  filter: brightness(1.1);   /* makes logo more visible */
+  filter: brightness(1.1);
 }
 
 .footer-links {
@@ -209,9 +254,7 @@ img { max-width: 100%; display: block; }
   font-size: 15px;
 }
 
-.footer-links li a:hover {
-  color: #ffffff;
-}
+.footer-links li a:hover { color: #ffffff; }
 
 .tiny { 
   font-size: 14px;
