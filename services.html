@@ -6,8 +6,8 @@
   <title>Services | SaleCompass</title>
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Page-specific Animations -->
   <style>
+    /* SIMPLE ANIMATION */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -22,11 +22,11 @@
 
 <body>
 
-  <!-- HEADER (Same as index) -->
+  <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Salecompass Logo">
+        <img src="assets/img/logo.svg" alt="SaleCompass Logo">
       </a>
 
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
@@ -43,7 +43,7 @@
     </div>
   </header>
 
-  <!-- MAIN SECTION -->
+  <!-- ===================== MAIN START ===================== -->
   <main class="section fade-up">
     <div class="container">
       <h1 style="margin-bottom:.25rem;font-weight:800;">Pricing Plans</h1>
@@ -51,11 +51,10 @@
         Choose the plan that fits your stage and scale.
       </p>
 
-      <!-- PRICING GRID -->
+      <!-- ========== PRICING GRID ========== -->
       <section class="pricing fade-up">
-
         <div class="plans-grid">
-          
+
           <!-- FREE -->
           <article class="plan">
             <header class="plan-head">
@@ -165,7 +164,7 @@
     </div>
   </main>
 
-  <!-- FOOTER (Same as Index) -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer fade-up">
     <div class="container footer-grid">
 
@@ -210,7 +209,7 @@
     </div>
   </footer>
 
-  <!-- UNIVERSAL JS (Works on all pages) -->
+  <!-- ===================== UNIVERSAL JS ===================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -241,7 +240,6 @@
 
       reveal();
       window.addEventListener('scroll', reveal);
-
     });
   </script>
 
