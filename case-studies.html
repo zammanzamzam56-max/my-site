@@ -3,93 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Case Studies — Salecompass</title>
+  <title>Case Studies — SaleCompass</title>
   <link rel="stylesheet" href="assets/styles.css">
 
-  <!-- Page-specific animations + enhancements -->
   <style>
-    /* Fade-in animations */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(25px);
-      animation: fadeUp .8s ease forwards;
-    }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .delay-1 { animation-delay: .2s; }
-    .delay-2 { animation-delay: .4s; }
-    .delay-3 { animation-delay: .6s; }
+    .fade-up { opacity:0; transform:translateY(25px); transition:.7s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
 
-    /* Case study cards aesthetic */
+    .delay-1 { transition-delay:.2s; }
+    .delay-2 { transition-delay:.4s; }
+    .delay-3 { transition-delay:.6s; }
+
     .case-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-      margin-top: 28px;
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+      gap:28px;
+      margin-top:28px;
     }
 
     .case-card {
-      background: #fff;
-      padding: 28px;
-      border-radius: 16px;
-      border: 1px solid #e8e8e8;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      transition: all .3s ease;
-      position: relative;
+      background:#fff;
+      padding:28px;
+      border-radius:16px;
+      border:1px solid #e8e8e8;
+      box-shadow:0 4px 10px rgba(0,0,0,0.06);
+      transition:.3s ease;
+      position:relative;
     }
 
     .case-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transform:translateY(-6px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.12);
     }
 
     .case-card .badge {
-      background: #007aff;
-      color: #fff;
-      font-size: .75rem;
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-weight: 600;
-      position: absolute;
-      top: -12px;
-      right: 12px;
+      background:#007aff;
+      color:#fff;
+      font-size:.75rem;
+      padding:6px 10px;
+      border-radius:8px;
+      font-weight:600;
+      position:absolute;
+      top:-12px;
+      right:12px;
     }
 
-    .case-card h3 {
-      font-size: 1.25rem;
-      margin-top: 12px;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-
-    .case-card p {
-      margin-bottom: 10px;
-      color: #444;
-      line-height: 1.5;
-      font-size: .95rem;
-    }
-
-    .case-card ul li {
-      margin-bottom: 6px;
-      font-size: .9rem;
-    }
-
-    /* Mobile */
-    @media(max-width: 880px) {
-      .case-grid {
-        grid-template-columns: 1fr;
-      }
+    @media(max-width:880px){
+      .case-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header fade-up">
+  <!-- HEADER (Fixed: now uses logo.svg same as index) -->
+  <header class="site-header">
     <div class="container nav">
-      <a class="logo" href="index.html">Salecompass</a>
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" alt="SaleCompass Logo">
+      </a>
 
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
@@ -100,7 +72,7 @@
         <a class="active" href="case-studies.html">Case Studies</a>
         <a href="research.html">R&amp;D</a>
         <a href="success-stories.html">Success Stories</a>
-        <a class="btn" href="contact.html">Contact</a>
+        <a class="btn primary" href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -113,8 +85,8 @@
       </p>
 
       <div class="case-grid fade-up delay-2">
-        
-        <!-- CASE STUDY 1 -->
+
+        <!-- CASE 1 -->
         <article class="case-card">
           <span class="badge">Case Study 1</span>
           <h3>Project Alpha — SME Growth Boost</h3>
@@ -122,12 +94,12 @@
 
           <ul>
             <li><strong>Problem:</strong> No clarity on which channels drove sales.</li>
-            <li><strong>Approach:</strong> Implemented multi-channel attribution + POS sync.</li>
-            <li><strong>Result:</strong> +34% ROAS improvement within 6 weeks.</li>
+            <li><strong>Approach:</strong> Multi-channel attribution + POS sync.</li>
+            <li><strong>Result:</strong> +34% ROAS improvement in 6 weeks.</li>
           </ul>
         </article>
 
-        <!-- CASE STUDY 2 -->
+        <!-- CASE 2 -->
         <article class="case-card delay-1">
           <span class="badge">Case Study 2</span>
           <h3>Project Beta — Restaurant Chain Analytics</h3>
@@ -144,18 +116,20 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (Fixed: now uses logo.svg) -->
   <footer class="site-footer fade-up delay-3">
     <div class="container footer-grid">
+
       <div>
-        <div class="logo">Salecompass</div>
-        <p class="small muted">Know What Works. Invest Where It Matters.</p>
+        <img src="assets/img/logo.svg" alt="SaleCompass Logo" class="logo-img">
+        <p class="tiny">Know What Works. Invest Where It Matters.</p>
       </div>
 
       <div>
         <h4>Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="success-stories.html">Success Stories</a></li>
           <li><a href="research.html">R&amp;D</a></li>
@@ -182,22 +156,39 @@
     </div>
 
     <div class="container tiny muted" style="padding-top:12px;">
-      © <span id="year"></span> Salecompass. All rights reserved.
+      © <span id="year"></span> SaleCompass. All rights reserved.
     </div>
   </footer>
 
-  <!-- TOGGLE SCRIPT -->
+  <!-- UNIVERSAL MENU TOGGLE (Works on ALL pages now) -->
   <script>
-    const btn = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+    document.addEventListener("DOMContentLoaded", () => {
 
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
-      menu.classList.toggle("open");
+      const btn = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+
+      if (btn && menu) {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!expanded));
+          menu.classList.toggle("open");
+        });
+      }
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Scroll animations
+      document.querySelectorAll(".fade-up").forEach(el => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 50) el.classList.add("visible");
+
+        window.addEventListener("scroll", () => {
+          const top = el.getBoundingClientRect().top;
+          if (top < window.innerHeight - 50) el.classList.add("visible");
+        });
+      });
+
     });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
