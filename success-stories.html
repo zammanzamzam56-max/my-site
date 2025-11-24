@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Success Stories — Salecompass</title>
+  <title>Success Stories — SaleCompass</title>
   <link rel="stylesheet" href="assets/styles.css">
 
   <!-- Premium SaaS Animations -->
@@ -69,20 +69,26 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (MATCHING INDEX) -->
   <header class="site-header">
     <div class="container nav">
-      <a class="logo" href="index.html">Salecompass</a>
+
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" alt="Salecompass Logo" class="logo-img">
+      </a>
+
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      <nav class="menu" role="navigation">
+
+      <nav class="menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="research.html">R&amp;D</a>
         <a class="active" href="success-stories.html">Success Stories</a>
-        <a class="btn" href="contact.html">Contact</a>
+        <a class="btn primary" href="contact.html">Contact</a>
       </nav>
+
     </div>
   </header>
 
@@ -99,9 +105,9 @@
           <p>
             How a small food business gained clarity on its marketing performance:
             <br><br>
-            • **Problem:** No idea which marketing channels actually generated sales.  
-            • **Action:** Connected Instagram, Google, POS + reviews.  
-            • **Result:** 27% increase in ROI and accurate channel attribution.
+            • <strong>Problem:</strong> No idea which marketing channels generated sales.<br>
+            • <strong>Action:</strong> Connected Instagram, Google, POS + reviews.<br>
+            • <strong>Result:</strong> 27% increase in ROI & clear attribution.
           </p>
         </article>
 
@@ -110,11 +116,11 @@
           <span class="badge">Success Story 2</span>
           <h3>Scaling What Works</h3>
           <p>
-            A growing retail brand used SaleCompass AI to double down on winning channels:
+            A retail brand used SaleCompass AI to scale high-performing channels:
             <br><br>
-            • **Problem:** High ad spend with unpredictable results.  
-            • **Action:** Trend detection + sentiment analysis + demand prediction.  
-            • **Result:** 41% drop in wasted ad spend within 30 days.
+            • <strong>Problem:</strong> High ad spend with unpredictable results.<br>
+            • <strong>Action:</strong> Trend detection + sentiment + demand prediction.<br>
+            • <strong>Result:</strong> 41% drop in wasted ad spend in 30 days.
           </p>
         </article>
 
@@ -122,11 +128,12 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (MATCHING INDEX) -->
   <footer class="site-footer">
     <div class="container footer-grid">
+
       <div>
-        <div class="logo">Salecompass</div>
+        <img src="assets/img/logo.svg" alt="SaleCompass Logo" class="logo-img">
         <p class="small muted">Know What Works. Invest Where It Matters.</p>
       </div>
 
@@ -157,14 +164,15 @@
           <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
         </ul>
       </div>
+
     </div>
 
     <div class="container tiny muted" style="padding-top:12px;">
-      © <span id="year"></span> Salecompass. All rights reserved.
+      © <span id="year"></span> SaleCompass. All rights reserved.
     </div>
   </footer>
 
-  <!-- SCROLL REVEAL + TOGGLE -->
+  <!-- TOGGLE + SCROLL REVEAL -->
   <script>
     const btn = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
@@ -178,17 +186,17 @@
     }
 
     // Scroll reveal
-    document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('show');
+    document.querySelectorAll('.fade-up, .slide-left, .slide-right')
+      .forEach(el => {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+          });
         });
-      }, { threshold: 0.2 });
-      observer.observe(el);
-    });
+        obs.observe(el);
+      });
 
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
