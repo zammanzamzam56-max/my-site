@@ -262,3 +262,229 @@ img { max-width: 100%; display: block; }
   text-align: center;
   margin-top: 25px;
 }
+/* =========================================
+   ABOUT PAGE – PREMIUM REDESIGN
+   (Hero, Cards, MV, Values, Timeline, Why Us)
+========================================= */
+
+/* -------- HERO SECTION -------- */
+.about-hero {
+  background: #f8f9fb;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.about-hero .hero-subtext {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* -------- ABOUT CARD -------- */
+.about-section {
+  padding: 50px 0;
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 22px rgba(0,0,0,0.06);
+  line-height: 1.75;
+}
+
+.about-card h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+/* -------- MISSION & VISION -------- */
+.mv-section {
+  padding: 60px 0;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.mv-card {
+  background: #f7f9ff;
+  padding: 30px;
+  border-left: 6px solid #0077ff;
+  border-radius: 14px;
+  box-shadow: 0px 4px 18px rgba(0,0,0,0.04);
+}
+
+.mv-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* -------- VALUES -------- */
+.values-section {
+  padding: 60px 0;
+}
+
+.center-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.value-card {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0px 6px 24px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0px 12px 28px rgba(0,0,0,0.08);
+}
+
+.value-card img {
+  height: 52px;
+  margin-bottom: 14px;
+}
+
+.value-card h4 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+/* -------- TIMELINE -------- */
+.timeline-section {
+  padding: 60px 0;
+}
+
+.timeline {
+  border-left: 3px solid #0077ff;
+  padding-left: 30px;
+  margin-top: 30px;
+}
+
+.timeline-item {
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: #0077ff;
+  border-radius: 50%;
+  position: absolute;
+  left: -38px;
+  top: 4px;
+}
+
+.timeline-year {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.timeline-item p {
+  margin-top: 6px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* -------- WHY US -------- */
+.why-section {
+  padding: 60px 0;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.why-card {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 14px;
+  box-shadow: 0px 4px 18px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0px 12px 28px rgba(0,0,0,0.08);
+}
+
+.why-card h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* =========================================
+   ANIMATIONS (Mixed — Fade + Slide + Scale)
+========================================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: 0.7s ease-out;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: 0.7s ease-out;
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.scale-up {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: 0.7s ease-out;
+}
+
+.scale-up.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
