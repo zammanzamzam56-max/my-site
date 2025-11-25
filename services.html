@@ -7,26 +7,18 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* SIMPLE ANIMATION */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.7s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-up { opacity:0; transform:translateY(30px); transition:.7s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
   </style>
 </head>
 
 <body>
 
-  <!-- ===================== HEADER ===================== -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo">
+        <img src="assets/img/logo.svg" alt="Salecompass Logo">
       </a>
 
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
@@ -43,20 +35,18 @@
     </div>
   </header>
 
-  <!-- ===================== MAIN START ===================== -->
+  <!-- MAIN -->
   <main class="section fade-up">
     <div class="container">
-      <h1 style="margin-bottom:.25rem;font-weight:800;">Pricing Plans</h1>
-      <p class="muted" style="margin-bottom:2rem;">
-        Choose the plan that fits your stage and scale.
-      </p>
+      <h1 style="margin-bottom:6px; font-weight:800;">Pricing Plans</h1>
+      <p class="muted" style="margin-bottom:28px;">Choose the plan that fits your stage and scale.</p>
 
-      <!-- ========== PRICING GRID ========== -->
       <section class="pricing fade-up">
+
         <div class="plans-grid">
 
           <!-- FREE -->
-          <article class="plan">
+          <article class="plan fade-up">
             <header class="plan-head">
               <h3>Free</h3>
               <p class="price">£0 <span>/ month</span></p>
@@ -66,13 +56,9 @@
               <li>Multi-Channel Dashboard (Basic)</li>
               <li>1 Channel Integration</li>
               <li>200 AI Insights</li>
-              <li>Basic Attribution</li>
-              <li>Manual POS Upload</li>
-              <li>Review Sentiment Summary</li>
               <li>Email Support</li>
               <li class="bad">Predictive Analytics</li>
               <li class="bad">Recommendations</li>
-              <li class="bad">Real-Time Alerts</li>
             </ul>
 
             <div class="plan-actions">
@@ -81,7 +67,7 @@
           </article>
 
           <!-- STARTER -->
-          <article class="plan">
+          <article class="plan fade-up delay-1">
             <header class="plan-head">
               <h3>Starter</h3>
               <p class="price">£29 <span>/ month</span></p>
@@ -91,23 +77,17 @@
               <li>All Free Features</li>
               <li>5 Channel Integrations</li>
               <li>1,000 AI Insights</li>
-              <li>Standard Attribution</li>
-              <li>POS / CRM Sync</li>
-              <li>Basic Trend Detection</li>
-              <li>Full Sentiment Analysis</li>
               <li>Weekly Reports</li>
               <li>Priority Email Support</li>
-              <li class="bad">Real-Time Alerts</li>
-              <li class="bad">Demand Forecasting</li>
             </ul>
 
             <div class="plan-actions">
-              <button class="btn full">Subscribe</button>
+              <a href="YOUR_STRIPE_CHECKOUT_URL" class="btn full">Subscribe</a>
             </div>
           </article>
 
           <!-- GROWTH -->
-          <article class="plan">
+          <article class="plan fade-up delay-2">
             <div class="badge">Most Popular</div>
             <header class="plan-head">
               <h3>Growth</h3>
@@ -117,23 +97,19 @@
             <ul class="features">
               <li>All Starter Features</li>
               <li>10 Integrations</li>
-              <li>5,000 AI Insights</li>
-              <li>Advanced Attribution</li>
               <li>Predictive Analytics</li>
               <li>Real-Time Alerts</li>
-              <li>Campaign Suggestions</li>
-              <li>Menu Trend Detection</li>
-              <li>Unlimited Offline Data Imports</li>
-              <li>Chat + Priority Support</li>
+              <li>Trend Detection</li>
+              <li>Priority Support</li>
             </ul>
 
             <div class="plan-actions">
-              <button class="btn full">Subscribe</button>
+              <a href="YOUR_STRIPE_CHECKOUT_URL" class="btn full">Subscribe</a>
             </div>
           </article>
 
           <!-- PREMIUM -->
-          <article class="plan">
+          <article class="plan fade-up delay-3">
             <div class="badge alt">Best Option</div>
             <header class="plan-head">
               <h3>Premium</h3>
@@ -141,21 +117,15 @@
             </header>
 
             <ul class="features">
-              <li>All Growth Features</li>
               <li>Unlimited Channels</li>
-              <li>Unlimited AI Insights</li>
               <li>AI Recommendation Engine</li>
               <li>Customer Journey Mapping</li>
-              <li>Loyalty Intelligence</li>
               <li>Competitor Monitoring</li>
-              <li>Full API Access</li>
-              <li>Custom Reporting</li>
               <li>Dedicated Support</li>
-              <li>Onboarding Call</li>
             </ul>
 
             <div class="plan-actions">
-              <button class="btn full">Subscribe</button>
+              <a href="YOUR_STRIPE_CHECKOUT_URL" class="btn full">Subscribe</a>
             </div>
           </article>
 
@@ -164,12 +134,11 @@
     </div>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
   <footer class="site-footer fade-up">
     <div class="container footer-grid">
-
       <div>
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo" class="logo-img">
+        <img src="assets/img/logo.svg" class="logo-img" alt="Logo">
         <p class="tiny">Know What Works. Invest Where It Matters.</p>
       </div>
 
@@ -179,8 +148,8 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="research.html">R&D</a></li>
           <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="research.html">R&amp;D</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -193,15 +162,6 @@
           <li><a href="services.html">Dashboards</a></li>
         </ul>
       </div>
-
-      <div>
-        <h4>Get in Touch</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
-        </ul>
-      </div>
-
     </div>
 
     <div class="container tiny">
@@ -209,40 +169,36 @@
     </div>
   </footer>
 
-  <!-- ===================== UNIVERSAL JS ===================== -->
+  <!-- UNIVERSAL JS -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
-      // MOBILE MENU
-      const btn = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
+      // TOGGLE MENU
+      const btn = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
 
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', !expanded);
-        menu.classList.toggle('open');
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", !expanded);
+        menu.classList.toggle("open");
       });
 
       // FOOTER YEAR
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // ANIMATIONS
-      const animated = document.querySelectorAll('.fade-up');
-
-      function reveal() {
-        animated.forEach(el => {
-          const pos = el.getBoundingClientRect().top;
-          if (pos < window.innerHeight - 60) {
-            el.classList.add('visible');
+      // ANIMATION
+      const els = document.querySelectorAll(".fade-up");
+      const reveal = () => {
+        els.forEach(el => {
+          if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+            el.classList.add("visible");
           }
         });
-      }
-
+      };
       reveal();
-      window.addEventListener('scroll', reveal);
+      window.addEventListener("scroll", reveal);
     });
   </script>
 
 </body>
 </html>
-
