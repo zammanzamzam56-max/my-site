@@ -357,3 +357,24 @@ img { max-width: 100%; display: block; }
   position: relative;
   z-index: 2;
 }
+/* FIX FOOTER HIDING */
+.page-hero {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 32, 82, 0.55);
+  z-index: -1; /* FIX */
+}
+
+/* FIX BUTTON CLICK ISSUES FROM FADE-UP */
+.fade-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
