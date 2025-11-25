@@ -503,6 +503,29 @@ img { max-width: 100%; display: block; }
   background:rgba(0, 32, 82, 0.55);
   backdrop-filter: blur(2px);
 }
+/* RESEARCH PAGE HERO — FINAL FIX */
+.page-hero {
+  background-image: url("../img/Research Photo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 90px 0;
+  color: #fff;
+  position: relative;
+}
+
+/* Navy blue overlay */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 32, 82, 0.55);
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+}
 
 
 
