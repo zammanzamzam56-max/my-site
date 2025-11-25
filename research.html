@@ -22,11 +22,12 @@
     .slide-left { opacity:0; transform:translateX(-40px); transition:.8s ease; }
     .slide-left.show { opacity:1; transform:translateX(0); }
 
-    /* HERO BACKGROUND FIX — CORRECT IMAGE PATH */
+    /* HERO BACKGROUND — FIXED PATH */
     .page-hero {
-      background-image: url(../img/Research Photo.png);
+      background-image: url("assets/img/Research Photo.png");
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       padding: 90px 0;
       color: #fff;
       position: relative;
@@ -66,11 +67,7 @@
       box-shadow:0 12px 28px rgba(0,0,0,0.08);
     }
 
-    /* Light blue background sections */
-    .section-alt {
-      background:#f8fbff;
-    }
-
+    .section-alt { background:#f8fbff; }
   </style>
 </head>
 
@@ -79,11 +76,9 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
-
       <a class="logo" href="index.html">
         <img src="assets/img/logo.svg" alt="Salecompass Logo">
       </a>
-
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
       <nav class="menu">
@@ -95,12 +90,10 @@
         <a href="success-stories.html">Success Stories</a>
         <a class="btn primary" href="contact.html">Contact</a>
       </nav>
-
     </div>
   </header>
 
-
-  <!-- PAGE HERO WITH BACKGROUND + BLUE TINT -->
+  <!-- PAGE HERO WITH IMAGE -->
   <section class="page-hero fade-up">
     <div class="container">
       <p class="kicker">Research &amp; Development</p>
@@ -112,7 +105,6 @@
     </div>
   </section>
 
-
   <!-- SECTION 1 -->
   <section class="section fade-up">
     <div class="container">
@@ -120,7 +112,6 @@
       <h3>Understanding the Real Problems Before Building the Solution</h3>
 
       <div class="grid-2">
-
         <div class="slide-left">
           <p>
             At Salecompass, research began long before a single line of code was written.
@@ -157,11 +148,9 @@
           <figure class="media-card"><img src="assets/img/photo1.png"></figure>
           <figure class="media-card"><img src="assets/img/photo2.png"></figure>
         </div>
-
       </div>
     </div>
   </section>
-
 
   <!-- ARCHITECTURE -->
   <section class="section section-alt fade-up">
@@ -174,7 +163,6 @@
       </figure>
     </div>
   </section>
-
 
   <!-- FOUNDER -->
   <section class="section fade-up">
@@ -191,7 +179,6 @@
     </div>
   </section>
 
-
   <!-- SECTION 2 -->
   <section class="section section-alt fade-up">
     <div class="container">
@@ -201,7 +188,6 @@
       <p>Backed by research presented in IEEE journals & conferences.</p>
 
       <div class="pub-list">
-
         <article class="pub-card slide-left">
           <h4>📘 Publication 1 — Ethical AI in Marketing</h4>
           <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
@@ -212,7 +198,6 @@
           <h4>📗 Publication 2 — AI in Multi-Channel Food Marketing</h4>
           <p>Research on attribution, POS integration, insights & behaviour prediction.</p>
         </article>
-
       </div>
 
       <div class="grid-3 highlights">
@@ -220,15 +205,12 @@
         <div class="card fade-up"><h4>Marketing Analytics</h4><p>Unifies online + offline touchpoints.</p></div>
         <div class="card fade-up"><h4>Continuous R&D</h4><p>Always improving with live behaviour data.</p></div>
       </div>
-
     </div>
   </section>
-
 
   <!-- FOOTER -->
   <footer class="site-footer fade-up">
     <div class="container footer-grid">
-
       <div>
         <img src="assets/img/logo.svg" class="logo-img" alt="Salecompass Logo">
         <p class="tiny">Know What Works. Invest Where It Matters.</p>
@@ -261,7 +243,6 @@
           <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
         </ul>
       </div>
-
     </div>
 
     <div class="container tiny">
@@ -269,23 +250,18 @@
     </div>
   </footer>
 
-
-  <!-- TOGGLE + ANIMATION SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
-    // MENU TOGGLE
     const btn = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
-
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!expanded));
       menu.classList.toggle("open");
     });
 
-    // YEAR
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // SCROLL REVEAL
     document.querySelectorAll('.fade-up, .slide-right, .slide-left').forEach(el => {
       const obs = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
