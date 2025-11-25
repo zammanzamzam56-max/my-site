@@ -6,218 +6,213 @@
   <title>Pricing Plans | SaleCompass</title>
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Page Animations -->
   <style>
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.7s ease;
-    }
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
+    /* ===== PAGE BACKGROUND ===== */
+    body {
+      background: #f4f6fb;
     }
 
-    .pricing-header {
+    /* ===== PAGE HERO ===== */
+    .pricing-hero {
       text-align: center;
-      margin-top: 40px;
+      padding: 50px 0 10px;
     }
-    .pricing-header h1 {
-      font-size: 42px;
+    .pricing-hero h1 {
+      font-size: 38px;
       font-weight: 800;
-      color: #0b0f19;
+      color: #0b1f3f;
     }
-    .pricing-header p {
-      margin-top: 10px;
-      color: #444;
-      font-size: 18px;
-    }
-
-    /* CONTAINER FIX */
-    .plans-wrapper {
-      margin-top: 50px;
-      padding-bottom: 60px;
-    }
-
-    /* Pricing Grid */
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    /* Cards */
-    .plan {
-      background: #ffffff;
-      border: 1px solid #dce3ef;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
-      transition: 0.3s ease;
-    }
-    .plan:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-    }
-
-    .plan h3 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #0b0f19;
-    }
-
-    .price {
-      font-size: 30px;
-      font-weight: 800;
-      color: #003366;
+    .pricing-hero p {
+      color: #555;
       margin-top: 8px;
     }
 
-    .features {
-      margin-top: 18px;
+    /* ===== PRICING GRID ===== */
+    .pricing-container {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .plan {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      border: 1px solid #e5e8ef;
+      transition: 0.25s ease;
+    }
+    .plan:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+    }
+
+    .plan h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0b1f3f;
+    }
+
+    .plan .price {
+      margin-top: 6px;
+      font-size: 26px;
+      font-weight: 800;
+      color: #0b3b83;
+    }
+
+    .plan ul {
+      margin-top: 16px;
       line-height: 1.55;
       color: #444;
+      padding-left: 18px;
     }
 
-    .bad {
-      opacity: 0.4;
-      text-decoration: line-through;
-    }
-
-    .btn-subscribe {
-      margin-top: 20px;
+    .plan button {
       width: 100%;
-      background: #003366;
+      margin-top: 20px;
+      background: #003a78;
       color: #fff;
-      padding: 12px;
-      border-radius: 8px;
       border: none;
+      padding: 12px;
       font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
       cursor: pointer;
       transition: 0.25s ease;
     }
-    .btn-subscribe:hover {
-      background: #0055aa;
+    .plan button:hover {
+      background: #001f45;
     }
 
-    .badge {
-      background: #003366;
-      color: #fff;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      float: right;
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 1100px) {
+      .pricing-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 700px) {
+      .pricing-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER (Same as Index) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo">
+        <img src="assets/img/logo.svg" alt="SaleCompass Logo" />
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+      </button>
 
       <nav class="menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a class="active" href="services.html">Services</a>
         <a href="case-studies.html">Case Studies</a>
-        <a href="research.html">R&D</a>
+        <a href="research.html">R&amp;D</a>
         <a href="success-stories.html">Success Stories</a>
         <a class="btn primary" href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main>
-    <div class="container pricing-header fade-up">
-      <h1>Pricing Plans</h1>
-      <p>Choose the plan that fits where your business is today — and scale when you're ready.</p>
-    </div>
+  <!-- HERO -->
+  <section class="pricing-hero fade-up">
+    <h1>Pricing Plans</h1>
+    <p>Choose the plan that fits your business — and scale when you're ready.</p>
+  </section>
 
-    <div class="container plans-wrapper fade-up">
-      <div class="plans-grid">
 
-        <!-- FREE -->
-        <article class="plan fade-up">
-          <h3>Free</h3>
-          <p class="price">£0 <span>/month</span></p>
+  <!-- PRICING GRID -->
+  <main class="container">
+    <div class="pricing-container">
 
-          <ul class="features">
-            <li>Basic Dashboard</li>
-            <li>1 Channel Integration</li>
-            <li>200 AI Insights</li>
-            <li>Email Support</li>
-            <li class="bad">Predictive Analytics</li>
-            <li class="bad">Real-Time Alerts</li>
-          </ul>
+      <!-- FREE -->
+      <article class="plan fade-up">
+        <h3>Free</h3>
+        <p class="price">£0 / month</p>
 
-          <button class="btn-subscribe" onclick="checkoutFree()">Current Plan</button>
-        </article>
+        <ul>
+          <li>Basic Dashboard</li>
+          <li>1 Channel Integration</li>
+          <li>200 AI Insights</li>
+          <li>Email Support</li>
+        </ul>
 
-        <!-- STARTER -->
-        <article class="plan fade-up">
-          <h3>Starter</h3>
-          <p class="price">£29 <span>/month</span></p>
+        <button disabled style="background:#ccc;cursor:not-allowed;">Current Plan</button>
+      </article>
 
-          <ul class="features">
-            <li>All Free Features</li>
-            <li>5 Integrations</li>
-            <li>1,000 AI Insights</li>
-            <li>Weekly Reports</li>
-          </ul>
+      <!-- STARTER -->
+      <article class="plan fade-up">
+        <h3>Starter</h3>
+        <p class="price">£29 / month</p>
 
-          <button class="btn-subscribe" onclick="checkoutStarter()">Subscribe</button>
-        </article>
+        <ul>
+          <li>5 Integrations</li>
+          <li>1,000 AI Insights</li>
+          <li>Weekly Reports</li>
+        </ul>
 
-        <!-- GROWTH -->
-        <article class="plan fade-up">
-          <span class="badge">Most Popular</span>
-          <h3>Growth</h3>
-          <p class="price">£59 <span>/month</span></p>
+        <button onclick="subscribeStarter()">Subscribe</button>
+      </article>
 
-          <ul class="features">
-            <li>All Starter Features</li>
-            <li>10 Integrations</li>
-            <li>5,000 AI Insights</li>
-            <li>Predictive Analytics</li>
-          </ul>
+      <!-- GROWTH -->
+      <article class="plan fade-up">
+        <h3>Growth</h3>
+        <p class="price">£59 / month</p>
 
-          <button class="btn-subscribe" onclick="checkoutGrowth()">Subscribe</button>
-        </article>
+        <ul>
+          <li>10 Integrations</li>
+          <li>5,000 AI Insights</li>
+          <li>Predictive Analytics</li>
+        </ul>
 
-        <!-- PREMIUM -->
-        <article class="plan fade-up">
-          <span class="badge">Best Value</span>
-          <h3>Premium</h3>
-          <p class="price">£99 <span>/month</span></p>
+        <button onclick="subscribeGrowth()">Subscribe</button>
+      </article>
 
-          <ul class="features">
-            <li>Unlimited Channels</li>
-            <li>Unlimited Insights</li>
-            <li>Recommendation Engine</li>
-            <li>Dedicated Support</li>
-          </ul>
+      <!-- PREMIUM -->
+      <article class="plan fade-up">
+        <h3>Premium</h3>
+        <p class="price">£99 / month</p>
 
-          <button class="btn-subscribe" onclick="checkoutPremium()">Subscribe</button>
-        </article>
+        <ul>
+          <li>Unlimited Channels</li>
+          <li>Unlimited Insights</li>
+          <li>Recommendation Engine</li>
+        </ul>
 
-      </div>
+        <button onclick="subscribePremium()">Subscribe</button>
+      </article>
+
     </div>
   </main>
+
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <img src="assets/img/logo.svg" class="logo-img">
+        <img src="assets/img/logo.svg" class="logo-img" />
         <p class="tiny">Know What Works. Invest Where It Matters.</p>
       </div>
 
@@ -225,9 +220,9 @@
         <h4>Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="research.html">R&D</a></li>
+          <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="research.html">R&amp;D</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -235,9 +230,17 @@
       <div>
         <h4>Services</h4>
         <ul class="footer-links">
-          <li><a href="services.html">Plans</a></li>
-          <li><a href="services.html">Analytics</a></li>
+          <li><a href="services.html">Attribution Engine</a></li>
+          <li><a href="services.html">Predictive Analytics</a></li>
           <li><a href="services.html">Dashboards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
         </ul>
       </div>
     </div>
@@ -245,40 +248,68 @@
     <div class="container tiny">© <span id="year"></span> SaleCompass</div>
   </footer>
 
-  <!-- JS -->
+
+  <!-- STRIPE + MENU + ANIMATIONS -->
+  <script src="https://js.stripe.com/v3/"></script>
+
   <script>
+    const stripe = Stripe("pk_test_123"); // ← Replace with your key
+
+    function subscribeStarter() {
+      stripe.redirectToCheckout({
+        lineItems: [{ price: "price_123", quantity: 1 }],
+        mode: "subscription",
+        successUrl: window.location.origin + "/success.html",
+        cancelUrl: window.location.origin + "/services.html"
+      });
+    }
+
+    function subscribeGrowth() {
+      stripe.redirectToCheckout({
+        lineItems: [{ price: "price_456", quantity: 1 }],
+        mode: "subscription",
+        successUrl: window.location.origin + "/success.html",
+        cancelUrl: window.location.origin + "/services.html"
+      });
+    }
+
+    function subscribePremium() {
+      stripe.redirectToCheckout({
+        lineItems: [{ price: "price_789", quantity: 1 }],
+        mode: "subscription",
+        successUrl: window.location.origin + "/success.html",
+        cancelUrl: window.location.origin + "/services.html"
+      });
+    }
+
+
     // MOBILE MENU
     const btn = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('open');
+      });
+    }
 
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('open');
-      btn.setAttribute("aria-expanded", btn.getAttribute("aria-expanded") === "true" ? "false" : "true");
-    });
-
-    // YEAR
     document.getElementById("year").textContent = new Date().getFullYear();
 
+
     // ANIMATIONS
-    const animate = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('show');
+    const elements = document.querySelectorAll(".fade-up");
+
+    function reveal() {
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 100) {
+          el.classList.add("visible");
+        }
       });
-    }, { threshold: 0.2 });
-
-    animate.forEach(el => observer.observe(el));
-
-    // STRIPE CHECKOUT LINKS (no backend needed)
-    function checkoutStarter() {
-      window.location.href = "https://buy.stripe.com/test_StarterPlanLink";
     }
-    function checkoutGrowth() {
-      window.location.href = "https://buy.stripe.com/test_GrowthPlanLink";
-    }
-    function checkoutPremium() {
-      window.location.href = "https://buy.stripe.com/test_PremiumPlanLink";
-    }
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
   </script>
 
 </body>
