@@ -132,32 +132,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* =========================================
-   RESEARCH PAGE HERO — FIXED
-========================================= */
-.page-hero {
-  background-image: url("assets/img/Research Photo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 90px 0;
-  color: #fff;
-  position: relative;
-}
-
-.page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 32, 82, 0.55);
-}
-
-.page-hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* =========================================
-   PROBLEM + SOLUTION SECTION
+   PROBLEM SECTION
 ========================================= */
 .problem-section {
   padding: 60px 0 30px;
@@ -175,7 +150,10 @@ img { max-width: 100%; display: block; }
   color: #444;
 }
 
-.problem-list { margin-top: 14px; margin-bottom: 30px; }
+.problem-list {
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
 
 .problem-list li {
   margin-bottom: 10px;
@@ -259,6 +237,7 @@ img { max-width: 100%; display: block; }
 
 .site-footer .logo-img {
   height: 48px;
+  width: auto;
   filter: brightness(1.1);
 }
 
@@ -282,6 +261,29 @@ img { max-width: 100%; display: block; }
   color: #9ca3af;
   text-align: center;
   margin-top: 25px;
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+.about-hero {
+  background: #f8f9fb;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.about-hero .hero-subtext {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* =========================================
@@ -329,4 +331,30 @@ img { max-width: 100%; display: block; }
 .scale-up.visible {
   opacity: 1;
   transform: scale(1);
+}
+
+/* =========================================
+   RESEARCH PAGE HERO — CORRECTED
+========================================= */
+.page-hero {
+  background-image: url("/mnt/data/d1f0e201-b4cc-4e61-87b1-0e7130cdaf32.png"); /* ✅ correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 90px 0;
+  color: #fff;
+  position: relative;
+}
+
+/* Navy blue overlay */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 32, 82, 0.55);
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 2;
 }
