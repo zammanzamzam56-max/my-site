@@ -8,7 +8,7 @@
         content="How Salecompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- PREMIUM SAAS ANIMATIONS -->
+  <!-- PREMIUM ANIMATIONS + FIXES -->
   <style>
     /* Fade-up */
     .fade-up { opacity:0; transform:translateY(24px); transition:.8s ease; }
@@ -22,6 +22,41 @@
     .slide-left { opacity:0; transform:translateX(-40px); transition:.8s ease; }
     .slide-left.show { opacity:1; transform:translateX(0); }
 
+    /* HERO BACKGROUND FIX — ADD YOUR IMAGE HERE */
+    .page-hero {
+      background-image: url('/mnt/data/Research Photo.png');
+      background-size: cover;
+      background-position: center;
+      padding: 90px 0;
+      color: #fff;
+      position: relative;
+    }
+
+    /* NAVY BLUE TINT */
+    .page-hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0, 32, 82, 0.55); /* navy blue highlight */
+      backdrop-filter: blur(2px);
+    }
+
+    .page-hero .container {
+      position:relative;
+      z-index:2;
+    }
+
+    /* REDUCE SIZE OF ALL OTHER IMAGES (per request) */
+    .media-card img,
+    .diagram-card img,
+    .founder-photo img {
+      width: 80% !important;
+      max-width: 350px !important;
+      margin: 0 auto;
+      display: block;
+      border-radius: 14px;
+    }
+
     /* Hover cards */
     .media-card, .pub-card, .diagram-card, .card {
       transition:transform .25s ease, box-shadow .25s ease;
@@ -30,15 +65,18 @@
       transform:translateY(-6px);
       box-shadow:0 12px 28px rgba(0,0,0,0.08);
     }
-    .media-card img, .diagram-card img {
-      border-radius:14px; width:100%; height:auto;
+
+    /* Light blue background sections */
+    .section-alt {
+      background:#f8fbff; /* subtle blue */
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- UNIVERSAL HEADER (LOGO + TOGGLE FIXED) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
 
@@ -62,133 +100,132 @@
   </header>
 
 
-  <!-- MAIN -->
-  <main>
+  <!-- PAGE HERO WITH BACKGROUND + BLUE TINT -->
+  <section class="page-hero fade-up">
+    <div class="container">
+      <p class="kicker">Research &amp; Development</p>
+      <h1>Built on real market needs. Backed by scientific research. Powered by innovation.</h1>
+      <p class="lead">
+        Salecompass combines hands-on interviews with SMEs and peer-reviewed AI research
+        to build marketing intelligence that actually moves revenue for small and medium-sized businesses.
+      </p>
+    </div>
+  </section>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero fade-up">
-      <div class="container">
-        <p class="kicker">Research &amp; Development</p>
-        <h1>Built on real market needs. Backed by scientific research. Powered by innovation.</h1>
-        <p class="lead">
-          Salecompass combines hands-on interviews with SMEs and peer-reviewed AI research
-          to build marketing intelligence that actually moves revenue for small and medium-sized businesses.
-        </p>
-      </div>
-    </section>
 
-    <!-- SECTION 1 -->
-    <section class="section fade-up">
-      <div class="container">
-        <h2 class="section-title">SECTION 1 — Market Interviews & Need Analysis</h2>
-        <h3>Understanding the Real Problems Before Building the Solution</h3>
+  <!-- SECTION 1 -->
+  <section class="section fade-up">
+    <div class="container">
+      <h2 class="section-title">SECTION 1 — Market Interviews & Need Analysis</h2>
+      <h3>Understanding the Real Problems Before Building the Solution</h3>
 
-        <div class="grid-2">
+      <div class="grid-2">
 
-          <div class="slide-left">
-            <p>
-              At Salecompass, research began long before a single line of code was written.
-              Our founder, <strong>Danyal Mohiuddin</strong>, conducted extensive
-              <strong>market interviews, discovery meetings, and need-analysis surveys</strong>.
-            </p>
+        <div class="slide-left">
+          <p>
+            At Salecompass, research began long before a single line of code was written.
+            Our founder, <strong>Danyal Mohiuddin</strong>, conducted extensive
+            <strong>market interviews, discovery meetings, and need-analysis surveys</strong>.
+          </p>
 
-            <ul>
-              <li>CEOs of food businesses</li>
-              <li>Restaurant owners & managers</li>
-              <li>Marketing teams & digital agencies</li>
-              <li>Product/growth strategists</li>
-              <li>UK SME founders in retail & hospitality</li>
-            </ul>
+          <ul>
+            <li>CEOs of food businesses</li>
+            <li>Restaurant owners & managers</li>
+            <li>Marketing teams & digital agencies</li>
+            <li>Product/growth strategists</li>
+            <li>UK SME founders in retail & hospitality</li>
+          </ul>
 
-            <p>
-              The pattern was clear:
-              <strong>Businesses have data everywhere — but almost no clarity about what drives revenue.</strong>
-            </p>
+          <p>
+            The pattern was clear:
+            <strong>Businesses have data everywhere — but almost no clarity about what drives revenue.</strong>
+          </p>
 
-            <p>Workshops conducted across:</p>
+          <p>Workshops conducted across:</p>
 
-            <ul class="flag-list">
-              <li>🇬🇧 United Kingdom</li>
-              <li>🇫🇷 France</li>
-              <li>🇵🇰 Pakistan</li>
-              <li>🇳🇱 Netherlands</li>
-            </ul>
+          <ul class="flag-list">
+            <li>🇬🇧 United Kingdom</li>
+            <li>🇫🇷 France</li>
+            <li>🇵🇰 Pakistan</li>
+            <li>🇳🇱 Netherlands</li>
+          </ul>
 
-            <p>These insights shaped attribution, sentiment analysis, trend detection, POS sync, and predictions.</p>
-          </div>
-
-          <div class="media-stack slide-right">
-            <figure class="media-card"><img src="assets/img/photo1.png"></figure>
-            <figure class="media-card"><img src="assets/img/photo2.png"></figure>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ARCHITECTURE -->
-    <section class="section section-alt fade-up">
-      <div class="container">
-        <h3>From Interviews to Architecture</h3>
-        <p>Insights were transformed into Salecompass’ technical architecture.</p>
-
-        <figure class="diagram-card slide-up">
-          <<img src="assets/img/photo3.jpg" alt="Architecture diagram" />
-        </figure>
-      </div>
-    </section>
-
-    <!-- FOUNDER -->
-    <section class="section fade-up">
-      <div class="container">
-        <h2 class="section-title">About the Founder</h2>
-        <p>
-          Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics, and marketing science
-          forms the scientific backbone of Salecompass.
-        </p>
-
-        <figure class="media-card founder-photo slide-up">
-          <img src="assets/img/photo4.jpg" alt="Founder">
-        </figure>
-      </div>
-    </section>
-
-    <!-- SECTION 2 -->
-    <section class="section section-alt fade-up">
-      <div class="container">
-        <h2 class="section-title">SECTION 2 — Scientific Foundations</h2>
-        <h3>Academic Rigor Behind Salecompass</h3>
-
-        <p>Backed by research presented in IEEE journals & conferences.</p>
-
-        <div class="pub-list">
-
-          <article class="pub-card slide-left">
-            <h4>📘 Publication 1 — Ethical AI in Marketing</h4>
-            <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
-            <p>Study on trust, ethics, fairness, and transparency in AI-driven marketing.</p>
-          </article>
-
-          <article class="pub-card slide-right">
-            <h4>📗 Publication 2 — AI in Multi-Channel Food Marketing</h4>
-            <p>Research on attribution, POS integration, insights & behaviour prediction.</p>
-          </article>
-
+          <p>These insights shaped attribution, sentiment analysis, trend detection, POS sync, and predictions.</p>
         </div>
 
-        <div class="grid-3 highlights">
-          <div class="card fade-up"><h4>Ethical AI</h4><p>Transparent, safe, privacy-aware analytics.</p></div>
-          <div class="card fade-up"><h4>Marketing Analytics</h4><p>Unifies online + offline touchpoints.</p></div>
-          <div class="card fade-up"><h4>Continuous R&D</h4><p>Always improving with live behaviour data.</p></div>
+        <div class="media-stack slide-right">
+          <figure class="media-card"><img src="assets/img/photo1.png"></figure>
+          <figure class="media-card"><img src="assets/img/photo2.png"></figure>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+
+  <!-- ARCHITECTURE -->
+  <section class="section section-alt fade-up">
+    <div class="container">
+      <h3>From Interviews to Architecture</h3>
+      <p>Insights were transformed into Salecompass’ technical architecture.</p>
+
+      <figure class="diagram-card slide-up">
+        <img src="assets/img/photo3.jpg" alt="Architecture diagram">
+      </figure>
+    </div>
+  </section>
 
 
-  <!-- UNIVERSAL FOOTER (LOGO + CORRECT LINKS) -->
+  <!-- FOUNDER -->
+  <section class="section fade-up">
+    <div class="container">
+      <h2 class="section-title">About the Founder</h2>
+      <p>
+        Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics, and marketing science
+        forms the scientific backbone of Salecompass.
+      </p>
+
+      <figure class="media-card founder-photo slide-up">
+        <img src="assets/img/photo4.jpg" alt="Founder">
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- SECTION 2 -->
+  <section class="section section-alt fade-up">
+    <div class="container">
+      <h2 class="section-title">SECTION 2 — Scientific Foundations</h2>
+      <h3>Academic Rigor Behind Salecompass</h3>
+
+      <p>Backed by research presented in IEEE journals & conferences.</p>
+
+      <div class="pub-list">
+
+        <article class="pub-card slide-left">
+          <h4>📘 Publication 1 — Ethical AI in Marketing</h4>
+          <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
+          <p>Study on trust, ethics, fairness, and transparency in AI-driven marketing.</p>
+        </article>
+
+        <article class="pub-card slide-right">
+          <h4>📗 Publication 2 — AI in Multi-Channel Food Marketing</h4>
+          <p>Research on attribution, POS integration, insights & behaviour prediction.</p>
+        </article>
+
+      </div>
+
+      <div class="grid-3 highlights">
+        <div class="card fade-up"><h4>Ethical AI</h4><p>Transparent, safe, privacy-aware analytics.</p></div>
+        <div class="card fade-up"><h4>Marketing Analytics</h4><p>Unifies online + offline touchpoints.</p></div>
+        <div class="card fade-up"><h4>Continuous R&D</h4><p>Always improving with live behaviour data.</p></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
   <footer class="site-footer fade-up">
     <div class="container footer-grid">
 
@@ -233,7 +270,7 @@
   </footer>
 
 
-  <!-- UNIVERSAL TOGGLE + SCROLL SCRIPT -->
+  <!-- TOGGLE + ANIMATION SCRIPT -->
   <script>
     // MENU TOGGLE
     const btn = document.querySelector(".menu-toggle");
@@ -248,15 +285,14 @@
     // YEAR
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // SCROLL REVEAL OBSERVER
+    // SCROLL REVEAL
     document.querySelectorAll('.fade-up, .slide-right, .slide-left').forEach(el => {
       const obs = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-      }, { threshold: 0.2 });
+      }, { threshold: 0.25 });
       obs.observe(el);
     });
   </script>
 
 </body>
 </html>
-
