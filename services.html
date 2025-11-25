@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | SaleCompass</title>
+
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* PAGE HERO */
+    /* HERO */
     .services-hero {
       background:#f5f7fb;
       padding:60px 0;
@@ -18,26 +19,26 @@
       font-weight:800;
     }
     .services-hero p {
-      color:#555;
+      margin-top:10px;
       font-size:18px;
-      margin-top:8px;
+      color:#555;
     }
 
-    /* TOGGLE SWITCH */
+    /* BILLING TOGGLE */
     .billing-toggle {
-      margin:25px auto 0;
+      margin-top:22px;
       text-align:center;
     }
     .billing-toggle button {
-      background:#e6ebf2;
-      padding:6px;
+      background:#e9eef5;
+      border:0;
       border-radius:40px;
-      border:none;
+      padding:6px;
       cursor:pointer;
     }
     .billing-toggle span {
-      display:inline-block;
       padding:10px 22px;
+      display:inline-block;
       border-radius:40px;
       font-size:15px;
     }
@@ -47,68 +48,65 @@
       font-weight:600;
     }
 
-    /* PRICING SECTION */
-    .pricing-section { padding:60px 0; }
-
+    /* PRICING */
+    .pricing-section {
+      padding:60px 0;
+    }
     .pricing-grid {
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:26px;
-      margin-top:30px;
     }
-
     .pricing-card {
-      background:#fff;
+      background:white;
       border:1px solid #e5e7eb;
       padding:26px;
       border-radius:14px;
       box-shadow:0px 4px 20px rgba(0,0,0,0.03);
       transition:.3s;
     }
-    .pricing-card:hover { transform:translateY(-4px); }
-
+    .pricing-card:hover {
+      transform:translateY(-5px);
+    }
     .plan-title {
       font-size:22px;
       font-weight:800;
       margin-bottom:6px;
     }
-
-    .plan-badge {
-      display:inline-block;
-      padding:4px 10px;
-      border-radius:6px;
-      font-size:14px;
-      margin-bottom:10px;
-      font-weight:600;
-    }
-    .starter-badge { background:#d7f5d9; color:#0a7e1a; }
-    .growth-badge { background:#ffe7cd; color:#a05a02; }
-    .premium-badge { background:#ffd1d1; color:#bf0000; }
-
     .plan-price {
       font-size:32px;
       font-weight:800;
-      margin-bottom:14px;
+      margin:8px 0 14px;
     }
-
-    .plan-features { margin:15px 0; }
     .plan-features li {
       margin-bottom:8px;
       font-size:15px;
     }
+    .plan-badge {
+      padding:4px 10px;
+      display:inline-block;
+      border-radius:6px;
+      font-size:14px;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+    .starter-badge { background:#d0f0d3; color:#1a6918; }
+    .growth-badge { background:#ffe4c3; color:#a65a00; }
+    .premium-badge { background:#ffd0d0; color:#b30000; }
 
     .plan-button {
       margin-top:18px;
       padding:12px 20px;
-      border-radius:6px;
       width:100%;
+      border-radius:6px;
       font-size:16px;
-      font-weight:600;
+      cursor:pointer;
       border:2px solid #0077ff;
       background:white;
       color:#0077ff;
-      cursor:pointer;
+      font-weight:600;
     }
+
     .current-plan {
       background:#0077ff;
       color:white;
@@ -122,7 +120,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html">
-      <img src="assets/img/logo.svg" alt="SaleCompass Logo">
+      <img src="assets/img/logo.svg" alt="Logo">
     </a>
 
     <button class="menu-toggle" aria-expanded="false">☰</button>
@@ -144,7 +142,7 @@
 <section class="services-hero fade-up">
   <div class="container">
     <h1>Pricing Plans</h1>
-    <p>Select a plan that fits your business needs.</p>
+    <p>Select a plan that fits your business growth.</p>
 
     <!-- BILLING TOGGLE -->
     <div class="billing-toggle">
@@ -157,7 +155,7 @@
 </section>
 
 
-<!-- PRICING -->
+<!-- PRICING PLANS -->
 <section class="pricing-section fade-up">
   <div class="container">
 
@@ -167,6 +165,7 @@
       <div class="pricing-card fade-up">
         <div class="plan-title">🟩 Free</div>
         <div class="plan-price" data-month="£0" data-year="£0">£0</div>
+
         <ul class="plan-features">
           <li>✔ Multi-Channel Dashboard (Basic)</li>
           <li>✔ 1 Marketing Channel Integration</li>
@@ -179,6 +178,7 @@
           <li>✖ Automated Recommendations</li>
           <li>✖ Real-Time Alerts</li>
         </ul>
+
         <button class="plan-button current-plan">Current Plan</button>
       </div>
 
@@ -186,7 +186,9 @@
       <div class="pricing-card fade-up">
         <div class="plan-title">🟩 Starter</div>
         <div class="plan-badge starter-badge">Starter</div>
+
         <div class="plan-price" data-month="£29" data-year="£290">£29</div>
+
         <ul class="plan-features">
           <li>✔ All Free Features</li>
           <li>✔ 5 Marketing Channels</li>
@@ -200,6 +202,7 @@
           <li>✖ Real-Time Alerts</li>
           <li>✖ Predictive Forecasting</li>
         </ul>
+
         <button class="plan-button">Subscribe</button>
       </div>
 
@@ -207,7 +210,9 @@
       <div class="pricing-card fade-up">
         <div class="plan-title">🟧 Growth</div>
         <div class="plan-badge growth-badge">Most Popular</div>
+
         <div class="plan-price" data-month="£59" data-year="£590">£59</div>
+
         <ul class="plan-features">
           <li>✔ All Starter Features</li>
           <li>✔ 10 Marketing Channels</li>
@@ -220,6 +225,7 @@
           <li>✔ Unlimited POS Imports</li>
           <li>✔ Chat + Priority Support</li>
         </ul>
+
         <button class="plan-button">Subscribe</button>
       </div>
 
@@ -227,20 +233,23 @@
       <div class="pricing-card fade-up">
         <div class="plan-title">🟥 Premium</div>
         <div class="plan-badge premium-badge">Best Option</div>
+
         <div class="plan-price" data-month="£99" data-year="£990">£99</div>
+
         <ul class="plan-features">
           <li>✔ All Growth Features</li>
           <li>✔ Unlimited Channels</li>
           <li>✔ Unlimited AI Insights</li>
           <li>✔ Personalised AI Engine</li>
-          <li>✔ Customer Journey Mapping</li>
+          <li>✔ Full Journey Mapping</li>
           <li>✔ Loyalty Analytics</li>
           <li>✔ Competitor Monitoring</li>
-          <li>✔ API Access</li>
+          <li>✔ Full API Access</li>
           <li>✔ Custom Reports</li>
           <li>✔ Dedicated Support</li>
           <li>✔ Strategy Call</li>
         </ul>
+
         <button class="plan-button">Subscribe</button>
       </div>
 
@@ -250,7 +259,7 @@
 
 
 <!-- FOOTER -->
-<footer class="site-footer">
+<footer class="site-footer fade-up">
   <div class="container tiny">
     © <span id="year"></span> SaleCompass. All rights reserved.
   </div>
@@ -258,7 +267,7 @@
 
 
 <script>
-  // MENU TOGGLE
+  // MOBILE MENU
   const btn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
   btn.onclick = () => menu.classList.toggle("open");
@@ -266,7 +275,7 @@
   // YEAR
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // BILLING SWITCH
+  // BILLING SWITCH LOGIC
   const prices = document.querySelectorAll(".plan-price");
   const monthlyBtn = document.getElementById("monthlyBtn");
   const yearlyBtn = document.getElementById("yearlyBtn");
