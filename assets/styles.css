@@ -132,6 +132,31 @@ img { max-width: 100%; display: block; }
 }
 
 /* =========================================
+   RESEARCH PAGE HERO — FIXED
+========================================= */
+.page-hero {
+  background-image: url("assets/img/Research Photo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 90px 0;
+  color: #fff;
+  position: relative;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 32, 82, 0.55);
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
    PROBLEM + SOLUTION SECTION
 ========================================= */
 .problem-section {
@@ -150,10 +175,7 @@ img { max-width: 100%; display: block; }
   color: #444;
 }
 
-.problem-list {
-  margin-top: 14px;
-  margin-bottom: 30px;
-}
+.problem-list { margin-top: 14px; margin-bottom: 30px; }
 
 .problem-list li {
   margin-bottom: 10px;
@@ -219,7 +241,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* =========================================
-   FOOTER — DARK NAVY
+   FOOTER
 ========================================= */
 .site-footer {
   background: #0b0f19;
@@ -237,7 +259,6 @@ img { max-width: 100%; display: block; }
 
 .site-footer .logo-img {
   height: 48px;
-  width: auto;
   filter: brightness(1.1);
 }
 
@@ -256,173 +277,11 @@ img { max-width: 100%; display: block; }
 
 .footer-links li a:hover { color: #ffffff; }
 
-.tiny { 
+.tiny {
   font-size: 14px;
   color: #9ca3af;
   text-align: center;
   margin-top: 25px;
-}
-
-/* =========================================
-   ABOUT PAGE
-========================================= */
-
-.about-hero {
-  background: #f8f9fb;
-  padding: 80px 0;
-  text-align: center;
-}
-
-.about-hero h1 {
-  font-size: 42px;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.about-hero .hero-subtext {
-  font-size: 18px;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-.about-section { padding: 50px 0; }
-
-.about-card {
-  background: #ffffff;
-  padding: 36px;
-  border-radius: 16px;
-  box-shadow: 0px 6px 22px rgba(0,0,0,0.06);
-  line-height: 1.75;
-}
-
-.about-card h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-
-.mv-section { padding: 60px 0; }
-
-.mv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.mv-card {
-  background: #f7f9ff;
-  padding: 30px;
-  border-left: 6px solid #0077ff;
-  border-radius: 14px;
-  box-shadow: 0px 4px 18px rgba(0,0,0,0.04);
-}
-
-.mv-card h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.values-section { padding: 60px 0; }
-
-.center-title {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 30px;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-}
-
-.value-card {
-  background: #ffffff;
-  padding: 26px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0px 6px 24px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0px 12px 28px rgba(0,0,0,0.08);
-}
-
-.value-card img {
-  height: 52px;
-  margin-bottom: 14px;
-}
-
-.value-card h4 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.timeline-section { padding: 60px 0; }
-
-.timeline {
-  border-left: 3px solid #0077ff;
-  padding-left: 30px;
-  margin-top: 30px;
-}
-
-.timeline-item {
-  margin-bottom: 28px;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: #0077ff;
-  border-radius: 50%;
-  position: absolute;
-  left: -38px;
-  top: 4px;
-}
-
-.timeline-year {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.timeline-item p {
-  margin-top: 6px;
-  color: #444;
-  line-height: 1.6;
-}
-
-.why-section { padding: 60px 0; }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-}
-
-.why-card {
-  background: #ffffff;
-  padding: 26px;
-  border-radius: 14px;
-  box-shadow: 0px 4px 18px rgba(0,0,0,0.06);
-  transition: 0.3s ease;
-}
-
-.why-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0px 12px 28px rgba(0,0,0,0.08);
-}
-
-.why-card h4 {
-  margin-bottom: 10px;
-  font-size: 20px;
 }
 
 /* =========================================
@@ -470,30 +329,4 @@ img { max-width: 100%; display: block; }
 .scale-up.visible {
   opacity: 1;
   transform: scale(1);
-}
-
-/* =========================================
-   RESEARCH PAGE HERO — FINAL CORRECT VERSION
-========================================= */
-.page-hero {
-  background-image: url("assets/img/Research Photo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 90px 0;
-  color: #fff;
-  position: relative;
-}
-
-/* Navy blue overlay */
-.page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 32, 82, 0.55);
-}
-
-.page-hero .container {
-  position: relative;
-  z-index: 2;
 }
