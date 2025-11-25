@@ -1,531 +1,274 @@
-/* =========================================
-   RESET & GLOBAL
-========================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
-img { max-width: 100%; display: block; }
-
-.container {
-  width: 92%;
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-/* =========================================
-   HEADER
-========================================= */
-.site-header {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-}
-
-.logo img {
-  height: 42px;
-  width: auto;
-}
-
-/* MENU */
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.menu a.active { color: #0077ff; }
-
-.btn.primary {
-  background: #0077ff;
-  color: #fff !important;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.btn.outline {
-  border: 2px solid #0077ff;
-  color: #0077ff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-/* MOBILE MENU */
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-}
-
-@media (max-width: 800px) {
-  .menu-toggle { display: block; }
-
-  .menu {
-    position: absolute;
-    top: 62px;
-    right: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    gap: 14px;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    display: none;
-  }
-
-  .menu.open { display: flex; }
-}
-
-/* =========================================
-   HERO
-========================================= */
-.hero {
-  padding: 60px 0;
-}
-
-.hero .container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.hero-text h1 {
-  font-size: 38px;
-  font-weight: 800;
-}
-
-.lead { margin-top: 10px; font-size: 18px; color: #444; }
-
-.cta { margin-top: 22px; display: flex; gap: 12px; }
-
-@media (max-width: 800px) {
-  .hero .container { flex-direction: column; text-align: center; }
-  .cta { justify-content: center; }
-}
-
-/* =========================================
-   PROBLEM + SOLUTION SECTION
-========================================= */
-.problem-section {
-  padding: 60px 0 30px;
-}
-
-.problem-section h2 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.problem-section p.intro {
-  font-size: 18px;
-  margin-bottom: 18px;
-  color: #444;
-}
-
-.problem-list {
-  margin-top: 14px;
-  margin-bottom: 30px;
-}
-
-.problem-list li {
-  margin-bottom: 10px;
-  font-size: 17px;
-}
-
-.solution-box {
-  background: #f7f9ff;
-  border-left: 6px solid #0077ff;
-  padding: 22px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.solution-box h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-
-/* =========================================
-   CORE FEATURES — Like Your Screenshot
-========================================= */
-.core-features {
-  padding: 60px 0;
-}
-
-.core-title {
-  font-size: 32px;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-}
-
-.feature-card {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 14px;
-  padding: 22px;
-  text-align: left;
-  transition: 0.25s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.07);
-}
-
-.feature-card img {
-  height: 52px;
-  margin-bottom: 14px;
-}
-
-.feature-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-/* =========================================
-   FOOTER — DARK NAVY
-========================================= */
-.site-footer {
-  background: #0b0f19;
-  padding: 50px 0 25px;
-  border-top: 1px solid #111827;
-  margin-top: 50px;
-  color: #e5e7eb;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 32px;
-}
-
-.site-footer .logo-img {
-  height: 48px;
-  width: auto;
-  filter: brightness(1.1);
-}
-
-.footer-links {
-  list-style: none;
-  margin-top: 12px;
-}
-
-.footer-links li a {
-  display: block;
-  padding: 4px 0;
-  color: #d1d5db;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.footer-links li a:hover { color: #ffffff; }
-
-.tiny { 
-  font-size: 14px;
-  color: #9ca3af;
-  text-align: center;
-  margin-top: 25px;
-}
-/* =========================================
-   ABOUT PAGE – PREMIUM REDESIGN
-   (Hero, Cards, MV, Values, Timeline, Why Us)
-========================================= */
-
-/* -------- HERO SECTION -------- */
-.about-hero {
-  background: #f8f9fb;
-  padding: 80px 0;
-  text-align: center;
-}
-
-.about-hero h1 {
-  font-size: 42px;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.about-hero .hero-subtext {
-  font-size: 18px;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-/* -------- ABOUT CARD -------- */
-.about-section {
-  padding: 50px 0;
-}
-
-.about-card {
-  background: #ffffff;
-  padding: 36px;
-  border-radius: 16px;
-  box-shadow: 0px 6px 22px rgba(0,0,0,0.06);
-  line-height: 1.75;
-}
-
-.about-card h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-
-/* -------- MISSION & VISION -------- */
-.mv-section {
-  padding: 60px 0;
-}
-
-.mv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.mv-card {
-  background: #f7f9ff;
-  padding: 30px;
-  border-left: 6px solid #0077ff;
-  border-radius: 14px;
-  box-shadow: 0px 4px 18px rgba(0,0,0,0.04);
-}
-
-.mv-card h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* -------- VALUES -------- */
-.values-section {
-  padding: 60px 0;
-}
-
-.center-title {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 30px;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-}
-
-.value-card {
-  background: #ffffff;
-  padding: 26px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0px 6px 24px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0px 12px 28px rgba(0,0,0,0.08);
-}
-
-.value-card img {
-  height: 52px;
-  margin-bottom: 14px;
-}
-
-.value-card h4 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-/* -------- TIMELINE -------- */
-.timeline-section {
-  padding: 60px 0;
-}
-
-.timeline {
-  border-left: 3px solid #0077ff;
-  padding-left: 30px;
-  margin-top: 30px;
-}
-
-.timeline-item {
-  margin-bottom: 28px;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: #0077ff;
-  border-radius: 50%;
-  position: absolute;
-  left: -38px;
-  top: 4px;
-}
-
-.timeline-year {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.timeline-item p {
-  margin-top: 6px;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* -------- WHY US -------- */
-.why-section {
-  padding: 60px 0;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-}
-
-.why-card {
-  background: #ffffff;
-  padding: 26px;
-  border-radius: 14px;
-  box-shadow: 0px 4px 18px rgba(0,0,0,0.06);
-  transition: 0.3s ease;
-}
-
-.why-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0px 12px 28px rgba(0,0,0,0.08);
-}
-
-.why-card h4 {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-/* =========================================
-   ANIMATIONS (Mixed — Fade + Slide + Scale)
-========================================= */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-.slide-in-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: 0.7s ease-out;
-}
-
-.slide-in-left.visible {
-  opacity: 1;
-  transform: translateX(0px);
-}
-
-.slide-in-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: 0.7s ease-out;
-}
-
-.slide-in-right.visible {
-  opacity: 1;
-  transform: translateX(0px);
-}
-
-.scale-up {
-  opacity: 0;
-  transform: scale(0.85);
-  transition: 0.7s ease-out;
-}
-
-.scale-up.visible {
-  opacity: 1;
-  transform: scale(1);
-} .page-hero {
-  background-image: url("assets/img/Research Photo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 90px 0;
-  color: white;
-  position: relative;
-}
-
-.page-hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0, 32, 82, 0.55);
-  backdrop-filter: blur(2px);
-}
-/* RESEARCH PAGE HERO — FINAL FIX */
-.page-hero {
-  background-image: url("../img/Research Photo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 90px 0;
-  color: #fff;
-  position: relative;
-}
-
-/* Navy blue overlay */
-.page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 32, 82, 0.55);
-}
-
-.page-hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research & Development | Salecompass</title>
+  <meta name="description"
+        content="How Salecompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- PREMIUM ANIMATIONS + FIXES -->
+  <style>
+    /* Fade-up */
+    .fade-up { opacity:0; transform:translateY(24px); transition:.8s ease; }
+    .fade-up.show { opacity:1; transform:translateY(0); }
+
+    /* Slide-in right */
+    .slide-right { opacity:0; transform:translateX(40px); transition:.8s ease; }
+    .slide-right.show { opacity:1; transform:translateX(0); }
+
+    /* Slide-in left */
+    .slide-left { opacity:0; transform:translateX(-40px); transition:.8s ease; }
+    .slide-left.show { opacity:1; transform:translateX(0); }
+
+    /* HERO BACKGROUND — FIXED PATH */
+    .page-hero {
+      background-image: url("assets/img/Research Photo.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 90px 0;
+      color: #fff;
+      position: relative;
+    }
+
+    /* NAVY BLUE TINT */
+    .page-hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0, 32, 82, 0.55); 
+      backdrop-filter: blur(2px);
+    }
+
+    .page-hero .container {
+      position:relative;
+      z-index:2;
+    }
+
+    /* REDUCE SIZE OF ALL OTHER IMAGES */
+    .media-card img,
+    .diagram-card img,
+    .founder-photo img {
+      width: 80% !important;
+      max-width: 350px !important;
+      margin: 0 auto;
+      display: block;
+      border-radius: 14px;
+    }
+
+    /* Hover cards */
+    .media-card, .pub-card, .diagram-card, .card {
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .media-card:hover, .pub-card:hover, .diagram-card:hover, .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .section-alt { background:#f8fbff; }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" alt="Salecompass Logo">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a class="active" href="research.html">R&amp;D</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a class="btn primary" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO WITH IMAGE -->
+  <section class="page-hero fade-up">
+    <div class="container">
+      <p class="kicker">Research &amp; Development</p>
+      <h1>Built on real market needs. Backed by scientific research. Powered by innovation.</h1>
+      <p class="lead">
+        Salecompass combines hands-on interviews with SMEs and peer-reviewed AI research
+        to build marketing intelligence that actually moves revenue for small and medium-sized businesses.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 1 -->
+  <section class="section fade-up">
+    <div class="container">
+      <h2 class="section-title">SECTION 1 — Market Interviews & Need Analysis</h2>
+      <h3>Understanding the Real Problems Before Building the Solution</h3>
+
+      <div class="grid-2">
+        <div class="slide-left">
+          <p>
+            At Salecompass, research began long before a single line of code was written.
+            Our founder, <strong>Danyal Mohiuddin</strong>, conducted extensive
+            <strong>market interviews, discovery meetings, and need-analysis surveys</strong>.
+          </p>
+
+          <ul>
+            <li>CEOs of food businesses</li>
+            <li>Restaurant owners & managers</li>
+            <li>Marketing teams & digital agencies</li>
+            <li>Product/growth strategists</li>
+            <li>UK SME founders in retail & hospitality</li>
+          </ul>
+
+          <p>
+            The pattern was clear:
+            <strong>Businesses have data everywhere — but almost no clarity about what drives revenue.</strong>
+          </p>
+
+          <p>Workshops conducted across:</p>
+
+          <ul class="flag-list">
+            <li>🇬🇧 United Kingdom</li>
+            <li>🇫🇷 France</li>
+            <li>🇵🇰 Pakistan</li>
+            <li>🇳🇱 Netherlands</li>
+          </ul>
+
+          <p>These insights shaped attribution, sentiment analysis, trend detection, POS sync, and predictions.</p>
+        </div>
+
+        <div class="media-stack slide-right">
+          <figure class="media-card"><img src="assets/img/photo1.png"></figure>
+          <figure class="media-card"><img src="assets/img/photo2.png"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="section section-alt fade-up">
+    <div class="container">
+      <h3>From Interviews to Architecture</h3>
+      <p>Insights were transformed into Salecompass’ technical architecture.</p>
+
+      <figure class="diagram-card slide-up">
+        <img src="assets/img/photo3.jpg" alt="Architecture diagram">
+      </figure>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="section fade-up">
+    <div class="container">
+      <h2 class="section-title">About the Founder</h2>
+      <p>
+        Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics, and marketing science
+        forms the scientific backbone of Salecompass.
+      </p>
+
+      <figure class="media-card founder-photo slide-up">
+        <img src="assets/img/photo4.jpg" alt="Founder">
+      </figure>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="section section-alt fade-up">
+    <div class="container">
+      <h2 class="section-title">SECTION 2 — Scientific Foundations</h2>
+      <h3>Academic Rigor Behind Salecompass</h3>
+
+      <p>Backed by research presented in IEEE journals & conferences.</p>
+
+      <div class="pub-list">
+        <article class="pub-card slide-left">
+          <h4>📘 Publication 1 — Ethical AI in Marketing</h4>
+          <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
+          <p>Study on trust, ethics, fairness, and transparency in AI-driven marketing.</p>
+        </article>
+
+        <article class="pub-card slide-right">
+          <h4>📗 Publication 2 — AI in Multi-Channel Food Marketing</h4>
+          <p>Research on attribution, POS integration, insights & behaviour prediction.</p>
+        </article>
+      </div>
+
+      <div class="grid-3 highlights">
+        <div class="card fade-up"><h4>Ethical AI</h4><p>Transparent, safe, privacy-aware analytics.</p></div>
+        <div class="card fade-up"><h4>Marketing Analytics</h4><p>Unifies online + offline touchpoints.</p></div>
+        <div class="card fade-up"><h4>Continuous R&D</h4><p>Always improving with live behaviour data.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer fade-up">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/img/logo.svg" class="logo-img" alt="Salecompass Logo">
+        <p class="tiny">Know What Works. Invest Where It Matters.</p>
+      </div>
+
+      <div>
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="research.html">R&amp;D</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Attribution Engine</a></li>
+          <li><a href="services.html">Predictive Analytics</a></li>
+          <li><a href="services.html">Dashboards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container tiny">
+      © <span id="year"></span> Salecompass. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    const btn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      menu.classList.toggle("open");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.fade-up, .slide-right, .slide-left').forEach(el => {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+      }, { threshold: 0.25 });
+      obs.observe(el);
+    });
+  </script>
+
+</body>
+</html>
