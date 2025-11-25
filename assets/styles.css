@@ -334,10 +334,10 @@ img { max-width: 100%; display: block; }
 }
 
 /* =========================================
-   RESEARCH PAGE HERO — CORRECTED
+   RESEARCH PAGE HERO — FIXED ✔
 ========================================= */
 .page-hero {
-  background-image: url("/mnt/data/d1f0e201-b4cc-4e61-87b1-0e7130cdaf32.png"); /* ✅ correct path */
+  background-image: url("assets/img/Research Photo.png"); /* ✔ Correct local path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -346,7 +346,6 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 
-/* Navy blue overlay */
 .page-hero::before {
   content: "";
   position: absolute;
