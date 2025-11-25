@@ -8,11 +8,10 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* HERO */
+    /* SERVICES HERO */
     .services-hero {
-      background:#f5f7fb;
-      padding:60px 0;
       text-align:center;
+      padding:60px 0;
     }
     .services-hero h1 {
       font-size:42px;
@@ -24,9 +23,9 @@
       color:#555;
     }
 
-    /* BILLING TOGGLE */
+    /* BILLING SWITCH */
     .billing-toggle {
-      margin-top:22px;
+      margin-top:20px;
       text-align:center;
     }
     .billing-toggle button {
@@ -38,17 +37,16 @@
     }
     .billing-toggle span {
       padding:10px 22px;
-      display:inline-block;
       border-radius:40px;
+      display:inline-block;
       font-size:15px;
     }
     .billing-toggle .active {
       background:#0077ff;
-      color:#fff;
-      font-weight:600;
+      color:white;
     }
 
-    /* PRICING */
+    /* PRICING GRID */
     .pricing-section {
       padding:60px 0;
     }
@@ -61,52 +59,49 @@
       background:white;
       border:1px solid #e5e7eb;
       padding:26px;
-      border-radius:14px;
-      box-shadow:0px 4px 20px rgba(0,0,0,0.03);
-      transition:.3s;
+      border-radius:12px;
+      box-shadow:0px 4px 16px rgba(0,0,0,0.04);
+      transition:.25s;
     }
     .pricing-card:hover {
-      transform:translateY(-5px);
+      transform:translateY(-4px);
     }
-    .plan-title {
-      font-size:22px;
-      font-weight:800;
-      margin-bottom:6px;
-    }
+
+    .plan-title { font-size:20px; font-weight:700; }
     .plan-price {
-      font-size:32px;
+      font-size:34px; 
       font-weight:800;
-      margin:8px 0 14px;
+      margin:12px 0 14px;
     }
     .plan-features li {
       margin-bottom:8px;
       font-size:15px;
     }
+
     .plan-badge {
-      padding:4px 10px;
-      display:inline-block;
-      border-radius:6px;
       font-size:14px;
+      padding:4px 10px;
+      border-radius:6px;
       margin-bottom:8px;
+      display:inline-block;
       font-weight:600;
     }
-    .starter-badge { background:#d0f0d3; color:#1a6918; }
-    .growth-badge { background:#ffe4c3; color:#a65a00; }
+    .starter-badge { background:#d0f0d3; color:#207a1f; }
+    .growth-badge { background:#ffe4c3; color:#a76100; }
     .premium-badge { background:#ffd0d0; color:#b30000; }
 
     .plan-button {
       margin-top:18px;
-      padding:12px 20px;
       width:100%;
-      border-radius:6px;
+      padding:12px;
       font-size:16px;
-      cursor:pointer;
       border:2px solid #0077ff;
+      border-radius:6px;
       background:white;
       color:#0077ff;
+      cursor:pointer;
       font-weight:600;
     }
-
     .current-plan {
       background:#0077ff;
       color:white;
@@ -116,14 +111,13 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html">
-      <img src="assets/img/logo.svg" alt="Logo">
+      <img src="assets/img/logo.svg" alt="">
     </a>
 
-    <button class="menu-toggle" aria-expanded="false">☰</button>
+    <button class="menu-toggle">☰</button>
 
     <nav class="menu">
       <a href="index.html">Home</a>
@@ -138,24 +132,21 @@
 </header>
 
 
-<!-- HERO -->
 <section class="services-hero fade-up">
   <div class="container">
     <h1>Pricing Plans</h1>
     <p>Select a plan that fits your business growth.</p>
 
-    <!-- BILLING TOGGLE -->
     <div class="billing-toggle">
       <button id="billingSwitch">
         <span id="monthlyBtn" class="active">Monthly</span>
-        <span id="yearlyBtn">Yearly (2 months free)</span>
+        <span id="yearlyBtn">Yearly</span>
       </button>
     </div>
   </div>
 </section>
 
 
-<!-- PRICING PLANS -->
 <section class="pricing-section fade-up">
   <div class="container">
 
@@ -163,93 +154,53 @@
 
       <!-- FREE -->
       <div class="pricing-card fade-up">
-        <div class="plan-title">🟩 Free</div>
+        <div class="plan-title">Free</div>
         <div class="plan-price" data-month="£0" data-year="£0">£0</div>
-
         <ul class="plan-features">
-          <li>✔ Multi-Channel Dashboard (Basic)</li>
-          <li>✔ 1 Marketing Channel Integration</li>
-          <li>✔ 200 Monthly AI Insights</li>
-          <li>✔ Basic Attribution Model</li>
-          <li>✔ POS Upload (Manual)</li>
-          <li>✔ Review & Sentiment Summary</li>
-          <li>✔ Email Support</li>
+          <li>✔ Multi-Channel Dashboard</li>
+          <li>✔ 1 Channel Integration</li>
+          <li>✔ 200 AI Insights</li>
           <li>✖ Predictive Analytics</li>
-          <li>✖ Automated Recommendations</li>
-          <li>✖ Real-Time Alerts</li>
         </ul>
-
         <button class="plan-button current-plan">Current Plan</button>
       </div>
 
       <!-- STARTER -->
       <div class="pricing-card fade-up">
-        <div class="plan-title">🟩 Starter</div>
+        <div class="plan-title">Starter</div>
         <div class="plan-badge starter-badge">Starter</div>
-
         <div class="plan-price" data-month="£29" data-year="£290">£29</div>
-
         <ul class="plan-features">
           <li>✔ All Free Features</li>
-          <li>✔ 5 Marketing Channels</li>
-          <li>✔ 1,000 Monthly AI Insights</li>
-          <li>✔ Standard Attribution Model</li>
-          <li>✔ POS / CRM Auto-Sync</li>
-          <li>✔ Basic Trend Detection</li>
-          <li>✔ Sentiment Analysis (Full)</li>
-          <li>✔ Weekly Reports</li>
-          <li>✔ Priority Email Support</li>
-          <li>✖ Real-Time Alerts</li>
-          <li>✖ Predictive Forecasting</li>
+          <li>✔ 5 Channels</li>
+          <li>✔ 1,000 AI Insights</li>
         </ul>
-
         <button class="plan-button">Subscribe</button>
       </div>
 
       <!-- GROWTH -->
       <div class="pricing-card fade-up">
-        <div class="plan-title">🟧 Growth</div>
+        <div class="plan-title">Growth</div>
         <div class="plan-badge growth-badge">Most Popular</div>
-
         <div class="plan-price" data-month="£59" data-year="£590">£59</div>
-
         <ul class="plan-features">
           <li>✔ All Starter Features</li>
-          <li>✔ 10 Marketing Channels</li>
-          <li>✔ 5,000 Monthly AI Insights</li>
-          <li>✔ Advanced Attribution</li>
+          <li>✔ 10 Channels</li>
           <li>✔ Predictive Analytics</li>
-          <li>✔ Real-Time Alerts</li>
-          <li>✔ Campaign Optimisation</li>
-          <li>✔ AI Menu Trend Detection</li>
-          <li>✔ Unlimited POS Imports</li>
-          <li>✔ Chat + Priority Support</li>
         </ul>
-
         <button class="plan-button">Subscribe</button>
       </div>
 
       <!-- PREMIUM -->
       <div class="pricing-card fade-up">
-        <div class="plan-title">🟥 Premium</div>
+        <div class="plan-title">Premium</div>
         <div class="plan-badge premium-badge">Best Option</div>
-
         <div class="plan-price" data-month="£99" data-year="£990">£99</div>
-
         <ul class="plan-features">
-          <li>✔ All Growth Features</li>
           <li>✔ Unlimited Channels</li>
           <li>✔ Unlimited AI Insights</li>
-          <li>✔ Personalised AI Engine</li>
-          <li>✔ Full Journey Mapping</li>
-          <li>✔ Loyalty Analytics</li>
-          <li>✔ Competitor Monitoring</li>
-          <li>✔ Full API Access</li>
-          <li>✔ Custom Reports</li>
-          <li>✔ Dedicated Support</li>
-          <li>✔ Strategy Call</li>
+          <li>✔ Full AI Engine</li>
         </ul>
-
         <button class="plan-button">Subscribe</button>
       </div>
 
@@ -258,7 +209,6 @@
 </section>
 
 
-<!-- FOOTER -->
 <footer class="site-footer fade-up">
   <div class="container tiny">
     © <span id="year"></span> SaleCompass. All rights reserved.
@@ -267,32 +217,27 @@
 
 
 <script>
-  // MOBILE MENU
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-  btn.onclick = () => menu.classList.toggle("open");
+document.querySelector(".menu-toggle").onclick = () =>
+  document.querySelector(".menu").classList.toggle("open");
 
-  // YEAR
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  // BILLING SWITCH
-  const prices = document.querySelectorAll(".plan-price");
-  const monthlyBtn = document.getElementById("monthlyBtn");
-  const yearlyBtn = document.getElementById("yearlyBtn");
+const prices = document.querySelectorAll(".plan-price");
+const monthlyBtn = document.getElementById("monthlyBtn");
+const yearlyBtn = document.getElementById("yearlyBtn");
 
-  document.getElementById("billingSwitch").onclick = () => {
-    const isYearly = yearlyBtn.classList.contains("active");
-
-    if (isYearly) {
-      yearlyBtn.classList.remove("active");
-      monthlyBtn.classList.add("active");
-      prices.forEach(p => p.textContent = p.dataset.month);
-    } else {
-      monthlyBtn.classList.remove("active");
-      yearlyBtn.classList.add("active");
-      prices.forEach(p => p.textContent = p.dataset.year);
-    }
-  };
+document.getElementById("billingSwitch").onclick = () => {
+  const yearly = yearlyBtn.classList.contains("active");
+  if (yearly) {
+    yearlyBtn.classList.remove("active");
+    monthlyBtn.classList.add("active");
+    prices.forEach(p => p.textContent = p.dataset.month);
+  } else {
+    monthlyBtn.classList.remove("active");
+    yearlyBtn.classList.add("active");
+    prices.forEach(p => p.textContent = p.dataset.year);
+  }
+};
 </script>
 
 </body>
