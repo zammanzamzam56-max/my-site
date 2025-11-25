@@ -486,5 +486,23 @@ img { max-width: 100%; display: block; }
 .scale-up.visible {
   opacity: 1;
   transform: scale(1);
+} .page-hero {
+  background-image: url("assets/img/Research Photo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 90px 0;
+  color: white;
+  position: relative;
 }
+
+.page-hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0, 32, 82, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+
 
