@@ -10,6 +10,21 @@
 
   <!-- PREMIUM SAAS ANIMATIONS -->
   <style>
+    /* ===== GLOBAL IMAGE FIX — KEEP IMAGES SMALL AND RESPONSIVE ===== */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .media-card img,
+    .diagram-card img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 14px;
+      margin: 0 auto;
+    }
+
     /* Fade-up */
     .fade-up {
       opacity: 0;
@@ -59,22 +74,23 @@
       box-shadow: 0 12px 28px rgba(0,0,0,0.08);
     }
 
-    .media-card img,
-    .diagram-card img {
-      border-radius: 14px;
-      width: 100%;
-      height: auto;
-    }
-
-    /* ✅ ONLY CHANGE YOU ASKED FOR: make this line white */
+    /* OVERLAY LINE COLOR FIX */
     .page-hero .lead {
       color: #ffffff;
+    }
+
+    /* === FIXED BACKGROUND IMAGE (YOUR FILE NAME WITH SPACE) === */
+    .page-hero {
+      background: url("assets/img/Research%20photo.png") center/cover no-repeat;
+      color: white;
+      padding: 140px 0;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER (same structure as other pages, with logo image) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="index.html">
@@ -97,7 +113,7 @@
 
   <main>
 
-    <!-- PAGE HERO (kept exactly the same, only paragraph color changed via CSS above) -->
+    <!-- PAGE HERO -->
     <section class="page-hero fade-up">
       <div class="container">
         <p class="kicker">Research &amp; Development</p>
@@ -242,7 +258,7 @@
 
   </main>
 
-  <!-- FOOTER (same as other pages, with logo image) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
