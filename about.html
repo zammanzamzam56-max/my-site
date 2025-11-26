@@ -5,6 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | SaleCompass</title>
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <style>
+    /* --------- ABOUT HERO WITH BACKGROUND IMAGE --------- */
+    .about-hero {
+      background: url('assets/img/about-bg.png') center/cover no-repeat;
+      padding: 160px 0;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+
+    /* Dark navy overlay for blending */
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 20, 60, 0.55);
+      backdrop-filter: blur(1px);
+    }
+
+    .about-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-subtext {
+      font-size: 20px;
+      margin-top: 14px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #e8eefc;
+    }
+
+    /* --- Navy blue accents across the page --- */
+    .mv-card,
+    .value-card,
+    .why-card,
+    .about-card {
+      border-top: 4px solid #0b1e47;
+    }
+
+    .center-title {
+      color: #0b1e47;
+    }
+
+    .timeline-year {
+      color: #0b1e47;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -32,10 +83,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- ✔ HERO WITH BACKGROUND IMAGE (text removed) -->
     <section class="about-hero fade-up">
       <div class="container">
-        <h1>About SaleCompass</h1>
         <p class="hero-subtext">
           A modern AI-powered marketing intelligence platform helping SMEs understand  
           what truly drives results across every online and offline touchpoint.
@@ -83,7 +133,7 @@
       </div>
     </section>
 
-    <!-- VALUES (EMOJI VERSION) -->
+    <!-- VALUES -->
     <section class="values-section fade-up">
       <div class="container">
         <h2 class="center-title">Our Core Values</h2>
@@ -259,3 +309,6 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOnScroll();
 });
 </script>
+
+</body>
+</html>
