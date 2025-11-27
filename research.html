@@ -25,7 +25,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.62); /* Stronger overlay */
+      background:rgba(0,0,0,0.62); 
       backdrop-filter: blur(2px);
     }
     .page-hero .container { position:relative; z-index:2; }
@@ -33,7 +33,7 @@
     .page-hero p.lead { font-size:20px; color:white !important; }
 
     /* =========================================
-       GLOBAL SPACING FIX (NO CLUSTERING)
+       GLOBAL SPACING FIX
     ========================================== */
     section.section {
       padding: 80px 0;
@@ -117,7 +117,7 @@
     .read-more-btn { color:#004c99; cursor:pointer; font-weight:600; margin-top:8px; display:inline-block; }
 
     /* =========================================
-       3-COLUMN HIGHLIGHTS — NOW IN CONTAINERS
+       3-COLUMN HIGHLIGHTS 
     ========================================== */
     .highlights {
       margin-top:40px;
@@ -134,6 +134,19 @@
       font-weight:800;
       margin-bottom:10px;
       color:#0a1a3a;
+    }
+
+    /* =========================================
+       ⭐ NEW FIX YOU REQUESTED ⭐
+    ========================================== */
+    .section-title {
+      margin-bottom: 22px !important; /* Space below Section 1 heading */
+    }
+
+    .section-sub-orange {
+      color: #FFB366 !important;  /* Orange colour for “Understanding…” line */
+      margin-bottom: 22px;         /* Additional breathing space */
+      display: block;
     }
   </style>
 </head>
@@ -176,7 +189,9 @@
 <section class="section fade-up">
   <div class="container">
     <h2 class="section-title">SECTION 1 — Market Interviews & Need Analysis</h2>
-    <h3>Understanding the Real Problems Before Building the Solution</h3>
+
+    <!-- ⭐ NEW ORANGE LINE WITH SPACING ⭐ -->
+    <h3 class="section-sub-orange">Understanding the Real Problems Before Building the Solution</h3>
 
     <div class="grid-2">
       <div class="slide-left">
@@ -212,7 +227,7 @@
   </div>
 </section>
 
-<!-- FROM INTERVIEWS & FOUNDER SIDE BY SIDE -->
+<!-- FROM INTERVIEWS & FOUNDER -->
 <section class="section-alt fade-up">
   <div class="container two-col">
 
@@ -240,7 +255,7 @@
   </div>
 </section>
 
-<!-- PUBLICATIONS (WITH READ MORE + HOVER EFFECT) -->
+<!-- PUBLICATIONS -->
 <section class="section-alt fade-up">
   <div class="container">
     <h2 class="section-title">SECTION 2 — Scientific Foundations</h2>
@@ -275,7 +290,7 @@
 
     </div>
 
-    <!-- HIGHLIGHTS IN CONTAINERS WITH HOVER -->
+    <!-- HIGHLIGHTS -->
     <div class="highlights">
       <div class="highlight-card fade-up">
         <h4>Ethical AI</h4>
@@ -338,7 +353,7 @@
   </div>
 
   <div class="container tiny muted">
-    © <span id="year"></span> Salecompass. All rights reserved.
+    ©️ <span id="year"></span> Salecompass. All rights reserved.
   </div>
 </footer>
 
