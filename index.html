@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta-name="viewport" content="width=device-width, initial-scale=1" />
   <title>SaleCompass — AI Marketing Intelligence</title>
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
     body { overflow-x: hidden; }
-
     img { max-width: 100%; display: block; }
 
     .container {
@@ -53,8 +52,8 @@
     .hero-content p {
       margin-top: 14px;
       font-size: 20px;
-      opacity: 1 !important;        /* FIXED → Always visible */
-      color: #ffffff !important;
+      opacity: 1 !important;
+      color: #ffffff !important; /* White */
     }
 
     .hero-cta {
@@ -79,10 +78,10 @@
       border: 2px solid #0066ff;
       color: white;
     }
-    .btn.outline:hover { background: #0066ff; color: white; }
+    .btn.outline:hover { background: #0066ff; color:white; }
 
     /* ===============================
-       PROBLEM SECTION (3 CONTAINERS)
+       PROBLEM SECTION
     ================================ */
 
     .ps-grid {
@@ -101,7 +100,7 @@
       transition: .25s;
     }
 
-    .ps-box:hover { background: #f0f7ff; transform: translateY(-6px); }
+    .ps-box:hover { background:#f0f7ff; transform: translateY(-6px); }
 
     .ps-box h2 {
       font-size: 28px;
@@ -110,61 +109,63 @@
       color: #0a1a3a;
     }
 
-    .ps-box ul { padding-left: 20px; line-height: 1.7; margin-top: 12px; }
+    .ps-box ul {
+      padding-left: 20px;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
 
     /* ===============================
-       CORE FEATURES (3 + 3 GRID)
+       CORE FEATURES
     ================================ */
 
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
       gap: 26px;
       padding-bottom: 80px;
     }
 
     .feature-card {
-      text-align: center;
-      background: white;
-      border-radius: 16px;
-      padding: 26px;
-      border-left: 6px solid #004c99;
-      box-shadow: 0 4px 22px rgba(0,0,0,0.06);
+      text-align:center;
+      background:white;
+      border-radius:16px;
+      padding:26px;
+      border-left:6px solid #004c99;
+      box-shadow:0 4px 22px rgba(0,0,0,0.06);
       transition: .25s ease;
     }
 
     .feature-card:hover {
-      background: #f0f7ff;
+      background:#f0f7ff;
       transform: translateY(-6px);
     }
 
     .feature-card img {
-      height: 70px;
-      margin: auto;
-      margin-bottom: 16px;
+      height:70px;
+      margin:auto;
+      margin-bottom:16px;
     }
 
-    .feature-card h3 { font-size: 22px; color:#0a1a3a; margin-bottom: 10px; }
+    .feature-card h3 {
+      font-size:22px;
+      color:#0a1a3a;
+      margin-bottom:10px;
+    }
 
-    /* ===============================
-       RESPONSIVE HERO
-    ================================ */
-
-    @media(max-width: 768px) {
-      .hero-content h1 { font-size: 32px; }
-      .hero { height: 70vh; }
-      .hero-cta { flex-direction: column; }
+    @media(max-width:768px){
+      .hero-content h1 { font-size:32px; }
+      .hero { height:70vh; }
+      .hero-cta { flex-direction:column; }
     }
   </style>
 </head>
-
 
 <body>
 
 <!-- HEADER -->
 <header class="site-header">
   <div class="container nav">
-
     <a class="logo" href="index.html">
       <img src="assets/img/logo.svg">
     </a>
@@ -180,15 +181,10 @@
       <a href="success-stories.html">Success Stories</a>
       <a class="btn primary" href="contact.html">Contact</a>
     </nav>
-
   </div>
 </header>
 
-
-
-<!-- ================================
-      HERO
-================================ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
 
@@ -204,11 +200,9 @@
   </div>
 </section>
 
-
-
-<!-- ================================
-      PROBLEM SECTION (Three Boxes)
-================================ -->
+<!-- ============================================
+     PROBLEM SECTION — 3 BOXES
+============================================== -->
 <section class="container">
 
   <div class="ps-grid">
@@ -216,34 +210,39 @@
     <!-- BOX 1 -->
     <div class="ps-box">
       <h2>What Problem Does SaleCompass Target?</h2>
-      <p>Marketing is complex. Customers jump between Instagram, Google, websites, email, delivery apps, and physical stores.<br><br>
-         SMEs don’t have the tools or time to measure everything so money is wasted on guesswork.
+      <p>
+        Marketing is complex. Customers jump between Instagram, Google, websites,
+        email, delivery apps, and physical stores.<br><br>
+        SMEs don’t have time or tools to measure everything — so money is wasted on guesswork.
       </p>
     </div>
 
-    <!-- BOX 2 -->
+    <!-- BOX 2 – CROSS ICONS ONLY -->
     <div class="ps-box">
       <h2>Most Businesses Don’t Know:</h2>
       <ul>
         <li>❌ Which channel brings the highest ROI</li>
-        <li>❌ What actually influences buying decisions</li>
+        <li>❌ What influences buying decisions</li>
         <li>❌ How many touchpoints lead to a sale</li>
         <li>❌ Why campaigns work or fail</li>
         <li>❌ Which customer segments are changing trends</li>
       </ul>
     </div>
 
-    <!-- BOX 3 -->
+    <!-- BOX 3 – CHECK ICONS ONLY -->
     <div class="ps-box">
       <h2>✔️ The SaleCompass Solution</h2>
-      <p>SaleCompass unifies all marketing and sales data  digital and physical into one real-time AI-powered dashboard.</p>
+      <p>
+        SaleCompass unifies all marketing & sales data — digital and physical —
+        into one real-time AI-powered dashboard.
+      </p>
 
       <ul>
-        <li>Track customer journeys across all channels</li>
-        <li>See which campaigns drive real sales</li>
-        <li>Predict customer preferences & menu trends</li>
-        <li>Use AI to optimise spend in real time</li>
-        <li>Measure offline + online behaviour together</li>
+        <li>✔ Track customer journeys across all channels</li>
+        <li>✔ See which campaigns drive actual sales</li>
+        <li>✔ Predict customer preferences & menu trends</li>
+        <li>✔ Optimise spend with real-time AI</li>
+        <li>✔ Measure offline + online behaviour together</li>
       </ul>
     </div>
 
@@ -251,11 +250,9 @@
 
 </section>
 
-
-
-<!-- ================================
-      CORE FEATURES (3 + 3)
-================================ -->
+<!-- ============================================
+     CORE FEATURES — 3 + 3 GRID
+============================================== -->
 <section class="container">
   <h2 style="text-align:center; font-size:34px; margin-bottom:24px;">Core Features</h2>
 
@@ -300,11 +297,7 @@
   </div>
 </section>
 
-
-
-<!-- ================================
-      FOOTER
-================================ -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
@@ -345,11 +338,9 @@
   </div>
 
   <div class="container tiny">
-    © <span id="year"></span> SaleCompass. All rights reserved.
+    ©️ <span id="year"></span> SaleCompass. All rights reserved.
   </div>
 </footer>
-
-
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -369,9 +360,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
 </body>
 </html>
-
-
-
