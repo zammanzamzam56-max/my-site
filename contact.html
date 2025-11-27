@@ -18,35 +18,53 @@
       transform: translateY(0); 
     }
 
-    /* CONTACT PAGE DESIGN */
+    /* HERO SECTION WITH YOUR IMAGE + OVERLAY */
     .contact-hero {
+      position: relative;
+      background: url("assets/img/Contact Us.png") center/cover no-repeat;
+      padding: 120px 20px;
       text-align: center;
-      padding: 60px 20px;
+      max-width: 100%;
+      color: #fff;
+    }
+
+    .contact-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55); /* overlay */
+    }
+
+    .contact-hero .container {
+      position: relative;
+      z-index: 2;
       max-width: 750px;
       margin: auto;
     }
 
     .contact-hero h2 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .contact-hero p {
-      color: #555;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #eee;
     }
 
+    /* CONTACT LAYOUT */
     .contact-container {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 40px;
-      padding: 40px 20px 80px;
+      padding: 60px 20px 80px;
       max-width: 1100px;
       margin: auto;
     }
 
+    /* FORM */
     .contact-form form {
       background: #fff;
       padding: 32px;
@@ -55,12 +73,7 @@
       border: 1px solid #e5e5e5;
     }
 
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      margin-top: 14px;
-    }
+    label { display: block; margin-bottom: 6px; font-weight: 600; margin-top: 14px; }
 
     input, textarea {
       width: 100%;
@@ -71,9 +84,7 @@
       font-size: 1rem;
     }
 
-    textarea {
-      resize: none;
-    }
+    textarea { resize: none; }
 
     .contact-form .btn {
       margin-top: 12px;
@@ -83,25 +94,34 @@
       border-radius: 10px;
     }
 
+    /* CONTACT INFO BOX + HOVER LIKE ABOUT PAGE */
     .contact-info {
       padding: 32px;
-      background: #f9fafb;
+      background: #ffffff;
       border-radius: 16px;
       border: 1px solid #e8e8e8;
       height: fit-content;
+      transition: 0.3s ease;
+      border-left: 6px solid transparent;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+    }
+
+    .contact-info:hover {
+      transform: translateY(-6px) scale(1.03);
+      border-left: 6px solid #FFB366;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
     .contact-info h3 {
       margin-bottom: 16px;
       font-size: 1.3rem;
       font-weight: 700;
+      color: #0a1a3a;
     }
 
-    .contact-info p {
-      margin-bottom: 10px;
-      color: #444;
-    }
+    .contact-info p { margin-bottom: 10px; color: #444; }
 
+    /* MOBILE */
     @media(max-width: 900px) {
       .contact-container {
         grid-template-columns: 1fr;
@@ -112,7 +132,7 @@
 
 <body>
 
-  <!-- HEADER (MATCHING INDEX EXACTLY) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
 
@@ -134,22 +154,26 @@
     </div>
   </header>
 
-  <!-- CONTACT CONTENT -->
-  <main>
 
-    <section class="contact-hero fade-up">
+  <!-- HERO -->
+  <section class="contact-hero fade-up">
+    <div class="container">
       <h2>Get in Touch</h2>
-      <p>
-        We’d love to hear from you. Whether you have a question, a project, or just want to connect —
-        reach out anytime.
-      </p>
-    </section>
+      <p>We’d love to hear from you. Whether you have a question, a project, or just want to connect — reach out anytime.</p>
+    </div>
+  </section>
+
+
+  <!-- FORM + INFO -->
+  <main>
 
     <section class="contact-container fade-up">
 
       <!-- FORM -->
       <div class="contact-form">
-        <form action="https://formspree.io/f/your-form-id" method="POST">
+        <form action="https://formspree.io/f/xkgwkbpr" method="POST">
+          <!-- (✔ this form now sends to danyalmohiuddin33@gmail.com because that Formspree account is linked to this endpoint) -->
+
           <label>Your Name</label>
           <input type="text" name="name" required>
 
@@ -166,7 +190,7 @@
       <!-- INFO BOX -->
       <div class="contact-info fade-up delay-1">
         <h3>Contact Details</h3>
-        <p><strong>Email:</strong> hello@salecompass.uk</p>
+        <p><strong>Email:</strong> danyalmohiuddin33@gmail.com</p>
         <p><strong>Phone:</strong> +44 7380 732477</p>
         <p><strong>Address:</strong> London, United Kingdom</p>
       </div>
@@ -174,12 +198,13 @@
     </section>
   </main>
 
-  <!-- FOOTER (MATCHED WITH INDEX) -->
+
+  <!-- FOOTER -->
   <footer class="site-footer fade-up">
     <div class="container footer-grid">
 
       <div>
-        <img src="assets/img/logo.svg" alt="Salecompass Logo" class="logo-img">
+        <img src="assets/img/logo.svg" alt="" class="logo-img">
         <p class="tiny">Know What Works. Invest Where It Matters.</p>
       </div>
 
@@ -207,7 +232,7 @@
       <div>
         <h4>Get in touch</h4>
         <ul class="footer-links">
-          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+          <li><a href="mailto:danyalmohiuddin33@gmail.com">danyalmohiuddin33@gmail.com</a></li>
           <li><a href="tel:+447380732477">+44 7380 732477</a></li>
         </ul>
       </div>
@@ -215,11 +240,11 @@
     </div>
 
     <div class="container tiny">
-      © <span id="year"></span> SaleCompass. All rights reserved.
+      ©️ <span id="year"></span> SaleCompass. All rights reserved.
     </div>
   </footer>
 
-  <!-- UNIVERSAL TOGGLE + ANIMATIONS -->
+  <!-- UNIVERSAL JS -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
 
@@ -253,4 +278,3 @@
 
 </body>
 </html>
-
