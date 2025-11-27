@@ -9,27 +9,11 @@
 
   <style>
     img { max-width: 100%; display: block; }
+    body { overflow-x:hidden; }
 
-    /* ----- Animations ----- */
-    .fade-up { opacity: 0; transform: translateY(24px); transition: .7s ease; }
-    .fade-up.show { opacity: 1; transform: translateY(0); }
-
-    .slide-left { opacity: 0; transform: translateX(-40px); transition: .7s ease; }
-    .slide-left.show { opacity: 1; transform: translateX(0); }
-
-    .slide-right { opacity: 0; transform: translateX(40px); transition: .7s ease; }
-    .slide-right.show { opacity: 1; transform: translateX(0); }
-
-    /* Hover Lift Effect */
-    .media-card, .pub-card, .diagram-card, .card {
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .media-card:hover, .pub-card:hover, .diagram-card:hover, .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
-    }
-
-    /* HERO */
+    /* =========================================
+       HERO — FIXED OVERLAY + BETTER READABILITY
+    ========================================== */
     .page-hero {
       background: url("assets/img/Research%20Photo.png") center/cover no-repeat;
       padding: 150px 0;
@@ -41,33 +25,116 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.55);
+      background:rgba(0,0,0,0.62); /* Stronger overlay */
+      backdrop-filter: blur(2px);
     }
     .page-hero .container { position:relative; z-index:2; }
+    .page-hero h1 { font-size:42px; font-weight:800; }
+    .page-hero p.lead { font-size:20px; color:white !important; }
 
-    .page-hero h1 {
-      color:#fff;
+    /* =========================================
+       GLOBAL SPACING FIX (NO CLUSTERING)
+    ========================================== */
+    section.section {
+      padding: 80px 0;
     }
-    .page-hero .lead {
-      color:#fff;
-      opacity: .95;
+    section.section-alt {
+      padding: 90px 0;
+      background:#f8fafc;
     }
 
-    /* ----- READ MORE ----- */
-    .hidden-text { display: none; margin-top: 8px; }
-    .read-more-btn { color:#004c99; cursor:pointer; font-weight:600; display:inline-block; margin-top:8px; }
+    @media(max-width:768px){
+      section.section, section.section-alt {
+        padding: 60px 0;
+      }
+    }
 
-    /* ----- TWO COLUMN: Interviews → Architecture + Founder Side by Side ----- */
+    /* =========================================
+       ANIMATIONS
+    ========================================== */
+    .fade-up { opacity: 0; transform: translateY(24px); transition:.7s ease; }
+    .fade-up.show { opacity: 1; transform: translateY(0); }
+
+    .slide-left { opacity:0; transform: translateX(-40px); transition:.7s ease; }
+    .slide-left.show { opacity:1; transform: translateX(0); }
+
+    .slide-right { opacity:0; transform: translateX(40px); transition:.7s ease; }
+    .slide-right.show { opacity:1; transform: translateX(0); }
+
+    /* =========================================
+       HOVER EFFECT LIKE ABOUT PAGE
+    ========================================== */
+    .media-card,
+    .pub-card,
+    .diagram-card,
+    .card,
+    .highlight-card {
+      background:white;
+      border-radius:18px;
+      padding:22px;
+      transition:0.3s ease;
+      border-left:6px solid transparent;
+    }
+
+    .media-card:hover,
+    .pub-card:hover,
+    .diagram-card:hover,
+    .card:hover,
+    .highlight-card:hover {
+      transform: translateY(-6px);
+      box-shadow:0 12px 28px rgba(0,0,0,0.12);
+      border-left:6px solid #FFB366;
+      background:#fff9f3;
+    }
+
+    /* =========================================
+       TWO COLUMN LAYOUT
+    ========================================== */
     .two-col {
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:40px;
-      align-items: start;
+      align-items:start;
     }
     @media(max-width:900px){
-      .two-col { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns:1fr; }
     }
 
+    /* =========================================
+       PUBLICATIONS
+    ========================================== */
+    .pub-list {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      margin-top:30px;
+    }
+    @media(max-width:900px){
+      .pub-list { grid-template-columns:1fr; }
+    }
+
+    .hidden-text { display:none; margin-top:10px; }
+    .read-more-btn { color:#004c99; cursor:pointer; font-weight:600; margin-top:8px; display:inline-block; }
+
+    /* =========================================
+       3-COLUMN HIGHLIGHTS — NOW IN CONTAINERS
+    ========================================== */
+    .highlights {
+      margin-top:40px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
+    }
+    @media(max-width:900px){
+      .highlights { grid-template-columns:1fr; }
+    }
+
+    .highlight-card h4 {
+      font-size:22px;
+      font-weight:800;
+      margin-bottom:10px;
+      color:#0a1a3a;
+    }
   </style>
 </head>
 
@@ -97,7 +164,9 @@
   <div class="container">
     <p class="kicker">Research & Development</p>
     <h1>Built on real market needs. Backed by scientific research. Powered by innovation.</h1>
-    <p class="lead">Salecompass combines interviews with SMEs and peer-reviewed AI research to build marketing intelligence that moves revenue.</p>
+    <p class="lead">
+      Salecompass combines interviews with SMEs and peer-reviewed AI research to build marketing intelligence that moves revenue.
+    </p>
   </div>
 </section>
 
@@ -143,44 +212,41 @@
   </div>
 </section>
 
-<!-- TWO-COLUMN: INTERVIEWS → ARCHITECTURE + FOUNDER -->
-<section class="section section-alt fade-up">
+<!-- FROM INTERVIEWS & FOUNDER SIDE BY SIDE -->
+<section class="section-alt fade-up">
   <div class="container two-col">
 
-    <!-- LEFT -->
-    <div class="slide-left">
+    <div>
       <h3>From Interviews to Architecture</h3>
       <p>Insights transformed into Salecompass’ technical foundation.</p>
 
-      <figure class="diagram-card">
+      <figure class="diagram-card slide-left">
         <img src="assets/img/photo3.jpg" alt="">
       </figure>
     </div>
 
-    <!-- RIGHT -->
-    <div class="slide-right">
+    <div>
       <h2 class="section-title">About the Founder</h2>
       <p>
-        Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics,  
-        and marketing science forms the backbone of Salecompass.
+        Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics and  
+        marketing science forms the backbone of Salecompass.
       </p>
 
-      <figure class="media-card">
-        <img src="assets/img/photo4.jpg" alt="Founder">
+      <figure class="media-card slide-right">
+        <img src="assets/img/photo4.jpg" alt="">
       </figure>
     </div>
 
   </div>
 </section>
 
-<!-- PUBLICATIONS WITH READ MORE -->
-<section class="section section-alt fade-up">
+<!-- PUBLICATIONS (WITH READ MORE + HOVER EFFECT) -->
+<section class="section-alt fade-up">
   <div class="container">
     <h2 class="section-title">SECTION 2 — Scientific Foundations</h2>
 
     <div class="pub-list">
 
-      <!-- PUB 1 -->
       <article class="pub-card slide-left">
         <h4>📘 Publication 1 — Ethical AI in Marketing</h4>
         <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
@@ -195,7 +261,6 @@
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
       </article>
 
-      <!-- PUB 2 -->
       <article class="pub-card slide-right">
         <h4>📗 Publication 2 — AI + ML in Multi-Channel Food Marketing</h4>
         <p>Research on attribution, behaviour trends, POS integration.</p>
@@ -210,10 +275,22 @@
 
     </div>
 
-    <div class="grid-3 highlights">
-      <div class="card fade-up"><h4>Ethical AI</h4><p>Transparent, safe, privacy-aware analytics.</p></div>
-      <div class="card fade-up"><h4>Marketing Analytics</h4><p>Unifies online + offline touchpoints.</p></div>
-      <div class="card fade-up"><h4>Continuous R&amp;D</h4><p>Always improving with new behavioural data.</p></div>
+    <!-- HIGHLIGHTS IN CONTAINERS WITH HOVER -->
+    <div class="highlights">
+      <div class="highlight-card fade-up">
+        <h4>Ethical AI</h4>
+        <p>Transparent, safe, privacy-aware analytics.</p>
+      </div>
+
+      <div class="highlight-card fade-up">
+        <h4>Marketing Analytics</h4>
+        <p>Unifies online + offline touchpoints.</p>
+      </div>
+
+      <div class="highlight-card fade-up">
+        <h4>Continuous R&amp;D</h4>
+        <p>Always improving with new behavioural data.</p>
+      </div>
     </div>
 
   </div>
@@ -224,6 +301,7 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
+
     <div>
       <img src="assets/img/logo.svg" class="logo-img">
       <p class="small muted">Know What Works. Invest Where It Matters.</p>
@@ -256,9 +334,12 @@
         <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
       </ul>
     </div>
+
   </div>
 
-  <div class="container tiny muted">© <span id="year"></span> Salecompass. All rights reserved.</div>
+  <div class="container tiny muted">
+    © <span id="year"></span> Salecompass. All rights reserved.
+  </div>
 </footer>
 
 <!-- JS -->
@@ -274,25 +355,24 @@ if (btn && menu) {
   });
 }
 
-// SCROLL ANIMATIONS
-document.querySelectorAll('.fade-up, .slide-left, .slide-right')
-.forEach(el => {
+// Animations
+document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('show');
     });
-  }, {threshold:0.2});
+  }, { threshold:0.25 });
   obs.observe(el);
 });
 
 // Read More
 function toggleText(btn){
   const hidden = btn.previousElementSibling;
-  hidden.style.display = hidden.style.display === "block" ? "none" : "block";
-  btn.textContent = hidden.style.display === "block" ? "Show Less" : "Read More";
+  const isOpen = hidden.style.display === "block";
+  hidden.style.display = isOpen ? "none" : "block";
+  btn.textContent = isOpen ? "Read More" : "Show Less";
 }
 
-// Year
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
