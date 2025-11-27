@@ -5,6 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Salecompass — Know What Works. Invest Where It Matters</title>
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <style>
+    /* ===== HERO SECTION (NEW) ===== */
+    .hero {
+      position: relative;
+      background: url("assets/img/Ai%20Image.jpg") center/cover no-repeat;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero .lead {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto 20px;
+      opacity: 0.95;
+    }
+
+    .cta {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 420px;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+
+    /* ===== PROBLEM + SOLUTION SIDE BY SIDE ===== */
+    .prob-sol-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 800px) {
+      .prob-sol-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      transition: 0.3s ease;
+    }
+
+    /* Hover highlight (SECONDARY COLOR) */
+    .box:hover {
+      border-left: 6px solid #004c99; /* ONLY blue line */
+      transform: translateY(-4px);
+    }
+
+    /* problem */
+    .problem-list li {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+
+    /* solution */
+    .solution-list li {
+      margin-bottom: 8px;
+      font-size: 17px;
+      list-style: none;
+    }
+
+    .solution-list li::before {
+      content: "✔ ";
+      color: #004c99;
+      font-weight: 700;
+    }
+
+    /* ===== FEATURE CARD HOVER COLOR ===== */
+    .feature-card:hover {
+      border-left: 6px solid #004c99;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+  </style>
+
 </head>
 
 <body>
@@ -32,113 +141,98 @@
     </div>
   </header>
 
-  <!-- MAIN START -->
-  <main>
+  <!-- HERO SECTION -->
+  <section class="hero fade-up">
+    <div class="container">
+      <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
+      <p class="lead">
+        Make smarter marketing decisions with one platform that unifies your digital and offline insights.
+      </p>
 
-    <!-- HERO -->
-    <section class="hero fade-up">
-      <div class="container">
-
-        <div class="hero-image">
-          <img src="assets/img/Ai Image.jpg" alt="AI Image">
-        </div>
-
-        <div class="hero-text">
-          <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
-          <p class="lead">Make smarter marketing decisions with one platform that unifies your digital and offline insights.</p>
-
-          <div class="cta">
-            <a class="btn primary" href="contact.html">Book a demo</a>
-            <a class="btn outline" href="services.html">Explore features</a>
-          </div>
-        </div>
-
+      <div class="cta">
+        <a class="btn primary" href="contact.html">Book a demo</a>
+        <a class="btn outline" href="services.html">Explore features</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROBLEM SECTION -->
-    <section class="problem-section fade-up">
-      <div class="container">
+  <!-- PROBLEM + SOLUTION -->
+  <section class="problem-section fade-up">
+    <div class="container">
 
-        <h2>What Problem Does SaleCompass Solve?</h2>
-        <p class="intro">
-          Marketing is complex. Customers jump between Instagram, Google, websites, email, delivery apps, and physical stores.
-          SMEs don’t have the tools or time to measure everything — so money is wasted on guesswork.
-        </p>
+      <h2>What Problem Does SaleCompass Solve?</h2>
+      <p class="intro">
+        SMEs face overwhelming complexity with scattered data across Instagram, Google, POS, websites,
+        delivery apps, and offline stores — making it impossible to know what actually drives sales.
+      </p>
 
-        <ul class="problem-list">
-          <li>Which channel brings the highest ROI</li>
-          <li>What actually influences buying decisions</li>
-          <li>How many touchpoints lead to a sale</li>
-          <li>Why campaigns work or fail</li>
-          <li>Which customer segments are changing trends</li>
-        </ul>
+      <div class="prob-sol-grid">
 
-        <div class="solution-box">
+        <!-- PROBLEM BOX -->
+        <div class="box">
+          <h3>Common SME Challenges</h3>
+          <ul class="problem-list">
+            <li>Which channel brings the highest ROI</li>
+            <li>What influences buying decisions</li>
+            <li>How many touchpoints lead to a sale</li>
+            <li>Why campaigns work or fail</li>
+            <li>Which customer segments change trends</li>
+          </ul>
+        </div>
+
+        <!-- SOLUTION BOX -->
+        <div class="box">
           <h3>The SaleCompass Solution</h3>
-          <p>SaleCompass unifies all marketing and sales data — digital and physical — into a single, real-time AI-powered dashboard.</p>
+          <p>Everything unified into one real-time AI dashboard.</p>
 
-          <ul style="margin-top:12px;">
-            <li>✔ Track customer journeys across all channels</li>
-            <li>✔ See which campaigns drive actual sales</li>
-            <li>✔ Predict preferences and menu trends</li>
-            <li>✔ Optimise spend with AI recommendations</li>
-            <li>✔ Measure offline + online behaviour together</li>
+          <ul class="solution-list">
+            <li>Track customer journeys across all channels</li>
+            <li>See which campaigns drive real revenue</li>
+            <li>Predict trends & preferences</li>
+            <li>Optimize spend using AI insights</li>
+            <li>Combine offline + online analytics</li>
           </ul>
         </div>
 
       </div>
-    </section>
 
-    <!-- CORE FEATURES SECTION -->
-    <section class="core-features fade-up">
-      <h2 class="core-title">Core Features</h2>
+    </div>
+  </section>
 
-      <div class="container feature-grid">
+  <!-- CORE FEATURES -->
+  <section class="core-features fade-up">
+    <h2 class="core-title">Core Features</h2>
 
-        <div class="feature-card">
-          <img src="assets/img/icon1.jpg" alt="">
-          <h3>Multi-Channel Attribution Engine</h3>
-          <p>Know the true value of every channel across Instagram, Google, TikTok, email, SMS & in-store.</p>
-        </div>
+    <div class="container feature-grid">
 
-        <div class="feature-card">
-          <img src="assets/img/icon2.jpg" alt="">
-          <h3>Predictive Analytics</h3>
-          <p>AI forecasting to detect demand shifts, trending items, behaviour patterns, and ideal campaign timing.</p>
-        </div>
-
-        <div class="feature-card">
-          <img src="assets/img/icon3.jpg" alt="">
-          <h3>Sentiment & Review Intelligence</h3>
-          <p>Analyse reviews & conversations from delivery apps and social media to detect emerging customer needs.</p>
-        </div>
-
-        <div class="feature-card">
-          <img src="assets/img/icon4.jpg" alt="">
-          <h3>Real-Time Performance Dashboards</h3>
-          <p>Live insights, channel performance updates, instant visibility, and immediate alerts.</p>
-        </div>
-
-        <div class="feature-card">
-          <img src="assets/img/icon5.jpg" alt="">
-          <h3>Seamless Integrations</h3>
-          <p>Integrates with Google, Meta, TikTok, POS, CRMs, HubSpot, Salesforce & more.</p>
-        </div>
-
-        <div class="feature-card">
-          <img src="assets/img/icon6.jpg" alt="">
-          <h3>Notification & Automation Engine</h3>
-          <p>Auto insights: wasted spend alerts, top channels, sentiment-driven recommendations.</p>
-        </div>
-
+      <div class="feature-card">
+        <img src="assets/img/icon1.jpg" alt="">
+        <h3>Multi-Channel Attribution</h3>
+        <p>Measure real channel performance with accuracy.</p>
       </div>
-    </section>
 
-  </main>
-  <!-- MAIN END -->
+      <div class="feature-card">
+        <img src="assets/img/icon2.jpg" alt="">
+        <h3>Predictive Analytics</h3>
+        <p>AI forecasting for demand, trends, and behaviour shifts.</p>
+      </div>
 
-  <!-- FOOTER START -->
+      <div class="feature-card">
+        <img src="assets/img/icon3.jpg" alt="">
+        <h3>Sentiment Intelligence</h3>
+        <p>Analyse reviews to detect customer pain points early.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="assets/img/icon4.jpg" alt="">
+        <h3>Real-Time Dashboards</h3>
+        <p>Instant insights, alerts, and live performance monitoring.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="site-footer fade-up">
     <div class="container footer-grid">
 
@@ -182,48 +276,35 @@
       © <span id="year"></span> Salecompass. All rights reserved.
     </div>
   </footer>
-  <!-- FOOTER END -->
 
-
-  <!-- SINGLE CLEAN SCRIPT (FIXED) -->
+  <!-- SCRIPT -->
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+      const year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
 
-    const btn = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
-    const year = document.getElementById("year");
+      if (btn && menu) {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", !expanded);
+          menu.classList.toggle("open");
+        });
+      }
 
-    // Year
-    if (year) year.textContent = new Date().getFullYear();
-
-    // Toggle menu
-    if (btn && menu) {
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", !expanded);
-        menu.classList.toggle("open");
-      });
-    }
-
-    // Scroll animations
-    const animated = document.querySelectorAll(
-      ".fade-up, .slide-in-left, .slide-in-right, .scale-up"
-    );
-
-    const animateOnScroll = () => {
-      animated.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-          el.classList.add("visible");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", animateOnScroll);
-    animateOnScroll();
-
-  });
+      const animated = document.querySelectorAll(".fade-up, .slide-in-left, .slide-in-right, .scale-up");
+      const animateOnScroll = () => {
+        animated.forEach(el => {
+          if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+            el.classList.add("visible");
+          }
+        });
+      };
+      window.addEventListener("scroll", animateOnScroll);
+      animateOnScroll();
+    });
   </script>
 
 </body>
 </html>
-
