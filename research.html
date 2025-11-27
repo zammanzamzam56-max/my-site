@@ -20,18 +20,19 @@
     .slide-right { opacity: 0; transform: translateX(40px); transition: .7s ease; }
     .slide-right.show { opacity: 1; transform: translateX(0); }
 
+    /* Hover Lift Effect */
     .media-card, .pub-card, .diagram-card, .card {
       transition: transform .25s ease, box-shadow .25s ease;
     }
     .media-card:hover, .pub-card:hover, .diagram-card:hover, .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
     }
 
-    /* HERO FIX — your image name corrected */
+    /* HERO */
     .page-hero {
       background: url("assets/img/Research%20Photo.png") center/cover no-repeat;
-      padding: 140px 0;
+      padding: 150px 0;
       color: white;
       text-align: center;
       position: relative;
@@ -44,15 +45,23 @@
     }
     .page-hero .container { position:relative; z-index:2; }
 
+    .page-hero h1 {
+      color:#fff;
+    }
+    .page-hero .lead {
+      color:#fff;
+      opacity: .95;
+    }
+
     /* ----- READ MORE ----- */
     .hidden-text { display: none; margin-top: 8px; }
     .read-more-btn { color:#004c99; cursor:pointer; font-weight:600; display:inline-block; margin-top:8px; }
 
-    /* ----- TWO COLUMN LAYOUT FIX ----- */
+    /* ----- TWO COLUMN: Interviews → Architecture + Founder Side by Side ----- */
     .two-col {
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:32px;
+      gap:40px;
       align-items: start;
     }
     @media(max-width:900px){
@@ -134,29 +143,29 @@
   </div>
 </section>
 
-<!-- FROM INTERVIEWS + ARCHITECTURE + ABOUT FOUNDER (SIDE BY SIDE NOW) -->
+<!-- TWO-COLUMN: INTERVIEWS → ARCHITECTURE + FOUNDER -->
 <section class="section section-alt fade-up">
   <div class="container two-col">
 
-    <!-- LEFT COLUMN -->
-    <div>
+    <!-- LEFT -->
+    <div class="slide-left">
       <h3>From Interviews to Architecture</h3>
       <p>Insights transformed into Salecompass’ technical foundation.</p>
 
-      <figure class="diagram-card slide-left">
+      <figure class="diagram-card">
         <img src="assets/img/photo3.jpg" alt="">
       </figure>
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div>
+    <!-- RIGHT -->
+    <div class="slide-right">
       <h2 class="section-title">About the Founder</h2>
       <p>
-        Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics and  
-        marketing science forms the backbone of Salecompass.
+        Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics,  
+        and marketing science forms the backbone of Salecompass.
       </p>
 
-      <figure class="media-card slide-right">
+      <figure class="media-card">
         <img src="assets/img/photo4.jpg" alt="Founder">
       </figure>
     </div>
@@ -215,7 +224,6 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
-
     <div>
       <img src="assets/img/logo.svg" class="logo-img">
       <p class="small muted">Know What Works. Invest Where It Matters.</p>
@@ -248,12 +256,9 @@
         <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
       </ul>
     </div>
-
   </div>
 
-  <div class="container tiny muted">
-    © <span id="year"></span> Salecompass. All rights reserved.
-  </div>
+  <div class="container tiny muted">© <span id="year"></span> Salecompass. All rights reserved.</div>
 </footer>
 
 <!-- JS -->
@@ -269,7 +274,7 @@ if (btn && menu) {
   });
 }
 
-// Animate on scroll
+// SCROLL ANIMATIONS
 document.querySelectorAll('.fade-up, .slide-left, .slide-right')
 .forEach(el => {
   const obs = new IntersectionObserver(entries => {
