@@ -29,12 +29,12 @@
       text-align: center;
     }
 
-    /* UPDATED — 10% OVERLAY */
+    /* HERO OVERLAY (approx. 10% stronger than a light overlay) */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.10); /* <-- NEW OVERLAY */
+      background: rgba(0,0,0,0.65);
     }
 
     .hero-content {
@@ -82,9 +82,10 @@
     .btn.outline:hover { background: #0066ff; color: white; }
 
 
-    /* ============================================
-       PROBLEM SECTION
-    ============================================ */
+    /* ========================================================
+       PROBLEM SECTION — THREE BOXES  
+       + Hover Animation (Like About Page)
+    ======================================================== */
     .ps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -114,6 +115,7 @@
       color: #0a1a3a;
     }
 
+    /* REMOVE DOTS ONLY FROM THESE LISTS */
     .ps-box ul {
       list-style: none !important;
       padding-left: 0 !important;
@@ -129,7 +131,8 @@
 
 
     /* ===============================
-       CORE FEATURES
+       CORE FEATURES — 3 + 3 GRID
+       With Hover Animation
     ================================ */
     .features-grid {
       display: grid;
@@ -169,18 +172,18 @@
 
 
     /* ===============================
-       RESPONSIVE HERO FIX
+       RESPONSIVE HERO & GRID FIX
     ================================ */
     @media(max-width: 768px) {
-
-      /* FIXED — CENTER HERO CONTENT ON MOBILE */
-      .hero-content {
-        padding: 0 20px !important;
-      }
-
       .hero-content h1 { font-size: 32px; }
       .hero { height: 70vh; }
       .hero-cta { flex-direction: column; }
+
+      /* Ensure problem boxes stack nicely on mobile */
+      .ps-grid {
+        grid-template-columns: 1fr;
+        padding: 50px 0;
+      }
     }
   </style>
 </head>
