@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta-name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SaleCompass — AI Marketing Intelligence</title>
   <link rel="stylesheet" href="assets/styles.css" />
 
@@ -53,7 +53,7 @@
       margin-top: 14px;
       font-size: 20px;
       opacity: 1 !important;
-      color: #ffffff !important; /* White */
+      color: #ffffff !important;
     }
 
     .hero-cta {
@@ -78,12 +78,13 @@
       border: 2px solid #0066ff;
       color: white;
     }
-    .btn.outline:hover { background: #0066ff; color:white; }
+    .btn.outline:hover { background: #0066ff; color: white; }
 
-    /* ===============================
-       PROBLEM SECTION
-    ================================ */
 
+    /* ========================================================
+       PROBLEM SECTION — THREE BOXES  
+       + Hover Animation (Like About Page)
+    ======================================================== */
     .ps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -100,7 +101,11 @@
       transition: .25s;
     }
 
-    .ps-box:hover { background:#f0f7ff; transform: translateY(-6px); }
+    .ps-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      border-left: 6px solid #FFB366; /* SAME AS ABOUT PAGE */
+    }
 
     .ps-box h2 {
       font-size: 28px;
@@ -109,54 +114,69 @@
       color: #0a1a3a;
     }
 
+    /* REMOVE DOTS ONLY FROM THESE TWO LISTS */
     .ps-box ul {
-      padding-left: 20px;
+      list-style: none !important;
+      padding-left: 0 !important;
       line-height: 1.7;
       margin-top: 12px;
     }
 
-    /* ===============================
-       CORE FEATURES
-    ================================ */
+    .ps-box ul li {
+      margin-bottom: 8px;
+      padding-left: 0; /* Ensure no bullets appear */
+      font-size: 16px;
+    }
 
+
+    /* ===============================
+       CORE FEATURES — 3 + 3 GRID
+       With Hover Animation
+    ================================ */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 26px;
       padding-bottom: 80px;
     }
 
     .feature-card {
-      text-align:center;
-      background:white;
-      border-radius:16px;
-      padding:26px;
-      border-left:6px solid #004c99;
-      box-shadow:0 4px 22px rgba(0,0,0,0.06);
+      text-align: center;
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      border-left: 6px solid #004c99;
+      box-shadow: 0 4px 22px rgba(0,0,0,0.06);
       transition: .25s ease;
     }
 
     .feature-card:hover {
-      background:#f0f7ff;
+      background: #f0f7ff;
       transform: translateY(-6px);
+      border-left: 6px solid #FFB366;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
     .feature-card img {
-      height:70px;
-      margin:auto;
-      margin-bottom:16px;
+      height: 70px;
+      margin: auto;
+      margin-bottom: 16px;
     }
 
     .feature-card h3 {
-      font-size:22px;
+      font-size: 22px;
       color:#0a1a3a;
-      margin-bottom:10px;
+      margin-bottom: 10px;
     }
 
-    @media(max-width:768px){
-      .hero-content h1 { font-size:32px; }
-      .hero { height:70vh; }
-      .hero-cta { flex-direction:column; }
+
+    /* ===============================
+       RESPONSIVE HERO
+    ================================ */
+    @media(max-width: 768px) {
+      .hero-content h1 { font-size: 32px; }
+      .hero { height: 70vh; }
+      .hero-cta { flex-direction: column; }
     }
   </style>
 </head>
@@ -166,6 +186,7 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="container nav">
+
     <a class="logo" href="index.html">
       <img src="assets/img/logo.svg">
     </a>
@@ -181,10 +202,15 @@
       <a href="success-stories.html">Success Stories</a>
       <a class="btn primary" href="contact.html">Contact</a>
     </nav>
+
   </div>
 </header>
 
-<!-- HERO -->
+
+
+<!-- ================================
+      HERO
+================================ -->
 <section class="hero">
   <div class="hero-content">
 
@@ -200,9 +226,11 @@
   </div>
 </section>
 
-<!-- ============================================
-     PROBLEM SECTION — 3 BOXES
-============================================== -->
+
+
+<!-- ================================
+      PROBLEM SECTION (Three Boxes)
+================================ -->
 <section class="container">
 
   <div class="ps-grid">
@@ -211,13 +239,14 @@
     <div class="ps-box">
       <h2>What Problem Does SaleCompass Target?</h2>
       <p>
-        Marketing is complex. Customers jump between Instagram, Google, websites,
-        email, delivery apps, and physical stores.<br><br>
-        SMEs don’t have time or tools to measure everything — so money is wasted on guesswork.
+        Marketing is complex. Customers jump between Instagram, Google,
+        websites, email, delivery apps, and physical stores.<br><br>
+        SMEs don’t have the tools or time to measure everything —
+        so money is wasted on guesswork.
       </p>
     </div>
 
-    <!-- BOX 2 – CROSS ICONS ONLY -->
+    <!-- BOX 2 -->
     <div class="ps-box">
       <h2>Most Businesses Don’t Know:</h2>
       <ul>
@@ -229,9 +258,10 @@
       </ul>
     </div>
 
-    <!-- BOX 3 – CHECK ICONS ONLY -->
+    <!-- BOX 3 -->
     <div class="ps-box">
       <h2>✔️ The SaleCompass Solution</h2>
+
       <p>
         SaleCompass unifies all marketing & sales data — digital and physical —
         into one real-time AI-powered dashboard.
@@ -250,9 +280,11 @@
 
 </section>
 
-<!-- ============================================
-     CORE FEATURES — 3 + 3 GRID
-============================================== -->
+
+
+<!-- ================================
+      CORE FEATURES
+================================ -->
 <section class="container">
   <h2 style="text-align:center; font-size:34px; margin-bottom:24px;">Core Features</h2>
 
@@ -297,7 +329,11 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+
+
+<!-- ================================
+      FOOTER
+================================ -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
@@ -342,6 +378,7 @@
   </div>
 </footer>
 
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
@@ -359,6 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
 
 </body>
 </html>
