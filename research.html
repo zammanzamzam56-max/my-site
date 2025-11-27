@@ -4,93 +4,136 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research & Development | Salecompass</title>
-  <meta name="description"
-        content="How Salecompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* GLOBAL IMAGE FIX */
+    /* ------------------------------
+       GLOBAL IMAGE IMPROVEMENT
+    --------------------------------*/
     img {
       max-width: 100%;
       height: auto;
       display: block;
     }
-
     .media-card img,
     .diagram-card img {
-      max-width: 420px !important;   /* Smaller images */
+      max-width: 480px;
       border-radius: 14px;
       margin: 0 auto;
     }
 
-    /* Fade-up */
+    /* ------------------------------
+       HERO SECTION W/ WORKING IMAGE
+    --------------------------------*/
+    .page-hero {
+      background: url("assets/img/Research%20Photo.png") center/cover no-repeat;
+      padding: 160px 0;
+      text-align: center;
+      color: white !important;
+      position: relative;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 25, 54, 0.55);
+    }
+
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-hero h1,
+    .page-hero p {
+      color: white !important;
+    }
+
+    /* ------------------------------
+       HOVER SECONDARY COLOUR (#004c99)
+    --------------------------------*/
+    .pub-card,
+    .media-card,
+    .card,
+    .diagram-card {
+      transition: 0.3s ease;
+    }
+
+    .pub-card:hover,
+    .media-card:hover,
+    .card:hover,
+    .diagram-card:hover {
+      background: #004c99;
+      color: white;
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .pub-card:hover p,
+    .pub-card:hover h4 {
+      color: white;
+    }
+
+    /* ------------------------------
+       READ MORE (PUBLICATIONS)
+    --------------------------------*/
+    .hidden-text {
+      display: none;
+      margin-top: 8px;
+    }
+
+    .read-more-btn {
+      margin-top: 10px;
+      display: inline-block;
+      color: #004c99;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* ------------------------------
+       ANIMATIONS
+    --------------------------------*/
     .fade-up {
       opacity: 0;
       transform: translateY(24px);
       transition: 0.8s ease;
     }
-    .fade-up.show { opacity: 1; transform: translateY(0); }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    /* Slide animations */
-    .slide-right, .slide-left {
+    .slide-left {
       opacity: 0;
+      transform: translateX(-40px);
       transition: 0.8s ease;
     }
-    .slide-right { transform: translateX(40px); }
-    .slide-left  { transform: translateX(-40px); }
-    .slide-right.show, .slide-left.show { transform: translateX(0); opacity: 1; }
-
-    /* Hover secondary colour (#ffddc2) */
-    .pub-card:hover,
-    .media-card:hover,
-    .card:hover {
-      background: #ffddc2 !important;
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    .slide-left.show {
+      opacity: 1;
+      transform: translateX(0);
     }
 
-    /* HERO FIX — WHITE TEXT & BACKGROUND IMAGE */
-    .page-hero {
-      background: url("assets/img/Research%20photo.png") center/cover no-repeat;
-      padding: 140px 0;
-      text-align: center;
-      color: white !important;
+    .slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: 0.8s ease;
     }
-    .page-hero h1,
-    .page-hero p {
-      color: white !important;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+    .slide-right.show {
+      opacity: 1;
+      transform: translateX(0);
     }
 
-    /* CONTAINER FOR PUB CARDS */
-    .pub-list {
-      display: grid;
-      gap: 22px;
-      margin-top: 20px;
+    /* ------------------------------
+       CONTAINERS
+    --------------------------------*/
+    .section .container {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.07);
     }
 
-    .pub-card {
-      background: white;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      transition: 0.25s ease;
-    }
-
-    .readmore-toggle {
-      color: #004c99;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 14px;
-      margin-top: 8px;
-      display: inline-block;
-    }
-
-    .hidden-text {
-      display: none;
-      margin-top: 8px;
-      color: #444;
-    }
   </style>
 </head>
 
@@ -122,10 +165,11 @@
     <!-- HERO -->
     <section class="page-hero fade-up">
       <div class="container">
-        <p class="kicker">Research &amp; Development</p>
+        <p class="kicker">Research & Development</p>
         <h1>Built on real market needs. Backed by scientific research. Powered by innovation.</h1>
         <p class="lead">
-          Salecompass combines hands-on interviews with SMEs and peer-reviewed AI research to build real revenue-driving marketing intelligence.
+          Salecompass combines hands-on interviews with SMEs and peer-reviewed AI research
+          to build marketing intelligence that truly drives revenue.
         </p>
       </div>
     </section>
@@ -133,37 +177,37 @@
     <!-- SECTION 1 -->
     <section class="section fade-up">
       <div class="container">
-        <h2 class="section-title">SECTION 1 — Market Interviews & Need Analysis</h2>
-        <h3>Understanding the Real Problems Before Building the Solution</h3>
+        <h2>SECTION 1 — Market Interviews & Need Analysis</h2>
+        <h3>Understanding the Real Problems</h3>
 
         <div class="grid-2">
           <div class="slide-left">
-            <p>At Salecompass, research began long before a single line of code was written.</p>
+            <p>Extensive interviews across food, retail, and marketing teams revealed clear gaps...</p>
+
             <ul>
-              <li>CEOs of food businesses</li>
+              <li>CEOs of food brands</li>
               <li>Restaurant owners</li>
-              <li>Marketing teams</li>
-              <li>Growth strategists</li>
-              <li>SME founders across Europe</li>
+              <li>Marketing agencies</li>
+              <li>Product/growth strategists</li>
+              <li>SME founders</li>
             </ul>
 
-            <p><strong>Businesses have data everywhere — but no clarity about what drives revenue.</strong></p>
-
             <p>Workshops conducted across:</p>
-            <ul class="flag-list">
-              <li>🇬🇧 UK</li>
+            <ul>
+              <li>🇬🇧 United Kingdom</li>
               <li>🇫🇷 France</li>
               <li>🇵🇰 Pakistan</li>
               <li>🇳🇱 Netherlands</li>
             </ul>
+
           </div>
 
           <div class="media-stack slide-right">
             <figure class="media-card">
-              <img src="assets/img/photo1.png" alt="Interview">
+              <img src="assets/img/photo1.png" alt="Market interview">
             </figure>
             <figure class="media-card">
-              <img src="assets/img/photo2.png" alt="Meeting">
+              <img src="assets/img/photo2.png" alt="Discovery call">
             </figure>
           </div>
         </div>
@@ -174,7 +218,7 @@
     <section class="section section-alt fade-up">
       <div class="container">
         <h3>From Interviews to Architecture</h3>
-        <p>Insights from the field shaped the entire SaleCompass technical architecture.</p>
+        <p>The insights shaped our core platform architecture.</p>
 
         <figure class="diagram-card slide-right">
           <img src="assets/img/photo3.jpg" alt="Architecture diagram">
@@ -185,8 +229,10 @@
     <!-- FOUNDER -->
     <section class="section fade-up">
       <div class="container">
-        <h2 class="section-title">About the Founder</h2>
-        <p>Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics, and marketing forms the core scientific foundation of SaleCompass.</p>
+        <h2>About the Founder</h2>
+        <p>
+          Danyal Mohiuddin’s work in AI, ethics, and analytics forms the backbone of SaleCompass.
+        </p>
 
         <figure class="media-card slide-left">
           <img src="assets/img/photo4.jpg" alt="Founder">
@@ -194,82 +240,98 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS WITH READ MORE -->
+    <!-- SECTION 2 -->
     <section class="section section-alt fade-up">
       <div class="container">
-        <h2 class="section-title">SECTION 2 — Scientific Foundations</h2>
+        <h2>SECTION 2 — Scientific Foundations</h2>
+        <h3>Academic Rigor Behind SaleCompass</h3>
 
         <div class="pub-list">
 
-          <!-- Pub 1 -->
+          <!-- PUB 1 -->
           <article class="pub-card slide-left">
             <h4>📘 Publication 1 — Ethical AI in Marketing</h4>
-            <p><strong>Authors:</strong> Danyal Mohiuddin &amp; Dr. Naureen Farhan</p>
-            <p>Study on trust, ethics, fairness, and transparency in AI-led marketing.</p>
+            <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
 
-            <p class="hidden-text">
-              This publication explains frameworks for ethical decision-making,
-              how customers evaluate AI behaviour, and how transparency drives trust.
+            <p>
+              Study on ethical frameworks for consumer trust in AI.
+              <span class="hidden-text">
+                This research explores transparency and fairness models used in attribution systems.
+              </span>
             </p>
 
-            <span class="readmore-toggle" onclick="toggleReadMore(this)">Read More</span>
+            <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
           </article>
 
-          <!-- Pub 2 -->
+          <!-- PUB 2 -->
           <article class="pub-card slide-right">
-            <h4>📗 Publication 2 — AI + Machine Learning in Multi-Channel Food Marketing</h4>
-            <p>Research on attribution, behaviour trends, POS integration, and real-time insights.</p>
+            <h4>📗 Publication 2 — AI & Machine Learning in Food Marketing</h4>
+            <p>Research on multi-channel attribution and real-time insights.</p>
 
-            <p class="hidden-text">
-              This research introduces machine learning models for demand forecasting,
-              channel-efficiency scoring, and multi-source data unification.
-            </p>
+            <span class="hidden-text">
+              This study covers advanced statistical models for menu trend detection.
+            </span>
 
-            <span class="readmore-toggle" onclick="toggleReadMore(this)">Read More</span>
+            <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
           </article>
 
         </div>
 
-      </div>
-    </section>
+        <div class="grid-3 highlights">
+          <div class="card fade-up">
+            <h4>Ethical AI</h4>
+            <p>Transparent and safe analytics.</p>
+          </div>
 
-    <!-- Highlights -->
-    <section class="section fade-up">
-      <div class="container grid-3">
-        <div class="card fade-up">
-          <h4>Ethical AI</h4>
-          <p>Transparent, privacy-aware analytics.</p>
+          <div class="card fade-up">
+            <h4>Marketing Analytics</h4>
+            <p>Unified touchpoint insights.</p>
+          </div>
+
+          <div class="card fade-up">
+            <h4>Continuous R&D</h4>
+            <p>Always improving.</p>
+          </div>
         </div>
 
-        <div class="card fade-up">
-          <h4>Marketing Analytics</h4>
-          <p>Unifies online + offline journeys.</p>
-        </div>
-
-        <div class="card fade-up">
-          <h4>Continuous R&D</h4>
-          <p>Evolves with real behavioural data.</p>
-        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (RESTORED EXACT) -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <img src="assets/img/logo.svg" class="logo-img">
-        <p class="tiny">Know What Works. Invest Where It Matters.</p>
+        <img src="assets/img/logo.svg" alt="Salecompass Logo" class="logo-img">
+        <p class="small muted">Know What Works. Invest Where It Matters.</p>
       </div>
 
       <div>
         <h4>Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">R&amp;D</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="research.html">R&D</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Attribution</a></li>
+          <li><a href="services.html">Predictive Analytics</a></li>
+          <li><a href="services.html">Dashboards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
         </ul>
       </div>
     </div>
@@ -279,34 +341,40 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- SCRIPTS -->
   <script>
     // Toggle menu
     const btn = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
-    if (btn) {
+
+    if (btn && menu) {
       btn.addEventListener('click', () => {
-        menu.classList.toggle('open');
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", !expanded);
+        menu.classList.toggle("open");
       });
     }
 
-    // Scroll reveal
-    document.querySelectorAll('.fade-up, .slide-right, .slide-left')
-      .forEach(el => {
-        const obs = new IntersectionObserver(entries => {
-          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-        }, { threshold: 0.2 });
-        obs.observe(el);
-      });
+    // Year
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
 
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Scroll animations
+    document.querySelectorAll('.fade-up, .slide-right, .slide-left').forEach(el => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+      }, { threshold: 0.2 });
 
-    // READ MORE
-    function toggleReadMore(el) {
-      const extra = el.previousElementSibling;
-      extra.style.display = extra.style.display === "block" ? "none" : "block";
-      el.textContent = extra.style.display === "block" ? "Read Less" : "Read More";
+      observer.observe(el);
+    });
+
+    // Read More Toggle
+    function toggleText(el) {
+      const hidden = el.previousElementSibling;
+      hidden.style.display = hidden.style.display === "none" ? "block" : "none";
+      el.textContent = el.textContent === "Read More" ? "Read Less" : "Read More";
     }
   </script>
 
