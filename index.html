@@ -3,481 +3,372 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SaleCompass — Know What Works. Invest Where It Matters</title>
+  <title>SaleCompass — AI Marketing Intelligence</title>
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* ===============================
-       GLOBAL TWEAKS
-    ================================ */
-    body {
-      overflow-x: hidden;
-    }
+    body { overflow-x: hidden; }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .container {
       max-width: 1180px;
-      margin: 0 auto;
+      margin: auto;
       padding: 0 20px;
     }
 
     /* ===============================
-       HERO (FULL BACKGROUND)
+       HERO
     ================================ */
     .hero {
       position: relative;
-      height: 88vh;
+      height: 85vh;
       background: url("assets/img/Ai%20Image.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #ffffff;
     }
 
-    /* dark overlay for readability */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0,0,0,0.55);
     }
 
-    .hero-inner {
+    .hero-content {
       position: relative;
-      z-index: 1;
-      max-width: 840px;
-      padding: 20px 12px;
+      z-index: 2;
+      max-width: 850px;
+      color: white;
+      padding: 20px 10px;
     }
 
-    .hero-inner h1 {
+    .hero-content h1 {
       font-size: 48px;
       font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 12px;
     }
 
-    .hero-inner p.lead {
+    .hero-content p {
+      margin-top: 14px;
       font-size: 20px;
-      line-height: 1.5;
-      opacity: 0.98;
-      margin-bottom: 24px;
+      opacity: 1 !important;        /* FIXED → Always visible */
+      color: #ffffff !important;
     }
 
     .hero-cta {
+      margin-top: 22px;
       display: flex;
-      justify-content: center;
       gap: 16px;
-      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .hero-cta .btn {
+    .btn {
       padding: 14px 26px;
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      transition: 0.25s ease;
     }
 
-    .btn.primary {
-      background: #0066ff;
-      color: #ffffff;
-    }
-    .btn.primary:hover {
-      background: #0046b3;
-      transform: translateY(-2px);
-    }
+    .btn.primary { background: #0066ff; color: white; }
+    .btn.primary:hover { background: #004cbb; }
 
     .btn.outline {
-      border: 2px solid #ffffff;
-      color: #ffffff;
-      background: transparent;
+      border: 2px solid #0066ff;
+      color: white;
     }
-    .btn.outline:hover {
-      background: #ffffff;
-      color: #0a1a3a;
-      transform: translateY(-2px);
-    }
+    .btn.outline:hover { background: #0066ff; color: white; }
 
     /* ===============================
-       PROBLEM + SOLUTION SECTION
-       (restore content, put in two cards)
+       PROBLEM SECTION (3 CONTAINERS)
     ================================ */
-    .problem-section {
-      padding: 60px 0;
-      background: #f9fafb;
-    }
 
     .ps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       gap: 26px;
-      align-items: flex-start;
+      padding: 70px 0;
     }
 
-    .ps-card {
-      background: #ffffff;
+    .ps-box {
+      background: white;
+      padding: 30px;
       border-radius: 16px;
-      padding: 26px 24px 28px;
-      border-left: 6px solid #ff9f3c; /* secondary orange line */
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
-      transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-left: 6px solid #004c99;
+      transition: .25s;
     }
 
-    .ps-card:hover {
-      background: #fff7ec;
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-    }
+    .ps-box:hover { background: #f0f7ff; transform: translateY(-6px); }
 
-    .ps-card h2,
-    .ps-card h3 {
-      margin-bottom: 10px;
-      color: #0a1a3a;
+    .ps-box h2 {
+      font-size: 28px;
       font-weight: 800;
+      margin-bottom: 12px;
+      color: #0a1a3a;
     }
 
-    .ps-card p {
-      font-size: 15.5px;
-      line-height: 1.7;
-      color: #374151;
-    }
-
-    .problem-list,
-    .solution-list {
-      margin-top: 14px;
-      padding-left: 20px;
-      line-height: 1.7;
-      color: #374151;
-    }
-
-    .problem-list li {
-      list-style: disc;
-    }
-
-    .solution-list li {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .solution-list li::before {
-      content: "✔";
-      color: #16a34a;
-      font-weight: 700;
-      margin-right: 8px;
-    }
+    .ps-box ul { padding-left: 20px; line-height: 1.7; margin-top: 12px; }
 
     /* ===============================
-       CORE FEATURES (6 cards, 3 x 3)
-       restore all features, add hover/secondary colour
+       CORE FEATURES (3 + 3 GRID)
     ================================ */
-    .core-features {
-      padding: 60px 0 70px;
-    }
 
-    .core-features .core-title {
-      text-align: center;
-      font-size: 34px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #0a1a3a;
-    }
-
-    .feature-grid {
+    .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    /* force exactly 3 columns on wider screens so it becomes 3 + 3 */
-    @media (min-width: 980px) {
-      .feature-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 26px;
+      padding-bottom: 80px;
     }
 
     .feature-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 22px 20px 24px;
       text-align: center;
-      border-left: 6px solid #ff9f3c;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
-      transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      border-left: 6px solid #004c99;
+      box-shadow: 0 4px 22px rgba(0,0,0,0.06);
+      transition: .25s ease;
     }
 
     .feature-card:hover {
-      background: #fff7ec;
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      background: #f0f7ff;
+      transform: translateY(-6px);
     }
 
     .feature-card img {
-      height: 60px;
-      margin: 0 auto 14px;
-      object-fit: contain;
+      height: 70px;
+      margin: auto;
+      margin-bottom: 16px;
     }
 
-    .feature-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #0a1a3a;
-    }
-
-    .feature-card p {
-      font-size: 15px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
+    .feature-card h3 { font-size: 22px; color:#0a1a3a; margin-bottom: 10px; }
 
     /* ===============================
-       RESPONSIVE
+       RESPONSIVE HERO
     ================================ */
-    @media (max-width: 768px) {
-      .hero {
-        height: 78vh;
-      }
 
-      .hero-inner h1 {
-        font-size: 32px;
-      }
-
-      .hero-inner p.lead {
-        font-size: 17px;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-      }
+    @media(max-width: 768px) {
+      .hero-content h1 { font-size: 32px; }
+      .hero { height: 70vh; }
+      .hero-cta { flex-direction: column; }
     }
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Salecompass Logo">
-      </a>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container nav">
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <a class="logo" href="index.html">
+      <img src="assets/img/logo.svg">
+    </a>
 
-      <nav class="menu">
-        <a class="active" href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="research.html">R&amp;D</a>
-        <a href="success-stories.html">Success Stories</a>
-        <a class="btn primary" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <button class="menu-toggle" aria-expanded="false">☰</button>
 
-  <!-- MAIN -->
-  <main>
+    <nav class="menu">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="research.html">R&amp;D</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a class="btn primary" href="contact.html">Contact</a>
+    </nav>
 
-    <!-- HERO (background image + centered text + CTAs) -->
-    <section class="hero fade-up">
-      <div class="hero-inner">
-        <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
-        <p class="lead">
-          Make smarter marketing decisions with one platform that unifies your digital and offline insights.
-        </p>
+  </div>
+</header>
 
-        <div class="hero-cta">
-          <a class="btn primary" href="contact.html">Book a demo</a>
-          <a class="btn outline" href="services.html">Explore features</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- PROBLEM + SOLUTION (original content, now 2 cards side by side) -->
-    <section class="problem-section fade-up">
-      <div class="container">
-        <div class="ps-grid">
 
-          <!-- Problem card -->
-          <article class="ps-card">
-            <h2>What Problem Does SaleCompass Solve?</h2>
-            <p class="intro">
-              Marketing is complex. Customers jump between Instagram, Google, websites, email, delivery apps,
-              and physical stores. SMEs don’t have the tools or time to measure everything — so money is wasted
-              on guesswork.
-            </p>
+<!-- ================================
+      HERO
+================================ -->
+<section class="hero">
+  <div class="hero-content">
 
-            <ul class="problem-list">
-              <li>Which channel brings the highest ROI</li>
-              <li>What actually influences buying decisions</li>
-              <li>How many touchpoints lead to a sale</li>
-              <li>Why campaigns work or fail</li>
-              <li>Which customer segments are changing trends</li>
-            </ul>
-          </article>
+    <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
 
-          <!-- Solution card (restored original copy) -->
-          <article class="ps-card solution-box">
-            <h3>The SaleCompass Solution</h3>
-            <p>
-              SaleCompass unifies all marketing and sales data — digital and physical — into a single,
-              real-time AI-powered dashboard.
-            </p>
+    <p>Make smarter marketing decisions with one platform that unifies your digital and offline insights.</p>
 
-            <ul class="solution-list">
-              <li>Track customer journeys across all channels</li>
-              <li>See which campaigns drive actual sales</li>
-              <li>Predict preferences and menu trends</li>
-              <li>Optimise spend with AI recommendations</li>
-              <li>Measure offline + online behaviour together</li>
-            </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CORE FEATURES (all 6, 3x3 grid, hover effect) -->
-    <section class="core-features fade-up">
-      <div class="container">
-        <h2 class="core-title">Core Features</h2>
-
-        <div class="feature-grid">
-
-          <!-- 1 -->
-          <article class="feature-card">
-            <img src="assets/img/icon1.jpg" alt="Multi-channel attribution icon">
-            <h3>Multi-Channel Attribution Engine</h3>
-            <p>
-              Know the true value of every channel across Instagram, Google, TikTok, email, SMS, and in-store
-              touchpoints.
-            </p>
-          </article>
-
-          <!-- 2 -->
-          <article class="feature-card">
-            <img src="assets/img/icon2.jpg" alt="Predictive analytics icon">
-            <h3>Predictive Analytics</h3>
-            <p>
-              AI forecasting to detect demand shifts, trending items, behaviour patterns, and ideal campaign timing.
-            </p>
-          </article>
-
-          <!-- 3 -->
-          <article class="feature-card">
-            <img src="assets/img/icon3.jpg" alt="Sentiment & review intelligence icon">
-            <h3>Sentiment &amp; Review Intelligence</h3>
-            <p>
-              Analyse reviews and conversations from delivery apps and social media to detect emerging customer needs.
-            </p>
-          </article>
-
-          <!-- 4 -->
-          <article class="feature-card">
-            <img src="assets/img/icon4.jpg" alt="Real-time dashboard icon">
-            <h3>Real-Time Performance Dashboards</h3>
-            <p>
-              Live insights, channel performance updates, instant visibility, and immediate alerts.
-            </p>
-          </article>
-
-          <!-- 5 -->
-          <article class="feature-card">
-            <img src="assets/img/icon5.jpg" alt="Integrations icon">
-            <h3>Seamless Integrations</h3>
-            <p>
-              Integrates with Google, Meta, TikTok, POS systems, CRMs like HubSpot and Salesforce, and more.
-            </p>
-          </article>
-
-          <!-- 6 -->
-          <article class="feature-card">
-            <img src="assets/img/icon6.jpg" alt="Automation engine icon">
-            <h3>Notification &amp; Automation Engine</h3>
-            <p>
-              Automated insights on wasted spend, top channels, and sentiment-driven recommendations across campaigns.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER (same structure as before) -->
-  <footer class="site-footer fade-up">
-    <div class="container footer-grid">
-
-      <div>
-        <img src="assets/img/logo.svg" alt="Salecompass Footer Logo" class="logo-img">
-        <p class="tiny">Know What Works. Invest Where It Matters.</p>
-      </div>
-
-      <div>
-        <h4>Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="research.html">R&amp;D</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">Attribution Engine</a></li>
-          <li><a href="services.html">Predictive Analytics</a></li>
-          <li><a href="services.html">Dashboards</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Get in touch</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
-        </ul>
-      </div>
-
+    <div class="hero-cta">
+      <a class="btn primary" href="contact.html">Book a demo</a>
+      <a class="btn outline" href="services.html">Explore features</a>
     </div>
 
-    <div class="container tiny">
-      © <span id="year"></span> Salecompass. All rights reserved.
+  </div>
+</section>
+
+
+
+<!-- ================================
+      PROBLEM SECTION (Three Boxes)
+================================ -->
+<section class="container">
+
+  <div class="ps-grid">
+
+    <!-- BOX 1 -->
+    <div class="ps-box">
+      <h2>What Problem Does SaleCompass Solve?</h2>
+      <p>Marketing is complex. Customers jump between Instagram, Google, websites, email, delivery apps, and physical stores.<br><br>
+         SMEs don’t have the tools or time to measure everything — so money is wasted on guesswork.
+      </p>
     </div>
-  </footer>
 
-  <!-- JS: mobile menu + year -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.querySelector(".menu-toggle");
-      const menu = document.querySelector(".menu");
-      const year = document.getElementById("year");
+    <!-- BOX 2 -->
+    <div class="ps-box">
+      <h2>Most Businesses Don’t Know:</h2>
+      <ul>
+        <li>❌ Which channel brings the highest ROI</li>
+        <li>❌ What actually influences buying decisions</li>
+        <li>❌ How many touchpoints lead to a sale</li>
+        <li>❌ Why campaigns work or fail</li>
+        <li>❌ Which customer segments are changing trends</li>
+      </ul>
+    </div>
 
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
+    <!-- BOX 3 -->
+    <div class="ps-box">
+      <h2>✔️ The SaleCompass Solution</h2>
+      <p>SaleCompass unifies all marketing and sales data — digital and physical — into one real-time AI-powered dashboard.</p>
 
-      if (btn && menu) {
-        btn.addEventListener("click", () => {
-          const expanded = btn.getAttribute("aria-expanded") === "true";
-          btn.setAttribute("aria-expanded", String(!expanded));
-          menu.classList.toggle("open");
-        });
-      }
+      <ul>
+        <li>✔ Track customer journeys across all channels</li>
+        <li>✔ See which campaigns drive real sales</li>
+        <li>✔ Predict customer preferences & menu trends</li>
+        <li>✔ Use AI to optimise spend in real time</li>
+        <li>✔ Measure offline + online behaviour together</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+      CORE FEATURES (3 + 3)
+================================ -->
+<section class="container">
+  <h2 style="text-align:center; font-size:34px; margin-bottom:24px;">Core Features</h2>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <img src="assets/img/icon1.jpg">
+      <h3>Attribution Engine</h3>
+      <p>Know the true ROI across every channel.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon2.jpg">
+      <h3>Predictive Analytics</h3>
+      <p>Forecast behaviour, demand, trends.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon3.jpg">
+      <h3>Sentiment & Review Intelligence</h3>
+      <p>Understand customer emotions in real time.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon4.jpg">
+      <h3>Real-Time Dashboards</h3>
+      <p>Instant visibility, alerts & insights.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon5.jpg">
+      <h3>Seamless Integrations</h3>
+      <p>Google, Meta, TikTok, POS, CRMs.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon6.jpg">
+      <h3>Automation Engine</h3>
+      <p>AI-driven notifications & optimisation.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ================================
+      FOOTER
+================================ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div>
+      <img src="assets/img/logo.svg" class="logo-img">
+      <p class="tiny">Know What Works. Invest Where It Matters.</p>
+    </div>
+
+    <div>
+      <h4>Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="research.html">R&amp;D</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Attribution Engine</a></li>
+        <li><a href="services.html">Predictive Analytics</a></li>
+        <li><a href="services.html">Dashboards</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="container tiny">
+    © <span id="year"></span> SaleCompass. All rights reserved.
+  </div>
+</footer>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+  const y = document.getElementById("year");
+
+  if (y) y.textContent = new Date().getFullYear();
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
     });
-  </script>
+  }
+});
+</script>
+
 
 </body>
 </html>
