@@ -19,12 +19,11 @@
       color: #ffffff;
     }
 
-    /* Dark navy overlay */
     .about-hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(10, 25, 54, 0.55); 
+      background: rgba(10, 25, 54, 0.60);
     }
 
     .about-hero .container {
@@ -36,22 +35,17 @@
       font-size: 48px;
       font-weight: 800;
       margin-bottom: 12px;
-      letter-spacing: 1px;
     }
 
     .about-hero .hero-subtext {
       font-size: 20px;
-      font-weight: 400;
       max-width: 760px;
       margin: 0 auto;
       line-height: 1.6;
-      opacity: 0.95;
-    
-    color: white !important;
-
+      color: #fff;
     }
 
-    /* ===== CONTENT SECTIONS ===== */
+    /* ===== BASE SECTIONS ===== */
     .about-section, .mv-section, .values-section, .timeline-section, .why-section {
       padding: 60px 0;
       background: #f9fafb;
@@ -62,23 +56,28 @@
       padding: 32px;
       border-radius: 16px;
       box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+      transition: 0.3s ease;
+    }
+
+    /* Hover animation + secondary colour */
+    .mv-card:hover, .value-card:hover, .why-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      border-left: 6px solid #FFB366;
     }
 
     .about-card h2 {
       font-size: 32px;
       font-weight: 800;
-      margin-bottom: 16px;
       color: #0a1a3a;
     }
 
     .about-card p {
-      color: #3a3a3a;
       font-size: 17px;
       line-height: 1.75;
-      margin-bottom: 14px;
+      color: #444;
     }
 
-    /* ===== TITLES ===== */
     .center-title {
       text-align: center;
       font-size: 34px;
@@ -87,29 +86,40 @@
       margin-bottom: 30px;
     }
 
-    .mv-grid, .values-grid, .why-grid {
+    /* ===== 4 COLUMN GRID (same as services) ===== */
+    .values-grid,
+    .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 28px;
     }
 
-    .mv-card h3, .value-card h4, .why-card h4 {
+    @media (max-width: 1024px) {
+      .values-grid,
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .values-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .value-card h4,
+    .why-card h4 {
       font-size: 22px;
       font-weight: 700;
       margin-bottom: 12px;
       color: #0a1a3a;
     }
 
-    .mv-card p, .value-card p, .why-card p {
-      color: #555;
-      line-height: 1.65;
-    }
-
     /* ===== TIMELINE ===== */
     .timeline {
       border-left: 4px solid #0a1a3a;
-      margin-top: 30px;
       padding-left: 28px;
+      margin-top: 30px;
     }
 
     .timeline-item {
@@ -129,14 +139,24 @@
     }
 
     .timeline-year {
-      font-size: 18px;
       font-weight: 700;
+      font-size: 18px;
       color: #0a1a3a;
     }
 
-    .timeline-item p {
-      margin-top: 6px;
-      color: #444;
+    /* ===== READ MORE ===== */
+    .hidden-text {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .read-more-btn {
+      margin-top: 12px;
+      display: inline-block;
+      font-weight: 600;
+      cursor: pointer;
+      color: #004c99;
     }
 
     /* ===== ANIMATIONS ===== */
@@ -150,6 +170,7 @@
       transform: translateY(0);
     }
   </style>
+
 </head>
 
 <body>
@@ -175,53 +196,68 @@
     </div>
   </header>
 
-  <main>
+  <!-- HERO -->
+  <section class="about-hero fade-up">
+    <div class="container">
+      <h1>About SaleCompass</h1>
+      <p class="hero-subtext">
+        A modern AI-powered marketing intelligence platform helping SMEs understand 
+        what truly drives performance.
+      </p>
+    </div>
+  </section>
 
-    <!-- HERO -->
-    <section class="about-hero fade-up">
-      <div class="container">
-        <h1>About SaleCompass</h1>
-        <p class="hero-subtext">
-          A modern AI-powered marketing intelligence platform helping SMEs understand  
-          what truly drives results across every online and offline touchpoint.
-        </p>
-      </div>
-    </section>
+  <main>
 
     <!-- WHAT IS SALECOMPASS -->
     <section class="about-section fade-up">
       <div class="container about-card">
         <h2>What is SaleCompass?</h2>
         <p>
-          SaleCompass is an AI-driven marketing intelligence platform designed for small and 
-          medium-sized businesses. Customers switch constantly between Instagram, Google, TikTok,
-          email, delivery apps, websites, and physical stores — making it nearly impossible to know
-          what actually works.
+          SaleCompass helps SMEs understand what truly works by unifying all digital and offline data into one 
+          intelligent dashboard backed by AI-driven analytics.
         </p>
         <p>
-          SaleCompass unifies all digital + offline data into one intelligent dashboard, using 
-          predictive analytics, sentiment analysis, multi-touch attribution, and POS integration to 
-          help teams make smarter decisions.
+          From predictive analytics to multi-touch attribution, SaleCompass removes guesswork and empowers 
+          every business to make confident, data-backed decisions.
         </p>
       </div>
     </section>
 
-    <!-- MISSION + VISION -->
+    <!-- MISSION & VISION -->
     <section class="mv-section fade-up">
       <div class="container mv-grid">
+
+        <!-- Mission -->
         <div class="mv-card">
           <h3>Our Mission</h3>
           <p>
-            Empower SMEs with enterprise-grade marketing intelligence — simple, affordable, and effective.
+            Empower SMEs with enterprise-grade marketing intelligence—simple, affordable, and effective.
           </p>
+
+          <p class="hidden-text">
+            We believe every business deserves clarity. Our mission is to remove complexity and replace 
+            it with insights that directly improve revenue, decisions, and long-term growth.
+          </p>
+
+          <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
         </div>
 
+        <!-- Vision -->
         <div class="mv-card">
           <h3>Our Vision</h3>
           <p>
-            To become the most accessible, accurate, and AI-powered insights platform in the world.
+            To become the world’s most accurate, accessible, and AI-powered marketing intelligence platform.
           </p>
+
+          <p class="hidden-text">
+            We envision a future where every business—regardless of size—can access predictive tools, 
+            automation, and intelligence without enterprise-level cost or complexity.
+          </p>
+
+          <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
         </div>
+
       </div>
     </section>
 
@@ -233,58 +269,29 @@
         <div class="values-grid">
 
           <div class="value-card">
-            <div style="font-size: 42px;">✨</div>
+            <div style="font-size:42px;">✨</div>
             <h4>Simplicity</h4>
-            <p>We turn complex data into clear, actionable insights.</p>
+            <p>Making complex insights clear and actionable.</p>
           </div>
 
           <div class="value-card">
-            <div style="font-size: 42px;">🔍</div>
+            <div style="font-size:42px;">🔍</div>
             <h4>Transparency</h4>
-            <p>Clear metrics. No guesswork. No hidden analytics.</p>
+            <p>No hidden data. No confusion — just clarity.</p>
           </div>
 
           <div class="value-card">
-            <div style="font-size: 42px;">📊</div>
+            <div style="font-size:42px;">📊</div>
             <h4>Accuracy</h4>
-            <p>Insights backed by reliable, research-based AI models.</p>
+            <p>Every insight backed by dependable AI models.</p>
           </div>
 
           <div class="value-card">
-            <div style="font-size: 42px;">🚀</div>
+            <div style="font-size:42px;">🚀</div>
             <h4>Innovation</h4>
-            <p>Constantly evolving with new data and smarter algorithms.</p>
+            <p>Continuously improving with smarter algorithms.</p>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section class="timeline-section fade-up">
-      <div class="container">
-        <h2 class="center-title">Our Journey</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-year">2021</span>
-            <p>SaleCompass concept created to solve attribution problems for SMEs.</p>
-          </div>
-
-          <div class="timeline-item">
-            <span class="timeline-year">2022</span>
-            <p>Launched AI modules for predictions, sentiment, and attribution.</p>
-          </div>
-
-          <div class="timeline-item">
-            <span class="timeline-year">2023</span>
-            <p>Integrated POS, CRM, and eCommerce systems globally.</p>
-          </div>
-
-          <div class="timeline-item">
-            <span class="timeline-year">2024</span>
-            <p>Expanded to cross-country analytics with deeper AI insights.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -298,22 +305,22 @@
 
           <div class="why-card">
             <h4>All Data in One Place</h4>
-            <p>A unified dashboard for every channel and system.</p>
+            <p>Every touchpoint unified into a single dashboard.</p>
           </div>
 
           <div class="why-card">
             <h4>Real-Time Insights</h4>
-            <p>Get instant alerts, forecasts, and performance reports.</p>
+            <p>Live predictions, alerts, and performance tracking.</p>
           </div>
 
           <div class="why-card">
             <h4>AI Recommendations</h4>
-            <p>Stop wasting spend — boost ROI with guided actions.</p>
+            <p>Spend smarter with guidance driven by real results.</p>
           </div>
 
           <div class="why-card">
             <h4>Built for SMEs</h4>
-            <p>Enterprise-grade intelligence without enterprise complexity.</p>
+            <p>Enterprise-grade tools without enterprise complexity.</p>
           </div>
 
         </div>
@@ -327,7 +334,7 @@
     <div class="container footer-grid">
 
       <div>
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo" class="logo-img">
+        <img src="assets/img/logo.svg" class="logo-img" alt="SaleCompass Logo">
         <p class="tiny">Know What Works. Invest Where It Matters.</p>
       </div>
 
@@ -367,9 +374,7 @@
     </div>
   </footer>
 
-
-
-<!-- CLEAN JS -->
+<!-- JS -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
@@ -383,11 +388,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Footer Year
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Animations
   const animated = document.querySelectorAll(".fade-up");
   const animateOnScroll = () => {
     animated.forEach(el => {
@@ -396,13 +398,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
-  
   window.addEventListener("scroll", animateOnScroll);
   animateOnScroll();
 });
+
+function toggleText(btn) {
+  const hidden = btn.previousElementSibling;
+  hidden.style.display = hidden.style.display === "block" ? "none" : "block";
+  btn.textContent = hidden.style.display === "block" ? "Show Less" : "Read More";
+}
 </script>
 
 </body>
 </html>
-
-
