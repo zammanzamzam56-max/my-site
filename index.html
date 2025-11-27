@@ -29,11 +29,12 @@
       text-align: center;
     }
 
+    /* UPDATED OVERLAY — DARKER NOW */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.70); /* <-- 55% → NOW 70% OVERLAY */
     }
 
     .hero-content {
@@ -104,7 +105,7 @@
     .ps-box:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-      border-left: 6px solid #FFB366; /* SAME AS ABOUT PAGE */
+      border-left: 6px solid #FFB366;
     }
 
     .ps-box h2 {
@@ -124,7 +125,7 @@
 
     .ps-box ul li {
       margin-bottom: 8px;
-      padding-left: 0; /* Ensure no bullets appear */
+      padding-left: 0;
       font-size: 16px;
     }
 
@@ -229,13 +230,12 @@
 
 
 <!-- ================================
-      PROBLEM SECTION (Three Boxes)
+      PROBLEM SECTION
 ================================ -->
 <section class="container">
 
   <div class="ps-grid">
 
-    <!-- BOX 1 -->
     <div class="ps-box">
       <h2>What Problem Does SaleCompass Target?</h2>
       <p>
@@ -246,7 +246,6 @@
       </p>
     </div>
 
-    <!-- BOX 2 -->
     <div class="ps-box">
       <h2>Most Businesses Don’t Know:</h2>
       <ul>
@@ -258,7 +257,6 @@
       </ul>
     </div>
 
-    <!-- BOX 3 -->
     <div class="ps-box">
       <h2>✔️ The SaleCompass Solution</h2>
 
