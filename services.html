@@ -75,6 +75,17 @@
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+
+      /* 🔥 Added About-page hover animation style */
+      border-left: 6px solid transparent;
+    }
+
+    /* 🔥 HOVER ANIMATIONS ADDED (Like About Page) */
+    .pricing-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      border-left: 6px solid #FFB366;
+      background: #fff7ef;
     }
 
     .plan-title { font-size:14px; text-transform:uppercase; color:#6b7280; font-weight:700; }
@@ -320,7 +331,7 @@
       </div>
     </div>
 
-    <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
+    <div class="container tiny">©️ <span id="year"></span> SaleCompass. All rights reserved.</div>
   </footer>
 
 <script>
@@ -390,4 +401,3 @@
 
 </body>
 </html>
-
