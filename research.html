@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research & Development | SaleCompass</title>
-  <meta name="description" content="How Salecompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
+  <meta name="description"
+        content="How SaleCompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
@@ -31,7 +32,6 @@
       font-size:20px;
       max-width:800px;
       margin:0 auto;
-      opacity:1;
       color:white !important;
     }
 
@@ -57,7 +57,7 @@
     /* TEXT CONTAINER ----------------------------------------- */
     .text-container {
       max-width:680px;
-      line-height:1.70;
+      line-height:1.65;
       font-size:17px;
       margin-bottom:26px;
     }
@@ -105,19 +105,39 @@
       gap:20px;
     }
 
-    /* MATCH FOUNDER & AI IMAGE HEIGHT ------------------------ */
-    .founder-architecture-wrapper {
+    /* FINAL FIX: Make SaleCompass.ai & Founder EXACT SAME HEIGHT */
+    .equal-row {
       display:grid;
       grid-template-columns:1fr 1fr;
+      align-items:stretch; /* equal height columns */
       gap:40px;
-      align-items:start;
     }
 
-    .equal-height-img {
-      height:50%;
-      width:auto;
-      object-fit:cover;
-      border-radius:20px;
+    .equal-card {
+      background:#fff;
+      border-radius:22px;
+      padding:20px;
+      height:100%;
+      box-shadow:0 12px 34px rgba(0,0,0,0.10);
+      transition:.35s ease;
+      border-left:6px solid transparent;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .equal-card:hover {
+      transform:translateY(-6px);
+      border-left:6px solid #FFB366;
+      background:#fff9f1;
+      box-shadow:0 18px 42px rgba(0,0,0,0.15);
+    }
+
+    .equal-img {
+      width:100%;
+      height:100%;
+      object-fit:contain; /* NO cropping */
+      border-radius:18px;
     }
 
     /* PUBLICATIONS ------------------------------------------- */
@@ -176,7 +196,9 @@
   <div class="container">
     <p class="kicker">Research & Development</p>
     <h1>Built on real market needs. Backed by scientific research.</h1>
-    <p class="lead">SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.</p>
+    <p class="lead">
+      SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.
+    </p>
   </div>
 </section>
 
@@ -189,12 +211,15 @@
 
     <div class="two-col">
 
-      <!-- TEXT -->
+      <!-- TEXT CONTAINER -->
       <div class="info-card fade-up text-container">
         <h3>Understanding the Real Problems Before Building the Solution</h3>
-        <p>At SaleCompass, research began long before a single line of code.</p>
 
-        <p>Our founder <strong>Danyal Mohiuddin</strong> conducted extensive market interviews, discovery meetings, and need-analysis surveys.</p>
+        <p>
+          At SaleCompass, research began long before a single line of code.
+          Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
+          market interviews, discovery meetings, and need-analysis surveys.
+        </p>
 
         <ul>
           <li>CEOs of food businesses</li>
@@ -214,10 +239,10 @@
         </ul>
       </div>
 
-      <!-- SCREENSHOTS -->
+      <!-- SCREENSHOT IMAGES -->
       <div class="photo-grid fade-up">
-        <figure class="photo-card"><img src="assets/img/photo1.png" alt=""></figure>
-        <figure class="photo-card"><img src="assets/img/photo2.png" alt=""></figure>
+        <figure class="photo-card"><img src="assets/img/photo1.png"></figure>
+        <figure class="photo-card"><img src="assets/img/photo2.png"></figure>
       </div>
 
     </div>
@@ -228,16 +253,16 @@
 <section class="section-alt fade-up">
   <div class="container">
 
-    <div class="founder-architecture-wrapper">
+    <div class="equal-row">
 
-      <!-- LEFT: SaleCompass.ai (Keeps full size) -->
-      <div class="diagram-card slide-left">
-        <img src="assets/img/photo3.jpg" alt="SaleCompass.ai Architecture">
+      <!-- SaleCompass.ai Diagram (left) -->
+      <div class="equal-card slide-left">
+        <img src="assets/img/photo3.jpg" class="equal-img" alt="SaleCompass.ai Architecture">
       </div>
 
-      <!-- RIGHT: Founder (Auto stretches to full height) -->
-      <div class="photo-card slide-right">
-        <img src="assets/img/photo4.jpg" class="equal-height-img" alt="Founder">
+      <!-- Founder Photo (right) -->
+      <div class="equal-card slide-right">
+        <img src="assets/img/photo4.jpg" class="equal-img" alt="Founder">
       </div>
 
     </div>
@@ -255,10 +280,11 @@
       <article class="pub-card slide-left">
         <h4>📘 Publication 1: Ethical AI in Marketing</h4>
         <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
-        <p>Study on transparency, fairness, trust, and ethical AI.</p>
+        <p>Study on trust, ethics, fairness, transparency in AI marketing.</p>
 
         <p class="hidden-text">
-          This study evaluates rule-based and outcome-based moral reasoning, ethical judgment formation, and its influence on consumer trust and behavioural intention.
+          This publication explores ethical judgment, rule-based reasoning,
+          moral frameworks, and how trust influences customer behaviour.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -266,10 +292,11 @@
 
       <article class="pub-card slide-right">
         <h4>📗 Publication 2: AI + ML in Multi-Channel Food Marketing</h4>
-        <p>Research on attribution modelling and behavioural trends.</p>
+        <p>Research on attribution, behaviour trends, and POS integration.</p>
 
         <p class="hidden-text">
-          Includes predictive models, channel attribution, offline + online behaviour integration, and machine-learning-based demand forecasting.
+          Includes attribution modelling, behavioural segmentation,
+          multi-channel analytics, and real-time demand forecasting.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -277,7 +304,7 @@
 
     </div>
 
-    <!-- HIGHLIGHTS -->
+    <!-- Highlights -->
     <div class="highlights fade-up">
       <div class="highlight-card">
         <h4>Ethical AI</h4>
@@ -290,7 +317,7 @@
       </div>
 
       <div class="highlight-card">
-        <h4>Continuous R&amp;D</h4>
+        <h4>Continuous R&D</h4>
         <p>Always improving with new behavioural data.</p>
       </div>
     </div>
@@ -303,6 +330,7 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
+
     <div>
       <img src="assets/img/logo.svg" class="logo-img">
       <p class="small muted">Know What Works. Invest Where It Matters.</p>
@@ -377,4 +405,3 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
-
