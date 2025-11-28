@@ -179,6 +179,7 @@
 
 <body>
 
+<!-- HEADER ------------------------------------------------ -->
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt=""></a>
@@ -195,30 +196,35 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO -------------------------------------------------- -->
 <section class="page-hero fade-up">
   <div class="container">
     <p class="kicker">Research & Development</p>
     <h1>Built on real market needs. Backed by scientific research.</h1>
-    <p class="lead">SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.</p>
+    <p class="lead">
+      SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.
+    </p>
   </div>
 </section>
 
 <main>
 
-<!-- SECTION 1 -->
+<!-- SECTION 1 -------------------------------------------- -->
 <section class="section fade-up">
   <div class="container">
     <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
 
     <div class="two-col">
 
+      <!-- TEXT -->
       <div class="info-card fade-up text-container">
         <h3>Understanding the Real Problems Before Building the Solution</h3>
 
-        <p>At SaleCompass, research began long before a single line of code.
-        Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
-        market interviews, discovery meetings, and need-analysis surveys.</p>
+        <p>
+          At SaleCompass, research began long before a single line of code.
+          Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
+          market interviews, discovery meetings, and need-analysis surveys.
+        </p>
 
         <ul>
           <li>CEOs of food businesses</li>
@@ -238,6 +244,7 @@
         </ul>
       </div>
 
+      <!-- SCREENSHOTS -->
       <div class="photo-grid fade-up">
         <figure class="photo-card"><img src="assets/img/photo1.png"></figure>
         <figure class="photo-card"><img src="assets/img/photo2.png"></figure>
@@ -247,14 +254,41 @@
   </div>
 </section>
 
-<!-- SECTION 2 (Heading FIXED + Aligned) -->
+<!-- SECTION 2: Architecture + Founder ---------------------- -->
 <section class="section-alt fade-up">
   <div class="container">
 
-    <h2 class="section-title" style="margin-bottom:25px;">
-      SECTION 2: Scientific Foundations
-    </h2>
+    <div class="equal-row">
 
+      <!-- SaleCompass.ai -->
+      <div class="equal-card slide-left">
+        <img src="assets/img/photo3.jpg" class="equal-img" alt="SaleCompass.ai Architecture">
+      </div>
+
+      <!-- Founder with text -->
+      <div class="equal-card slide-right">
+        <div style="width:100%; margin-bottom:12px;">
+          <h2 class="section-title" style="margin-bottom:8px;">About the Founder</h2>
+          <p style="line-height:1.55;">
+            Danyal Mohiuddin is a researcher whose work in AI, analytics,
+            ethics, and marketing science forms the backbone of SaleCompass.
+          </p>
+        </div>
+
+        <img src="assets/img/photo4.jpg" class="equal-img-cover" alt="Founder">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FIXED SECTION 2 HEADING (NOW ALIGNED INSIDE CONTAINER) -->
+<section class="section-alt fade-up" style="padding-top:30px;">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:30px;">SECTION 2: Scientific Foundations</h2>
+
+    <!-- Academic Rigor Card -->
     <div class="info-card fade-up" style="margin-bottom:20px;">
       <h2 class="section-title" style="margin-bottom:10px;">Academic Rigor That Fuels Technological Innovation</h2>
       <p>
@@ -265,9 +299,9 @@
       </p>
     </div>
 
-    <!-- PUBLICATIONS -->
     <div class="pub-list">
 
+      <!-- PUBLICATION 1 -->
       <article class="pub-card slide-left">
         <h4>📘 Publication 1: Ethical AI in Marketing</h4>
         <p><strong>AI in Marketing: Ethical Challenges and Solutions for Consumers and Society</strong></p>
@@ -292,6 +326,7 @@
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
       </article>
 
+      <!-- PUBLICATION 2 -->
       <article class="pub-card slide-right">
         <h4>📗 Publication 2: Multi-Channel Food Marketing</h4>
         <p><strong>AI and Machine Learning Enhance Multi-Channel Marketing Effectiveness in the Food Industry</strong></p>
@@ -304,6 +339,9 @@
           The study proposes leveraging AI and machine learning to integrate digital and offline
           interactions, develop attribution models, track real-time performance, and map customer
           journeys across touchpoints.
+
+          It highlights the importance of combining POS data, footfall metrics, order history, and
+          app-based behavioural insights to create a unified understanding of consumer behaviour.
 
           These findings directly informed the technical architecture of SaleCompass, contributing
           to the development of its multi-touch attribution engine, real-time trend detection,
@@ -340,7 +378,7 @@
 
 </main>
 
-<!-- FOOTER -->
+<!-- FOOTER -------------------------------------------------- -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
@@ -384,6 +422,7 @@
   </div>
 </footer>
 
+<!-- SCRIPTS ----------------------------------------------- -->
 <script>
 const btn = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
