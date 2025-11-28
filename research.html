@@ -457,3 +457,43 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
+/* ==== FIX R&D PAGE MOBILE VIEW (NO OTHER CHANGES) ==== */
+@media (max-width: 768px) {
+
+  /* force all card grids to stack on mobile */
+  .rd-grid,
+  .research-grid,
+  .two-col,
+  .container > .card-wrapper,
+  .container > .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* ensure cards take full width on mobile */
+  .card,
+  .rd-card,
+  .research-card,
+  .founder-card {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* fix image scaling inside founder/research cards */
+  .card img,
+  .rd-card img,
+  .research-card img,
+  .founder-card img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* fix spacing on mobile */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
