@@ -11,9 +11,7 @@
     img { max-width: 100%; display: block; }
     body { overflow-x:hidden; background:#ffffff; }
 
-    /* =========================================================
-       PREMIUM HERO
-    ========================================================== */
+    /* HERO */
     .page-hero {
       background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.3)),
                   url("assets/img/Research%20Photo.png") center/cover no-repeat;
@@ -33,12 +31,9 @@
       font-size:20px;
       max-width:800px;
       margin:0 auto;
-      opacity:.94;
     }
 
-    /* =========================================================
-       GLOBAL SPACING
-    ========================================================== */
+    /* SPACING */
     section.section { padding: 90px 0; }
     section.section-alt { padding: 90px 0; background:#f8fafc; }
 
@@ -47,9 +42,7 @@
       .page-hero h1 { font-size:38px; }
     }
 
-    /* =========================================================
-       ANIMATIONS
-    ========================================================== */
+    /* ANIMATIONS */
     .fade-up { opacity: 0; transform: translateY(24px); transition:0.8s ease; }
     .fade-up.show { opacity:1; transform:translateY(0); }
 
@@ -59,21 +52,14 @@
     .slide-right { opacity:0; transform:translateX(40px); transition:0.8s ease; }
     .slide-right.show { opacity:1; transform:translateX(0); }
 
-    /* =========================================================
-       TEXT CONTAINER — Readable Text Lines
-    ========================================================== */
+    /* TEXT CONTAINER */
     .text-container {
       max-width:680px;
       line-height:1.65;
       font-size:17px;
-      margin-bottom:26px;
     }
 
-    .text-container ul { padding-left:22px; line-height:1.7; }
-
-    /* =========================================================
-       INFO CARD
-    ========================================================== */
+    /* INFO CARD */
     .info-card {
       background:#fff;
       padding:34px;
@@ -89,76 +75,64 @@
       background:#fff9f1;
     }
 
-    /* =========================================================
-       FIXED LAYOUT — TEXT LEFT | PHOTOS RIGHT
-    ========================================================== */
+    /* THE CORRECT 2 COLUMN LAYOUT */
     .two-col {
       display:grid;
-      grid-template-columns:1fr 0.8fr; /* FINAL FIX */
-      gap:50px;
+      grid-template-columns:1.1fr 0.9fr;  /* text left / photos right */
+      gap:40px;
       align-items:flex-start;
-      margin-top:40px;
     }
 
     @media(max-width:900px){
       .two-col { grid-template-columns:1fr; }
     }
 
-    /* =========================================================
-       PHOTO GRID — STACK VERTICALLY (FINAL FIX)
-    ========================================================== */
+    /* SCREENSHOTS RIGHT SIDE (VERTICAL STACK) */
     .photo-grid {
       display:grid;
       grid-template-columns:1fr;
-      gap:22px;
+      gap:28px;
       height:fit-content;
     }
 
     .photo-card {
       background:#fff;
       padding:14px;
-      border-radius:16px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.10);
       transition:.35s ease;
     }
 
     .photo-card:hover {
       transform:translateY(-6px);
-      border-left:5px solid #FFB366;
+      border-left:6px solid #FFB366;
       background:#fff9f1;
     }
 
-    /* =========================================================
-       MAKE FOUNDER IMAGE SAME SIZE AS ARCHITECTURE DIAGRAM
-    ========================================================== */
-    .photo-card img,
-    .diagram-card img {
+    /* ARCHITECTURE + FOUNDER PHOTO MATCH SIZE */
+    .diagram-card img,
+    .photo-card img {
       width:100%;
-      height:350px;         /* FINAL MATCHED HEIGHT */
+      height:350px;
       object-fit:cover;
-      border-radius:12px;
+      border-radius:14px;
     }
 
-    /* =========================================================
-       DIAGRAM CARD
-    ========================================================== */
     .diagram-card {
-      background:white;
-      padding:20px;
+      background:#fff;
+      padding:18px;
       border-radius:18px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-      transition:.3s ease;
+      box-shadow:0 12px 34px rgba(0,0,0,0.12);
+      transition:.35s ease;
     }
 
     .diagram-card:hover {
       transform:translateY(-6px);
-      border-left:5px solid #FFB366;
+      border-left:6px solid #FFB366;
       background:#fff9f1;
     }
 
-    /* =========================================================
-       PUBLICATIONS
-    ========================================================== */
+    /* PUBLICATIONS */
     .pub-list {
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -174,33 +148,31 @@
       background:#fff;
       padding:28px;
       border-radius:20px;
-      box-shadow:0 10px 32px rgba(0,0,0,0.10);
-      transition:.35s ease;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      transition:.3s;
     }
 
     .pub-card:hover {
       transform:translateY(-6px);
-      background:#fff9f1;
       border-left:6px solid #FFB366;
+      background:#fff9f1;
     }
 
-    .hidden-text { display:none; margin-top:10px; }
+    .hidden-text { display:none; }
     .read-more-btn {
       cursor:pointer;
       font-weight:600;
-      color:#004c99;
+      color:#0054b8;
       margin-top:8px;
       display:inline-block;
     }
 
-    /* =========================================================
-       HIGHLIGHT CARDS
-    ========================================================== */
+    /* HIGHLIGHTS */
     .highlights {
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:28px;
-      margin-top:50px;
+      gap:26px;
+      margin-top:40px;
     }
 
     @media(max-width:900px){
@@ -208,27 +180,24 @@
     }
 
     .highlight-card {
-      background:white;
-      padding:30px;
+      background:#fff;
+      padding:26px;
       border-radius:20px;
       box-shadow:0 10px 34px rgba(0,0,0,0.08);
-      transition:.3s ease;
-      border-left:5px solid transparent;
+      transition:.3s;
+      border-left:6px solid transparent;
     }
 
     .highlight-card:hover {
       transform:translateY(-6px);
+      border-left:6px solid #FFB366;
       background:#fff9f1;
-      border-left:5px solid #FFB366;
     }
 
     .highlight-card h4 {
-      margin-bottom:10px;
       font-size:22px;
-      font-weight:800;
-      color:#0a1a3a;
+      margin-bottom:12px;
     }
-
   </style>
 </head>
 
@@ -256,18 +225,15 @@
 <!-- HERO -->
 <section class="page-hero fade-up">
   <div class="container">
-    <p class="kicker">Research & Development</p>
-    <h1>Built on real market needs. Backed by scientific research. Powered by innovation.</h1>
-    <p class="lead">
-      Salecompass combines interviews with SMEs and peer-reviewed AI research to build marketing intelligence that moves revenue.
-    </p>
+    <h1>Built on real market needs.<br>Backed by scientific research.</h1>
+    <p class="lead">SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.</p>
   </div>
 </section>
 
 <main>
 
 <!-- ============================================================
-     SECTION 1 — TEXT LEFT | PHOTOS RIGHT (FINAL LAYOUT)
+     SECTION 1 — TEXT LEFT / SCREENSHOTS RIGHT (fixed)
 ============================================================ -->
 <section class="section fade-up">
   <div class="container">
@@ -275,14 +241,13 @@
 
     <div class="two-col">
 
-      <!-- LEFT TEXT -->
-      <div class="info-card fade-up text-container">
+      <div class="info-card text-container">
         <h3>Understanding the Real Problems Before Building the Solution</h3>
 
         <p>
-          At Salecompass, research began long before a single line of code.
-          Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
-          <strong>market interviews, discovery meetings, and need-analysis surveys.</strong>
+          Research began long before a single line of code.
+          Founder <strong>Danyal Mohiuddin</strong> conducted extensive
+          <strong>market interviews, discovery meetings, and need-analysis surveys</strong>.
         </p>
 
         <ul>
@@ -303,10 +268,10 @@
         </ul>
       </div>
 
-      <!-- RIGHT PHOTOS STACKED -->
+      <!-- RIGHT SIDE SCREENSHOTS (NOW FIXED & NOT CUT) -->
       <div class="photo-grid fade-up">
-        <figure class="photo-card"><img src="assets/img/photo1.png" alt=""></figure>
-        <figure class="photo-card"><img src="assets/img/photo2.png" alt=""></figure>
+        <figure class="photo-card"><img src="assets/img/photo1.png"></figure>
+        <figure class="photo-card"><img src="assets/img/photo2.png"></figure>
       </div>
 
     </div>
@@ -314,29 +279,28 @@
 </section>
 
 <!-- ============================================================
-     ARCHITECTURE + FOUNDER (FOUNDER MATCHED SIZE)
+     FOUNDER + SALECOMPASS.AI (restored & aligned)
 ============================================================ -->
 <section class="section-alt fade-up">
   <div class="container two-col">
 
     <div>
       <h3>From Interviews to Architecture</h3>
-      <p>Insights transformed into Salecompass’ technical foundation.</p>
+      <p>Insights transformed into the technical backbone of SaleCompass.</p>
 
       <figure class="diagram-card slide-left">
-        <img src="assets/img/photo3.jpg" alt="">
+        <img src="assets/img/photo3.jpg">
       </figure>
     </div>
 
     <div>
-      <h2 class="section-title">About the Founder</h2>
+      <h3>About the Founder</h3>
       <p>
-        Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics and
-        marketing science forms the backbone of Salecompass.
+        Danyal Mohiuddin's research in AI ethics, analytics, and marketing science forms the core of SaleCompass innovation.
       </p>
 
       <figure class="photo-card slide-right">
-        <img src="assets/img/photo4.jpg" alt="">
+        <img src="assets/img/photo4.jpg">
       </figure>
     </div>
 
@@ -344,7 +308,7 @@
 </section>
 
 <!-- ============================================================
-     PUBLICATIONS
+     PUBLICATIONS RESTORED
 ============================================================ -->
 <section class="section-alt fade-up">
   <div class="container">
@@ -353,24 +317,25 @@
     <div class="pub-list">
 
       <article class="pub-card slide-left">
-        <h4>📘 Publication 1 : Ethical AI in Marketing</h4>
+        <h4>📘 Publication 1: Ethical AI in Marketing</h4>
         <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
         <p>Study on trust, ethics, fairness, transparency in AI marketing.</p>
 
         <p class="hidden-text">
-          This publication explores consumer trust frameworks,
-          moral reasoning, and behavioural influence of AI-generated recommendations.
+          This publication examines ethical judgement models, algorithmic fairness,
+          consumer trust dynamics, and the impact of AI-driven recommendations.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
       </article>
 
       <article class="pub-card slide-right">
-        <h4>📗 Publication 2 : AI + ML in Multi-Channel Food Marketing</h4>
-        <p>Research on attribution, behaviour trends, POS integration.</p>
+        <h4>📗 Publication 2: AI & ML in Multi-Channel Food Marketing</h4>
+        <p>Research on attribution, behaviour trends, and predictive analytics.</p>
 
         <p class="hidden-text">
-          Includes neural architectures, attribution scoring, segmentation, demand forecasting.
+          Covers multi-model neural systems, behavioural segmentation,
+          personalised targeting, and real-time cross-channel measurement.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -378,15 +343,16 @@
 
     </div>
 
+    <!-- HIGHLIGHTS -->
     <div class="highlights fade-up">
       <div class="highlight-card">
         <h4>Ethical AI</h4>
-        <p>Transparent, safe, privacy-aware analytics.</p>
+        <p>Transparent, safe, privacy-first analytics.</p>
       </div>
 
       <div class="highlight-card">
         <h4>Marketing Analytics</h4>
-        <p>Unifies online + offline touchpoints.</p>
+        <p>Real-time insights combining online + offline behaviour.</p>
       </div>
 
       <div class="highlight-card">
@@ -467,12 +433,12 @@ document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
   obs.observe(el);
 });
 
-// Read More toggle
+// Read More
 function toggleText(btn){
   const hidden = btn.previousElementSibling;
-  const isOpen = hidden.style.display === "block";
-  hidden.style.display = isOpen ? "none" : "block";
-  btn.textContent = isOpen ? "Read More" : "Show Less";
+  const open = hidden.style.display === "block";
+  hidden.style.display = open ? "none" : "block";
+  btn.textContent = open ? "Read More" : "Show Less";
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
