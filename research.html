@@ -12,7 +12,7 @@
     img { max-width:100%; display:block; }
     body { overflow-x:hidden; background:#ffffff; }
 
-    /* HERO ---------------------------------------------------- */
+    /* HERO ------------------------------------ */
     .page-hero {
       background:linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.3)),
                  url("assets/img/Research%20Photo.png") center/cover no-repeat;
@@ -35,7 +35,7 @@
       color:white !important;
     }
 
-    /* SPACING ------------------------------------------------- */
+    /* SPACING --------------------------------- */
     section.section { padding:90px 0; }
     section.section-alt { padding:90px 0; background:#f8fafc; }
 
@@ -44,7 +44,7 @@
       .page-hero h1 { font-size:38px; }
     }
 
-    /* ANIMATIONS --------------------------------------------- */
+    /* ANIMATIONS ------------------------------ */
     .fade-up { opacity:0; transform:translateY(24px); transition:0.8s ease; }
     .fade-up.show { opacity:1; transform:translateY(0); }
 
@@ -54,7 +54,7 @@
     .slide-right { opacity:0; transform:translateX(40px); transition:0.8s ease; }
     .slide-right.show { opacity:1; transform:translateX(0); }
 
-    /* TEXT CONTAINER ----------------------------------------- */
+    /* TEXT CONTAINER -------------------------- */
     .text-container {
       max-width:680px;
       line-height:1.65;
@@ -63,7 +63,7 @@
     }
     .text-container ul { padding-left:22px; line-height:1.7; }
 
-    /* CARD STYLE --------------------------------------------- */
+    /* CARD STYLES ----------------------------- */
     .info-card,
     .photo-card,
     .diagram-card,
@@ -87,7 +87,7 @@
       box-shadow:0 18px 42px rgba(0,0,0,0.15);
     }
 
-    /* GRID ----------------------------------------------------- */
+    /* TWO-COLUMN GRID ------------------------- */
     .two-col {
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -98,31 +98,33 @@
       .two-col { grid-template-columns:1fr; }
     }
 
-    /* SCREENSHOT GRID (next to text) -------------------------- */
+    /* SCREENSHOT GRID ------------------------- */
     .photo-grid {
       display:grid;
       grid-template-columns:1fr;
       gap:20px;
     }
 
-    /* FINAL FIX: Make SaleCompass.ai & Founder EXACT SAME HEIGHT */
+    /* EQUAL HEIGHT FIX - SMALL CONTAINERS ----- */
     .equal-row {
       display:grid;
       grid-template-columns:1fr 1fr;
-      align-items:stretch; /* equal height columns */
       gap:40px;
+      align-items:stretch;
     }
 
     .equal-card {
       background:#fff;
       border-radius:22px;
       padding:20px;
-      height:100%;
+      height:380px;        /* ⭐ FINAL SMALL HEIGHT */
+      overflow:hidden;
       box-shadow:0 12px 34px rgba(0,0,0,0.10);
       transition:.35s ease;
       border-left:6px solid transparent;
       display:flex;
-      justify-content:center;
+      flex-direction:column;
+      justify-content:flex-start;
       align-items:center;
     }
 
@@ -133,14 +135,16 @@
       box-shadow:0 18px 42px rgba(0,0,0,0.15);
     }
 
-    .equal-img {
+    /* BOTH IMAGES FIT INSIDE WITHOUT CROPPING */
+    .equal-img,
+    .equal-img-cover {
       width:100%;
       height:100%;
-      object-fit:contain; /* NO cropping */
+      object-fit:contain;    /* ⭐ NO CROPPING */
       border-radius:18px;
     }
 
-    /* PUBLICATIONS ------------------------------------------- */
+    /* PUBLICATIONS ----------------------------- */
     .pub-list {
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -150,6 +154,7 @@
     @media(max-width:900px){
       .pub-list { grid-template-columns:1fr; }
     }
+
     .hidden-text { display:none; margin-top:10px; }
     .read-more-btn {
       cursor:pointer;
@@ -159,7 +164,7 @@
       margin-top:8px;
     }
 
-    /* HIGHLIGHTS --------------------------------------------- */
+    /* HIGHLIGHTS ------------------------------- */
     .highlights {
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -169,12 +174,13 @@
     @media(max-width:900px){
       .highlights { grid-template-columns:1fr; }
     }
+
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- HEADER ------------------------------------------------ -->
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt=""></a>
@@ -191,7 +197,7 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO -------------------------------------------------- -->
 <section class="page-hero fade-up">
   <div class="container">
     <p class="kicker">Research & Development</p>
@@ -204,14 +210,14 @@
 
 <main>
 
-<!-- SECTION 1: Market Interviews -->
+<!-- SECTION 1 -------------------------------------------- -->
 <section class="section fade-up">
   <div class="container">
     <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
 
     <div class="two-col">
 
-      <!-- TEXT CONTAINER -->
+      <!-- TEXT -->
       <div class="info-card fade-up text-container">
         <h3>Understanding the Real Problems Before Building the Solution</h3>
 
@@ -239,7 +245,7 @@
         </ul>
       </div>
 
-      <!-- SCREENSHOT IMAGES -->
+      <!-- SCREENSHOTS -->
       <div class="photo-grid fade-up">
         <figure class="photo-card"><img src="assets/img/photo1.png"></figure>
         <figure class="photo-card"><img src="assets/img/photo2.png"></figure>
@@ -249,20 +255,30 @@
   </div>
 </section>
 
-<!-- SECTION: Architecture + Founder -->
+<!-- SECTION 2: Architecture + Founder ---------------------- -->
 <section class="section-alt fade-up">
   <div class="container">
 
     <div class="equal-row">
 
-      <!-- SaleCompass.ai Diagram (left) -->
+      <!-- SaleCompass.ai -->
       <div class="equal-card slide-left">
         <img src="assets/img/photo3.jpg" class="equal-img" alt="SaleCompass.ai Architecture">
       </div>
 
-      <!-- Founder Photo (right) -->
+      <!-- Founder with text -->
       <div class="equal-card slide-right">
-        <img src="assets/img/photo4.jpg" class="equal-img" alt="Founder">
+
+        <div style="width:100%; margin-bottom:12px;">
+          <h2 class="section-title" style="margin-bottom:8px;">About the Founder</h2>
+          <p style="line-height:1.55;">
+            Danyal Mohiuddin is a researcher whose work in AI, analytics,
+            ethics, and marketing science forms the backbone of SaleCompass.
+          </p>
+        </div>
+
+        <img src="assets/img/photo4.jpg" class="equal-img-cover" alt="Founder">
+
       </div>
 
     </div>
@@ -270,7 +286,7 @@
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
+<!-- PUBLICATIONS ------------------------------------------ -->
 <section class="section-alt fade-up">
   <div class="container">
     <h2 class="section-title">SECTION 2: Scientific Foundations</h2>
@@ -283,8 +299,8 @@
         <p>Study on trust, ethics, fairness, transparency in AI marketing.</p>
 
         <p class="hidden-text">
-          This publication explores ethical judgment, rule-based reasoning,
-          moral frameworks, and how trust influences customer behaviour.
+          This publication explores consumer trust frameworks,
+          moral reasoning, ethical judgment, and behavioural outcomes.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -295,8 +311,8 @@
         <p>Research on attribution, behaviour trends, and POS integration.</p>
 
         <p class="hidden-text">
-          Includes attribution modelling, behavioural segmentation,
-          multi-channel analytics, and real-time demand forecasting.
+          Includes predictive modelling, multi-channel analytics,
+          customer segmentation, and real-time forecasting.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -327,7 +343,7 @@
 
 </main>
 
-<!-- FOOTER -->
+<!-- FOOTER -------------------------------------------------- -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
@@ -371,7 +387,7 @@
   </div>
 </footer>
 
-<!-- SCRIPTS -->
+<!-- SCRIPTS ----------------------------------------------- -->
 <script>
 const btn = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
@@ -384,7 +400,8 @@ if(btn && menu){
   });
 }
 
-document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el=>{
+document.querySelectorAll('.fade-up, .slide-left, .slide-right')
+.forEach(el=>{
   const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting) entry.target.classList.add('show');
