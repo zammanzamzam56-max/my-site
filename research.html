@@ -12,7 +12,7 @@
     body { overflow-x:hidden; background:#ffffff; }
 
     /* =========================================================
-       PREMIUM HERO - DARK OVERLAY + GRADIENT + BLUR
+       PREMIUM HERO
     ========================================================== */
     .page-hero {
       background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.3)),
@@ -20,16 +20,15 @@
       padding: 160px 0;
       text-align:center;
       color:white;
-      position:relative;
     }
 
-    .page-hero .container { position:relative; z-index:2; }
     .page-hero h1 {
       font-size:48px;
       font-weight:800;
       line-height:1.2;
       margin-bottom:16px;
     }
+
     .page-hero p.lead {
       font-size:20px;
       max-width:800px;
@@ -49,7 +48,7 @@
     }
 
     /* =========================================================
-       ANIMATIONS (premium smooth)
+       ANIMATIONS
     ========================================================== */
     .fade-up { opacity: 0; transform: translateY(24px); transition:0.8s ease; }
     .fade-up.show { opacity:1; transform:translateY(0); }
@@ -61,7 +60,7 @@
     .slide-right.show { opacity:1; transform:translateX(0); }
 
     /* =========================================================
-       TEXT CONTAINER — FIX LONG LINES
+       TEXT CONTAINER — Readable Text Lines
     ========================================================== */
     .text-container {
       max-width:680px;
@@ -69,10 +68,11 @@
       font-size:17px;
       margin-bottom:26px;
     }
+
     .text-container ul { padding-left:22px; line-height:1.7; }
 
     /* =========================================================
-       INFO CARD — WHITE BOX WITH PREMIUM ELEVATION
+       INFO CARD
     ========================================================== */
     .info-card {
       background:#fff;
@@ -82,33 +82,36 @@
       border-left:6px solid transparent;
       transition:.35s ease;
     }
+
     .info-card:hover {
       transform:translateY(-6px);
       border-left:6px solid #FFB366;
       background:#fff9f1;
-      box-shadow:0 18px 42px rgba(0,0,0,0.15);
     }
 
     /* =========================================================
-       GRID LAYOUT
+       FIXED LAYOUT — TEXT LEFT | PHOTOS RIGHT
     ========================================================== */
     .two-col {
       display:grid;
-      grid-template-columns:1fr;
-      gap:22px;
+      grid-template-columns:1fr 0.8fr; /* FINAL FIX */
+      gap:50px;
       align-items:flex-start;
+      margin-top:40px;
     }
+
     @media(max-width:900px){
       .two-col { grid-template-columns:1fr; }
     }
 
     /* =========================================================
-       RIGHT-SIDE IMAGES GRID
+       PHOTO GRID — STACK VERTICALLY (FINAL FIX)
     ========================================================== */
     .photo-grid {
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
+      grid-template-columns:1fr;
+      gap:22px;
+      height:fit-content;
     }
 
     .photo-card {
@@ -118,10 +121,22 @@
       box-shadow:0 8px 30px rgba(0,0,0,0.08);
       transition:.35s ease;
     }
+
     .photo-card:hover {
       transform:translateY(-6px);
       border-left:5px solid #FFB366;
       background:#fff9f1;
+    }
+
+    /* =========================================================
+       MAKE FOUNDER IMAGE SAME SIZE AS ARCHITECTURE DIAGRAM
+    ========================================================== */
+    .photo-card img,
+    .diagram-card img {
+      width:100%;
+      height:350px;         /* FINAL MATCHED HEIGHT */
+      object-fit:cover;
+      border-radius:12px;
     }
 
     /* =========================================================
@@ -134,6 +149,7 @@
       box-shadow:0 10px 30px rgba(0,0,0,0.08);
       transition:.3s ease;
     }
+
     .diagram-card:hover {
       transform:translateY(-6px);
       border-left:5px solid #FFB366;
@@ -141,7 +157,7 @@
     }
 
     /* =========================================================
-       PUBLICATIONS (two-column)
+       PUBLICATIONS
     ========================================================== */
     .pub-list {
       display:grid;
@@ -149,6 +165,7 @@
       gap:34px;
       margin-top:40px;
     }
+
     @media(max-width:900px){
       .pub-list { grid-template-columns:1fr; }
     }
@@ -160,6 +177,7 @@
       box-shadow:0 10px 32px rgba(0,0,0,0.10);
       transition:.35s ease;
     }
+
     .pub-card:hover {
       transform:translateY(-6px);
       background:#fff9f1;
@@ -171,12 +189,12 @@
       cursor:pointer;
       font-weight:600;
       color:#004c99;
-      display:inline-block;
       margin-top:8px;
+      display:inline-block;
     }
 
     /* =========================================================
-       HIGHLIGHT CARDS (3 columns)
+       HIGHLIGHT CARDS
     ========================================================== */
     .highlights {
       display:grid;
@@ -184,6 +202,7 @@
       gap:28px;
       margin-top:50px;
     }
+
     @media(max-width:900px){
       .highlights { grid-template-columns:1fr; }
     }
@@ -196,6 +215,7 @@
       transition:.3s ease;
       border-left:5px solid transparent;
     }
+
     .highlight-card:hover {
       transform:translateY(-6px);
       background:#fff9f1;
@@ -208,6 +228,7 @@
       font-weight:800;
       color:#0a1a3a;
     }
+
   </style>
 </head>
 
@@ -217,7 +238,9 @@
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt=""></a>
+
     <button class="menu-toggle" aria-expanded="false">☰</button>
+
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -244,7 +267,7 @@
 <main>
 
 <!-- ============================================================
-     SECTION 1 — INTERVIEWS + IMAGES
+     SECTION 1 — TEXT LEFT | PHOTOS RIGHT (FINAL LAYOUT)
 ============================================================ -->
 <section class="section fade-up">
   <div class="container">
@@ -252,6 +275,7 @@
 
     <div class="two-col">
 
+      <!-- LEFT TEXT -->
       <div class="info-card fade-up text-container">
         <h3>Understanding the Real Problems Before Building the Solution</h3>
 
@@ -279,6 +303,7 @@
         </ul>
       </div>
 
+      <!-- RIGHT PHOTOS STACKED -->
       <div class="photo-grid fade-up">
         <figure class="photo-card"><img src="assets/img/photo1.png" alt=""></figure>
         <figure class="photo-card"><img src="assets/img/photo2.png" alt=""></figure>
@@ -289,7 +314,7 @@
 </section>
 
 <!-- ============================================================
-     ARCHITECTURE + FOUNDER
+     ARCHITECTURE + FOUNDER (FOUNDER MATCHED SIZE)
 ============================================================ -->
 <section class="section-alt fade-up">
   <div class="container two-col">
@@ -297,6 +322,7 @@
     <div>
       <h3>From Interviews to Architecture</h3>
       <p>Insights transformed into Salecompass’ technical foundation.</p>
+
       <figure class="diagram-card slide-left">
         <img src="assets/img/photo3.jpg" alt="">
       </figure>
@@ -308,6 +334,7 @@
         Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics and
         marketing science forms the backbone of Salecompass.
       </p>
+
       <figure class="photo-card slide-right">
         <img src="assets/img/photo4.jpg" alt="">
       </figure>
@@ -332,8 +359,7 @@
 
         <p class="hidden-text">
           This publication explores consumer trust frameworks,
-          moral reasoning in algorithmic systems, and the behavioural influence
-          of AI-generated recommendations on purchase decisions.
+          moral reasoning, and behavioural influence of AI-generated recommendations.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -344,8 +370,7 @@
         <p>Research on attribution, behaviour trends, POS integration.</p>
 
         <p class="hidden-text">
-          Includes multi-model neural architectures, cross-channel attribution scoring,
-          behavioural segmentation, and real-time food industry demand prediction.
+          Includes neural architectures, attribution scoring, segmentation, demand forecasting.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -353,7 +378,6 @@
 
     </div>
 
-    <!-- HIGHLIGHTS -->
     <div class="highlights fade-up">
       <div class="highlight-card">
         <h4>Ethical AI</h4>
@@ -431,7 +455,7 @@ if (btn && menu) {
     btn.setAttribute("aria-expanded", !expanded);
     menu.classList.toggle("open");
   });
-}
+});
 
 // Animations
 document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
@@ -443,7 +467,7 @@ document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
   obs.observe(el);
 });
 
-// Read More
+// Read More toggle
 function toggleText(btn){
   const hidden = btn.previousElementSibling;
   const isOpen = hidden.style.display === "block";
@@ -456,4 +480,3 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
-
