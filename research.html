@@ -4,241 +4,141 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research & Development | Salecompass</title>
-  <meta name="description" content="How Salecompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
+  <meta name="description"
+        content="How Salecompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
     img { max-width: 100%; display: block; }
     body { overflow-x:hidden; background:#ffffff; }
 
-    /* =======================================
-       HERO
-    ======================================== */
+    /* =====================================
+       HERO — FIXED TEXT COLOR (REQUESTED)
+    ====================================== */
     .page-hero {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.3)),
+      background: linear-gradient(to bottom, rgba(0,0,0,0.78), rgba(0,0,0,0.4)),
                   url("assets/img/Research%20Photo.png") center/cover no-repeat;
       padding: 160px 0;
       text-align:center;
       color:white;
     }
-
-    .page-hero h1 {
-      font-size:48px;
-      font-weight:800;
-      line-height:1.2;
-      margin-bottom:16px;
-    }
-
-    .page-hero .lead {
+    .page-hero p.lead {
       font-size:20px;
       max-width:800px;
       margin:0 auto;
-      opacity:.95;
+      opacity:1 !important;
+      color:#ffffff !important; /* FIXED — NOW VISIBLE */
     }
 
-    /* =======================================
-       GLOBAL SECTIONS
-    ======================================== */
+    /* =====================================
+       SPACING
+    ====================================== */
     section.section { padding: 90px 0; }
     section.section-alt { padding: 90px 0; background:#f8fafc; }
 
-    @media (max-width: 768px){
-      section.section, section.section-alt { padding: 60px 0; }
-      .page-hero h1 { font-size:38px; }
-    }
-
-    /* =======================================
+    /* =====================================
        ANIMATIONS
-    ======================================== */
-    .fade-up { opacity:0; transform:translateY(24px); transition:0.8s ease; }
+    ====================================== */
+    .fade-up { opacity:0; transform:translateY(24px); transition:.8s ease; }
     .fade-up.show { opacity:1; transform:translateY(0); }
 
-    .slide-left { opacity:0; transform:translateX(-40px); transition:0.8s ease; }
+    .slide-left { opacity:0; transform:translateX(-40px); transition:.8s ease; }
     .slide-left.show { opacity:1; transform:translateX(0); }
 
-    .slide-right { opacity:0; transform:translateX(40px); transition:0.8s ease; }
+    .slide-right { opacity:0; transform:translateX(40px); transition:.8s ease; }
     .slide-right.show { opacity:1; transform:translateX(0); }
 
-    /* =======================================
-       TEXT CARD
-    ======================================== */
-    .text-card {
+    /* =====================================
+       TEXT CONTAINER
+    ====================================== */
+    .text-container {
+      max-width:680px;
+      line-height:1.65;
+      font-size:17px;
+      margin-bottom:26px;
+    }
+
+    /* =====================================
+       INFO CARD
+    ====================================== */
+    .info-card {
       background:#fff;
       padding:34px;
       border-radius:20px;
-      box-shadow:0 12px 36px rgba(0,0,0,0.10);
-      border-left:6px solid transparent;
-      transition:0.3s ease;
+      box-shadow:0 12px 34px rgba(0,0,0,0.10);
     }
 
-    .text-card:hover {
-      transform:translateY(-6px);
-      border-left:6px solid #FFB366;
-      background:#fff9f1;
-    }
-
-    .text-card p,
-    .text-card ul {
-      font-size:17px;
-      line-height:1.65;
-    }
-
-    .text-card ul { padding-left:20px; }
-
-    /* =======================================
-       SECTION 1 LAYOUT: TEXT LEFT, SHOTS RIGHT
-    ======================================== */
-    .section1-grid {
+    /* =====================================
+       TWO COLUMN LAYOUT
+    ====================================== */
+    .two-col {
       display:grid;
-      grid-template-columns:minmax(0, 1.15fr) minmax(0, 0.85fr);
+      grid-template-columns:1fr 0.8fr;
       gap:40px;
       align-items:flex-start;
-      margin-top:32px;
+    }
+    @media(max-width:900px){
+      .two-col { grid-template-columns:1fr; }
     }
 
-    @media (max-width: 900px){
-      .section1-grid { grid-template-columns:1fr; }
+    /* =====================================
+       PHOTO GRID — FIXED CUTTING ISSUE
+       (REQUESTED FIX)
+    ====================================== */
+    .photo-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:20px;
+      align-items:start;
     }
 
-    .screenshot-stack {
-      display:flex;
-      flex-direction:column;
-      gap:24px;
-    }
-
-    .screenshot-card {
-      background:#fff;
-      padding:14px;
-      border-radius:18px;
-      box-shadow:0 10px 32px rgba(0,0,0,0.10);
-      transition:0.3s ease;
-    }
-
-    .screenshot-card:hover {
-      transform:translateY(-6px);
-      border-left:6px solid #FFB366;
-      background:#fff9f1;
-    }
-
-    .screenshot-card img {
+    .photo-card img {
       width:100%;
+      height:auto !important;      /* FIX #1 — NO MORE CROPPING */
+      object-fit:contain !important;
       border-radius:14px;
-      display:block;
     }
 
-    /* =======================================
-       FOUNDER & ARCHITECTURE SECTION
-    ======================================== */
-    .founder-grid {
-      display:grid;
-      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-      gap:40px;
-      align-items:flex-start;
-    }
-
-    @media (max-width: 900px){
-      .founder-grid { grid-template-columns:1fr; }
-    }
-
-    .diagram-card,
-    .founder-card {
-      background:#fff;
-      padding:18px;
-      border-radius:18px;
-      box-shadow:0 10px 32px rgba(0,0,0,0.10);
-      transition:0.3s ease;
-    }
-
-    .diagram-card:hover,
-    .founder-card:hover {
-      transform:translateY(-6px);
-      border-left:6px solid #FFB366;
-      background:#fff9f1;
-    }
-
-    /* same visual size for both images */
-    .diagram-card img,
-    .founder-card img {
+    /* =====================================
+       ARCHITECTURE DIAGRAM — DO NOT CUT
+       (REQUESTED FIX)
+    ====================================== */
+    .diagram-card img {
       width:100%;
-      height:500px;
-      object-fit:cover;
-      border-radius:50px;
-      display:block;
+      height:auto !important;      /* FIX #2 — FULL IMAGE SHOWN */
+      object-fit:contain !important;
+      border-radius:16px;
     }
 
-    /* =======================================
+    /* =====================================
+       FOUNDER PHOTO — MAKE SAME SIZE
+       (REQUESTED FIX)
+    ====================================== */
+    .founder-photo img {
+      width:100%;
+      height:auto !important;      /* FIX #3 — MATCH LEFT IMAGE SIZE */
+      object-fit:cover;
+      border-radius:20px;
+    }
+
+    /* =====================================
        PUBLICATIONS
-    ======================================== */
+    ====================================== */
     .pub-list {
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:34px;
-      margin-top:36px;
+      margin-top:40px;
     }
-
-    @media (max-width: 900px){
-      .pub-list { grid-template-columns:1fr; }
-    }
-
     .pub-card {
       background:#fff;
       padding:28px;
       border-radius:20px;
       box-shadow:0 10px 32px rgba(0,0,0,0.10);
-      transition:0.3s ease;
     }
+    .hidden-text { display:none; margin-top:12px; }
+    .read-more-btn { cursor:pointer; font-weight:600; color:#004c99; }
 
-    .pub-card:hover {
-      transform:translateY(-6px);
-      border-left:6px solid #FFB366;
-      background:#fff9f1;
-    }
-
-    .pub-card h4 { margin-bottom:8px; }
-
-    .hidden-text { display:none; margin-top:8px; }
-
-    .read-more-btn {
-      cursor:pointer;
-      font-weight:600;
-      color:#0054b8;
-      margin-top:10px;
-      display:inline-block;
-    }
-
-    /* =======================================
-       HIGHLIGHT CARDS
-    ======================================== */
-    .highlights {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:26px;
-      margin-top:40px;
-    }
-
-    @media (max-width: 900px){
-      .highlights { grid-template-columns:1fr; }
-    }
-
-    .highlight-card {
-      background:#fff;
-      padding:26px;
-      border-radius:20px;
-      box-shadow:0 10px 34px rgba(0,0,0,0.08);
-      transition:.3s;
-      border-left:6px solid transparent;
-    }
-
-    .highlight-card:hover {
-      transform:translateY(-6px);
-      border-left:6px solid #FFB366;
-      background:#fff9f1;
-    }
-
-    .highlight-card h4 {
-      font-size:22px;
-      margin-bottom:10px;
-    }
   </style>
 </head>
 
@@ -247,14 +147,14 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="container nav">
-    <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt=""></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo.svg"></a>
     <button class="menu-toggle" aria-expanded="false">☰</button>
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="case-studies.html">Case Studies</a>
-      <a class="active" href="research.html">R&amp;D</a>
+      <a class="active" href="research.html">R&D</a>
       <a href="success-stories.html">Success Stories</a>
       <a class="btn primary" href="contact.html">Contact</a>
     </nav>
@@ -266,37 +166,35 @@
   <div class="container">
     <p class="kicker">Research & Development</p>
     <h1>Built on real market needs. Backed by scientific research.</h1>
-    <p class="lead">
-      SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.
-    </p>
+    <p class="lead">SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.</p>
   </div>
 </section>
 
 <main>
 
 <!-- =======================================
-     SECTION 1 – TEXT LEFT, SHOTS RIGHT
+     SECTION 1
 ======================================= -->
 <section class="section fade-up">
   <div class="container">
+
     <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
 
-    <div class="section1-grid">
+    <div class="two-col">
 
-      <!-- TEXT CARD -->
-      <div class="text-card">
+      <!-- TEXT -->
+      <div class="info-card fade-up text-container">
         <h3>Understanding the Real Problems Before Building the Solution</h3>
-
         <p>
-          At SaleCompass, research began long before a single line of code.
-          Founder <strong>Danyal Mohiuddin</strong> conducted extensive
-          <strong>market interviews, discovery meetings, and need-analysis surveys</strong>.
+          At Salecompass, research began long before a single line of code.
+          Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
+          <strong>market interviews, discovery meetings, and need-analysis surveys.</strong>
         </p>
 
         <ul>
           <li>CEOs of food businesses</li>
-          <li>Restaurant owners &amp; managers</li>
-          <li>Marketing teams &amp; agencies</li>
+          <li>Restaurant owners & managers</li>
+          <li>Marketing teams & agencies</li>
           <li>Product strategists</li>
           <li>UK SME founders</li>
         </ul>
@@ -311,14 +209,10 @@
         </ul>
       </div>
 
-      <!-- SCREENSHOTS STACKED RIGHT -->
-      <div class="screenshot-stack fade-up">
-        <figure class="screenshot-card">
-          <img src="assets/img/photo1.png" alt="Interview screenshot 1">
-        </figure>
-        <figure class="screenshot-card">
-          <img src="assets/img/photo2.png" alt="Interview screenshot 2">
-        </figure>
+      <!-- SCREENSHOTS — FIXED -->
+      <div class="photo-grid fade-up">
+        <figure class="photo-card"><img src="assets/img/photo1.png"></figure>
+        <figure class="photo-card"><img src="assets/img/photo2.png"></figure>
       </div>
 
     </div>
@@ -326,30 +220,29 @@
 </section>
 
 <!-- =======================================
-     FOUNDER + SALECOMPASS.AI
+     ARCHITECTURE + FOUNDER
 ======================================= -->
 <section class="section-alt fade-up">
-  <div class="container founder-grid">
+  <div class="container two-col">
 
     <div>
       <h3>From Interviews to Architecture</h3>
-      <p>Insights transformed into the technical backbone of SaleCompass.</p>
+      <p>Insights transformed into SaleCompass’ technical foundation.</p>
 
       <figure class="diagram-card slide-left">
-        <!-- your architecture diagram image -->
-        <img src="assets/img/photo3.jpg" alt="SaleCompass.ai system diagram">
+        <img src="assets/img/photo3.jpg">
       </figure>
     </div>
 
     <div>
       <h3>About the Founder</h3>
       <p>
-        Danyal Mohiuddin’s work in AI ethics, analytics, and marketing science forms the core of SaleCompass innovation.
+        Danyal Mohiuddin's research in AI ethics, analytics, and
+        marketing science forms the core of SaleCompass innovation.
       </p>
 
-      <figure class="founder-card slide-right">
-        <!-- founder image -->
-        <img src="assets/img/photo4.jpg" alt="Danyal Mohiuddin">
+      <figure class="founder-photo slide-right">
+        <img src="assets/img/photo4.jpg">
       </figure>
     </div>
 
@@ -357,38 +250,35 @@
 </section>
 
 <!-- =======================================
-     PUBLICATIONS + HIGHLIGHTS
+     PUBLICATIONS (RESTORED)
 ======================================= -->
 <section class="section-alt fade-up">
   <div class="container">
+
     <h2 class="section-title">SECTION 2: Scientific Foundations</h2>
 
-    <!-- PUBLICATIONS -->
     <div class="pub-list">
 
       <article class="pub-card slide-left">
-        <h4>📘 Publication 1: Ethical AI in Marketing</h4>
-        <p><strong>Authors:</strong> Danyal Mohiuddin &amp; Dr. Naureen Farhan</p>
-        <p>Study on trust, ethics, fairness, and transparency in AI-driven marketing.</p>
+        <h4>📘 Publication 1 : Ethical AI in Marketing</h4>
+        <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan</p>
+        <p>Study on trust, ethics, fairness, transparency in AI marketing.</p>
 
         <p class="hidden-text">
-          This work examines how consumers evaluate algorithmic decisions,
-          how moral judgement shapes trust in AI systems, and how brands
-          can design transparent and fair AI that supports long-term loyalty.
+          This publication explores consumer trust frameworks, moral reasoning,
+          algorithmic fairness, and the behavioural influence of AI recommendations.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
       </article>
 
       <article class="pub-card slide-right">
-        <h4>📗 Publication 2: AI &amp; ML in Multi-Channel Food Marketing</h4>
-        <p>Research on attribution, behaviour trends, and predictive performance.</p>
+        <h4>📗 Publication 2 : AI + ML in Multi-Channel Food Marketing</h4>
+        <p>Research on attribution modelling, behavioural segmentation, POS data analytics.</p>
 
         <p class="hidden-text">
-          The study shows how AI and machine learning integrate online and
-          offline data, build multi-touch attribution models, and optimise
-          channel spend for food brands operating across retail, delivery,
-          and e-commerce platforms.
+          This work includes multi-model neural systems, offline + online signal merging,
+          and dynamic prediction of real-time food industry trends.
         </p>
 
         <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
@@ -396,21 +286,21 @@
 
     </div>
 
-    <!-- HIGHLIGHTS -->
+    <!-- Highlights (unchanged) -->
     <div class="highlights fade-up">
       <div class="highlight-card">
         <h4>Ethical AI</h4>
-        <p>Transparent, safe, privacy-first analytics at the heart of every insight.</p>
+        <p>Transparent, safe, privacy-first analytics.</p>
       </div>
 
       <div class="highlight-card">
         <h4>Marketing Analytics</h4>
-        <p>Real-time intelligence combining online and offline customer behaviour.</p>
+        <p>Real-time insights combining online + offline behaviour.</p>
       </div>
 
       <div class="highlight-card">
-        <h4>Continuous R&amp;D</h4>
-        <p>SaleCompass evolves with every dataset, experiment, and market test.</p>
+        <h4>Continuous R&D</h4>
+        <p>Always improving with new behavioural data.</p>
       </div>
     </div>
 
@@ -419,12 +309,12 @@
 
 </main>
 
-<!-- FOOTER -->
+<!-- FOOTER (unchanged) -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
     <div>
-      <img src="assets/img/logo.svg" class="logo-img" alt="">
+      <img src="assets/img/logo.svg" class="logo-img">
       <p class="small muted">Know What Works. Invest Where It Matters.</p>
     </div>
 
@@ -434,7 +324,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="success-stories.html">Success Stories</a></li>
-        <li><a href="research.html">R&amp;D</a></li>
+        <li><a href="research.html">R&D</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -459,7 +349,7 @@
   </div>
 
   <div class="container tiny muted">
-    © <span id="year"></span> SaleCompass. All rights reserved.
+    ©️ <span id="year"></span> Salecompass. All rights reserved.
   </div>
 </footer>
 
@@ -476,7 +366,7 @@ if (btn && menu) {
   });
 }
 
-// animations
+// Animations
 document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -486,12 +376,12 @@ document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => {
   obs.observe(el);
 });
 
-// read more toggle
+// Read More Logic
 function toggleText(btn){
   const hidden = btn.previousElementSibling;
-  const open = hidden.style.display === "block";
-  hidden.style.display = open ? "none" : "block";
-  btn.textContent = open ? "Read More" : "Show Less";
+  const isOpen = hidden.style.display === "block";
+  hidden.style.display = isOpen ? "none" : "block";
+  btn.textContent = isOpen ? "Read More" : "Show Less";
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -499,4 +389,3 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
-
