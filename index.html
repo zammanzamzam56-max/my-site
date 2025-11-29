@@ -37,7 +37,7 @@
     .hero {
       position: relative;
       height: 85vh;
-      background: url("assets/img/Ai Image.jpg") center/cover no-repeat;
+      background: url("assets/img/Ai%20Image.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -57,6 +57,17 @@
       max-width: 850px;
       color: white;
       padding: 20px 10px;
+
+      /* FIX — removes white lines completely */
+      display: flex;
+      flex-direction: column;
+      gap: 0 !important;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     .hero-content h1 {
@@ -65,13 +76,12 @@
     }
 
     .hero-content p {
-      margin-top: 14px;
       font-size: 20px;
       color: white !important;
     }
 
     .hero-cta {
-      margin-top: 26px;
+      margin-top: 10px;
       display: flex;
       gap: 16px;
       justify-content: center;
@@ -86,16 +96,18 @@
       border: none;
     }
 
-    /* BOTH HERO BUTTONS ORANGE */
+    /* HERO BUTTONS NAVY BLUE */
     .btn.primary,
     .btn.outline {
-      background: #ff8c3a;
+      background:#0a1a3a;
       color: white;
-      border: none !important;
+      border:none !important;
     }
+
     .btn.primary:hover,
     .btn.outline:hover {
-      background: #e87722;
+      background:#0a1a3a;
+      opacity: 0.9;
     }
 
     /* =============================== PROBLEM SECTION =============================== */
@@ -123,7 +135,12 @@
       color: #0a1a3a;
     }
 
-    /* TOP TARGET BOX — NAVY BLUE */
+    .ps-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      border-left: 6px solid #ff8c3a;
+    }
+
     .ps-box.target {
       background: #001437;
       color: white;
@@ -153,24 +170,21 @@
       border-left: 6px solid #ff8c3a;
     }
 
-    /* NAVY BLUE CARDS */
     .navy {
       background: #001437;
       color: white;
     }
 
-    /* ORANGE CARDS */
     .orange {
       background: #ff8c3a;
-      color: #0a1a3a;
+      color:white;
     }
 
     .feature-card img {
       height: 70px;
       margin: auto;
       margin-bottom: 16px;
-      /* 🔧 keep original icon colours (remove any global filters) */
-      filter: none !important;
+      filter:none !important;
     }
 
     /* =============================== RESPONSIVE =============================== */
@@ -209,13 +223,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
+
     <h1>AI-Powered Marketing Intelligence for Small Businesses</h1>
+
     <p>Make smarter marketing decisions with one platform that unifies your digital and offline insights.</p>
 
     <div class="hero-cta">
       <a class="btn primary" href="contact.html">Book a demo</a>
       <a class="btn outline" href="services.html">Explore features</a>
     </div>
+
   </div>
 </section>
 
@@ -224,7 +241,6 @@
 
   <div class="ps-grid">
 
-    <!-- TARGET BOX NAVY BLUE -->
     <div class="ps-box target">
       <h2>What Problem Does SaleCompass Target?</h2>
       <p>
@@ -235,7 +251,6 @@
       </p>
     </div>
 
-    <!-- BOTTOM TWO -->
     <div class="ps-row-2">
 
       <div class="ps-box">
@@ -263,7 +278,9 @@
       </div>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- CORE FEATURES -->
@@ -273,37 +290,37 @@
   <div class="features-grid">
 
     <div class="feature-card navy">
-      <img src="assets/img/icon1.jpg" alt="">
+      <img src="assets/img/icon1.jpg">
       <h3>Attribution Engine</h3>
       <p>Know the true ROI across every channel.</p>
     </div>
 
     <div class="feature-card orange">
-      <img src="assets/img/icon2.jpg" alt="">
+      <img src="assets/img/icon2.jpg">
       <h3>Predictive Analytics</h3>
       <p>Forecast behaviour, demand, trends.</p>
     </div>
 
     <div class="feature-card navy">
-      <img src="assets/img/icon3.jpg" alt="">
+      <img src="assets/img/icon3.jpg">
       <h3>Sentiment Intelligence</h3>
       <p>Understand customer emotions in real time.</p>
     </div>
 
     <div class="feature-card navy">
-      <img src="assets/img/icon4.jpg" alt="">
+      <img src="assets/img/icon4.jpg">
       <h3>Real-Time Dashboards</h3>
       <p>Instant visibility, alerts & insights.</p>
     </div>
 
     <div class="feature-card orange">
-      <img src="assets/img/icon5.jpg" alt="">
+      <img src="assets/img/icon5.jpg">
       <h3>Seamless Integrations</h3>
       <p>Google, Meta, TikTok, POS, CRM.</p>
     </div>
 
     <div class="feature-card navy">
-      <img src="assets/img/icon6.jpg" alt="">
+      <img src="assets/img/icon6.jpg">
       <h3>Automation Engine</h3>
       <p>AI-driven notifications & optimisation.</p>
     </div>
