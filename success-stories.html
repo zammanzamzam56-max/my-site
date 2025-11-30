@@ -1,204 +1,470 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Success Stories — SaleCompass</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Success Stories | SaleCompass</title>
 
-  <!-- Premium SaaS Animations -->
+  <link rel="stylesheet" href="assets/styles.css" />
+
   <style>
-    /* Fade-up */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .8s ease, transform .8s ease;
+    body { overflow-x:hidden; background:white; }
+    img { max-width:100%; display:block; }
+
+    .container { max-width:1180px; margin:auto; padding:0 20px; }
+
+    /* ================= HEADER (MATCHED EXACTLY) ================= */
+    .site-header {
+      padding:10px 0 !important;
+      background:white;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
     }
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .site-header .nav { height:50px; overflow:visible !important; }
+    .logo img {
+      height:85px; width:auto; object-fit:contain; display:block;
+    }
+    nav.menu a {
+      padding:8px 14px;
+      border-radius:6px;
+      transition:.25s ease;
+      color:black;
+    }
+    nav.menu a:hover {
+      background:#ff8c3a;
+      color:white !important;
+    }
+    nav.menu a.active {
+      color:#ff8c3a !important;
+      font-weight:700;
+    }
+    nav.menu a.btn.primary {
+      background:#03102b;
+      color:white !important;
+      padding:10px 18px;
+      border-radius:6px;
+    }
+    nav.menu a.btn.primary:hover {
+      background:#ff8c3a !important;
+      color:white !important;
     }
 
-    /* Slide left */
-    .slide-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity .8s ease, transform .8s ease;
+    /* ================= SUCCESS STORIES ================= */
+    main.section {
+      padding:80px 0;
     }
-    .slide-left.show {
-      opacity: 1;
-      transform: translateX(0);
+    .grid-2 {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:26px;
     }
-
-    /* Slide right */
-    .slide-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity .8s ease, transform .8s ease;
+    .card {
+      background:white;
+      padding:26px;
+      border-radius:16px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.06);
+      border-left:6px solid #004c99;
+      transition:.3s ease;
     }
-    .slide-right.show {
-      opacity: 1;
-      transform: translateX(0);
+    .card:hover {
+      border-left:6px solid #ff8c3a;
+      transform:translateY(-6px);
+      box-shadow:0 12px 32px rgba(0,0,0,0.12);
     }
-
-    /* Card hover effect */
-    .story-card {
-      background: #fff;
-      padding: 28px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .story-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    .badge {
+      font-size:12px;
+      font-weight:700;
+      color:white;
+      background:#001437;
+      padding:4px 10px;
+      border-radius:4px;
+      display:inline-block;
+      margin-bottom:10px;
     }
 
-    .story-card .badge {
-      background: #eef2ff;
-      color: #3b5bfd;
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 12px;
+    /* ================= FOOTER (MATCHED EXACTLY) ================= */
+    footer {
+      position:relative;
+      background:#464a50;
+      color:white;
+      padding-top:40px;
+      padding-bottom:50px;
+    }
+   
+    .logo-img {
+      height:120px !important;
+      width:auto;
+      margin-bottom:6px;
+      object-fit:contain;
+    }
+    .footer-description {
+      font-size:12px;
+      margin-top:-20px;
+      margin-left:-23px;
+      color:white;
+      max-width:260px;
+    }
+    .footer-links a { color:#ff8c3a; }
+    .tiny {
+      color:#ff8c3a !important;
+      text-align:center;
+      margin-top:20px;
+      font-size:16px;
+    }
+    .footer-watermark {
+      position:absolute;
+      right:-20px;
+      top:50%;
+      transform:translateY(-50%);
+      height:260px;
+      opacity:0.09;
+      pointer-events:none;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER (MATCHING INDEX) -->
-  <header class="site-header">
-    <div class="container nav">
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container nav">
 
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Salecompass Logo" class="logo-img">
-      </a>
+    <a class="logo" href="index.html">
+      <img src="assets/img/logo.png" alt="SaleCompass">
+    </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" aria-expanded="false">☰</button>
 
-      <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="research.html">R&amp;D</a>
-        <a class="active" href="success-stories.html">Success Stories</a>
-        <a class="btn primary" href="contact.html">Contact</a>
-      </nav>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="research.html">R&amp;D</a>
+      <a class="active" href="success-stories.html">Success Stories</a>
+      <a class="btn primary" href="contact.html">Contact</a>
+    </nav>
 
+  </div>
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+<main class="section">
+  <div class="container">
+    <h1 style="font-size:40px; font-weight:800; margin-bottom:10px;">Success Stories</h1>
+
+    <div class="grid-2" style="margin-top:16px">
+      <article class="card">
+        <span class="badge">Success Story 1</span>
+        <h3>From idea to impact</h3>
+        <p>
+          Summarize the success (problem, action, result) in 4–6 lines.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="badge">Success Story 2</span>
+        <h3>Scaling what works</h3>
+        <p>
+          Summarize the success (problem, action, result) in 4–6 lines.
+        </p>
+      </article>
     </div>
-  </header>
+  </div>
+</main>
 
-  <main class="section">
-    <div class="container fade-up">
-      <h1>Success Stories</h1>
 
-      <div class="grid-2" style="margin-top:24px">
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
 
-        <!-- Story 1 -->
-        <article class="story-card slide-left">
-          <span class="badge">Success Story 1</span>
-          <h3>From Idea to Impact</h3>
-          <p>
-            How a small food business gained clarity on its marketing performance:
-            <br><br>
-            • <strong>Problem:</strong> No idea which marketing channels generated sales.<br>
-            • <strong>Action:</strong> Connected Instagram, Google, POS + reviews.<br>
-            • <strong>Result:</strong> 27% increase in ROI & clear attribution.
-          </p>
-        </article>
-
-        <!-- Story 2 -->
-        <article class="story-card slide-right">
-          <span class="badge">Success Story 2</span>
-          <h3>Scaling What Works</h3>
-          <p>
-            A retail brand used SaleCompass AI to scale high-performing channels:
-            <br><br>
-            • <strong>Problem:</strong> High ad spend with unpredictable results.<br>
-            • <strong>Action:</strong> Trend detection + sentiment + demand prediction.<br>
-            • <strong>Result:</strong> 41% drop in wasted ad spend in 30 days.
-          </p>
-        </article>
-
-      </div>
-    </div>
-  </main>
-
-  <!-- FOOTER (MATCHING INDEX) -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-
-      <div>
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo" class="logo-img">
-        <p class="small muted">Know What Works. Invest Where It Matters.</p>
-      </div>
-
-      <div>
-        <h4>Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="research.html">R&amp;D</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">Attribution Engine</a></li>
-          <li><a href="services.html">Predictive Analytics</a></li>
-          <li><a href="services.html">Dashboards</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Get in touch</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
-        </ul>
-      </div>
-
+    <div>
+      <img src="assets/img/logo.png" class="logo-img">
+      <p class="footer-description">Know what works , Where to invest.</p>
     </div>
 
-    <div class="container tiny muted" style="padding-top:12px;">
-      © <span id="year"></span> SaleCompass. All rights reserved.
+    <div>
+      <h4>Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="research.html">R&amp;D</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </footer>
 
-  <!-- TOGGLE + SCROLL REVEAL -->
-  <script>
-    const btn = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Attribution Engine</a></li>
+        <li><a href="services.html">Predictive Analytics</a></li>
+        <li><a href="services.html">Dashboards</a></li>
+      </ul>
+    </div>
 
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        menu.classList.toggle("open");
-      });
-    }
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+      </ul>
+  
+    </div>
 
-    // Scroll reveal
-    document.querySelectorAll('.fade-up, .slide-left, .slide-right')
-      .forEach(el => {
-        const obs = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('show');
-          });
-        });
-        obs.observe(el);
-      });
+  </div>
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+
+  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
+</footer>
+
+
+<!-- JS -->
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Success Stories | SaleCompass</title>
 
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <style>
+    body { overflow-x:hidden; background:white; }
+    img { max-width:100%; display:block; }
+
+    .container { max-width:1180px; margin:auto; padding:0 20px; }
+
+    /* ================= HEADER (MATCHED EXACTLY) ================= */
+    .site-header {
+      padding:10px 0 !important;
+      background:white;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .site-header .nav { height:50px; overflow:visible !important; }
+    .logo img {
+      height:85px; width:auto; object-fit:contain; display:block;
+    }
+    nav.menu a {
+      padding:8px 14px;
+      border-radius:6px;
+      transition:.25s ease;
+      color:black;
+    }
+    nav.menu a:hover {
+      background:#ff8c3a;
+      color:white !important;
+    }
+    nav.menu a.active {
+      color:#ff8c3a !important;
+      font-weight:700;
+    }
+    nav.menu a.btn.primary {
+      background:#03102b;
+      color:white !important;
+      padding:10px 18px;
+      border-radius:6px;
+    }
+    nav.menu a.btn.primary:hover {
+      background:#ff8c3a !important;
+      color:white !important;
+    }
+
+    /* ================= SUCCESS STORIES ================= */
+    main.section {
+      padding:80px 0;
+    }
+    .grid-2 {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:26px;
+    }
+    .card {
+      background:white;
+      padding:26px;
+      border-radius:16px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.06);
+      border-left:6px solid #004c99;
+      transition:.3s ease;
+    }
+    .card:hover {
+      border-left:6px solid #ff8c3a;
+      transform:translateY(-6px);
+      box-shadow:0 12px 32px rgba(0,0,0,0.12);
+    }
+    .badge {
+      font-size:12px;
+      font-weight:700;
+      color:white;
+      background:#001437;
+      padding:4px 10px;
+      border-radius:4px;
+      display:inline-block;
+      margin-bottom:10px;
+    }
+
+    /* ================= FOOTER (MATCHED EXACTLY) ================= */
+    footer {
+      position:relative;
+      background:#464a50;
+      color:white;
+      padding-top:40px;
+      padding-bottom:50px;
+    }
+   
+    .logo-img {
+      height:120px !important;
+      width:auto;
+      margin-bottom:6px;
+      object-fit:contain;
+    }
+    .footer-description {
+      font-size:12px;
+      margin-top:-20px;
+      margin-left:-23px;
+      color:white;
+      max-width:260px;
+    }
+    .footer-links a { color:#ff8c3a; }
+    .tiny {
+      color:#ff8c3a !important;
+      text-align:center;
+      margin-top:20px;
+      font-size:16px;
+    }
+    .footer-watermark {
+      position:absolute;
+      right:-20px;
+      top:50%;
+      transform:translateY(-50%);
+      height:260px;
+      opacity:0.09;
+      pointer-events:none;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container nav">
+
+    <a class="logo" href="index.html">
+      <img src="assets/img/logo.png" alt="SaleCompass">
+    </a>
+
+    <button class="menu-toggle" aria-expanded="false">☰</button>
+
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="research.html">R&amp;D</a>
+      <a class="active" href="success-stories.html">Success Stories</a>
+      <a class="btn primary" href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+<main class="section">
+  <div class="container">
+    <h1 style="font-size:40px; font-weight:800; margin-bottom:10px;">Success Stories</h1>
+
+    <div class="grid-2" style="margin-top:16px">
+      <article class="card">
+        <span class="badge">Success Story 1</span>
+        <h3>From idea to impact</h3>
+        <p>
+          Summarize the success (problem, action, result) in 4–6 lines.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="badge">Success Story 2</span>
+        <h3>Scaling what works</h3>
+        <p>
+          Summarize the success (problem, action, result) in 4–6 lines.
+        </p>
+      </article>
+    </div>
+  </div>
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div>
+      <img src="assets/img/logo.png" class="logo-img">
+      <p class="footer-description">Know what works , Where to invest.</p>
+    </div>
+
+    <div>
+      <h4>Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="research.html">R&amp;D</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Attribution Engine</a></li>
+        <li><a href="services.html">Predictive Analytics</a></li>
+        <li><a href="services.html">Dashboards</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+      </ul>
+  
+    </div>
+
+  </div>
+
+  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+
+  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
+</footer>
+
+
+<!-- JS -->
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
