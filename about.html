@@ -4,429 +4,470 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | SaleCompass</title>
+
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* ===== HERO BACKGROUND ===== */
-    .about-hero {
-      position: relative;
-      background: url("assets/img/about-bg.png") center/cover no-repeat;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #ffffff;
+    body { overflow-x: hidden; background:white; }
+    img { max-width:100%; display:block; }
+
+    .container {
+      max-width:1180px;
+      margin:auto;
+      padding:0 20px;
     }
 
-    /* ===== 20% DARKER OVERLAY ADDED HERE ===== */
+    /* =============================== HEADER =============================== */
+    .site-header {
+      padding:10px 0 !important;
+      background:white;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo img {
+      height:85px;
+      object-fit:contain;
+    }
+
+    nav.menu a {
+      padding:8px 14px;
+      border-radius:6px;
+      transition:.25s ease;
+    }
+    nav.menu a:hover {
+      background:#ff8c3a;
+      color:white !important;
+    }
+
+    nav.menu a.active {
+      font-weight:700;
+      color:#ff8c3a !important;
+    }
+
+    nav.menu a.btn.primary {
+      background:#03102b;
+      color:white !important;
+      padding:10px 18px;
+      border-radius:6px;
+    }
+    nav.menu a.btn.primary:hover {
+      background:#ff8c3a !important;
+    }
+
+    /* =============================== HERO =============================== */
+    .about-hero {
+      position:relative;
+      background:url("assets/img/about-bg.png") center/cover no-repeat;
+      min-height:420px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+    }
+
     .about-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(10, 25, 54, 0.80); /* DARKER OVERLAY */
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(1,3,8,0.82);
     }
 
     .about-hero .container {
-      position: relative;
-      z-index: 2;
+      position:relative;
+      z-index:2;
     }
 
     .about-hero h1 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 12px;
+      font-size:48px;
+      font-weight:800;
+      margin-bottom:12px;
+      color:white !important;
     }
 
-    .about-hero .hero-subtext {
-      font-size: 20px;
-      max-width: 760px;
-      margin: 0 auto;
-      line-height: 1.6;
-      color: #fff;
+    .hero-subtext {
+      font-size:20px;
+      max-width:760px;
+      margin:0 auto;
+      line-height:1.6;
+      color:white !important;
     }
 
-    /* ===== BASE SECTIONS ===== */
-    .about-section, .mv-section, .values-section, .why-section {
-      padding: 60px 0;
-      background: #f9fafb;
+    /* =============================== ABOUT - TWO COLUMN =============================== */
+    .about-section {
+      padding:80px 0;
+      background:#f9fafb;
     }
 
-    /* ===== REDUCED SPACING (ONLY EDIT YOU ASKED FOR) ===== */
-    .about-section { padding-bottom: 20px !important; }
-    .mv-section { padding-bottom: 20px !important; }
-    .values-section { padding-bottom: 20px !important; }
-    .why-section { padding-top: 20px !important; }
-
-    .about-card, .mv-card, .value-card, .why-card {
-      background: #ffffff;
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.07);
-      transition: 0.3s ease;
-      border-left: 6px solid transparent;
+    .about-flex {
+      display:flex;
+      align-items:center;
+      gap:40px;
     }
 
-    /* ===== APPLY SAME ORANGE HOVER EFFECT TO ALL CARDS ===== */
-    .about-card:hover,
-    .mv-card:hover,
-    .value-card:hover,
-    .why-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-      border-left: 6px solid #FFB366;
+    /* LEFT = TEXT */
+    .about-card {
+      flex:0 0 48%;
+      background:white;
+      padding:32px;
+      border-radius:16px;
+      box-shadow:0 6px 25px rgba(0,0,0,0.07);
     }
 
-    .about-card h2 {
-      font-size: 32px;
-      font-weight: 800;
-      color: #0a1a3a;
+    /* RIGHT = IMAGE */
+    .about-photo {
+      flex:0 0 52%;
+    }
+    .about-photo img {
+      width:100%;
+      border-radius:16px;
+      box-shadow:0 6px 25px rgba(0,0,0,0.08);
     }
 
-    .about-card p {
-      font-size: 17px;
-      line-height: 1.75;
-      color: #444;
+    @media(max-width:900px) {
+      .about-flex {
+        flex-direction:column;
+        text-align:center;
+      }
+      .about-card, .about-photo {
+        flex:100%;
+      }
+    }
+
+    /* =============================== GRID SECTIONS =============================== */
+    .mv-section, .values-section, .why-section {
+      padding:60px 0;
+      background:#f9fafb;
+    }
+
+    .mv-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .mv-card, .value-card, .why-card {
+      background:white;
+      padding:32px;
+      border-radius:16px;
+      box-shadow:0 6px 25px rgba(0,0,0,0.07);
+      transition:.3s ease;
+    }
+
+    .mv-card:hover, .value-card:hover, .why-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 12px 30px rgba(0,0,0,0.12);
     }
 
     .center-title {
-      text-align: center;
-      font-size: 34px;
-      font-weight: 800;
-      color: #0a1a3a;
-      margin-bottom: 30px;
+      font-size:34px;
+      font-weight:800;
+      text-align:center;
+      color:#010a1f;
+      margin-bottom:30px;
     }
 
-    /* ===== GRID LAYOUTS ===== */
-    .mv-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
+    .values-grid, .why-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:28px;
     }
 
-    .values-grid,
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
+    @media(max-width:1024px) {
+      .values-grid, .why-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:600px) {
+      .values-grid, .why-grid { grid-template-columns:1fr; }
     }
 
-    @media (max-width: 1024px) {
-      .values-grid,
-      .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .value-card h4, .why-card h4 {
+      font-size:22px;
+      margin-bottom:12px;
+      color:#03102b;
     }
 
-    @media (max-width: 600px) {
-      .values-grid,
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .value-card h4,
-    .why-card h4 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: #0a1a3a;
-    }
-
-    /* ===== TIMELINE ===== */
-    .timeline {
-      border-left: 4px solid #0a1a3a;
-      padding-left: 28px;
-      margin-top: 30px;
-    }
-
-    .timeline-item {
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: "";
-      width: 16px;
-      height: 16px;
-      background: #0a1a3a;
-      border-radius: 50%;
-      position: absolute;
-      left: -38px;
-      top: 6px;
-    }
-
-    .timeline-year {
-      font-weight: 700;
-      font-size: 18px;
-      color: #0a1a3a;
-    }
-
-    /* ===== READ MORE ===== */
+    /* READ MORE */
     .hidden-text {
-      display: none;
-      margin-top: 10px;
-      color: #555;
+      display:none;
+      margin-top:10px;
+      color:#555;
     }
-
     .read-more-btn {
-      margin-top: 12px;
-      display: inline-block;
-      font-weight: 600;
-      cursor: pointer;
-      color: #004c99;
+      margin-top:12px;
+      display:inline-block;
+      font-weight:600;
+      cursor:pointer;
+      color:#004c99;
     }
 
-    /* ===== ANIMATIONS ===== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: 0.8s ease-out;
+
+
+/* ======================= FIXED FOOTER (MATCHES INDEX EXACTLY) ======================= */
+
+footer {
+      position: relative;
+      background: #001437;
+      color:white;
+      padding-top: 40px;
+      padding-bottom: 50px;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    .logo-img {
+      height: 120px !important;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .footer-description {
+      font-size: 12px;
+      color: #ffffff;
+      margin-top:-20px; 
+      margin-left:-23px;
+      line-height: 1.3;
+      max-width: 260px;
+    }
+    .footer-links a { color: #ff8c3a; }
+    .tiny {
+      color: #ff8c3a !important;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    /* Watermark (matched exactly) */
+    .footer-watermark {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 260px;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
     }
   </style>
-
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo">
-      </a>
+<!-- ======================== HEADER ======================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html"><img src="assets/img/logo.png"></a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" aria-expanded="false">☰</button>
 
-      <nav class="menu">
-        <a href="index.html">Home</a>
-        <a class="active" href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="research.html">R&amp;D</a>
-        <a href="success-stories.html">Success Stories</a>
-        <a class="btn primary" href="contact.html">Contact</a>
-      </nav>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a class="active" href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="research.html">R&amp;D</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a class="btn primary" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================== HERO ======================== -->
+<section class="about-hero">
+  <div class="container">
+    <h1>About SaleCompass</h1>
+    <p class="hero-subtext">
+      A modern AI-powered marketing intelligence platform helping SMEs understand what truly drives performance.
+    </p>
+  </div>
+</section>
+
+<main>
+
+<!-- ======================== WHAT IS SALECOMPASS ======================== -->
+<section class="about-section">
+  <div class="container about-flex">
+
+    <div class="about-card">
+      <h2>What is SaleCompass?</h2>
+      <p>SaleCompass helps SMEs understand what truly works by unifying all digital and offline data into one intelligent dashboard backed by AI-driven analytics.</p>
+      <p>From predictive analytics to multi-touch attribution, SaleCompass removes guesswork and empowers every business to make confident, data-backed decisions.</p>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="about-hero fade-up">
-    <div class="container">
-      <h1>About SaleCompass</h1>
-      <p class="hero-subtext">
-        A modern AI-powered marketing intelligence platform helping SMEs understand 
-        what truly drives performance.
+    <div class="about-photo">
+      <img src="assets/img/who we are.jpg" alt="Who We Are">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================== MISSION / VISION ======================== -->
+<section class="mv-section">
+  <div class="container mv-grid">
+
+    <div class="mv-card">
+      <h3>Our Mission</h3>
+      <p>Empower SMEs with enterprise-grade marketing intelligence that is simple, affordable, and effective.</p>
+      <p class="hidden-text">We believe every business deserves clarity and confidence.</p>
+      <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
+    </div>
+
+    <div class="mv-card">
+      <h3>Our Vision</h3>
+      <p>To become the world’s most accurate, accessible, and AI-powered marketing intelligence platform.</p>
+      <p class="hidden-text">Our goal is to democratize data-driven growth.</p>
+      <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================== VALUES ======================== -->
+<section class="values-section">
+  <div class="container">
+    <h2 class="center-title">Our Core Values</h2>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div style="font-size:42px;">✨</div>
+        <h4>Simplicity</h4>
+        <p>Making complex insights clear and actionable.</p>
+      </div>
+
+      <div class="value-card">
+        <div style="font-size:42px;">🔍</div>
+        <h4>Transparency</h4>
+        <p>No hidden data — only clarity.</p>
+      </div>
+
+      <div class="value-card">
+        <div style="font-size:42px;">📊</div>
+        <h4>Accuracy</h4>
+        <p>Reliable insights backed by AI.</p>
+      </div>
+
+      <div class="value-card">
+        <div style="font-size:42px;">🚀</div>
+        <h4>Innovation</h4>
+        <p>Always evolving with smarter technology.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================== WHY US ======================== -->
+<section class="why-section">
+  <div class="container">
+    <h2 class="center-title">Why Businesses Choose SaleCompass</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>All Data in One Place</h4>
+        <p>Every touchpoint unified in a single dashboard.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Real-Time Insights</h4>
+        <p>Live analytics and predictive alerts.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>AI Recommendations</h4>
+        <p>Optimize spend using real data.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Built for SMEs</h4>
+        <p>Enterprise tools without complexity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ======================== FIXED FOOTER ======================== -->
+<!-- FOOTER (MATCHED 100% TO ABOUT PAGE) -->
+<footer class="site-footer fade-up">
+  <div class="container footer-grid">
+
+    <div>
+      <img src="assets/img/logo.png" class="logo-img">
+      <p class="footer-description">
+        Know what works , Where to invest.
       </p>
     </div>
-  </section>
 
-  <main>
-
-    <!-- WHAT IS SALECOMPASS -->
-    <section class="about-section fade-up">
-      <div class="container about-card">
-        <h2>What is SaleCompass?</h2>
-        <p>
-          SaleCompass helps SMEs understand what truly works by unifying all digital and offline data into one 
-          intelligent dashboard backed by AI-driven analytics.
-        </p>
-        <p>
-          From predictive analytics to multi-touch attribution, SaleCompass removes guesswork and empowers 
-          every business to make confident, data-backed decisions.
-        </p>
-      </div>
-    </section>
-
-    <!-- MISSION & VISION -->
-    <section class="mv-section fade-up">
-      <div class="container mv-grid">
-
-        <!-- Mission -->
-        <div class="mv-card">
-          <h3>Our Mission</h3>
-          <p>
-            Empower SMEs with enterprise-grade marketing intelligence simple, affordable, and effective.
-          </p>
-
-          <p class="hidden-text">
-            We believe every business deserves clarity. Our mission is to remove complexity and replace 
-            it with insights that directly improve revenue, decisions, and long-term growth.
-          </p>
-
-          <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
-        </div>
-
-        <!-- Vision -->
-        <div class="mv-card">
-          <h3>Our Vision</h3>
-          <p>
-            To become the world’s most accurate, accessible, and AI-powered marketing intelligence platform.
-          </p>
-
-          <p class="hidden-text">
-            We envision a future where every business regardless of size can access predictive tools, 
-            automation, and intelligence without enterprise-level cost or complexity.
-          </p>
-
-          <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- VALUES -->
-    <section class="values-section fade-up">
-      <div class="container">
-        <h2 class="center-title">Our Core Values</h2>
-
-        <div class="values-grid">
-
-          <div class="value-card">
-            <div style="font-size:42px;">✨</div>
-            <h4>Simplicity</h4>
-            <p>Making complex insights clear and actionable.</p>
-          </div>
-
-          <div class="value-card">
-            <div style="font-size:42px;">🔍</div>
-            <h4>Transparency</h4>
-            <p>No hidden data. No confusion  just clarity.</p>
-          </div>
-
-          <div class="value-card">
-            <div style="font-size:42px;">📊</div>
-            <h4>Accuracy</h4>
-            <p>Every insight backed by dependable AI models.</p>
-          </div>
-
-          <div class="value-card">
-            <div style="font-size:42px;">🚀</div>
-            <h4>Innovation</h4>
-            <p>Continuously improving with smarter algorithms.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="why-section fade-up">
-      <div class="container">
-        <h2 class="center-title">Why Businesses Choose SaleCompass</h2>
-
-        <div class="why-grid">
-
-          <div class="why-card">
-            <h4>All Data in One Place</h4>
-            <p>Every touchpoint unified into a single dashboard.</p>
-          </div>
-
-          <div class="why-card">
-            <h4>Real-Time Insights</h4>
-            <p>Live predictions, alerts, and performance tracking.</p>
-          </div>
-
-          <div class="why-card">
-            <h4>AI Recommendations</h4>
-            <p>Spend smarter with guidance drivenby real results.</p>
-          </div>
-
-          <div class="why-card">
-            <h4>Built for SMEs</h4>
-            <p>Enterprise-grade tools without enterprise complexity.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer fade-up">
-    <div class="container footer-grid">
-
-      <div>
-        <img src="assets/img/logo.svg" class="logo-img" alt="SaleCompass Logo">
-        <p class="tiny">Know What Works. Invest Where It Matters.</p>
-      </div>
-
-      <div>
-        <h4>Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="research.html">R&amp;D</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">Attribution Engine</a></li>
-          <li><a href="services.html">Predictive Analytics</a></li>
-          <li><a href="services.html">Dashboards</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Get in touch</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
-        </ul>
-      </div>
+    <div>
+      <h4>Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="research.html">R&amp;D</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
 
-    <div class="container tiny">
-      ©️ <span id="year"></span> SaleCompass. All rights reserved.
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Attribution Engine</a></li>
+        <li><a href="services.html">Predictive Analytics</a></li>
+        <li><a href="services.html">Dashboards</a></li>
+      </ul>
     </div>
-  </footer>
 
-<!-- JS -->
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- WATERMARK -->
+  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+
+  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
+</footer>
+ 
+
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
-    });
+  function toggleText(btn){
+    const hidden = btn.previousElementSibling;
+    if(hidden.style.display === "block"){
+      hidden.style.display = "none";
+      btn.textContent = "Read More";
+    } else {
+      hidden.style.display = "block";
+      btn.textContent = "Show Less";
+    }
   }
-
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  const animated = document.querySelectorAll(".fade-up");
-  const animateOnScroll = () => {
-    animated.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-        el.classList.add("visible");
-      }
-    });
-  };
-  window.addEventListener("scroll", animateOnScroll);
-  animateOnScroll();
-});
-
-function toggleText(btn) {
-  const hidden = btn.previousElementSibling;
-  hidden.style.display = hidden.style.display === "block" ? "none" : "block";
-  btn.textContent = hidden.style.display === "block" ? "Show Less" : "Read More";
-}
 </script>
 
 </body>
 </html>
-
-
