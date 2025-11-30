@@ -1,196 +1,317 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Case Studies — SaleCompass</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Studies | SaleCompass</title>
+
+  <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    .fade-up { opacity:0; transform:translateY(25px); transition:.7s ease; }
-    .fade-up.visible { opacity:1; transform:translateY(0); }
+    body { background:#0a0f1a; overflow-x:hidden; }
+    img { max-width:100%; display:block; }
+    .container { max-width:1180px; margin:auto; padding:0 20px; }
 
-    .delay-1 { transition-delay:.2s; }
-    .delay-2 { transition-delay:.4s; }
-    .delay-3 { transition-delay:.6s; }
+    /* HEADER */
+    .site-header {
+      padding:10px 0;
+      background:white;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+      position:sticky; top:0; z-index:50;
+    }
+    .nav { display:flex; justify-content:space-between; align-items:center; }
+    .logo img { height:85px; object-fit:contain; }
+    nav.menu a { padding:8px 14px; border-radius:6px; transition:.25s; }
+    nav.menu a:hover { background:#ff8c3a; color:white !important; }
+    nav.menu a.active { color:#ff8c3a !important; font-weight:700; }
+    nav.menu a.btn { background:#0a1a3a; color:white !important; padding:10px 18px; }
+    nav.menu a.btn:hover { background:#ff8c3a; }
 
+    /* HERO */
+    .case-hero { color:white; padding:90px 0 40px; }
+    .case-hero h1 { font-size:46px; font-weight:800; }
+    .case-hero p { opacity:.7; font-size:18px; }
+
+    /* GRID */
     .case-grid {
       display:grid;
-      grid-template-columns: repeat(2,1fr);
-      gap:28px;
-      margin-top:28px;
+      grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
+      gap:36px;
+      padding-bottom:120px;
     }
 
+    /* CARD */
     .case-card {
-      background:#fff;
-      padding:28px;
-      border-radius:16px;
-      border:1px solid #e8e8e8;
-      box-shadow:0 4px 10px rgba(0,0,0,0.06);
-      transition:.3s ease;
       position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      min-height: 460px;
+      height:auto;
+      cursor:pointer;
+    }
+    .case-card img {
+      width:100%; height:100%; object-fit:cover;
+      transition:opacity .4s ease;
+    }
+    .case-card:hover img { opacity:0.15; }
+
+    .case-overlay {
+      position:absolute; inset:0;
+      padding:30px;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      opacity:0; transition:.4s;
+      background:rgba(0,0,0,0);
+    }
+    .case-card:hover .case-overlay {
+      opacity:1; background:rgba(0,0,0,0.65);
     }
 
-    .case-card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    .case-tag { font-size:12px; color:#ff8c3a; font-weight:700; }
+    .case-title { color:white; font-size:26px; font-weight:700; margin:10px 0; }
+
+    /* PREVIEW TEXT */
+    .case-preview { color:#ddd; font-size:15px; margin-bottom:10px; }
+
+    /* FULL TEXT (hidden initially) */
+    .case-full {
+      max-height:0;
+      overflow:hidden;
+      color:#ccc;
+      font-size:14px;
+      line-height:1.5;
+      transition:max-height .5s ease;
+      white-space:pre-line;
     }
 
-    .case-card .badge {
-      background:#007aff;
-      color:#fff;
-      font-size:.75rem;
-      padding:6px 10px;
-      border-radius:8px;
+    .case-link {
+      margin-top:10px;
+      color:#4ea0ff;
       font-weight:600;
-      position:absolute;
-      top:-12px;
-      right:12px;
+      text-decoration:none;
+      cursor:pointer;
     }
 
-    @media(max-width:880px){
-      .case-grid { grid-template-columns:1fr; }
+    /* FOOTER */
+    footer {
+      background:#001437; color:white;
+      padding:40px 0 60px; margin-top:60px; position:relative;
     }
+    
+    .case-grid{
+      margin-bottom: 120px !important;
+    }
+    .logo-img { height:120px; margin-bottom:6px; }
+    .footer-watermark {
+      position:absolute; top:50%; right:-20px;
+      transform:translateY(-50%);
+      opacity:.1; height:260px;
+    }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .logo-img{
+
+      height: 120px !important;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }.footer-description {
+  font-size: 12px;
+  color: #ffffff;
+  margin-top:-20px;      /* moved higher */
+  line-height: 1.3;
+  margin-left: -23px;
+  max-width: 260px;     /* keeps it aligned under logo */
+}
+footer {
+  position: relative;
+  background: #001437;
+  color:white;
+  padding-top: -100px;
+  padding-bottom: 50px;
+}
+     
+
+    .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER (Fixed: now uses logo.svg same as index) -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo">
-      </a>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html"><img src="assets/img/logo.png"></a>
+    <button class="menu-toggle">☰</button>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a class="active" href="case-studies.html">Case Studies</a>
+      <a href="research.html">R&D</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a class="btn" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="menu" role="navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a class="active" href="case-studies.html">Case Studies</a>
-        <a href="research.html">R&amp;D</a>
-        <a href="success-stories.html">Success Stories</a>
-        <a class="btn primary" href="contact.html">Contact</a>
-      </nav>
+<!-- HERO -->
+<section class="case-hero container">
+  <h1>Case Studies</h1>
+  <p>Real results powered by AI-driven marketing intelligence.</p>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-grid container">
+
+  <!-- ====================== ANKARA TAKEAWAY ====================== -->
+  <div class="case-card">
+    <img src="assets/img/Restaurant.jpg">
+
+    <div class="case-overlay">
+      <span class="case-tag">CASE STUDY</span>
+      <div class="case-title">Ankara Takeaway (UK)</div>
+
+      <div class="case-preview">
+        Marketing was strong, but conversions were weak. No clarity on what was driving sales…
+      </div>
+
+      <div class="case-full" id="ankara-full">
+When Ankara Takeaway approached us, their marketing performance was inconsistent across channels. Despite strong food quality and a loyal local customer base, the business struggled to understand which online and offline touchpoints were influencing sales.
+
+Instagram engagement looked impressive, but orders were not increasing at the same rate. Google Ads were running without attribution. Deliveroo and Uber Eats dashboards showed growth, yet nothing connected with in-store POS.
+
+We identified 27 gaps across analytics, campaign structure, customer segmentation, and platform visibility.
+
+SaleCompass Omnichannel Intelligence integrated POS, delivery apps, website analytics, and social media signals into one real-time dashboard.
+
+We built a new marketing playbook: high-intent keywords, channel-specific creatives, AI-powered retargeting, and menu-engineering insights.
+
+Within 90 days:
+• 10X ROI  
+• Abandoned carts dropped  
+• Footfall increased  
+• CEO: “First time we can see exactly what works and why.”
+
+Today, the brand operates fully data-driven with no guesswork.
+      </div>
+
+      <a class="case-link" onclick="toggleFull('ankara-full', this)">Read full case study →</a>
     </div>
-  </header>
+  </div>
 
-  <main class="section fade-up delay-1">
-    <div class="container">
-      <h1 style="font-weight:800;">Case Studies</h1>
-      <p class="muted" style="margin-top:4px; margin-bottom:20px;">
-        Real-world examples of how SaleCompass drives measurable growth.
-      </p>
 
-      <div class="case-grid fade-up delay-2">
+  <!-- ====================== PAPA JOHN'S UK ====================== -->
+  <div class="case-card">
+    <img src="assets/img/PAPA JOHNS.jpg">
 
-        <!-- CASE 1 -->
-        <article class="case-card">
-          <span class="badge">Case Study 1</span>
-          <h3>Project Alpha : SME Growth Boost</h3>
-          <p>A full customer journey mapping + attribution project.</p>
+    <div class="case-overlay">
+      <span class="case-tag">CASE STUDY</span>
+      <div class="case-title">Papa John's UK</div>
 
-          <ul>
-            <li><strong>Problem:</strong> No clarity on which channels drove sales.</li>
-            <li><strong>Approach:</strong> Multi-channel attribution + POS sync.</li>
-            <li><strong>Result:</strong> +34% ROAS improvement in 6 weeks.</li>
-          </ul>
-        </article>
-
-        <!-- CASE 2 -->
-        <article class="case-card delay-1">
-          <span class="badge">Case Study 2</span>
-          <h3>Project Beta : Restaurant Chain Analytics</h3>
-          <p>Offline + online unification using sentiment + trend prediction.</p>
-
-          <ul>
-            <li><strong>Problem:</strong> Poor visibility into customer behaviour.</li>
-            <li><strong>Approach:</strong> POS integration + predictive analytics.</li>
-            <li><strong>Result:</strong> +22% increase in repeat purchases.</li>
-          </ul>
-        </article>
-
+      <div class="case-preview">
+        A national brand with fragmented data, unclear ROI, and duplicated spending…
       </div>
+
+      <div class="case-full" id="papa-full">
+Papa John’s UK was struggling with channel fragmentation. Social media, email, app offers, paid ads, and delivery partners all worked in silos.
+
+Store managers relied on isolated platform-level data. HQ had no visibility into which campaigns truly contributed to revenue.
+
+Our diagnostic exposed:
+• duplicated spending  
+• broken attribution  
+• no POS-to-digital linkage  
+
+SaleCompass AI Attribution Engine unified POS, app events, loyalty data, website traffic, paid media, and partner orders.
+
+We introduced a unified decision layer ranking campaigns by real revenue contribution.
+
+Results:
+• 10X ROI uplift  
+• two high-cost national campaigns contributed <3% to sales  
+• hundreds of thousands saved  
+• new customer clusters improved repeat orders  
+
+Regional Director: “This is a clarity engine for our entire organisation.”
+
+Papa John’s now operates with complete visibility and data-led decisions.
+      </div>
+
+      <a class="case-link" onclick="toggleFull('papa-full', this)">Read full case study →</a>
     </div>
-  </main>
+  </div>
 
-  <!-- FOOTER (Fixed: now uses logo.svg) -->
-  <footer class="site-footer fade-up delay-3">
-    <div class="container footer-grid">
+</section>
 
-      <div>
-        <img src="assets/img/logo.svg" alt="SaleCompass Logo" class="logo-img">
-        <p class="tiny">Know What Works. Invest Where It Matters.</p>
-      </div>
+<!-- FOOTER -->
+<footer class="site-footer fade-up">
+  <div class="container footer-grid">
 
-      <div>
-        <h4>Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="success-stories.html">Success Stories</a></li>
-          <li><a href="research.html">R&amp;D</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">Attribution Engine</a></li>
-          <li><a href="services.html">Predictive Analytics</a></li>
-          <li><a href="services.html">Dashboards</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Get in touch</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-          <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
-        </ul>
-      </div>
+    <div>
+      <img src="assets/img/logo.png" class="logo-img">
+      <p class="footer-description">Know what works, Where to invest.</p>
     </div>
 
-    <div class="container tiny muted" style="padding-top:12px;">
-      © <span id="year"></span> SaleCompass. All rights reserved.
+    <div>
+      <h4>Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="research.html">R&D</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </footer>
 
-  <!-- UNIVERSAL MENU TOGGLE (Works on ALL pages now) -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Attribution Engine</a></li>
+        <li><a href="services.html">Predictive Analytics</a></li>
+        <li><a href="services.html">Dashboards</a></li>
+      </ul>
+    </div>
 
-      const btn = document.querySelector(".menu-toggle");
-      const menu = document.querySelector(".menu");
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
+        <li><a href="tel:+447482771421">📞+44 7482 771421</a></li>
+      </ul>
+      
+    </div>
 
-      if (btn && menu) {
-        btn.addEventListener("click", () => {
-          const expanded = btn.getAttribute("aria-expanded") === "true";
-          btn.setAttribute("aria-expanded", String(!expanded));
-          menu.classList.toggle("open");
-        });
-      }
+  </div>
 
-      document.getElementById("year").textContent = new Date().getFullYear();
+  <img src="assets/img/salecompass logo.png" class="footer-watermark">
 
-      // Scroll animations
-      document.querySelectorAll(".fade-up").forEach(el => {
-        const rect = el.getBoundingClientRect().top;
-        if (rect < window.innerHeight - 50) el.classList.add("visible");
+  <div class="container tiny">©️ <span id="year"></span> SaleCompass. All rights reserved.</div>
+</footer>
 
-        window.addEventListener("scroll", () => {
-          const top = el.getBoundingClientRect().top;
-          if (top < window.innerHeight - 50) el.classList.add("visible");
-        });
-      });
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    });
-  </script>
+  function toggleFull(id, btn) {
+    const section = document.getElementById(id);
+
+    if (section.style.maxHeight && section.style.maxHeight !== "0px") {
+      section.style.maxHeight = "0px";
+      btn.textContent = "Read full case study →";
+    } else {
+      section.style.maxHeight = "600px";
+      btn.textContent = "Show less ↑";
+    }
+  }
+</script>
 
 </body>
 </html>
-
