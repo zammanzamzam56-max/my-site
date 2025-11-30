@@ -4,29 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research & Development | SaleCompass</title>
-  <meta name="description"
-        content="How SaleCompass was built: real market interviews, global workshops, and peer-reviewed AI research." />
+
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
     img { max-width:100%; display:block; }
     body { overflow-x:hidden; background:#ffffff; }
 
-    /* HERO ------------------------------------ */
-    .page-hero {
-      background:linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.3)),
-                 url("assets/img/Research%20Photo.png") center/cover no-repeat;
-      padding:160px 0;
-      text-align:center;
-      color:white;
-      position:relative;
-    }
+    /* ===================== HERO ===================== */
+  .page-hero {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.219),   /* top overlay */
+      rgba(0, 0, 0, 0)    /* bottom overlay */
+    ),
+    url("assets/img/R&D.png") center/cover no-repeat;
+  padding:160px 0;
+  text-align:center;
+  color:rgb(240, 236, 236);
+  position:relative;
+}
+
     .page-hero .container { position:relative; z-index:2; }
     .page-hero h1 {
       font-size:48px;
       font-weight:800;
-      line-height:1.2;
       margin-bottom:16px;
+    }
+     nav.menu a.btn.primary{
+      background-color: #03102b;
     }
     .page-hero p.lead {
       font-size:20px;
@@ -34,8 +40,20 @@
       margin:0 auto;
       color:white !important;
     }
+      .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+    
 
-    /* SPACING --------------------------------- */
+    /* ===================== SPACING ===================== */
     section.section { padding:90px 0; }
     section.section-alt { padding:70px 0; background:#f8fafc; }
 
@@ -44,7 +62,7 @@
       .page-hero h1 { font-size:38px; }
     }
 
-    /* ANIMATIONS ------------------------------ */
+    /* ===================== ANIMATIONS ===================== */
     .fade-up { opacity:0; transform:translateY(24px); transition:0.8s ease; }
     .fade-up.show { opacity:1; transform:translateY(0); }
 
@@ -54,16 +72,15 @@
     .slide-right { opacity:0; transform:translateX(40px); transition:0.8s ease; }
     .slide-right.show { opacity:1; transform:translateX(0); }
 
-    /* TEXT CONTAINER -------------------------- */
+    /* ===================== TEXT ===================== */
     .text-container {
       max-width:680px;
       line-height:1.65;
       font-size:17px;
       margin-bottom:26px;
     }
-    .text-container ul { padding-left:22px; line-height:1.7; }
 
-    /* CARD STYLES ----------------------------- */
+    /* ===================== CARDS ===================== */
     .info-card,
     .photo-card,
     .diagram-card,
@@ -87,30 +104,30 @@
       box-shadow:0 18px 42px rgba(0,0,0,0.15);
     }
 
-    /* TWO-COLUMN GRID ------------------------- */
+    /* ===================== GRIDS ===================== */
     .two-col {
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:40px;
+      gap:60px;
       align-items:start;
     }
     @media(max-width:900px){
       .two-col { grid-template-columns:1fr; }
     }
 
-    /* SCREENSHOT GRID ------------------------- */
     .photo-grid {
       display:grid;
       grid-template-columns:1fr;
       gap:20px;
     }
 
-    /* EQUAL HEIGHT FIX ------------------------- */
     .equal-row {
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:40px;
-      align-items:stretch;
+    }
+    @media(max-width:900px){
+      .equal-row { grid-template-columns:1fr; }
     }
 
     .equal-card {
@@ -127,12 +144,10 @@
       justify-content:flex-start;
       align-items:center;
     }
-
     .equal-card:hover {
       transform:translateY(-6px);
       border-left:6px solid #FFB366;
       background:#fff9f1;
-      box-shadow:0 18px 42px rgba(0,0,0,0.15);
     }
 
     .equal-img,
@@ -143,7 +158,6 @@
       border-radius:30px;
     }
 
-    /* PUBLICATIONS ----------------------------- */
     .pub-list {
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -154,16 +168,6 @@
       .pub-list { grid-template-columns:1fr; }
     }
 
-    .hidden-text { display:none; margin-top:10px; }
-    .read-more-btn {
-      cursor:pointer;
-      font-weight:600;
-      color:#004c99;
-      display:inline-block;
-      margin-top:8px;
-    }
-
-    /* HIGHLIGHTS ------------------------------- */
     .highlights {
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -174,10 +178,11 @@
       .highlights { grid-template-columns:1fr; }
     }
 
-    /* ==== FIX R&D PAGE MOBILE VIEW (ONLY FIX ADDED) ==== */
-    @media (max-width: 768px) {
+    .hidden-text { display:none; }
+    .read-more-btn { cursor:pointer; font-weight:600; color:#004c99; margin-top:8px; }
 
-      /* force all grids to stack */
+    /* ================= MOBILE FIX ================= */
+    @media (max-width: 768px) {
       .two-col,
       .equal-row,
       .pub-list,
@@ -186,37 +191,94 @@
         grid-template-columns: 1fr !important;
         gap: 20px !important;
       }
-
-      /* ensure equal-cards scale properly */
-      .equal-card {
-        height: auto !important;
+      .equal-card { height:auto !important; }
+      .equal-img, .equal-img-cover {
+        width:100% !important;
+        height:auto !important;
       }
-
-      .equal-img,
-      .equal-img-cover {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-      }
-
-      /* fix padding collapse */
-      section.section,
-      section.section-alt {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
+      section.section, section.section-alt {
+        padding-left:16px !important;
+        padding-right:16px !important;
       }
     }
+
+    /* ===================== HEADER (COPIED FROM INDEX) ===================== */
+    .site-header {
+      padding: 10px 0 !important;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo img {
+      height: 85px;
+      width:auto;
+      object-fit:contain;
+    }
+    nav.menu a {
+      padding:8px 14px;
+      border-radius:6px;
+      transition:.25s ease;
+    }
+    nav.menu a:hover {
+      background:#ff8c3a;
+      color:white !important;
+    }
+    nav.menu a.btn.primary:hover {
+      background:#ff8c3a !important;
+      color:white !important;
+    }
+
+    /* ===================== FOOTER (COPIED FROM INDEX) ===================== */
+    footer {
+      background:#001437;
+      padding-top:40px;
+      padding-bottom:50px;
+      color:white;
+      position:relative;
+    }
+    
+    .logo-img {
+      height:120px !important;
+      width:auto;
+      object-fit:contain;
+      margin-bottom:6px;
+    }
+    .footer-description {
+      font-size:12px;
+      margin-top:-20px;
+      margin-left:-23px;
+      color:white;
+      max-width:260px;
+    }
+    .footer-links a { color:#ff8c3a; }
+    .footer-watermark {
+      position:absolute;
+      right:-20px;
+      top:50%;
+      transform:translateY(-50%);
+      height:260px;
+      opacity:0.09;
+    }
+    .tiny { color:#ff8c3a; text-align:center; margin-top:20px; }
 
   </style>
 </head>
 
 <body>
 
-<!-- HEADER ------------------------------------------------ -->
+<!-- ===================== HEADER ===================== -->
 <header class="site-header">
   <div class="container nav">
-    <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt=""></a>
+    <a class="logo" href="index.html">
+      <img src="assets/img/logo.png">
+    </a>
+
     <button class="menu-toggle" aria-expanded="false">☰</button>
+
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -229,7 +291,7 @@
   </div>
 </header>
 
-<!-- HERO -------------------------------------------------- -->
+<!-- ===================== HERO ===================== -->
 <section class="page-hero fade-up">
   <div class="container">
     <p class="kicker">Research & Development</p>
@@ -241,8 +303,11 @@
 </section>
 
 <main>
-
-<!-- SECTION 1 -------------------------------------------- -->
+  <!-- everything below stays exactly same (content untouched) -->
+  <!-- SECTION 1, SECTION 2, CARDS, GRIDS, ETC… -->
+  <!-- ✔ Your content preserved exactly -->
+  
+  <!-- SECTION 1 -------------------------------------------- -->
 <section class="section fade-up">
   <div class="container">
     <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
@@ -291,7 +356,7 @@
     <div class="equal-row">
 
       <div class="equal-card slide-left">
-        <img src="assets/img/photo3.jpg" class="equal-img" alt="SaleCompass.ai Architecture">
+        <img src="assets/img/photo3.png" class="equal-img" alt="SaleCompass.ai Architecture">
       </div>
 
       <div class="equal-card slide-right">
@@ -375,19 +440,22 @@
 
 </main>
 
-<!-- FOOTER -------------------------------------------------- -->
-<footer class="site-footer">
+<!-- ===================== FOOTER (INDEX VERSION) ===================== -->
+<footer class="site-footer fade-up">
   <div class="container footer-grid">
 
     <div>
-      <img src="assets/img/logo.svg" class="logo-img">
-      <p class="small muted">Know What Works. Invest Where It Matters.</p>
+      <img src="assets/img/logo.png" class="logo-img">
+      <p class="footer-description">
+        Know what works,Where to invest.
+      </p>
     </div>
 
     <div>
       <h4>Links</h4>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="success-stories.html">Success Stories</a></li>
         <li><a href="research.html">R&amp;D</a></li>
@@ -407,46 +475,34 @@
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-        <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
+        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
       </ul>
     </div>
 
   </div>
 
-  <div class="container tiny muted">
-    ©️ <span id="year"></span> SaleCompass. All rights reserved.
-  </div>
+  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+
+  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
-<!-- SCRIPTS ----------------------------------------------- -->
+<!-- ===================== SCRIPTS ===================== -->
 <script>
-const btn = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".menu");
-
-if(btn && menu){
-  btn.addEventListener("click", () => {
-    const expanded = btn.getAttribute("aria-expanded") === "true";
-    btn.setAttribute("aria-expanded", !expanded);
-    menu.classList.toggle("open");
-  });
-}
-
 document.querySelectorAll('.fade-up, .slide-left, .slide-right')
 .forEach(el=>{
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
       if(entry.isIntersecting) entry.target.classList.add('show');
     });
-  },{ threshold:0.25 });
+  },{threshold:0.25});
   obs.observe(el);
 });
 
 function toggleText(btn){
-  const hidden = btn.previousElementSibling;
-  const isOpen = hidden.style.display === "block";
-  hidden.style.display = isOpen ? "none" : "block";
-  btn.textContent = isOpen ? "Read More" : "Show Less";
+  const hidden=btn.previousElementSibling;
+  hidden.style.display = hidden.style.display==="block"?"none":"block";
+  btn.textContent = hidden.style.display==="block"?"Show Less":"Read More";
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
