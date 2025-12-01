@@ -7,9 +7,14 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
+    html, body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
     body { 
-      overflow-x: hidden; 
       background:white; 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
     img { max-width: 100%; display: block; }
     a, button { text-decoration:none !important; border:none !important; outline:none !important; }
@@ -28,6 +33,9 @@
       padding: 10px 0 !important;
       background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
     .nav {
       display: flex;
@@ -125,6 +133,74 @@
       opacity:1 !important;
     }
 
+    /* =============================== TRUSTED CLIENTS =============================== */
+    .clients-section {
+      background:#f7f8fc;
+      padding:50px 0;
+    }
+    .clients-section h2 {
+      text-align:center;
+      font-size:32px;
+      font-weight:800;
+      margin-bottom:24px;
+      color:#0a1a3a;
+    }
+    .client-carousel {
+      overflow:hidden;
+      max-width:900px;
+      margin:0 auto;
+    }
+    .client-track {
+      display:flex;
+      align-items:center;
+      gap:60px;
+      animation:logo-scroll 18s linear infinite;
+    }
+    .client-logo {
+      flex:0 0 auto;
+      min-width:160px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      filter:grayscale(0.1);
+      opacity:0.9;
+    }
+    .client-logo img {
+      max-height:70px;
+      width:auto;
+    }
+    @keyframes logo-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =============================== WHO WE ARE =============================== */
+    .who-section {
+      padding:60px 0 40px;
+    }
+    .who-grid {
+      display:grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap:40px;
+      align-items:center;
+    }
+    .who-text h2 {
+      font-size:32px;
+      font-weight:800;
+      color:#cf5b0e;
+      margin-bottom:14px;
+    }
+    .who-text p {
+      font-size:17px;
+      line-height:1.6;
+      color:#333;
+      margin:0;
+    }
+    .who-image img {
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
     /* =============================== PROBLEM SECTION =============================== */
     .ps-grid {
       display: grid;
@@ -157,6 +233,9 @@
       color: white;
       border-left: 6px solid #ff8c3a;
       margin-bottom: 30px;
+    }
+    .ps-box.target p {
+      color:white;
     }
     .ps-box.target:hover {
       background: linear-gradient(135deg, #001437, #003b88) !important;
@@ -207,7 +286,104 @@
       color:white;
     }
 
-    /* =============================== FOOTER (MATCHED TO ABOUT PAGE) =============================== */
+    /* =============================== FAQ SECTION =============================== */
+    .faq-section {
+      background:#f7f8fc;
+      padding:60px 0;
+    }
+    .faq-section h2 {
+      text-align:center;
+      font-size:32px;
+      font-weight:800;
+      margin-bottom:28px;
+      color:#0a1a3a;
+    }
+    .faq-list {
+      max-width:900px;
+      margin:0 auto;
+    }
+    .faq-item {
+      margin-bottom:12px;
+      border-radius:10px;
+      background:white;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+      overflow:hidden;
+    }
+    .faq-item details {
+      padding:14px 18px;
+      cursor:pointer;
+    }
+    .faq-item summary {
+      font-weight:600;
+      font-size:15px;
+      list-style:none;
+    }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item summary::after {
+      content:"+";
+      float:right;
+      font-weight:bold;
+    }
+    .faq-item details[open] summary::after {
+      content:"−";
+    }
+    .faq-item p {
+      margin-top:8px;
+      font-size:14px;
+      color:#333;
+    }
+    /* =========================================
+   FIX FOOTER MOBILE VIEW ONLY (INLINE VERSION)
+========================================= */
+@media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
+
+    /* =============================== FOOTER (MATCHED TO CASE STUDIES) =============================== */
     footer {
       position: relative;
       background: #001437;
@@ -215,7 +391,7 @@
       padding-top: 40px;
       padding-bottom: 50px;
     }
-    
+
     .logo-img {
       height: 120px !important;
       width: auto;
@@ -223,14 +399,26 @@
       display: block;
       margin-bottom: 6px;
     }
-    .footer-description {
-      font-size: 12px;
-      color: #ffffff;
-      margin-top:-20px; 
-      margin-left:-23px;
-      line-height: 1.3;
-      max-width: 260px;
-    }
+    /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
+.footer-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers logo + tagline */
+  text-align: center;
+}
+
+.footer-description {
+  margin-top:-10px !important;  /* space below logo */
+  margin-left: 0 !important;
+  max-width: 260px;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+    /* Ensure logo and tagline stack nicely */
+
+
+
     .footer-links a { color: #ff8c3a; }
     .tiny {
       color: #ff8c3a !important;
@@ -249,13 +437,39 @@
       opacity: 0.09;
       pointer-events: none;
     }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    .footer-links a { color:#ff8c3a; }
+
+    .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
 
     /* =============================== MOBILE & TABLET FIXES =============================== */
     @media (max-width: 900px) {
-      html, body {
-        overflow-x: hidden;
-      }
-
       .container {
         width: 100% !important;
         max-width: 100% !important;
@@ -296,6 +510,14 @@
         padding-bottom: 50px;
       }
 
+      .who-grid {
+        grid-template-columns:1fr;
+      }
+
+      .client-track {
+        gap:40px;
+      }
+
       .footer-watermark {
         right: 0;
         height: 180px;
@@ -317,7 +539,7 @@
         max-width: 260px;
         margin: 0 auto;
       }
-    }
+    } 
   </style>
 </head>
 
@@ -327,7 +549,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html">
-      <img src="assets/img/logo.png">
+      <img src="assets/img/logo.png" alt="SaleCompass logo">
     </a>
 
     <button class="menu-toggle" aria-expanded="false">☰</button>
@@ -357,6 +579,53 @@
   </div>
 </section>
 
+<!-- OUR TRUSTED CLIENTS -->
+<section class="clients-section">
+  <div class="container">
+    <h2>Our Trusted Clients</h2>
+    <div class="client-carousel">
+      <div class="client-track">
+        <div class="client-logo">
+          <img src="assets/img/Papa Johns.png" alt="Papa John's logo">
+        </div>
+        <div class="client-logo">
+          <img src="assets/img/Eye Interaction.png" alt="Eye Interaction logo">
+        </div>
+        <div class="client-logo">
+          <img src="assets/img/Ankara.png" alt="Ankara logo">
+        </div>
+        <!-- repeat for seamless scroll -->
+        <div class="client-logo">
+          <img src="assets/img/Papa Johns.png" alt="Papa John's logo">
+        </div>
+        <div class="client-logo">
+          <img src="assets/img/Eye Interaction.png" alt="Eye Interaction logo">
+        </div>
+        <div class="client-logo">
+          <img src="assets/img/Ankara.png" alt="Ankara logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="who-section">
+  <div class="container who-grid">
+    <div class="who-text">
+      <h2>Who We Are </h2>
+      <p>
+        SaleCompass is an AI-powered marketing intelligence platform built for small and growing businesses.
+        We connect all your digital and offline touchpoints – ads, social, delivery apps, POS and CRM – into one
+        clear view of what truly drives revenue, so you can invest confidently and stop wasting budget on guesswork.
+      </p>
+    </div>
+    <div class="who-image">
+      <img src="assets/img/Intro..jpg" alt="AI marketing analytics dashboard">
+    </div>
+  </div>
+</section>
+
 <!-- PROBLEM SECTION -->
 <section class="container">
 
@@ -369,6 +638,10 @@
         websites, email, delivery apps, and physical stores.<br><br>
         SMEs don’t have the tools or time to measure everything 
         so money is wasted on guesswork.
+      </p>
+      <p>
+        SaleCompass is built for restaurants, franchises, retail brands and local service businesses
+        that need a single source of truth for their marketing performance.
       </p>
     </div>
 
@@ -387,12 +660,12 @@
 
       <div class="ps-box">
         <h2>✔️ The SaleCompass Solution</h2>
-        <p>SaleCompass unifies all marketing & sales data digital and physical — into one real-time AI-powered dashboard.</p>
+        <p>SaleCompass unifies all marketing &amp; sales data – digital and physical — into one real-time AI-powered dashboard.</p>
 
         <ul>
           <li>✔ Track customer journeys across all channels</li>
           <li>✔ Measure real conversions</li>
-          <li>✔ Predict preferences & trends</li>
+          <li>✔ Predict preferences &amp; trends</li>
           <li>✔ Optimise spend with AI</li>
           <li>✔ Combine offline + online behaviour</li>
         </ul>
@@ -411,56 +684,136 @@
   <div class="features-grid">
 
     <div class="feature-card">
-      <img src="assets/img/icon 1.png">
+      <img src="assets/img/icon 1.png" alt="Attribution Engine icon">
       <h3>Attribution Engine</h3>
       <p>Know the true ROI across every channel.</p>
       <a href="services.html" class="read-more">Read More</a>
     </div>
 
     <div class="feature-card">
-      <img src="assets/img/icon 2.png">
+      <img src="assets/img/icon 2.png" alt="Predictive Analytics icon">
       <h3>Predictive Analytics</h3>
       <p>Forecast behaviour, demand, trends.</p>
       <a href="services.html" class="read-more">Read More</a>
     </div>
 
     <div class="feature-card">
-      <img src="assets/img/icon 3.png">
+      <img src="assets/img/icon 3.png" alt="Sentiment Intelligence icon">
       <h3>Sentiment Intelligence</h3>
       <p>Understand customer emotions in real time.</p>
       <a href="services.html" class="read-more">Read More</a>
     </div>
 
     <div class="feature-card">
-      <img src="assets/img/icon 4.png">
+      <img src="assets/img/icon 4.png" alt="Real-Time Dashboards icon">
       <h3>Real-Time Dashboards</h3>
-      <p>Instant visibility, alerts & insights.</p>
+      <p>Instant visibility, alerts &amp; insights.</p>
       <a href="services.html" class="read-more">Read More</a>
     </div>
 
     <div class="feature-card">
-      <img src="assets/img/icon 5.png">
+      <img src="assets/img/icon 5.png" alt="Integrations icon">
       <h3>Seamless Integrations</h3>
       <p>Google, Meta, TikTok, POS, CRM.</p>
       <a href="services.html" class="read-more">Read More</a>
     </div>
 
     <div class="feature-card">
-      <img src="assets/img/icon 6.png">
+      <img src="assets/img/icon 6.png" alt="Automation Engine icon">
       <h3>Automation Engine</h3>
-      <p>AI-driven notifications & optimisation.</p>
+      <p>AI-driven notifications &amp; optimisation.</p>
       <a href="services.html" class="read-more">Read More</a>
     </div>
 
   </div>
 </section>
 
-<!-- FOOTER (MATCHED 100% TO ABOUT PAGE) -->
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <details>
+          <summary>1. How many days does it take to activate the service I subscribed to?</summary>
+          <p>Activation usually takes 24–48 hours after payment. You will be notified as soon as your service is active.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>2. Can I get a refund for my subscription?</summary>
+          <p>Refunds are only available before service activation. Once activated, the service becomes non-refundable.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>3. How will I receive my Activation ID and Password?</summary>
+          <p>Your credentials will arrive via email and WhatsApp. Ensure your contact details are correct at checkout.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>4. Why should I choose SaleCompass for my business?</summary>
+          <p>We provide fast, reliable services with transparent pricing. Our expert support ensures smooth operations for your business.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>5. How can I contact SaleCompass support?</summary>
+          <p>You can reach us through email or WhatsApp anytime. Support is available 7 days a week for quick assistance.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>6. What payment methods do you accept?</summary>
+          <p>We accept major debit/credit cards and online transfers. All payments are processed securely.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>7. What happens if I don’t receive my activation details?</summary>
+          <p>If you don’t receive them within the expected time, contact support. We will resend your activation credentials immediately.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>8. Can I upgrade my plan later?</summary>
+          <p>Yes, you can upgrade anytime based on your needs. Our team will handle the transition smoothly.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>9. Is my data safe with SaleCompass?</summary>
+          <p>Yes, we follow strict data protection protocols. Your information is kept secure and confidential.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>10. Do you offer discounts on bulk or long-term services?</summary>
+          <p>Yes, we provide special pricing for bulk and long-term plans. Contact our sales team for customized offers.</p>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer fade-up">
   <div class="container footer-grid">
 
-    <div>
-      <img src="assets/img/logo.png" class="logo-img">
+    <!-- WRAP LOGO + TAGLINE TOGETHER -->
+    <div class="footer-brand">
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass logo">
       <p class="footer-description">
         Know what works , Where to invest.
       </p>
@@ -498,10 +851,11 @@
   </div>
 
   <!-- WATERMARK -->
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass watermark">
 
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
+
 
 <!-- JS -->
 <script>
