@@ -1,34 +1,40 @@
 <script>
-  // Mobile Menu Toggle
-  const btn = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
+  // ----------- FIXED MOBILE MENU SYSTEM -----------
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("header .menu"); // only header menu
 
   if (btn && menu) {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      menu.classList.toggle('open');
+    // Ensure aria-expanded exists
+    if (!btn.hasAttribute("aria-expanded")) {
+      btn.setAttribute("aria-expanded", "false");
+    }
+
+    btn.addEventListener("click", () => {
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+      btn.setAttribute("aria-expanded", !isOpen);
+      menu.classList.toggle("open");
     });
   }
 
-  // Footer Year
-  const y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
+  // ----------- FOOTER YEAR -----------
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // About Page Animations
+  // ----------- SCROLL ANIMATIONS -----------
   const animatedEls = document.querySelectorAll(
-    '.fade-up, .slide-in-left, .slide-in-right, .scale-up'
+    ".fade-up, .slide-in-left, .slide-in-right, .scale-up"
   );
 
   function animateOnScroll() {
     animatedEls.forEach(el => {
-      const position = el.getBoundingClientRect().top;
-      if (position < window.innerHeight - 120) {
-        el.classList.add('visible');
+      if (el.getBoundingClientRect().top < window.innerHeight - 120) {
+        el.classList.add("visible");
       }
     });
   }
 
-  window.addEventListener('scroll', animateOnScroll);
-  window.addEventListener('load', animateOnScroll);
+  window.addEventListener("scroll", animateOnScroll);
+  window.addEventListener("load", animateOnScroll);
+
 </script>
