@@ -353,40 +353,26 @@
 </footer>
 
 
-<!-- ===========================================
-     JS
-=========================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-  // Mobile menu
   const btn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
+  const y = document.getElementById("year");
+
+  if (y) y.textContent = new Date().getFullYear();
+
   if (btn && menu) {
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
+      btn.setAttribute("aria-expanded", !expanded);
       menu.classList.toggle("open");
     });
   }
-
-  // Footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Animations
-  const animated = document.querySelectorAll(".fade-up");
-  function show() {
-    animated.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-        el.classList.add("visible");
-      }
-    });
-  }
-  show();
-  window.addEventListener("scroll", show);
-
 });
 </script>
 
 </body>
 </html>
+
+
+
