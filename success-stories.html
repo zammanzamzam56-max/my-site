@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services | SaleCompass</title>
+  <title>Success Stories | SaleCompass</title>
 
   <link rel="stylesheet" href="assets/styles.css" />
 
@@ -11,13 +11,9 @@
     body { overflow-x:hidden; background:white; }
     img { max-width:100%; display:block; }
 
-    .container {
-      max-width:1180px;
-      margin:auto;
-      padding:0 20px;
-    }
+    .container { max-width:1180px; margin:auto; padding:0 20px; }
 
-    /* ========================= HEADER (MATCHES INDEX) ========================= */
+    /* ================= HEADER (MATCHED EXACTLY) ================= */
     .site-header {
       padding:10px 0 !important;
       background:white;
@@ -28,282 +24,103 @@
       justify-content:space-between;
       align-items:center;
     }
+    .site-header .nav { height:50px; overflow:visible !important; }
     .logo img {
-      height:85px;
-      object-fit:contain;
-      display:block;
+      height:85px; width:auto; object-fit:contain; display:block;
     }
     nav.menu a {
       padding:8px 14px;
       border-radius:6px;
-      transition:.25s;
+      transition:.25s ease;
+      color:black;
     }
     nav.menu a:hover {
       background:#ff8c3a;
       color:white !important;
     }
+    nav.menu a.active {
+      color:#ff8c3a !important;
+      font-weight:700;
+    }
     nav.menu a.btn.primary {
-      background:#0a1a3a;
+      background:#03102b;
       color:white !important;
+      padding:10px 18px;
+      border-radius:6px;
     }
     nav.menu a.btn.primary:hover {
       background:#ff8c3a !important;
       color:white !important;
     }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
 
-    /* ========================= SERVICES HERO (UPDATED) ========================= */
-    .services-hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-
-      background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), /* stronger overlay */
-        url("assets/img/Services.png") center/cover no-repeat;
+    /* ================= SUCCESS STORIES ================= */
+    main.section {
+      padding:80px 0;
     }
-
-    .hero-content {
-      z-index: 2;
-    }
-
-    .services-title {
-      font-size: 68px;
-      font-weight: 900;
-      color: white !important; /* changed from gradient to white */
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    .services-tagline {
-      font-size: 22px;
-      color: white;
-      font-weight: 400;
-      max-width: 680px;
-      margin: auto;
-      line-height: 1.5;
-      opacity: 0.92;
-    }
-
-    /* ========================= CORE FEATURES SECTION ========================= */
-   
-    .core-features {
-    padding: 40px 40px 10px;  /* top 40, left/right 40, bottom 10 */
-}
-.tech-section {
-    padding: 30px 0 80px; /* top reduced from 80 → 30 */
-}
-
-
-    .core-features h2 {
-      text-align:center;
-      font-size:38px;
-      font-weight:800;
-      margin-bottom:30px;
-    }
-    
-
-    .feature-box {
-      background:white;
-      padding:26px;
-      border-radius:16px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.06);
-      border-left:6px solid transparent;
-      transition:.25s;
-    }
-    .feature-box:hover {
-      transform:translateY(-6px);
-      box-shadow:0 12px 30px rgba(0,0,0,0.12);
-      border-left:6px solid #ff8c3a;
-      background:#fff7ef;
-    }
-    .feature-box h3 {
-      font-size:20px;
-      margin-bottom:10px;
-      font-weight:800;
-      color:#001437;
-    }
-    .feature-box ul {
-      padding-left:18px;
-      line-height:1.55;
-      color:#444;
-    }
-    .feature-box p.outcome {
-      margin-top:12px;
-      font-weight:700;
-      color:#0a1a3a;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* EXACT screenshot alignment */
-      gap: 26px;
-}
-
-
-    /* ========================= PRICING ========================= */
-    .pricing-section { padding:60px 0 20px; }
-    .pricing-heading { text-align:center; margin-bottom:28px; }
-    .pricing-heading h2 { font-size:32px; font-weight:800; }
-
-    .pricing-main-heading {
-      font-size:42px;
-      font-weight:900;
-      text-align:center;
-      margin-bottom:10px;
-      color:#001437;
-    }
-    
-
-    .billing-toggle {
-      margin-bottom:20px;
-      text-align:center;
-    }
-
-    .billing-switch {
-      position:relative;
-      width:46px;
-      height:22px;
-      display:inline-block;
-      margin:0 10px;
-    }
-
-    .billing-switch input { opacity:0; width:0; height:0; }
-
-    .billing-slider {
-      position:absolute;
-      inset:0;
-      background:#d1d5db;
-      border-radius:999px;
-      transition:.3s;
-    }
-    .billing-slider::before {
-      content:"";
-      position:absolute;
-      width:18px;
-      height:18px;
-      left:3px;
-      top:2px;
-      background:white;
-      border-radius:50%;
-      transition:.3s;
-    }
-    .billing-switch input:checked + .billing-slider {
-      background:#0077ff;
-    }
-    .billing-switch input:checked + .billing-slider::before {
-      transform:translateX(22px);
-    }
-
-    .pricing-grid {
+    .grid-2 {
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:26px;
     }
-
-    .pricing-card {
-      background:white;
-      padding:26px;
-      border-radius:14px;
-      border:1px solid #e5e7eb;
-      box-shadow:0 4px 16px rgba(0,0,0,0.03);
-      border-left:6px solid transparent;
-      transition:.25s;
-    }
-    .pricing-card:hover {
-      transform:translateY(-6px);
-      background:#fff7ef;
-      border-left:6px solid #ff8c3a;
-      box-shadow:0 12px 30px rgba(0,0,0,0.12);
-    }
-
-    .plan-title { font-size:14px; color:#6b7280; text-transform:uppercase; }
-    .plan-name { font-size:20px; font-weight:800; margin-bottom:4px; }
-    .plan-price { font-size:30px; font-weight:800; margin:6px 0 2px; }
-    .plan-period { font-size:14px; color:#6b7280; margin-bottom:14px; }
-    .plan-features li { margin-bottom:6px; }
-    .plan-button {
-      padding:12px;
-      width:100%;
-      border-radius:6px;
-      border:2px solid #0a1a3a;
-      background:white;
-      font-weight:600;
-      transition:.25s;
-      cursor:pointer;
-    }
-    .plan-button:hover {
-      background:#0a1a3a;
-      color:white;
-    }
-    .current { background:#0a1a3a; color:white; }
-
-    /* ========================= TECHNOLOGIES ========================= */
-    .tech-section {
-      padding:80px 0;
-      text-align:center;
-    }
-    .tech-heading {
-      font-size:36px;
-      font-weight:800;
-      margin-bottom:40px;
-    }
-    .tech-grid {
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:28px;
-      justify-items:center;
-      align-items:center;
-    }
-    .tech-box {
+    .card {
       background:white;
       padding:26px;
       border-radius:16px;
-      width:100%;
-      max-width:260px;
-      text-align:center;
       box-shadow:0 4px 20px rgba(0,0,0,0.06);
-      transition:.25s;
+      border-left:6px solid #004c99;
+      transition:.3s ease;
     }
-    .tech-box:hover {
-      transform:translateY(-8px);
-      background:#fff7ef;
-      box-shadow:0 14px 32px rgba(0,0,0,0.12);
+    .card:hover {
+      border-left:6px solid #ff8c3a;
+      transform:translateY(-6px);
+      box-shadow:0 12px 32px rgba(0,0,0,0.12);
     }
-    .tech-box img {
-      width:80px;
-      height:auto;
+    .badge {
+      font-size:12px;
+      font-weight:700;
+      color:white;
+      background:#001437;
+      padding:4px 10px;
+      border-radius:4px;
+      display:inline-block;
+      margin-bottom:10px;
     }
 
-    /* ========================= FOOTER ========================= */
+    /* ================= FOOTER (MATCHED EXACTLY) ================= */
     footer {
+      position:relative;
       background:#001437;
       color:white;
       padding-top:40px;
       padding-bottom:50px;
-      position:relative;
     }
-    
+    .footer-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:30px;
+      align-items:center;
+      padding-bottom:20px;
+    }
     .logo-img {
       height:120px !important;
+      width:auto;
       margin-bottom:6px;
+      object-fit:contain;
     }
     .footer-description {
       font-size:12px;
-      color:#ffffff;
-      margin-top:-27px !important;
-      line-height:1.3;
+      margin-top:-20px;
       margin-left:-23px;
-      max-width:280px;
+      color:white;
+      max-width:260px;
     }
     .footer-links a { color:#ff8c3a; }
-
+    .tiny {
+      color:#ff8c3a !important;
+      text-align:center;
+      margin-top:20px;
+      font-size:16px;
+    }
     .footer-watermark {
       position:absolute;
       right:-20px;
@@ -313,266 +130,63 @@
       opacity:0.09;
       pointer-events:none;
     }
-    .tiny {
-      text-align:center;
-      margin-top:20px;
-      color:#ff8c3a;
-    }
-
   </style>
 </head>
 
 <body>
 
-<!-- ========================= HEADER ========================= -->
+<!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="container nav">
+
     <a class="logo" href="index.html">
-      <img src="assets/img/logo.png" alt="">
+      <img src="assets/img/logo.png" alt="SaleCompass">
     </a>
+
     <button class="menu-toggle" aria-expanded="false">☰</button>
 
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a class="active" href="services.html">Services</a>
+      <a href="services.html">Services</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="research.html">R&amp;D</a>
-      <a href="success-stories.html">Success Stories</a>
+      <a class="active" href="success-stories.html">Success Stories</a>
       <a class="btn primary" href="contact.html">Contact</a>
     </nav>
+
   </div>
 </header>
 
-<!-- ========================= HERO (UPDATED) ========================= -->
-<section class="services-hero fade-up"> 
-  <div class="hero-content">
-    <h1 class="services-title">OUR SERVICES</h1>
-    <p class="services-tagline">AI-powered tools that simplify marketing, boost performance, and maximise ROI.</p>
-  </div>
-</section>
 
-
-<!-- ========================= CORE FEATURES ========================= -->
-<section class="core-features fade-up">
+<!-- ================= CONTENT ================= -->
+<main class="section">
   <div class="container">
-    <h2>Our Core Features</h2>
+    <h1 style="font-size:40px; font-weight:800; margin-bottom:10px;">Success Stories</h1>
 
-    <div class="features-grid">
+    <div class="grid-2" style="margin-top:16px">
+      <article class="card">
+        <span class="badge">Success Story 1</span>
+        <h3>From idea to impact</h3>
+        <p>
+          Summarize the success (problem, action, result) in 4–6 lines.
+        </p>
+      </article>
 
-      <div class="feature-box">
-        <h3>1️⃣ Multi-Channel Attribution Engine</h3>
-        <ul>
-          <li>See ROI of Instagram, Google, TikTok, email, SMS & offline.</li>
-          <li>Track customer journeys across all touchpoints.</li>
-          <li>Identify top channels & eliminate wasted spend.</li>
-        </ul>
-        <p class="outcome">Outcome: Smarter budget allocation & higher ROAS.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>2️⃣ Predictive Analytics (AI Forecasting)</h3>
-        <ul>
-          <li>Forecast demand, peak hours & trending products.</li>
-          <li>Detect emerging patterns & viral opportunities.</li>
-          <li>Predict perfect timing for ads & promotions.</li>
-        </ul>
-        <p class="outcome">Outcome: Better planning, less uncertainty & higher revenue.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>3️⃣ POS + Offline Data Integration</h3>
-        <ul>
-          <li>Connect POS, footfall counters & offline promos.</li>
-          <li>Combine online + offline data for full visibility.</li>
-          <li>Attribute real revenue impact to marketing.</li>
-        </ul>
-        <p class="outcome">Outcome: Accurate offline conversion tracking.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>4️⃣ Customer Sentiment & Review Intelligence</h3>
-        <ul>
-          <li>Analyse reviews from social media & delivery apps.</li>
-          <li>Detect trending complaints & sentiment shifts.</li>
-          <li>Identify what customers love or dislike.</li>
-        </ul>
-        <p class="outcome">Outcome: Higher ratings & better customer loyalty.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>5️⃣ Real-Time Dashboards & Alerts</h3>
-        <ul>
-          <li>Live metrics: ROI, spend, campaigns, trends.</li>
-          <li>Instant alerts for spikes or underperformance.</li>
-          <li>Fast decision-making without delays.</li>
-        </ul>
-        <p class="outcome">Outcome: Immediate action & reduced wasted spend.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>6️⃣ Integrations + Automation Engine</h3>
-        <ul>
-          <li>Integrate Google Ads, Meta, TikTok, POS & CRM.</li>
-          <li>AI-led recommendations for scaling campaigns.</li>
-          <li>Audience insights, optimisation & automation.</li>
-        </ul>
-        <p class="outcome">Outcome: More automation, less manual work.</p>
-      </div>
-
+      <article class="card">
+        <span class="badge">Success Story 2</span>
+        <h3>Scaling what works</h3>
+        <p>
+          Summarize the success (problem, action, result) in 4–6 lines.
+        </p>
+      </article>
     </div>
   </div>
-</section>
+</main>
 
-<!-- ========================= PRICING ========================= -->
-<section class="pricing-section fade-up">
-  <div class="container">
 
-    <h1 class="pricing-main-heading">Pricing Plans</h1>
-
-    <div class="pricing-heading">
-      <h2>Compare Plans</h2>
-    </div>
-
-    <!-- BILLING TOGGLE -->
-    <div class="billing-toggle">
-      <span>Monthly</span>
-      <label class="billing-switch">
-        <input type="checkbox" id="billingToggle">
-        <span class="billing-slider"></span>
-      </label>
-      <span>Annual <span style="color:#16a34a">(2 months free)</span></span>
-    </div>
-
-    <div class="pricing-grid">
-
-      <!-- FREE -->
-      <article class="pricing-card">
-        <div class="plan-title">Free</div>
-        <div class="plan-name">Free</div>
-
-        <div class="plan-price" data-month="£0" data-year="£0">£0</div>
-        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
-
-        <ul class="plan-features">
-          <li>✔ Multi-Channel Dashboard</li>
-          <li>✔ 1 Integration</li>
-          <li>✔ 200 AI Insights</li>
-          <li>✔ 200 Monthly AI Insights</li>
-          <li>✔ Basic Attribution Model</li>
-          <li>✔ POS Upload (Manual)</li>
-          <li>✔ Access to Review & Sentiment Summary</li>
-          <li>✖ Predictive Analytics </li>
-          <li>✖ Automated Recommendations</li>
-          <li>✖ Real-Time Alerts</li>
-        </ul>
-
-        <button class="plan-button current">Current Plan</button>
-      </article>
-
-      <!-- STARTER -->
-      <article class="pricing-card">
-        <div class="plan-title">Starter</div>
-        <div class="plan-name">Starter</div>
-
-        <div class="plan-price" data-month="£29" data-year="£290">£29</div>
-        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
-
-        <ul class="plan-features">
-          <li>✔ All Free Features</li>
-          <li>✔ 5 Integrations</li>
-          <li>✔ POS / CRM Sync</li>
-          <li>✔ 1,000 Monthly AI Insights</li>
-          <li>✔ AI Trend Detection (Basic)</li>
-          <li>✔ Automated Weekly Reports</li>
-          <li>✔ Priority Email Support</li>
-          <li>✖ Real-Time Alerts</li>
-          <li>✖ Predictive Demand Forecasting</li>
-          
-        </ul>
-
-        <button class="plan-button subscribe-btn" data-plan="Starter">Subscribe</button>
-      </article>
-
-      <!-- GROWTH -->
-      <article class="pricing-card">
-        <div class="plan-title">Growth</div>
-        <div class="plan-name">Growth</div>
-
-        <div class="plan-price" data-month="£59" data-year="£590">£59</div>
-        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
-
-        <ul class="plan-features">
-          <li>✔ All Starter Features</li>
-          <li>✔ 10 Integrations</li>
-          <li>✔ Real-Time Alerts</li>
-          <li>✔ 5,000 Monthly AI Insights</li>
-          <li>✔ Advanced Multi-Touch Attribution</li>
-          <li>✔ Campaign Optimisation Suggestions</li>
-          <li>✔ Campaign Optimisation Suggestions</li>
-          <li>✔ Chat + Priority Support</li>
-        </ul>
-
-        <button class="plan-button subscribe-btn" data-plan="Growth">Subscribe</button>
-      </article>
-
-      <!-- PREMIUM -->
-      <article class="pricing-card">
-        <div class="plan-title">Premium</div>
-        <div class="plan-name">Premium</div>
-
-        <div class="plan-price" data-month="£99" data-year="£990">£99</div>
-        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
-
-        <ul class="plan-features">
-          <li>✔ All Growth Features</li>
-          <li>✔ Unlimited Integrations</li>
-          <li>✔ Unlimited AI Insights</li>
-          <li>✔ Personalised AI Recommendations Engine</li>
-          <li>✔ Full Customer Journey Mapping</li>
-          <li>✔ API Access (Full)</li>
-          <li>✔ Dedicated Account Support</li>
-          <li>✔ Onboarding & Strategy Call</li>
-        </ul>
-
-        <button class="plan-button subscribe-btn" data-plan="Premium">Subscribe</button>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ========================= TECHNOLOGIES SECTION ========================= -->
-<section class="tech-section fade-up">
-  <div class="container">
-    <h2 class="tech-heading">Our Technologies</h2>
-
-    <div class="tech-grid">
-
-      <!-- ROW 1 -->
-      <div class="tech-box"><img src="assets/img/Tech 1.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 2.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 3.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 4.png" alt=""></div>
-
-      <!-- ROW 2 -->
-      <div class="tech-box"><img src="assets/img/Tech 5.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 6.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 7.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 8.png" alt=""></div>
-
-      <!-- ROW 3 -->
-      <div class="tech-box"><img src="assets/img/Tech 9.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 10.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 11.png" alt=""></div>
-      <div class="tech-box"><img src="assets/img/Tech 12.png" alt=""></div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ========================= FOOTER ========================= -->
-<footer class="site-footer fade-up">
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
   <div class="container footer-grid">
 
     <div>
@@ -604,9 +218,10 @@
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
-        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+        <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">+44 123 456 7890</a></li>
       </ul>
+      <a class="btn primary" href="contact.html" style="margin-top:6px; display:inline-block;">Book a call</a>
     </div>
 
   </div>
@@ -617,8 +232,7 @@
 </footer>
 
 
-
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
@@ -638,4 +252,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
