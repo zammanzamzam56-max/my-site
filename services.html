@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    body { overflow-x:hidden; background:white; }
+    html, body {
+      overflow-x: hidden;
+    }
+
+    body { background:white; }
     img { max-width:100%; display:block; }
 
     .container {
@@ -32,6 +36,7 @@
       height:85px;
       object-fit:contain;
       display:block;
+      padding-top: 10%;
     }
     nav.menu a {
       padding:8px 14px;
@@ -44,7 +49,7 @@
     }
     nav.menu a.btn.primary {
       background:#0a1a3a;
-      color:white !important;
+      color:white ;
     }
     nav.menu a.btn.primary:hover {
       background:#ff8c3a !important;
@@ -64,9 +69,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-
       background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), /* stronger overlay */
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
         url("assets/img/Services.png") center/cover no-repeat;
     }
 
@@ -77,7 +81,7 @@
     .services-title {
       font-size: 68px;
       font-weight: 900;
-      color: white !important; /* changed from gradient to white */
+      color: white !important;
       margin-bottom: 12px;
       letter-spacing: 1px;
     }
@@ -93,14 +97,9 @@
     }
 
     /* ========================= CORE FEATURES SECTION ========================= */
-   
     .core-features {
-    padding: 40px 40px 10px;  /* top 40, left/right 40, bottom 10 */
-}
-.tech-section {
-    padding: 30px 0 80px; /* top reduced from 80 → 30 */
-}
-
+      padding: 40px 0 10px;  /* removed side padding to avoid overflow */
+    }
 
     .core-features h2 {
       text-align:center;
@@ -108,7 +107,12 @@
       font-weight:800;
       margin-bottom:30px;
     }
-    
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* desktop: 3 columns */
+      gap: 26px;
+    }
 
     .feature-box {
       background:white;
@@ -121,7 +125,7 @@
     .feature-box:hover {
       transform:translateY(-6px);
       box-shadow:0 12px 30px rgba(0,0,0,0.12);
-      border-left:6px solid #ff8c3a;
+      border-left:6px solid #d46616 ;
       background:#fff7ef;
     }
     .feature-box h3 {
@@ -140,12 +144,6 @@
       font-weight:700;
       color:#0a1a3a;
     }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* EXACT screenshot alignment */
-      gap: 26px;
-}
-
 
     /* ========================= PRICING ========================= */
     .pricing-section { padding:60px 0 20px; }
@@ -159,7 +157,6 @@
       margin-bottom:10px;
       color:#001437;
     }
-    
 
     .billing-toggle {
       margin-bottom:20px;
@@ -246,7 +243,7 @@
 
     /* ========================= TECHNOLOGIES ========================= */
     .tech-section {
-      padding:80px 0;
+      padding:30px 0 80px; /* top reduced already */
       text-align:center;
     }
     .tech-heading {
@@ -289,7 +286,7 @@
       padding-bottom:50px;
       position:relative;
     }
-    
+
     .logo-img {
       height:120px !important;
       margin-bottom:6px;
@@ -297,7 +294,7 @@
     .footer-description {
       font-size:12px;
       color:#ffffff;
-      margin-top:-27px !important;
+      margin-top:-10px !important;
       line-height:1.3;
       margin-left:-23px;
       max-width:280px;
@@ -318,6 +315,107 @@
       margin-top:20px;
       color:#ff8c3a;
     }
+
+    /* ========================= MOBILE & TABLET FIXES ========================= */
+    @media (max-width: 900px) {
+      .container {
+        max-width:100%;
+        padding:0 16px;
+        margin:auto;
+      }
+
+      .services-hero {
+        height:auto;
+        min-height:70vh;
+        padding:80px 0 40px;
+        background-position:center;
+      }
+
+      .services-title {
+        font-size:48px;
+      }
+
+      .services-tagline {
+        font-size:18px;
+      }
+
+      .features-grid {
+        grid-template-columns:1fr;   /* single column cards on mobile/tablet */
+      }
+
+      .tech-grid {
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-title {
+        font-size:40px;
+      }
+
+      .services-tagline {
+        font-size:16px;
+      }
+
+      .tech-grid {
+        grid-template-columns:1fr;  /* 1 column tech logos on small phones */
+      }
+    }
+    /* Remove bullets behind ✔ and ✖ in pricing lists */
+.plan-features {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.plan-features li {
+  list-style-type: none;
+}
+    .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
+
 
   </style>
 </head>
@@ -351,7 +449,6 @@
     <p class="services-tagline">AI-powered tools that simplify marketing, boost performance, and maximise ROI.</p>
   </div>
 </section>
-
 
 <!-- ========================= CORE FEATURES ========================= -->
 <section class="core-features fade-up">
@@ -488,7 +585,6 @@
           <li>✔ Priority Email Support</li>
           <li>✖ Real-Time Alerts</li>
           <li>✖ Predictive Demand Forecasting</li>
-          
         </ul>
 
         <button class="plan-button subscribe-btn" data-plan="Starter">Subscribe</button>
@@ -548,25 +644,20 @@
     <h2 class="tech-heading">Our Technologies</h2>
 
     <div class="tech-grid">
-
-      <!-- ROW 1 -->
       <div class="tech-box"><img src="assets/img/Tech 1.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 2.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 3.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 4.png" alt=""></div>
 
-      <!-- ROW 2 -->
       <div class="tech-box"><img src="assets/img/Tech 5.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 6.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 7.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 8.png" alt=""></div>
 
-      <!-- ROW 3 -->
       <div class="tech-box"><img src="assets/img/Tech 9.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 10.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 11.png" alt=""></div>
       <div class="tech-box"><img src="assets/img/Tech 12.png" alt=""></div>
-
     </div>
   </div>
 </section>
@@ -616,31 +707,27 @@
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
-
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-  const y = document.getElementById("year");
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  if (y) y.textContent = new Date().getFullYear();
+  const billingToggle = document.getElementById("billingToggle");
+  const priceEls = document.querySelectorAll(".plan-price");
+  const periodEls = document.querySelectorAll(".plan-period");
 
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
+  billingToggle?.addEventListener("change", () => {
+    const yearly = billingToggle.checked;
+
+    priceEls.forEach(el => {
+      el.textContent = yearly
+        ? el.getAttribute("data-year")
+        : el.getAttribute("data-month");
     });
-  }
-});
+
+    periodEls.forEach(el => {
+      el.textContent = yearly ? "/ year" : "/ month";
+    });
+  });
 </script>
 
 </body>
 </html>
-
-
-
-
-</body>
-</html>
-
