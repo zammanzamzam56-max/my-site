@@ -7,14 +7,20 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    body { overflow-x: hidden; background:white; }
+    body { 
+      overflow-x: hidden; 
+      background:white; 
+    }
     img { max-width: 100%; display: block; }
     a, button { text-decoration:none !important; border:none !important; outline:none !important; }
 
     .container {
+      width: 100%;
       max-width: 1180px;
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
       padding: 0 20px;
+      box-sizing: border-box;
     }
 
     /* =============================== HEADER (MATCHED TO ABOUT) =============================== */
@@ -33,6 +39,7 @@
       width: auto;
       object-fit: contain;
       display: block;
+      padding-top: 10%;
     }
     .site-header .nav {
       height: 50px;
@@ -242,6 +249,75 @@
       opacity: 0.09;
       pointer-events: none;
     }
+
+    /* =============================== MOBILE & TABLET FIXES =============================== */
+    @media (max-width: 900px) {
+      html, body {
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 16px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .site-header .nav {
+        gap: 12px;
+      }
+
+      .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 80px 0 40px;
+        background-position: center;
+      }
+
+      .hero-content h1 {
+        font-size: 30px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .ps-grid {
+        padding: 40px 0;
+      }
+
+      .ps-row-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 50px;
+      }
+
+      .footer-watermark {
+        right: 0;
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 26px;
+      }
+      .hero-content p {
+        font-size: 15px;
+      }
+      .hero-cta {
+        flex-direction: column;
+      }
+      .hero-cta .btn {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 
@@ -311,7 +387,7 @@
 
       <div class="ps-box">
         <h2>✔️ The SaleCompass Solution</h2>
-        <p>SaleCompass unifies all marketing & sales data digital and physical into one real-time AI-powered dashboard.</p>
+        <p>SaleCompass unifies all marketing & sales data digital and physical — into one real-time AI-powered dashboard.</p>
 
         <ul>
           <li>✔ Track customer journeys across all channels</li>
@@ -448,4 +524,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
