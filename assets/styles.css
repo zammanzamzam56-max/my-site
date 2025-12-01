@@ -319,3 +319,15 @@ footer.site-footer .container {
   background: rgba(0, 32, 82, 0.55);
   z-index: -1;
 }
+/* UNIVERSAL MOBILE FIX */
+* {
+  box-sizing: border-box;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  position: relative;
+}
+
