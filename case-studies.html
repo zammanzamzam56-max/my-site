@@ -44,7 +44,11 @@
     nav.menu a.btn:hover { background:#ff8c3a; }
 
     /* HERO */
-    .case-hero { color:white; padding:90px 0 40px; }
+    .case-hero { 
+      color:white; 
+      padding:90px 0 40px; 
+      text-align:left;
+    }
     .case-hero h1 { font-size:46px; font-weight:800; }
     .case-hero p { opacity:.7; font-size:18px; }
 
@@ -173,6 +177,19 @@
         padding:0 16px;
       }
 
+      .case-hero {
+        padding:80px 0 30px;
+        text-align:center;
+      }
+      .case-hero h1 {
+        font-size:32px;
+      }
+      .case-hero p {
+        font-size:16px;
+        max-width:520px;
+        margin:10px auto 0; /* centers tagline and gives breathing room */
+      }
+
       /* prevent the grid from overflowing horizontally */
       .case-grid {
         grid-template-columns:1fr;
@@ -197,16 +214,6 @@
       .case-card:hover .case-overlay {
         opacity:1;
         background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.35));
-      }
-
-      .case-hero {
-        padding:80px 0 30px;
-      }
-      .case-hero h1 {
-        font-size:32px;
-      }
-      .case-hero p {
-        font-size:16px;
       }
     }
 
@@ -385,7 +392,8 @@ Papa John’s now operates with complete visibility and data-led decisions.
       section.style.maxHeight = "0px";
       btn.textContent = "Read full case study →";
     } else {
-      section.style.maxHeight = "600px";
+      // expand to full natural height so it shows completely on phone
+      section.style.maxHeight = section.scrollHeight + "px";
       btn.textContent = "Show less ↑";
     }
   }
