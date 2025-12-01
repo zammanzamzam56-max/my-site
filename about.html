@@ -303,6 +303,55 @@
     }
 
     /* ======================= FOOTER ======================= */
+   @media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
+
+    /* =============================== FOOTER (MATCHED TO CASE STUDIES) =============================== */
     footer {
       position: relative;
       background: #001437;
@@ -318,15 +367,26 @@
       display: block;
       margin-bottom: 6px;
     }
+    /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
+.footer-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers logo + tagline */
+  text-align: center;
+}
 
-    .footer-description {
-      font-size: 12px;
-      color: #ffffff;
-      margin-top:-20px; 
+.footer-description {
+      font-size:12px;
+      color:#ffffff;
+      margin-top:-10px !important;
+      line-height:1.3;
       margin-left:-23px;
-      line-height: 1.3;
-      max-width: 260px;
+      max-width:280px;
     }
+
+    /* Ensure logo and tagline stack nicely */
+
+
 
     .footer-links a { color: #ff8c3a; }
     .tiny {
@@ -336,6 +396,7 @@
       font-size: 16px;
     }
 
+    /* Watermark (matched exactly) */
     .footer-watermark {
       position: absolute;
       right: -20px;
@@ -345,6 +406,109 @@
       opacity: 0.09;
       pointer-events: none;
     }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    .footer-links a { color:#ff8c3a; }
+
+    .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
+
+    /* =============================== MOBILE & TABLET FIXES =============================== */
+    @media (max-width: 900px) {
+      .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 16px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .site-header .nav {
+        gap: 12px;
+      }
+
+      .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 80px 0 40px;
+        background-position: center;
+      }
+
+      .hero-content h1 {
+        font-size: 30px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .ps-grid {
+        padding: 40px 0;
+      }
+
+      .ps-row-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 50px;
+      }
+
+      .who-grid {
+        grid-template-columns:1fr;
+      }
+
+      .client-track {
+        gap:40px;
+      }
+
+      .footer-watermark {
+        right: 0;
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 26px;
+      }
+      .hero-content p {
+        font-size: 15px;
+      }
+      .hero-cta {
+        flex-direction: column;
+      }
+      .hero-cta .btn {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+      }
+    } 
 
     /* =============================== MOBILE FIXES =============================== */
     @media (max-width: 900px) {
@@ -358,6 +522,45 @@
         overflow-x: hidden !important;
       }
     }
+    /* ====================== FULL MOBILE SCROLL FIX ====================== */
+html, body {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.container, .mv-grid, .values-grid, .why-grid, .about-flex {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.mv-grid, .values-grid, .why-grid {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Prevent accidental scrollbars on small screens */
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    width: 94% !important;
+    padding: 0 14px !important;
+    margin: 0 auto !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
   </style>
 </head>
 
