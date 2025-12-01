@@ -92,53 +92,54 @@
       cursor:pointer;
     }
 
-    /* FOOTER */
-    footer {
-      background:#001437;
+   footer {
+      position: relative;
+      background: #001437;
       color:white;
-      padding:60px 0 50px;
-      text-align:center;
+      padding-top: 40px;
+      padding-bottom: 50px;
     }
-    .footer-grid {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:25px;
-    }
+
     .logo-img {
-      height:120px !important;
-      width:auto;
-      object-fit:contain;
-      display:block;
-      margin:0 auto 6px;
+      height: 120px !important;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
     }
-    .footer-description {
-      font-size:13px;
-      color:#ffffff;
-      line-height:1.4;
-      text-align:center;
-      margin:0 auto 20px;
-      max-width:300px;
-    }
-    .footer-links { list-style:none; padding:0; margin:0; }
-    .footer-links li { margin:6px 0; }
-    .footer-links a { color:#ff8c3a; text-decoration:none; transition:.25s; }
-    .footer-links a:hover { text-decoration:underline; }
+    /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
+.footer-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers logo + tagline */
+  text-align: center;
+}
+
+.footer-description {
+  margin-top:-10px !important;  /* space below logo */
+  margin-left: 0 !important;
+  max-width: 260px;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+    .footer-links a { color: #ff8c3a; }
     .tiny {
-      color:#ff8c3a !important;
-      text-align:center;
-      margin-top:30px;
-      font-size:16px;
+      color: #ff8c3a !important;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
     }
+
+    /* Watermark (matched exactly) */
     .footer-watermark {
-      position:absolute;
-      right:-20px;
-      top:50%;
-      transform:translateY(-50%);
-      height:260px;
-      opacity:0.09;
-      pointer-events:none;
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 260px;
+      opacity: 0.09;
+      pointer-events: none;
     }
 
     /* RESPONSIVE FIXES */
@@ -265,11 +266,16 @@ Papa John’s now operates with complete visibility and data-led decisions.
 
 </section>
 
-<!-- FOOTER -->
 <footer class="site-footer fade-up">
   <div class="container footer-grid">
-    <img src="assets/img/logo.png" class="logo-img">
-    <p class="footer-description">Know what works, Where to invest.</p>
+
+    <!-- WRAP LOGO + TAGLINE TOGETHER -->
+    <div class="footer-brand">
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass logo">
+      <p class="footer-description">
+        Know what works , Where to invest.
+      </p>
+    </div>
 
     <div>
       <h4>Links</h4>
@@ -278,7 +284,7 @@ Papa John’s now operates with complete visibility and data-led decisions.
         <li><a href="about.html">About</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="success-stories.html">Success Stories</a></li>
-        <li><a href="research.html">R&D</a></li>
+        <li><a href="research.html">R&amp;D</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -295,15 +301,19 @@ Papa John’s now operates with complete visibility and data-led decisions.
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">📧 hello@salecompass.uk</a></li>
-        <li><a href="tel:+447482771421">📞 +44 7482 771421</a></li>
+        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
       </ul>
     </div>
+
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
-  <div class="container tiny">©️ <span id="year"></span> SaleCompass. All rights reserved.</div>
+  <!-- WATERMARK -->
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass watermark">
+
+  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
+
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -340,5 +350,6 @@ Papa John’s now operates with complete visibility and data-led decisions.
 
 </body>
 </html>
+
 
 
