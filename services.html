@@ -707,27 +707,25 @@
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
+<!-- JS -->
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+  const y = document.getElementById("year");
 
-  const billingToggle = document.getElementById("billingToggle");
-  const priceEls = document.querySelectorAll(".plan-price");
-  const periodEls = document.querySelectorAll(".plan-period");
+  if (y) y.textContent = new Date().getFullYear();
 
-  billingToggle?.addEventListener("change", () => {
-    const yearly = billingToggle.checked;
-
-    priceEls.forEach(el => {
-      el.textContent = yearly
-        ? el.getAttribute("data-year")
-        : el.getAttribute("data-month");
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
     });
-
-    periodEls.forEach(el => {
-      el.textContent = yearly ? "/ year" : "/ month";
-    });
-  });
+  }
+});
 </script>
 
 </body>
 </html>
+
