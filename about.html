@@ -15,6 +15,7 @@
       max-width:1180px;
       margin:auto;
       padding:0 20px;
+      box-sizing: border-box;
     }
 
     /* =============================== HEADER =============================== */
@@ -22,6 +23,18 @@
       padding:10px 0 !important;
       background:white;
       box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
     }
 
     .nav {
@@ -111,7 +124,6 @@
       gap:40px;
     }
 
-    /* LEFT = TEXT */
     .about-card {
       flex:0 0 48%;
       background:white;
@@ -120,12 +132,12 @@
       box-shadow:0 6px 25px rgba(0,0,0,0.07);
     }
 
-    /* RIGHT = IMAGE */
     .about-photo {
       flex:0 0 52%;
     }
     .about-photo img {
-      width:100%;
+      width:85%;
+      margin:auto;
       border-radius:16px;
       box-shadow:0 6px 25px rgba(0,0,0,0.08);
     }
@@ -138,11 +150,25 @@
       .about-card, .about-photo {
         flex:100%;
       }
+      .about-photo img {
+        width:100%;
+      }
     }
 
     /* =============================== GRID SECTIONS =============================== */
-    .mv-section, .values-section, .why-section {
-      padding:60px 0;
+    .mv-section {
+      padding:60px 0 40px;      /* bottom reduced to tighten space before Core Values */
+      background:#f9fafb;
+    }
+
+    .values-section {
+      padding:40px 0 50px;      /* reduced top spacing */
+      background:radial-gradient(circle at top, #024065 0%, #022443 55%, #010a1f 100%);
+      color:#ffffff;
+    }
+
+    .why-section {
+      padding:40px 0 60px;      /* reduced top spacing */
       background:#f9fafb;
     }
 
@@ -152,15 +178,23 @@
       gap:28px;
     }
 
-    .mv-card, .value-card, .why-card {
+    .mv-card {
       background:white;
       padding:32px;
       border-radius:16px;
       box-shadow:0 6px 25px rgba(0,0,0,0.07);
       transition:.3s ease;
+      overflow:hidden;
     }
 
-    .mv-card:hover, .value-card:hover, .why-card:hover {
+    .mv-card img {
+      width:100%;
+      border-radius:12px 12px 0 0;
+      margin-bottom:16px;
+      display:block;
+    }
+
+    .mv-card:hover {
       transform:translateY(-6px);
       box-shadow:0 12px 30px rgba(0,0,0,0.12);
     }
@@ -171,6 +205,20 @@
       text-align:center;
       color:#010a1f;
       margin-bottom:30px;
+    }
+
+    /* Core Values heading like screenshot */
+    .values-section .center-title {
+      color:#ffffff;
+      margin-bottom:10px;
+    }
+    .values-subtitle {
+      text-align:center;
+      max-width:620px;
+      margin:0 auto 30px;
+      font-size:16px;
+      line-height:1.6;
+      color:#e4ecf7;
     }
 
     .values-grid, .why-grid {
@@ -186,31 +234,76 @@
       .values-grid, .why-grid { grid-template-columns:1fr; }
     }
 
-    .value-card h4, .why-card h4 {
-      font-size:22px;
-      margin-bottom:12px;
-      color:#03102b;
+    .value-card,
+    .why-card {
+      border-radius:16px;
+      padding:32px;
+      box-shadow:0 6px 25px rgba(0,0,0,0.07);
+      transition:0.3s ease;
     }
 
-    /* READ MORE */
-    .hidden-text {
-      display:none;
-      margin-top:10px;
-      color:#555;
+   /* ======================= CORE VALUES IMPROVEMENTS ======================= */
+.value-card {
+  background: #ffffff;
+  text-align: center;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  cursor: default;
+}
+
+.value-card > div:first-child {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.value-card h4 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #03102b;
+  font-weight: 700;
+}
+
+.value-card p {
+  font-size: 15px;
+  color: #050653;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 1; /* text now fully visible */
+}
+
+/* Hover effect similar to Salesloft style */
+.value-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, #ad6303 0%, #08012e 100%);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+}
+
+.value-card:hover h4,
+.value-card:hover p,
+.value-card:hover div:first-child {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+    /* ======================= WHY SECTION GRADIENT EFFECT ======================= */
+    .why-card {
+      background:white;
     }
-    .read-more-btn {
-      margin-top:12px;
-      display:inline-block;
-      font-weight:600;
-      cursor:pointer;
-      color:#004c99;
+    .why-card:hover {
+      background:linear-gradient(135deg, #ad6303 0%,#08012e 100%);
+      color:white !important;
+      transform:translateY(-6px);
+      box-shadow:0 12px 30px rgba(0,0,0,0.18);
+    }
+    .why-card:hover h4,
+    .why-card:hover p {
+      color:white !important;
     }
 
-
-
-/* ======================= FIXED FOOTER (MATCHES INDEX EXACTLY) ======================= */
-
-footer {
+    /* ======================= FOOTER ======================= */
+    footer {
       position: relative;
       background: #001437;
       color:white;
@@ -225,6 +318,7 @@ footer {
       display: block;
       margin-bottom: 6px;
     }
+
     .footer-description {
       font-size: 12px;
       color: #ffffff;
@@ -233,6 +327,7 @@ footer {
       line-height: 1.3;
       max-width: 260px;
     }
+
     .footer-links a { color: #ff8c3a; }
     .tiny {
       color: #ff8c3a !important;
@@ -241,7 +336,6 @@ footer {
       font-size: 16px;
     }
 
-    /* Watermark (matched exactly) */
     .footer-watermark {
       position: absolute;
       right: -20px;
@@ -251,16 +345,18 @@ footer {
       opacity: 0.09;
       pointer-events: none;
     }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
+
+    /* =============================== MOBILE FIXES =============================== */
+    @media (max-width: 900px) {
+      .container {
+        width: 94% !important;
+        margin: 0 auto !important;
+        padding: 0 14px !important;
+        overflow-x: hidden;
+      }
+      body {
+        overflow-x: hidden !important;
+      }
     }
   </style>
 </head>
@@ -271,9 +367,7 @@ footer {
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html"><img src="assets/img/logo.png"></a>
-
     <button class="menu-toggle" aria-expanded="false">☰</button>
-
     <nav class="menu">
       <a href="index.html">Home</a>
       <a class="active" href="about.html">About</a>
@@ -301,26 +395,23 @@ footer {
 <!-- ======================== WHAT IS SALECOMPASS ======================== -->
 <section class="about-section">
   <div class="container about-flex">
-
     <div class="about-card">
       <h2>What is SaleCompass?</h2>
       <p>SaleCompass helps SMEs understand what truly works by unifying all digital and offline data into one intelligent dashboard backed by AI-driven analytics.</p>
       <p>From predictive analytics to multi-touch attribution, SaleCompass removes guesswork and empowers every business to make confident, data-backed decisions.</p>
     </div>
-
     <div class="about-photo">
-      <img src="assets/img/Who we are.jpg" alt="Who We Are">
+      <img src="assets/img/who we are.jpg" alt="Who We Are">
     </div>
-
   </div>
 </section>
-
 
 <!-- ======================== MISSION / VISION ======================== -->
 <section class="mv-section">
   <div class="container mv-grid">
 
     <div class="mv-card">
+      <img src="assets/img/Our mission.jpg" alt="Our Mission">
       <h3>Our Mission</h3>
       <p>Empower SMEs with enterprise-grade marketing intelligence that is simple, affordable, and effective.</p>
       <p class="hidden-text">We believe every business deserves clarity and confidence.</p>
@@ -328,6 +419,7 @@ footer {
     </div>
 
     <div class="mv-card">
+      <img src="assets/img/Our Vision..jpg" alt="Our Vision">
       <h3>Our Vision</h3>
       <p>To become the world’s most accurate, accessible, and AI-powered marketing intelligence platform.</p>
       <p class="hidden-text">Our goal is to democratize data-driven growth.</p>
@@ -337,40 +429,41 @@ footer {
   </div>
 </section>
 
-
 <!-- ======================== VALUES ======================== -->
 <section class="values-section">
   <div class="container">
     <h2 class="center-title">Our Core Values</h2>
+    <p class="values-subtitle">
+      Our values guide how we think, collaborate, and deliver results for every customer we work with.
+    </p>
 
     <div class="values-grid">
       <div class="value-card">
-        <div style="font-size:42px;">✨</div>
+        <div>✨</div>
         <h4>Simplicity</h4>
-        <p>Making complex insights clear and actionable.</p>
+        <p>We turn complex signals into clear, actionable insights.</p>
       </div>
 
       <div class="value-card">
-        <div style="font-size:42px;">🔍</div>
+        <div>🔍</div>
         <h4>Transparency</h4>
-        <p>No hidden data  only clarity.</p>
+        <p>No black boxes — just honest, explainable data stories.</p>
       </div>
 
       <div class="value-card">
-        <div style="font-size:42px;">📊</div>
+        <div>📊</div>
         <h4>Accuracy</h4>
-        <p>Reliable insights backed by AI.</p>
+        <p>Every recommendation is grounded in real performance data.</p>
       </div>
 
       <div class="value-card">
-        <div style="font-size:42px;">🚀</div>
+        <div>🚀</div>
         <h4>Innovation</h4>
-        <p>Always evolving with smarter technology.</p>
+        <p>We continuously experiment so our customers stay ahead.</p>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- ======================== WHY US ======================== -->
 <section class="why-section">
@@ -395,7 +488,7 @@ footer {
 
       <div class="why-card">
         <h4>Built for SMEs</h4>
-        <p>Enterprise tools without complexity.</p>
+        <p>Enterprise tools without the enterprise complexity.</p>
       </div>
     </div>
   </div>
@@ -403,19 +496,13 @@ footer {
 
 </main>
 
-
-<!-- ======================== FIXED FOOTER ======================== -->
-<!-- FOOTER (MATCHED 100% TO ABOUT PAGE) -->
+<!-- ======================== FOOTER ======================== -->
 <footer class="site-footer fade-up">
   <div class="container footer-grid">
-
     <div>
       <img src="assets/img/logo.png" class="logo-img">
-      <p class="footer-description">
-        Know what works , Where to invest.
-      </p>
+      <p class="footer-description">Know what works , Where to invest.</p>
     </div>
-
     <div>
       <h4>Links</h4>
       <ul class="footer-links">
@@ -427,7 +514,6 @@ footer {
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-
     <div>
       <h4>Services</h4>
       <ul class="footer-links">
@@ -436,7 +522,6 @@ footer {
         <li><a href="services.html">Dashboards</a></li>
       </ul>
     </div>
-
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
@@ -444,38 +529,24 @@ footer {
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
       </ul>
     </div>
-
   </div>
-
-  <!-- WATERMARK -->
   <img src="assets/img/salecompass logo.png" class="footer-watermark">
-
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
- 
-
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-  const y = document.getElementById("year");
-
-  if (y) y.textContent = new Date().getFullYear();
-
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
-    });
+  function toggleText(btn){
+    const hidden = btn.previousElementSibling;
+    if(hidden.style.display === "block"){
+      hidden.style.display = "none";
+      btn.textContent = "Read More";
+    } else {
+      hidden.style.display = "block";
+      btn.textContent = "Show Less";
+    }
   }
-});
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
-
-
-
-
