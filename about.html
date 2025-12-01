@@ -24,18 +24,6 @@
       background:white;
       box-shadow:0 2px 6px rgba(0,0,0,0.05);
     }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
 
     .nav {
       display:flex;
@@ -45,7 +33,16 @@
 
     .logo img {
       height:85px;
+      width:auto;
       object-fit:contain;
+      display:block;
+      padding-top:0;              /* FIX: removed 10% padding */
+    }
+
+    .site-header .nav {
+      height:50px;
+      overflow:visible !important;
+      align-items:center;
     }
 
     nav.menu a {
@@ -71,6 +68,16 @@
     }
     nav.menu a.btn.primary:hover {
       background:#ff8c3a !important;
+    }
+
+    /* Make logo a bit smaller on phones */
+    @media (max-width: 768px) {
+      .logo img {
+        height:60px;
+      }
+      .site-header {
+        padding:6px 0 !important;
+      }
     }
 
     /* =============================== HERO =============================== */
@@ -157,18 +164,18 @@
 
     /* =============================== GRID SECTIONS =============================== */
     .mv-section {
-      padding:60px 0 40px;      /* bottom reduced to tighten space before Core Values */
+      padding:60px 0 40px;
       background:#f9fafb;
     }
 
     .values-section {
-      padding:40px 0 50px;      /* reduced top spacing */
+      padding:40px 0 50px;
       background:radial-gradient(circle at top, #024065 0%, #022443 55%, #010a1f 100%);
       color:#ffffff;
     }
 
     .why-section {
-      padding:40px 0 60px;      /* reduced top spacing */
+      padding:40px 0 60px;
       background:#f9fafb;
     }
 
@@ -207,7 +214,6 @@
       margin-bottom:30px;
     }
 
-    /* Core Values heading like screenshot */
     .values-section .center-title {
       color:#ffffff;
       margin-bottom:10px;
@@ -242,50 +248,49 @@
       transition:0.3s ease;
     }
 
-   /* ======================= CORE VALUES IMPROVEMENTS ======================= */
-.value-card {
-  background: #ffffff;
-  text-align: center;
-  border-radius: 16px;
-  padding: 32px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s ease;
-  cursor: default;
-}
+    /* ======================= CORE VALUES IMPROVEMENTS ======================= */
+    .value-card {
+      background: #ffffff;
+      text-align: center;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.35s ease;
+      cursor: default;
+    }
 
-.value-card > div:first-child {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
+    .value-card > div:first-child {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
 
-.value-card h4 {
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: #03102b;
-  font-weight: 700;
-}
+    .value-card h4 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #03102b;
+      font-weight: 700;
+    }
 
-.value-card p {
-  font-size: 15px;
-  color: #050653;
-  line-height: 1.6;
-  margin: 0;
-  opacity: 1; /* text now fully visible */
-}
+    .value-card p {
+      font-size: 15px;
+      color: #050653;
+      line-height: 1.6;
+      margin: 0;
+      opacity: 1;
+    }
 
-/* Hover effect similar to Salesloft style */
-.value-card:hover {
-  transform: translateY(-6px);
-  background: linear-gradient(135deg, #ad6303 0%, #08012e 100%);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
-}
+    .value-card:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(135deg, #ad6303 0%, #08012e 100%);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+    }
 
-.value-card:hover h4,
-.value-card:hover p,
-.value-card:hover div:first-child {
-  color: #ffffff !important;
-  opacity: 1 !important;
-}
+    .value-card:hover h4,
+    .value-card:hover p,
+    .value-card:hover div:first-child {
+      color: #ffffff !important;
+      opacity: 1 !important;
+    }
 
     /* ======================= WHY SECTION GRADIENT EFFECT ======================= */
     .why-card {
@@ -302,56 +307,48 @@
       color:white !important;
     }
 
-    /* ======================= FOOTER ======================= */
-   @media (max-width: 768px) {
+    /* ======================= FOOTER STACK ON MOBILE ======================= */
+    @media (max-width: 768px) {
+      .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 32px !important;
+      }
 
-  /* Stack footer content */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
+      .footer-grid .logo-img {
+        margin: 0 auto !important;
+      }
 
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
+      .footer-description {
+        margin: 10px auto !important;
+        text-align: center !important;
+        max-width: 90% !important;
+      }
 
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
+      .footer-grid div {
+        width: 100% !important;
+        text-align: center !important;
+      }
 
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
+      .footer-links {
+        text-align: center !important;
+      }
+      .footer-links li a {
+        font-size: 18px !important;
+        padding: 6px 0 !important;
+      }
 
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
+      .footer-grid div:last-child ul li {
+        font-size: 18px !important;
+      }
 
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
+      .footer-watermark {
+        display: none !important;
+      }
+    }
 
-  /* Hide huge watermark */
-  .footer-watermark {
-    display: none !important;
-  }
-}
-
-    /* =============================== FOOTER (MATCHED TO CASE STUDIES) =============================== */
+    /* =============================== FOOTER =============================== */
     footer {
       position: relative;
       background: #001437;
@@ -367,15 +364,15 @@
       display: block;
       margin-bottom: 6px;
     }
-    /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
-.footer-grid > div:first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;        /* centers logo + tagline */
-  text-align: center;
-}
 
-.footer-description {
+    .footer-grid > div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-description {
       font-size:12px;
       color:#ffffff;
       margin-top:-10px !important;
@@ -383,10 +380,6 @@
       margin-left:-23px;
       max-width:280px;
     }
-
-    /* Ensure logo and tagline stack nicely */
-
-
 
     .footer-links a { color: #ff8c3a; }
     .tiny {
@@ -396,7 +389,6 @@
       font-size: 16px;
     }
 
-    /* Watermark (matched exactly) */
     .footer-watermark {
       position: absolute;
       right: -20px;
@@ -406,36 +398,6 @@
       opacity: 0.09;
       pointer-events: none;
     }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-
-    
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-
-    .footer-links a { color:#ff8c3a; }
-
-    .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
 
     /* =============================== MOBILE & TABLET FIXES =============================== */
     @media (max-width: 900px) {
@@ -445,51 +407,6 @@
         padding: 0 16px;
         margin-left: auto !important;
         margin-right: auto !important;
-      }
-
-      .site-header .nav {
-        gap: 12px;
-      }
-
-      .hero {
-        height: auto;
-        min-height: 80vh;
-        padding: 80px 0 40px;
-        background-position: center;
-      }
-
-      .hero-content h1 {
-        font-size: 30px;
-      }
-
-      .hero-content p {
-        font-size: 16px;
-      }
-
-      .ps-grid {
-        padding: 40px 0;
-      }
-
-      .ps-row-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-        padding-bottom: 50px;
-      }
-
-      .who-grid {
-        grid-template-columns:1fr;
-      }
-
-      .client-track {
-        gap:40px;
-      }
-
-      .footer-watermark {
-        right: 0;
-        height: 180px;
       }
     }
 
@@ -508,58 +425,45 @@
         max-width: 260px;
         margin: 0 auto;
       }
-    } 
+    }
 
-    /* =============================== MOBILE FIXES =============================== */
+    /* ====================== FULL MOBILE SCROLL FIX ====================== */
+    html, body {
+      width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    .container, .mv-grid, .values-grid, .why-grid, .about-flex {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    .mv-grid, .values-grid, .why-grid {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     @media (max-width: 900px) {
-      .container {
-        width: 94% !important;
-        margin: 0 auto !important;
-        padding: 0 14px !important;
-        overflow-x: hidden;
-      }
-      body {
+      html, body {
+        width: 100% !important;
         overflow-x: hidden !important;
       }
+
+      .container {
+        width: 94% !important;
+        padding: 0 14px !important;
+        margin: 0 auto !important;
+      }
+
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
     }
-    /* ====================== FULL MOBILE SCROLL FIX ====================== */
-html, body {
-  width: 100% !important;
-  overflow-x: hidden !important;
-}
-
-.container, .mv-grid, .values-grid, .why-grid, .about-flex {
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-}
-
-.mv-grid, .values-grid, .why-grid {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Prevent accidental scrollbars on small screens */
-* {
-  box-sizing: border-box;
-}
-
-@media (max-width: 900px) {
-  html, body {
-    width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .container {
-    width: 94% !important;
-    padding: 0 14px !important;
-    margin: 0 auto !important;
-  }
-
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
 
   </style>
 </head>
@@ -569,7 +473,7 @@ html, body {
 <!-- ======================== HEADER ======================== -->
 <header class="site-header">
   <div class="container nav">
-    <a class="logo" href="index.html"><img src="assets/img/logo.png"></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="SaleCompass logo"></a>
     <button class="menu-toggle" aria-expanded="false">☰</button>
     <nav class="menu">
       <a href="index.html">Home</a>
@@ -612,7 +516,6 @@ html, body {
 <!-- ======================== MISSION / VISION ======================== -->
 <section class="mv-section">
   <div class="container mv-grid">
-
     <div class="mv-card">
       <img src="assets/img/Our mission.jpg" alt="Our Mission">
       <h3>Our Mission</h3>
@@ -628,7 +531,6 @@ html, body {
       <p class="hidden-text">Our goal is to democratize data-driven growth.</p>
       <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
     </div>
-
   </div>
 </section>
 
@@ -703,7 +605,7 @@ html, body {
 <footer class="site-footer fade-up">
   <div class="container footer-grid">
     <div>
-      <img src="assets/img/logo.png" class="logo-img">
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass logo">
       <p class="footer-description">Know what works , Where to invest.</p>
     </div>
     <div>
@@ -733,22 +635,27 @@ html, body {
       </ul>
     </div>
   </div>
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
+<!-- JS -->
 <script>
-  function toggleText(btn){
-    const hidden = btn.previousElementSibling;
-    if(hidden.style.display === "block"){
-      hidden.style.display = "none";
-      btn.textContent = "Read More";
-    } else {
-      hidden.style.display = "block";
-      btn.textContent = "Show Less";
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+  const y = document.getElementById("year");
+
+  if (y) y.textContent = new Date().getFullYear();
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
+    });
   }
-  document.getElementById("year").textContent = new Date().getFullYear();
+});
 </script>
 
 </body>
