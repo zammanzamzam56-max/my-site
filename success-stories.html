@@ -27,6 +27,7 @@
     .site-header .nav { height:50px; overflow:visible !important; }
     .logo img {
       height:85px; width:auto; object-fit:contain; display:block;
+      padding-top: 10%;
     }
     nav.menu a {
       padding:8px 14px;
@@ -130,6 +131,47 @@
       opacity:0.09;
       pointer-events:none;
     }
+    
+  /* Global: keep layout tight */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Mobile: kill horizontal scroll + keep content centered */
+  @media (max-width: 900px) {
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    .container {
+      width: 94% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 14px !important;
+    }
+
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block;
+    }
+  }
+  .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+</style>
+
   </style>
 </head>
 
@@ -221,7 +263,7 @@
         <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">+44 123 456 7890</a></li>
       </ul>
-      <a class="btn primary" href="contact.html" style="margin-top:6px; display:inline-block;">Book a call</a>
+     
     </div>
 
   </div>
