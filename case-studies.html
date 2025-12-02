@@ -250,6 +250,82 @@ footer {
     display: none !important;
   }
 }
+    /* FIX GRID FOR MOBILE */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* smaller min size */
+  gap: 26px;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+}
+
+/* FIX CARD */
+.case-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  height: auto;
+  cursor: pointer;
+}
+
+/* FIX IMAGE (remove forced height) */
+.case-card img {
+  width: 100%;
+  height: auto !important;
+  object-fit: cover;
+  transition: opacity .4s ease;
+}
+
+.case-card:hover img {
+  opacity: .15;
+}
+
+/* FIX OVERLAY */
+.case-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  background: rgba(0,0,0,0);
+  transition: .4s ease;
+}
+
+.case-card:hover .case-overlay {
+  opacity: 1;
+  background: rgba(0,0,0,0.65);
+}
+
+/* FULL TEXT SCROLL FIX */
+.case-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+  white-space: pre-line;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+
+  .case-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .case-card img {
+    height: auto !important;
+  }
+
+  .case-overlay {
+    padding: 20px !important;
+  }
+
+  .case-title {
+    font-size: 22px !important;
+  }
+}
   </style>
 </head>
 
@@ -426,3 +502,4 @@ Papa John’s now operates with complete visibility and data-led decisions.
 
 </body>
 </html>
+
