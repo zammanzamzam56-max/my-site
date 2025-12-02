@@ -271,12 +271,14 @@
       .footer-links li a { font-size: 1rem; }
 
       .footer-watermark {
-        position: relative;
-        display: block;
-        margin: 30px auto 0;
-        height: 140px;
-        opacity: 0.15;
-      }
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 260px;
+      opacity: 0.09;
+      pointer-events: none;
+    }
     }
   </style>
 </head>
@@ -400,4 +402,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
