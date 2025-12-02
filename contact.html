@@ -142,12 +142,9 @@
       gap: 40px;
     }
 
-   @media (max-width: 768px) {
-  .contact-wrapper {
-    padding-top: 30px !important; /* adds space above the whole section */
-    
-  }
-}
+  @media(max-width: 900px){
+      .contact-wrapper { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
   .contact-left {
     padding-left: 10px !important;
@@ -427,5 +424,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
