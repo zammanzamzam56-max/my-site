@@ -175,6 +175,7 @@
       width: auto;
       object-fit: contain;
       display: block;
+      padding-top: 10%;
     }
     .site-header .nav {
       height: 50px;
@@ -229,7 +230,143 @@
       height: 260px;
       opacity: 0.09;
       pointer-events: none;
+      
     }
+    
+  /* Global: keep layout tight */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Mobile: kill horizontal scroll + keep content centered */
+  @media (max-width: 900px) {
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    .container {
+      width: 94% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 14px !important;
+    }
+
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block;
+    }
+  }
+  @media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
+.logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
+</style>
+
 
   </style>
 </head>
@@ -353,6 +490,9 @@
 </footer>
 
 
+<!-- ===========================================
+     JS
+=========================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
@@ -371,8 +511,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
 </body>
 </html>
-
-
-
