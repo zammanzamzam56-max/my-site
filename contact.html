@@ -7,22 +7,111 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* ===========================================
-       UNIVERSAL ANIMATIONS
-    ============================================ */
-    .fade-up { opacity:0; transform:translateY(25px); transition:.6s ease; }
-    .fade-up.visible { opacity:1; transform:translateY(0); }
+    /* ================== RESET ================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    /* ===========================================
-       HERO SECTION
-    ============================================ */
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #03102b;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /* ================== HEADER ================== */
+    .site-header {
+      padding: 10px 0;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .logo img {
+        height: 56px;
+      }
+    }
+
+    nav.menu a {
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.25s ease;
+      color: #03102b;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav.menu a:hover {
+      background: #ff8c3a;
+      color: #ffffff !important;
+    }
+
+    nav.menu a.active {
+      font-weight: 700;
+      color: #ff8c3a !important;
+    }
+
+    nav.menu a.btn.primary {
+      background: #03102b;
+      color: #ffffff !important;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
+
+    nav.menu a.btn.primary:hover {
+      background: #ff8c3a !important;
+      color: #ffffff !important;
+    }
+
+    /* ================== ANIMATION HELPER ================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================== HERO ================== */
     .contact-hero {
       position: relative;
       background: url("assets/img/Contact Us.png") center/cover no-repeat;
-      padding: 160px 65px;
+      padding: 150px 0;
       text-align: center;
-      max-width: 100%;
-      color: #fff;
+      color: #ffffff;
     }
 
     .contact-hero::before {
@@ -36,7 +125,6 @@
       position: relative;
       z-index: 2;
       max-width: 750px;
-      margin: auto;
     }
 
     .contact-hero h2 {
@@ -46,25 +134,41 @@
     }
 
     .contact-hero p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       line-height: 1.7;
-      color: #eee;
+      color: #f4f4f4;
     }
 
-    /* ===========================================
-       CONTACT FORM + INFO
-    ============================================ */
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: 120px 0;
+      }
+      .contact-hero h2 {
+        font-size: 2.1rem;
+      }
+      .contact-hero p {
+        font-size: 1rem;
+      }
+    }
+
+    /* ================== CONTACT LAYOUT ================== */
     .contact-container {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 40px;
-      padding: 60px 20px 80px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 60px 0 80px;
     }
 
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        padding: 40px 0 60px;
+      }
+    }
+
+    /* FORM */
     .contact-form form {
-      background: #fff;
+      background: #ffffff;
       padding: 32px;
       border-radius: 16px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.06);
@@ -76,18 +180,24 @@
       margin-bottom: 6px;
       font-weight: 600;
       margin-top: 14px;
+      font-size: 0.95rem;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 12px;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #cccccc;
       margin-bottom: 10px;
       font-size: 1rem;
+      font-family: inherit;
     }
 
-    textarea { resize:none; }
+    textarea {
+      resize: none;
+      min-height: 150px;
+    }
 
     .contact-form .btn {
       margin-top: 12px;
@@ -95,6 +205,8 @@
       padding: 14px;
       font-size: 1rem;
       border-radius: 10px;
+      border: none;
+      cursor: pointer;
     }
 
     /* INFO BOX */
@@ -111,94 +223,41 @@
 
     .contact-info:hover {
       transform: translateY(-6px) scale(1.03);
-      border-left: 6px solid #FFB366;
+      border-left: 6px solid #ffb366;
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
-    @media(max-width: 900px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
+    .contact-info h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
-    /* ===========================================
-       HEADER — MATCHED 100% WITH INDEX PAGE
-    ============================================ */
-    .site-header {
-      padding: 10px 0 !important;
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    .contact-info p {
+      margin-bottom: 6px;
+      font-size: 0.98rem;
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    nav.menu a {
-      padding: 8px 14px;
-      border-radius: 6px;
-      transition: .25s ease;
-      color: black;
-    }
-
-    nav.menu a:hover {
-      background: #ff8c3a;
-      color: white !important;
-    }
-
-    nav.menu a.active {
-      font-weight: 700;
-      color: #ff8c3a !important;
-    }
-
-    nav.menu a.btn.primary {
-      background: #03102b;
-      color: white !important;
-      padding: 10px 18px;
-      border-radius: 6px;
-    }
-
-    nav.menu a.btn.primary:hover {
-      background: #ff8c3a !important;
-    }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-
-    /* ===========================================
-       FOOTER — MATCHED 100% WITH INDEX PAGE
-    ============================================ */
+    /* ================== FOOTER ================== */
     footer {
       position: relative;
       background: #001437;
-      color: white;
+      color: #ffffff;
       padding-top: 40px;
       padding-bottom: 50px;
+      overflow: hidden;
     }
 
-   
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      align-items: flex-start;
+    }
 
     .logo-img {
-      height: 120px !important;
+      height: 120px;
       width: auto;
+      object-fit: contain;
       display: block;
       margin-bottom: 6px;
     }
@@ -209,17 +268,34 @@
       margin-top: -20px;
       margin-left: -23px;
       max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 6px;
     }
 
     .footer-links a {
       color: #ff8c3a;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
     }
 
     .tiny {
-      color: #ff8c3a !important;
+      color: #ff8c3a;
       text-align: center;
       margin-top: 20px;
-      font-size: 16px;
+      font-size: 0.9rem;
     }
 
     .footer-watermark {
@@ -230,164 +306,49 @@
       height: 260px;
       opacity: 0.09;
       pointer-events: none;
-      
-    }
-    
-  /* Global: keep layout tight */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  /* Mobile: kill horizontal scroll + keep content centered */
-  @media (max-width: 900px) {
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden !important;
     }
 
-    .container {
-      width: 94% !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-      padding: 0 14px !important;
-    }
-
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-      display: block;
-    }
-  }
-  @media (max-width: 768px) {
-
-  /* Stack footer content */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
-
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
-
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
-
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
-
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
-
-  /* Hide huge watermark */
-  .footer-watermark {
-    display: none !important;
-  }
-}
-.logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
     @media (max-width: 768px) {
-
-  /* Stack footer content */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
-
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
-
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
-
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
-
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
-
-  /* Hide huge watermark */
-  .footer-watermark {
-    display: none !important;
-  }
-}
-    @media (max-width: 900px) {
-      .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 16px;
-        margin-left: auto !important;
-        margin-right: auto !important;
+      .footer-grid {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
       }
 
-      .site-header .nav {
-        gap: 12px;
+      .logo-img {
+        margin: 0 auto;
       }
-</style>
 
+      .footer-description {
+        margin: 10px auto;
+        text-align: center;
+        max-width: 90%;
+      }
 
+      .footer-grid div {
+        width: 100%;
+      }
+
+      .footer-links {
+        text-align: center;
+      }
+
+      .footer-links li a {
+        font-size: 1rem;
+        padding: 4px 0;
+      }
+
+      .footer-watermark {
+        display: none;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- ===========================================
-     HEADER (Perfect Match)
-=========================================== -->
+<!-- ============== HEADER ============== -->
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html">
@@ -408,23 +369,20 @@
   </div>
 </header>
 
-
-<!-- ===========================================
-     HERO
-=========================================== -->
+<!-- ============== HERO ============== -->
 <section class="contact-hero fade-up">
   <div class="container">
     <h2>Get in Touch</h2>
-    <p>We’d love to hear from you. Whether you have a question, a project, or just want to connect  reach out anytime.</p>
+    <p>
+      We’d love to hear from you. Whether you have a question, a project, or
+      just want to connect, reach out anytime.
+    </p>
   </div>
 </section>
 
-
-<!-- ===========================================
-     FORM + INFO
-=========================================== -->
+<!-- ============== FORM + INFO ============== -->
 <main>
-  <section class="contact-container fade-up">
+  <section class="contact-container container fade-up">
 
     <!-- FORM -->
     <div class="contact-form">
@@ -453,15 +411,12 @@
   </section>
 </main>
 
-
-<!-- ===========================================
-     FOOTER (Perfect Match)
-=========================================== -->
+<!-- ============== FOOTER ============== -->
 <footer class="site-footer fade-up">
   <div class="container footer-grid">
 
     <div>
-      <img src="assets/img/logo.png" class="logo-img">
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass">
       <p class="footer-description">Know what works , Where to invest.</p>
     </div>
 
@@ -496,15 +451,12 @@
 
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
 
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
-
-<!-- ===========================================
-     JS
-=========================================== -->
+<!-- ============== JS ============== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
@@ -520,10 +472,13 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.toggle("open");
     });
   }
+
+  // simple fade-up reveal
+  document.querySelectorAll(".fade-up").forEach(el => {
+    el.classList.add("visible");
+  });
 });
 </script>
 
-
 </body>
 </html>
-
