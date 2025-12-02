@@ -7,41 +7,24 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* ================== RESET ================== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    /* ========== RESET & GLOBAL ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      background: #ffffff;
-      color: #03102b;
+      width: 100%; overflow-x: hidden;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #fff; color: #03102b;
     }
+    img { max-width: 100%; display: block; }
+    .container { width: 92%; max-width: 1180px; margin: 0 auto; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-
-    /* ================== HEADER ================== */
+    /* ========== HEADER ========== */
     .site-header {
-      padding: 10px 0;
-      background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
       position: sticky;
       top: 0;
       z-index: 999;
+      padding: 10px 0;
     }
 
     .nav {
@@ -54,27 +37,20 @@
       height: 70px;
       width: auto;
       object-fit: contain;
-      display: block;
-    }
-
-    @media (max-width: 600px) {
-      .logo img {
-        height: 30px;
-      }
     }
 
     nav.menu a {
+      color: #03102b;
+      text-decoration: none;
       padding: 8px 14px;
       border-radius: 6px;
       transition: 0.25s ease;
-      color: #03102b;
-      text-decoration: none;
       font-size: 0.95rem;
     }
 
     nav.menu a:hover {
       background: #ff8c3a;
-      color: #ffffff !important;
+      color: #fff !important;
     }
 
     nav.menu a.active {
@@ -84,34 +60,27 @@
 
     nav.menu a.btn.primary {
       background: #03102b;
-      color: #ffffff !important;
+      color: #fff !important;
       padding: 10px 18px;
       border-radius: 6px;
     }
 
     nav.menu a.btn.primary:hover {
       background: #ff8c3a !important;
-      color: #ffffff !important;
     }
 
-    /* ================== ANIMATION HELPER ================== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @media (max-width: 600px) {
+      .logo img { height: 58px; }
+      .site-header { padding: 6px 0; }
     }
 
-    /* ================== HERO ================== */
+    /* ========== HERO ========== */
     .contact-hero {
       position: relative;
       background: url("assets/img/Contact Us.png") center/cover no-repeat;
-      padding: 150px 0;
+      padding: 150px 0 130px;
       text-align: center;
-      color: #ffffff;
+      color: #fff;
     }
 
     .contact-hero::before {
@@ -136,43 +105,31 @@
     .contact-hero p {
       font-size: 1.1rem;
       line-height: 1.7;
-      color: #f4f4f4;
+      color: #eee;
     }
 
     @media (max-width: 768px) {
-      .contact-hero {
-        padding: 120px 0;
-      }
-      .contact-hero h2 {
-        font-size: 2.1rem;
-      }
-      .contact-hero p {
-        font-size: 1rem;
-      }
+      .contact-hero { padding: 120px 0 100px; }
+      .contact-hero h2 { font-size: 2.1rem; }
+      .contact-hero p { font-size: 1rem; }
     }
 
-    /* ================== CONTACT LAYOUT ================== */
+    /* ========== CONTACT FORM ========== */
     .contact-container {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 40px;
       padding: 60px 0 80px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    @media (max-width: 900px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-        padding: 40px 0 60px;
-      }
-    }
-
-    /* FORM */
     .contact-form form {
-      background: #ffffff;
+      background: #fff;
       padding: 32px;
       border-radius: 16px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
       border: 1px solid #e5e5e5;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
     }
 
     label {
@@ -180,24 +137,18 @@
       margin-bottom: 6px;
       font-weight: 600;
       margin-top: 14px;
-      font-size: 0.95rem;
     }
 
-    input,
-    textarea {
+    input, textarea {
       width: 100%;
       padding: 12px;
       border-radius: 8px;
-      border: 1px solid #cccccc;
+      border: 1px solid #ccc;
       margin-bottom: 10px;
       font-size: 1rem;
-      font-family: inherit;
     }
 
-    textarea {
-      resize: none;
-      min-height: 150px;
-    }
+    textarea { resize: none; }
 
     .contact-form .btn {
       margin-top: 12px;
@@ -205,14 +156,11 @@
       padding: 14px;
       font-size: 1rem;
       border-radius: 10px;
-      border: none;
-      cursor: pointer;
     }
 
-    /* INFO BOX */
     .contact-info {
       padding: 32px;
-      background: #ffffff;
+      background: #fff;
       border-radius: 16px;
       border: 1px solid #e8e8e8;
       height: fit-content;
@@ -223,25 +171,19 @@
 
     .contact-info:hover {
       transform: translateY(-6px) scale(1.03);
-      border-left: 6px solid #ffb366;
+      border-left: 6px solid #FFB366;
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
-    .contact-info h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
+    @media (max-width: 900px) {
+      .contact-container { grid-template-columns: 1fr; }
     }
 
-    .contact-info p {
-      margin-bottom: 6px;
-      font-size: 0.98rem;
-    }
-
-    /* ================== FOOTER ================== */
+    /* ========== FOOTER ========== */
     footer {
       position: relative;
       background: #001437;
-      color: #ffffff;
+      color: #fff;
       padding-top: 40px;
       padding-bottom: 50px;
       overflow: hidden;
@@ -249,50 +191,39 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px;
-      align-items: flex-start;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      align-items: center;
+      padding-bottom: 20px;
     }
 
     .logo-img {
       height: 120px;
       width: auto;
       object-fit: contain;
-      display: block;
       margin-bottom: 6px;
     }
 
     .footer-description {
       font-size: 12px;
-      color: #ffffff;
+      color: #fff;
       margin-top: -20px;
       margin-left: -23px;
       max-width: 260px;
       line-height: 1.4;
     }
 
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links li {
-      margin-bottom: 6px;
-    }
-
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 6px; }
     .footer-links a {
       color: #ff8c3a;
       text-decoration: none;
       font-size: 0.95rem;
     }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
+    .footer-links a:hover { text-decoration: underline; }
 
     .tiny {
-      color: #ff8c3a;
+      color: #ff8c3a !important;
       text-align: center;
       margin-top: 20px;
       font-size: 0.9rem;
@@ -300,11 +231,10 @@
 
     .footer-watermark {
       position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 260px;
-      opacity: 0.09;
+      right: 20px;
+      bottom: 10px;
+      height: 180px;
+      opacity: 0.1;
       pointer-events: none;
     }
 
@@ -316,9 +246,7 @@
         gap: 32px;
       }
 
-      .logo-img {
-        margin: 0 auto;
-      }
+      .logo-img { margin: 0 auto; }
 
       .footer-description {
         margin: 10px auto;
@@ -326,21 +254,16 @@
         max-width: 90%;
       }
 
-      .footer-grid div {
-        width: 100%;
-      }
+      .footer-links { text-align: center; }
 
-      .footer-links {
-        text-align: center;
-      }
-
-      .footer-links li a {
-        font-size: 1rem;
-        padding: 4px 0;
-      }
+      .footer-links li a { font-size: 1rem; }
 
       .footer-watermark {
-        display: none;
+        position: relative;
+        display: block;
+        margin: 30px auto 0;
+        height: 140px;
+        opacity: 0.15;
       }
     }
   </style>
@@ -348,7 +271,7 @@
 
 <body>
 
-<!-- ============== HEADER ============== -->
+<!-- ========== HEADER ========== -->
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html">
@@ -369,22 +292,17 @@
   </div>
 </header>
 
-<!-- ============== HERO ============== -->
-<section class="contact-hero fade-up">
+<!-- ========== HERO ========== -->
+<section class="contact-hero">
   <div class="container">
     <h2>Get in Touch</h2>
-    <p>
-      We’d love to hear from you. Whether you have a question, a project, or
-      just want to connect, reach out anytime.
-    </p>
+    <p>We’d love to hear from you. Whether you have a question, a project, or just want to connect, reach out anytime.</p>
   </div>
 </section>
 
-<!-- ============== FORM + INFO ============== -->
+<!-- ========== CONTACT FORM + INFO ========== -->
 <main>
-  <section class="contact-container container fade-up">
-
-    <!-- FORM -->
+  <section class="contact-container">
     <div class="contact-form">
       <form action="https://formspree.io/f/xkgwkbpr" method="POST">
         <label>Your Name</label>
@@ -400,21 +318,18 @@
       </form>
     </div>
 
-    <!-- INFO BOX -->
-    <div class="contact-info fade-up">
+    <div class="contact-info">
       <h3>Contact Details</h3>
       <p><strong>Email:</strong> salecompass.uk@gmail.com</p>
       <p><strong>Phone:</strong> +44 7380 732477</p>
       <p><strong>Address:</strong> London, United Kingdom</p>
     </div>
-
   </section>
 </main>
 
-<!-- ============== FOOTER ============== -->
-<footer class="site-footer fade-up">
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
   <div class="container footer-grid">
-
     <div>
       <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass">
       <p class="footer-description">Know what works , Where to invest.</p>
@@ -444,27 +359,23 @@
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
-        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+        <li><a href="mailto:hello@salecompass.uk">📧 hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">📞 +44 123 456 7890</a></li>
       </ul>
     </div>
-
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass Watermark">
 
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
-<!-- ============== JS ============== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
   const y = document.getElementById("year");
-
   if (y) y.textContent = new Date().getFullYear();
-
   if (btn && menu) {
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") === "true";
@@ -472,14 +383,8 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.toggle("open");
     });
   }
-
-  // simple fade-up reveal
-  document.querySelectorAll(".fade-up").forEach(el => {
-    el.classList.add("visible");
-  });
 });
 </script>
 
 </body>
 </html>
-
