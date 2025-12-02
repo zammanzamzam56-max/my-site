@@ -7,208 +7,27 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* ========== RESET & GLOBAL ========== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      width: 100%; overflow-x: hidden;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #fff; color: #03102b;
-    }
-    img { max-width: 100%; display: block; }
-    .container { width: 92%; max-width: 1180px; margin: 0 auto; }
+    /* ===========================================
+       UNIVERSAL ANIMATIONS
+    ============================================ */
+    .fade-up { opacity:0; transform:translateY(25px); transition:.6s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
 
-    /* ========== HEADER ========== */
-    .site-header {
-      background: #fff;
-      border-bottom: 1px solid #e5e5e5;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      padding: 10px 0;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 70px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    nav.menu a {
-      color: #03102b;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      transition: 0.25s ease;
-      font-size: 0.95rem;
-    }
-
-    nav.menu a:hover {
-      background: #ff8c3a;
-      color: #fff !important;
-    }
-
-    nav.menu a.active {
-      font-weight: 700;
-      color: #ff8c3a !important;
-    }
-
-    nav.menu a.btn.primary {
-      background: #03102b;
-      color: #fff !important;
-      padding: 10px 18px;
-      border-radius: 6px;
-    }
-
-    nav.menu a.btn.primary:hover {
-      background: #ff8c3a !important;
-    }
-
-    @media (max-width: 600px) {
-      .logo img { height: 58px; }
-      .site-header { padding: 6px 0; }
-    }
-
-    /* ========== HERO ========== */
+    /* ===========================================
+       HERO SECTION
+    ============================================ */
     .contact-hero {
       position: relative;
       background: url("assets/img/Contact Us.png") center/cover no-repeat;
-      padding: 150px 0 130px;
+      padding: 160px 65px;
       text-align: center;
+      max-width: 100%;
       color: #fff;
     }
-
-    .contact-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    }
-
-    .contact-hero .container {
-      position: relative;
-      z-index: 2;
-      max-width: 750px;
-    }
-
-    .contact-hero h2 {
-      font-size: 2.6rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .contact-hero p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #eee;
-    }
-
-    @media (max-width: 768px) {
-      .contact-hero { padding: 120px 0 100px; }
-      .contact-hero h2 { font-size: 2.1rem; }
-      .contact-hero p { font-size: 1rem; }
-    }
-
-    /* ========== CONTACT FORM ========== */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 40px;
-      padding: 60px 0 80px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .contact-form form {
-      background: #fff;
-      padding: 32px;
-      border-radius: 16px;
-      border: 1px solid #e5e5e5;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      margin-top: 14px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    textarea { resize: none; }
-
-    .contact-form .btn {
-      margin-top: 12px;
-      width: 100%;
-      padding: 14px;
-      font-size: 1rem;
-      border-radius: 10px;
-    }
-
-    .contact-info {
-      padding: 32px;
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid #e8e8e8;
-      height: fit-content;
-      transition: 0.3s ease;
-      border-left: 6px solid transparent;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.07);
-    }
-
-    .contact-info:hover {
-      transform: translateY(-6px) scale(1.03);
-      border-left: 6px solid #FFB366;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-    }
-
-  @media (max-width: 900px) {
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden !important;
-    }
-
-    .container {
-      width: 94% !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-      padding: 0 14px !important;
-    }
-
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-      display: block;
-    }
-  }
-  @media (max-width: 768px) {
-
+     /* =========================================
+   FIX FOOTER MOBILE VIEW ONLY (INLINE VERSION)
+========================================= */
+@media (max-width: 768px) {
 
   /* Stack footer content */
   .footer-grid {
@@ -258,28 +77,238 @@
         height: 140px;
         opacity: 0.15;
       }
+    }
+     footer {
+      position: relative;
+      background: #001437;
+      color:white;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
 
-    @media (max-width: 768px) {
-      .footer-grid {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 32px;
+    .logo-img {
+      height: 120px !important;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+    /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
+.footer-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers logo + tagline */
+  text-align: center;
+}
+
+.footer-description {
+      font-size:12px;
+      color:#ffffff;
+      margin-top:-10px !important;
+      line-height:1.3;
+      margin-left:-23px;
+      max-width:280px;
+    }
+
+
+    .contact-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .contact-hero .container {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .contact-hero h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .contact-hero p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #eee;
+    }
+
+    /* ===========================================
+       CONTACT FORM + INFO
+    ============================================ */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
+      padding: 60px 20px 80px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .contact-form form {
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      border: 1px solid #e5e5e5;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      margin-top: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    textarea { resize:none; }
+
+    .contact-form .btn {
+      margin-top: 12px;
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 10px;
+    }
+
+    /* INFO BOX */
+    .contact-info {
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e8e8e8;
+      height: fit-content;
+      transition: 0.3s ease;
+      border-left: 6px solid transparent;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+    }
+
+    .contact-info:hover {
+      transform: translateY(-6px) scale(1.03);
+      border-left: 6px solid #FFB366;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    @media(max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
       }
+    }
 
-      .logo-img { margin: 0 auto; }
+    /* ===========================================
+       HEADER — MATCHED 100% WITH INDEX PAGE
+    ============================================ */
+    .site-header {
+      padding: 10px 0 !important;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
 
-      .footer-description {
-        margin: 10px auto;
-        text-align: center;
-        max-width: 90%;
-      }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      .footer-links { text-align: center; }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
 
-      .footer-links li a { font-size: 1rem; }
+    nav.menu a {
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: .25s ease;
+      color: black;
+    }
 
-      .footer-watermark {
+    nav.menu a:hover {
+      background: #ff8c3a;
+      color: white !important;
+    }
+
+    nav.menu a.active {
+      font-weight: 700;
+      color: #ff8c3a !important;
+    }
+
+    nav.menu a.btn.primary {
+      background: #03102b;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
+
+    nav.menu a.btn.primary:hover {
+      background: #ff8c3a !important;
+    }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    /* ===========================================
+       FOOTER — MATCHED 100% WITH INDEX PAGE
+    ============================================ */
+    footer {
+      position: relative;
+      background: #001437;
+      color: white;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+
+   
+
+    .logo-img {
+      height: 120px !important;
+      width: auto;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-description {
+      font-size: 12px;
+      color: #ffffff;
+      margin-top: -20px;
+      margin-left: -23px;
+      max-width: 260px;
+    }
+
+    .footer-links a {
+      color: #ff8c3a;
+    }
+
+    .tiny {
+      color: #ff8c3a !important;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .footer-watermark {
       position: absolute;
       right: -20px;
       top: 50%;
@@ -287,14 +316,152 @@
       height: 260px;
       opacity: 0.09;
       pointer-events: none;
+      
     }
+    
+  /* Global: keep layout tight */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Mobile: kill horizontal scroll + keep content centered */
+  @media (max-width: 900px) {
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden !important;
     }
+
+    .container {
+      width: 94% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 14px !important;
+    }
+
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block;
+    }
+  }
+  @media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
+.logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
+</style>
+
+
   </style>
 </head>
 
 <body>
 
-<!-- ========== HEADER ========== -->
+<!-- ===========================================
+     HEADER (Perfect Match)
+=========================================== -->
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html">
@@ -315,17 +482,25 @@
   </div>
 </header>
 
-<!-- ========== HERO ========== -->
-<section class="contact-hero">
+
+<!-- ===========================================
+     HERO
+=========================================== -->
+<section class="contact-hero fade-up">
   <div class="container">
     <h2>Get in Touch</h2>
-    <p>We’d love to hear from you. Whether you have a question, a project, or just want to connect, reach out anytime.</p>
+    <p>We’d love to hear from you. Whether you have a question, a project, or just want to connect  reach out anytime.</p>
   </div>
 </section>
 
-<!-- ========== CONTACT FORM + INFO ========== -->
+
+<!-- ===========================================
+     FORM + INFO
+=========================================== -->
 <main>
-  <section class="contact-container">
+  <section class="contact-container fade-up">
+
+    <!-- FORM -->
     <div class="contact-form">
       <form action="https://formspree.io/f/xkgwkbpr" method="POST">
         <label>Your Name</label>
@@ -341,20 +516,26 @@
       </form>
     </div>
 
-    <div class="contact-info">
+    <!-- INFO BOX -->
+    <div class="contact-info fade-up">
       <h3>Contact Details</h3>
       <p><strong>Email:</strong> salecompass.uk@gmail.com</p>
       <p><strong>Phone:</strong> +44 7380 732477</p>
       <p><strong>Address:</strong> London, United Kingdom</p>
     </div>
+
   </section>
 </main>
 
-<!-- ========== FOOTER ========== -->
-<footer class="site-footer">
+
+<!-- ===========================================
+     FOOTER (Perfect Match)
+=========================================== -->
+<footer class="site-footer fade-up">
   <div class="container footer-grid">
+
     <div>
-      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass">
+      <img src="assets/img/logo.png" class="logo-img">
       <p class="footer-description">Know what works , Where to invest.</p>
     </div>
 
@@ -382,23 +563,31 @@
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">📧 hello@salecompass.uk</a></li>
-        <li><a href="tel:+441234567890">📞 +44 123 456 7890</a></li>
+           <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
+        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+        <li><a href="location">📍London,United Kingdom</a></li>
       </ul>
     </div>
+
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass Watermark">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark">
 
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
+
+<!-- ===========================================
+     JS
+=========================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
   const y = document.getElementById("year");
+
   if (y) y.textContent = new Date().getFullYear();
+
   if (btn && menu) {
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") === "true";
@@ -409,9 +598,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
 </body>
 </html>
-
-
-
-
