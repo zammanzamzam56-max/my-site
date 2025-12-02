@@ -371,51 +371,6 @@
 .plan-features li {
   list-style-type: none;
 }
-    .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
-
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
-
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
-
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
-
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
-
-  /* Hide huge watermark */
-  .footer-watermark {
-    display: none !important;
-  }
-}
-
 
   </style>
 </head>
@@ -707,25 +662,27 @@
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
-<!-- JS -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-  const y = document.getElementById("year");
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  if (y) y.textContent = new Date().getFullYear();
+  const billingToggle = document.getElementById("billingToggle");
+  const priceEls = document.querySelectorAll(".plan-price");
+  const periodEls = document.querySelectorAll(".plan-period");
 
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
+  billingToggle?.addEventListener("change", () => {
+    const yearly = billingToggle.checked;
+
+    priceEls.forEach(el => {
+      el.textContent = yearly
+        ? el.getAttribute("data-year")
+        : el.getAttribute("data-month");
     });
-  }
-});
+
+    periodEls.forEach(el => {
+      el.textContent = yearly ? "/ year" : "/ month";
+    });
+  });
 </script>
 
 </body>
 </html>
-
