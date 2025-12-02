@@ -8,341 +8,254 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    body { overflow-x:hidden; background:white; }
-    img { max-width:100%; display:block; }
+    /* ========== RESET & GLOBAL ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .container { max-width:1180px; margin:auto; padding:0 20px; }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #03102b;
+    }
 
-    /* ================= HEADER (MATCHED EXACTLY) ================= */
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /* ========== HEADER (same sizing as Home / Contact) ========== */
     .site-header {
-      padding:10px 0 !important;
-      background:white;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+      padding: 10px 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
+
     .nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .site-header .nav { height:50px; overflow:visible !important; }
+
     .logo img {
-      height:85px; width:auto; object-fit:contain; display:block;
-      padding-top: 10%;
+      height: 70px;
+      width: auto;
+      object-fit: contain;
     }
+
+    @media (max-width: 600px) {
+      .logo img {
+        height: 58px;   /* same compact size as contact page */
+      }
+      .site-header {
+        padding: 6px 0;
+      }
+    }
+
     nav.menu a {
-      padding:8px 14px;
-      border-radius:6px;
-      transition:.25s ease;
-      color:black;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.25s ease;
+      color: #03102b;
+      text-decoration: none;
+      font-size: 0.95rem;
     }
+
     nav.menu a:hover {
-      background:#ff8c3a;
-      color:white !important;
+      background: #ff8c3a;
+      color: #ffffff !important;
     }
+
     nav.menu a.active {
-      color:#ff8c3a !important;
-      font-weight:700;
+      color: #ff8c3a !important;
+      font-weight: 700;
     }
+
     nav.menu a.btn.primary {
-      background:#03102b;
-      color:white !important;
-      padding:10px 18px;
-      border-radius:6px;
+      background: #03102b;
+      color: #ffffff !important;
+      padding: 10px 18px;
+      border-radius: 6px;
     }
+
     nav.menu a.btn.primary:hover {
-      background:#ff8c3a !important;
-      color:white !important;
+      background: #ff8c3a !important;
     }
 
-    /* ================= SUCCESS STORIES ================= */
+    /* ========== SUCCESS STORIES CONTENT ========== */
     main.section {
-      padding:80px 0;
-    }
-    .grid-2 {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:26px;
-    }
-    .card {
-      background:white;
-      padding:26px;
-      border-radius:16px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.06);
-      border-left:6px solid #004c99;
-      transition:.3s ease;
-    }
-    .card:hover {
-      border-left:6px solid #ff8c3a;
-      transform:translateY(-6px);
-      box-shadow:0 12px 32px rgba(0,0,0,0.12);
-    }
-    .badge {
-      font-size:12px;
-      font-weight:700;
-      color:white;
-      background:#001437;
-      padding:4px 10px;
-      border-radius:4px;
-      display:inline-block;
-      margin-bottom:10px;
+      padding: 80px 0;
     }
 
-    /* ================= FOOTER (MATCHED EXACTLY) ================= */
-    footer {
-      position:relative;
-      background:#001437;
-      color:white;
-      padding-top:40px;
-      padding-bottom:50px;
-    }
-    .footer-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:30px;
-      align-items:center;
-      padding-bottom:20px;
-    }
-    .logo-img {
-      height:120px !important;
-      width:auto;
-      margin-bottom:6px;
-      object-fit:contain;
-    }
-    .footer-description {
-      font-size:12px;
-      margin-top:-20px;
-      margin-left:-23px;
-      color:white;
-      max-width:260px;
-    }
-    .footer-links a { color:#ff8c3a; }
-    .tiny {
-      color:#ff8c3a !important;
-      text-align:center;
-      margin-top:20px;
-      font-size:16px;
-    }
-    .footer-watermark {
-      position:absolute;
-      right:-20px;
-      top:50%;
-      transform:translateY(-50%);
-      height:260px;
-      opacity:0.09;
-      pointer-events:none;
-    }
-    
-  /* Global: keep layout tight */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  /* Mobile: kill horizontal scroll + keep content centered */
-  @media (max-width: 900px) {
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden !important;
-    }
-
-    .container {
-      width: 94% !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-      padding: 0 14px !important;
-    }
-
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-      display: block;
-    }
-  }
-  .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-   
-    /* ================= SUCCESS STORIES ================= */
-    main.section {
-      padding:80px 0;
-    }
-    .grid-2 {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:26px;
-    }
-    .card {
-      background:white;
-      padding:26px;
-      border-radius:16px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.06);
-      border-left:6px solid #004c99;
-      transition:.3s ease;
-    }
-    .card:hover {
-      border-left:6px solid #ff8c3a;
-      transform:translateY(-6px);
-      box-shadow:0 12px 32px rgba(0,0,0,0.12);
-    }
-    .badge {
-      font-size:12px;
-      font-weight:700;
-      color:white;
-      background:#001437;
-      padding:4px 10px;
-      border-radius:4px;
-      display:inline-block;
-      margin-bottom:10px;
-    }
-
-    /* ================= FOOTER (MATCHED EXACTLY) ================= */
-    footer {
-      position:relative;
-      background:#001437;
-      color:white;
-      padding-top:40px;
-      padding-bottom:50px;
-    }
-    .footer-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:30px;
-      align-items:center;
-      padding-bottom:20px;
-    }
-    .logo-img {
-      height:120px !important;
-      width:auto;
-      margin-bottom:6px;
-      object-fit:contain;
-    }
-    .footer-description {
-      font-size:12px;
-      margin-top:-20px;
-      margin-left:-23px;
-      color:white;
-      max-width:260px;
-    }
-    .footer-links a { color:#ff8c3a; }
-    .tiny {
-      color:#ff8c3a !important;
-      text-align:center;
-      margin-top:20px;
-      font-size:16px;
-    }
-    .footer-watermark {
-      position:absolute;
-      right:-20px;
-      top:50%;
-      transform:translateY(-50%);
-      height:260px;
-      opacity:0.09;
-      pointer-events:none;
-    }
-    
-  /* Global: keep layout tight */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  /* Mobile: kill horizontal scroll + keep content centered */
-  @media (max-width: 900px) {
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden !important;
-    }
-
-    .container {
-      width: 94% !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-      padding: 0 14px !important;
-    }
-
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-      display: block;
-    }
-  }
-  .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
     @media (max-width: 768px) {
+      main.section {
+        padding: 60px 0;
+      }
+    }
 
-  /* Stack footer content */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      margin-top: 18px;
+    }
 
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
+    .card {
+      background: #ffffff;
+      padding: 26px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-left: 6px solid #004c99;
+      transition: 0.3s ease;
+    }
 
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
+    .card:hover {
+      border-left: 6px solid #ff8c3a;
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
 
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
+    .badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      background: #001437;
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
 
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
 
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
+    .card p {
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
 
-  /* Hide huge watermark */
-  .footer-watermark {
-    display: none !important;
-  }
-}
+    /* ========== FOOTER (same behavior as Contact) ========== */
+    footer {
+      position: relative;
+      background: #001437;
+      color: #ffffff;
+      padding-top: 40px;
+      padding-bottom: 50px;
+      overflow: hidden;
+    }
 
-</style>
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      align-items: center;
+      padding-bottom: 20px;
+    }
 
+    .logo-img {
+      height: 120px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 6px;
+    }
+
+    .footer-description {
+      font-size: 12px;
+      color: #ffffff;
+      margin-top: -20px;
+      margin-left: -23px;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 6px;
+    }
+
+    .footer-links a {
+      color: #ff8c3a;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .tiny {
+      color: #ff8c3a !important;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .footer-watermark {
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      height: 180px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    /* Footer layout + watermark on mobile */
+    @media (max-width: 768px) {
+      .footer-grid {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .logo-img {
+        margin: 0 auto;
+      }
+
+      .footer-description {
+        margin: 10px auto;
+        text-align: center;
+        max-width: 90%;
+      }
+
+      .footer-grid div {
+        width: 100%;
+      }
+
+      .footer-links {
+        text-align: center;
+      }
+
+      .footer-links li a {
+        font-size: 1rem;
+      }
+
+      /* Keep watermark visible but centered and smaller on mobile */
+      .footer-watermark {
+        position: relative;
+        display: block;
+        margin: 30px auto 0;
+        height: 140px;
+        opacity: 0.15;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ========== HEADER ========== -->
 <header class="site-header">
   <div class="container nav">
 
@@ -365,13 +278,12 @@
   </div>
 </header>
 
-
-<!-- ================= CONTENT ================= -->
+<!-- ========== CONTENT ========== -->
 <main class="section">
   <div class="container">
     <h1 style="font-size:40px; font-weight:800; margin-bottom:10px;">Success Stories</h1>
 
-    <div class="grid-2" style="margin-top:16px">
+    <div class="grid-2">
       <article class="card">
         <span class="badge">Success Story 1</span>
         <h3>From idea to impact</h3>
@@ -391,13 +303,12 @@
   </div>
 </main>
 
-
-<!-- ================= FOOTER ================= -->
+<!-- ========== FOOTER ========== -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
     <div>
-      <img src="assets/img/logo.png" class="logo-img">
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass">
       <p class="footer-description">Know what works , Where to invest.</p>
     </div>
 
@@ -428,16 +339,14 @@
         <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">+44 123 456 7890</a></li>
       </ul>
-     
     </div>
 
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass watermark">
 
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
-
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -459,129 +368,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
-</style>
-
-  </style>
-</head>
-
-<body>
-
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="container nav">
-
-    <a class="logo" href="index.html">
-      <img src="assets/img/logo.png" alt="SaleCompass">
-    </a>
-
-    <button class="menu-toggle" aria-expanded="false">☰</button>
-
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="research.html">R&amp;D</a>
-      <a class="active" href="success-stories.html">Success Stories</a>
-      <a class="btn primary" href="contact.html">Contact</a>
-    </nav>
-
-  </div>
-</header>
-
-
-<!-- ================= CONTENT ================= -->
-<main class="section">
-  <div class="container">
-    <h1 style="font-size:40px; font-weight:800; margin-bottom:10px;">Success Stories</h1>
-
-    <div class="grid-2" style="margin-top:16px">
-      <article class="card">
-        <span class="badge">Success Story 1</span>
-        <h3>From idea to impact</h3>
-        <p>
-          Summarize the success (problem, action, result) in 4–6 lines.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="badge">Success Story 2</span>
-        <h3>Scaling what works</h3>
-        <p>
-          Summarize the success (problem, action, result) in 4–6 lines.
-        </p>
-      </article>
-    </div>
-  </div>
-</main>
-
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container footer-grid">
-
-    <div>
-      <img src="assets/img/logo.png" class="logo-img">
-      <p class="footer-description">Know what works , Where to invest.</p>
-    </div>
-
-    <div>
-      <h4>Links</h4>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="success-stories.html">Success Stories</a></li>
-        <li><a href="research.html">R&amp;D</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Services</h4>
-      <ul class="footer-links">
-        <li><a href="services.html">Attribution Engine</a></li>
-        <li><a href="services.html">Predictive Analytics</a></li>
-        <li><a href="services.html">Dashboards</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Get in touch</h4>
-      <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">hello@salecompass.uk</a></li>
-        <li><a href="tel:+441234567890">+44 123 456 7890</a></li>
-      </ul>
-     
-    </div>
-
-  </div>
-
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
-
-  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
-</footer>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-  const y = document.getElementById("year");
-
-  if (y) y.textContent = new Date().getFullYear();
-
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
-    });
-  }
-});
-</script>
-
-</body>
-</html>
-
