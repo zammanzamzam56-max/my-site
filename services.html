@@ -419,13 +419,16 @@
 .plan-features li {
   list-style-type: none;
 }
- .footer-watermark {
-        position: relative;
-        display: block;
-        margin: 30px auto 0;
-        height: 140px;
-        opacity: 0.15;
-      }
+
+    .footer-watermark {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 260px;
+      opacity: 0.09;
+      pointer-events: none;
+    }
   </style>
 </head>
 
@@ -570,7 +573,7 @@
           <li>✔ Access to Review & Sentiment Summary</li>
           <li>✖ Predictive Analytics </li>
           <li>✖ Automated Recommendations</li>
-          <li>✖ Real-Time Alerts</li>
+          <li>✖ Real-Time Alerts </li>
         </ul>
 
         <button class="plan-button current">Current Plan</button>
@@ -592,7 +595,7 @@
           <li>✔ AI Trend Detection (Basic)</li>
           <li>✔ Automated Weekly Reports</li>
           <li>✔ Priority Email Support</li>
-          <li>✖ Real-Time Alerts</li>
+          <li>✖ Real-Time Alerts on time</li>
           <li>✖ Predictive Demand Forecasting</li>
         </ul>
 
@@ -610,7 +613,7 @@
         <ul class="plan-features">
           <li>✔ All Starter Features</li>
           <li>✔ 10 Integrations</li>
-          <li>✔ Real-Time Alerts</li>
+          <li>✔ Real-Time Alerts on Time</li>
           <li>✔ 5,000 Monthly AI Insights</li>
           <li>✔ Advanced Multi-Touch Attribution</li>
           <li>✔ Campaign Optimisation Suggestions</li>
@@ -706,6 +709,8 @@
       <ul class="footer-links">
         <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+         <li><a href="location">📍London,United Kingdom</a></li>
+      </ul>
       </ul>
     </div>
 
@@ -737,6 +742,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
