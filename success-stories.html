@@ -31,11 +31,7 @@
       display: block;
       margin-bottom: 6px;
     }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
+   
     nav.menu a {
       padding:8px 14px;
       border-radius:6px;
@@ -213,6 +209,22 @@
     display: none !important;
   }
 }
+    .logo img {
+  height: 85px !important;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  padding-top: 0 !important;
+}
+
+@media(max-width: 768px){
+  .logo img {
+    height: 60px !important;
+  }
+  .nav {
+    height: 50px !important;
+  }
+}
 
 </style>
 
@@ -339,5 +351,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
