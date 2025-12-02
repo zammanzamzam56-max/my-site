@@ -17,6 +17,7 @@
       max-width: 1180px;
       margin: 0 auto;
     }
+    
 
     /* ================= HEADER ================= */
     .site-header {
@@ -172,6 +173,7 @@
       color: #ffffff;
       transform: translateY(-6px);
     }
+    
     .founder-card h2 {
       font-size: 26px;
       margin-bottom: 10px;
@@ -201,94 +203,78 @@ section.alt {
   padding: 40px 0 50px !important; /* tightened spacing */
 }
 
-/* Founder Section Layout */
-.founder-section {
-  display: grid;
-  grid-template-columns: 2.5fr 2fr; /* larger text area */
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-  margin: 20 auto;
-  max-width: 1100px;
+/* ===== FOUNDER CARD (image + text in one container) ===== */
+.founder-wrapper {
+  margin-top: 0px;
 }
 
-/* Founder Info Box */
 .founder-card {
-  background: #001437;
+  background: #001437;           /* navy */
   color: #ffffff;
-  border-radius: 20px;
-  padding: 40px 36px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
-  position: relative;
-  animation: fadeUp 0.8s ease;
+  border-radius: 24px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+  transition: 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .founder-card:hover {
-  background: #ff8c3a;
-  color: #fff;
-  transform: translateY(-5px);
-  size:70px !important;
+  background: #001437;           /* orange on hover */
+  transform: translateY(-6px);
 }
 
-.founder-card h2 {
-  font-size: 28px;
-  font-weight: 800;
+.founder-photo {
+  flex: 0 0 40%;
+}
+
+.founder-photo img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.founder-content {
+  flex: 1;
+}
+
+.founder-content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.founder-content p {
+  font-size: 15.5px;
+  line-height: 1.7;
   margin-bottom: 10px;
 }
 
-.founder-card p {
-  line-height: 1.7;
-  font-size: 16px;
-  margin-bottom: 12px;
+.founder-meta {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
-/* Founder Image */
-.founder-image {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
-  max-width: 360px;
-  margin: auto;
-}
-
-.founder-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 0.4s ease;
-}
-
-.founder-image:hover img {
-  transform: scale(1.03);
-}
-
-/* Smooth fade-up animation */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Fix */
+/* Mobile layout: stack image above text */
 @media (max-width: 900px) {
-  .founder-section {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 0 20px;
-  }
   .founder-card {
-    padding: 30px 22px;
+    flex-direction: column;
+    text-align: left;
+    padding: 24px 20px;
   }
-  .founder-image {
-    max-width: 300px;
-    margin-top: 20px;
+
+  .founder-photo {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .founder-photo img {
+    max-height: 260px;
+    object-fit: cover;
   }
 }
 
@@ -296,7 +282,9 @@ section.alt {
     /* ================ PUBLICATIONS SECTION ================ */
     .intro-card {
       margin-bottom: 20px;
+      margin-top:10px;
     }
+
 
     .pub-list {
       display: grid;
@@ -460,13 +448,9 @@ section.alt {
         max-width: 100%;
       }
       .footer-watermark {
-        position: relative;
-        display: block;
-        margin: 30px auto 0;
-        height: 140px;
-        opacity: 0.15;
+        display: none;
       }
-    
+    }
     @media (max-width: 768px) {
 
   /* Stack footer content */
@@ -636,27 +620,37 @@ footer {
   </section>
 
   <!-- SECTION 2: Founder -->
-  <section class="alt">
-    <div class="container">
-      <div class="founder-section">
-        <div class="founder-card">
-          <h2>About the Founder</h2>
-          <p>
-            Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics,
-            and marketing science forms the backbone of SaleCompass.
-            His work has been presented in international conferences and IEEE publications.
-          </p>
-          <p>
-            His vision is to democratise marketing intelligence – giving SMEs the same
-            clarity and decision power that was previously reserved for large enterprises.
-          </p>
-        </div>
-        <div class="founder-image">
-          <img src="assets/img/photo4.jpg" alt="Founder Danyal Mohiuddin">
+  <section class="section-alt">
+  <div class="container founder-wrapper">
+    <h2 class="section-title" style="margin-bottom: 18px;">About the Founder</h2>
+
+    <div class="founder-card">
+      <div class="founder-photo">
+        <img src="assets/img/photo4.png" alt="Danyal Mohiuddin">
+      </div>
+
+      <div class="founder-content">
+        <p>
+          Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics, and
+          marketing science forms the backbone of SaleCompass. His research has been
+          published and presented in IEEE conferences and journals, with a focus on
+          how AI can be used responsibly in real-world marketing.
+        </p>
+        <p>
+          Drawing from interviews with SME founders, food businesses, and marketing
+          teams across the UK and beyond, he designed SaleCompass to solve one
+          recurring problem: data everywhere, but no clarity. The platform is built
+          to give business owners confidence in every marketing decision.
+        </p>
+        <div class="founder-meta">
+          <strong>Vision:</strong> To democratise marketing intelligence so that
+          small and mid-sized businesses can access the kind of insight that was
+          once reserved only for large enterprises.
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- SECTION 3: Scientific Foundations & Publications -->
   <section>
@@ -676,7 +670,7 @@ footer {
       <div class="pub-list">
         <!-- Publication 1 -->
         <article class="pub-card">
-          <h4>📘 Publication 1: Ethical AI in Marketing</h4>
+          <h4>Publication 1: Ethical AI in Marketing</h4>
           <p><strong>AI in Marketing: Ethical Challenges and Solutions for Consumers and Society</strong></p>
           <p><strong>Authors:</strong> Danyal Mohiuddin &amp; Dr. Naureen Farhan (Ravensbourne University London)</p>
           <p class="hidden-text">
@@ -690,7 +684,7 @@ footer {
 
         <!-- Publication 2 -->
         <article class="pub-card">
-          <h4>📗 Publication 2: Multi-Channel Food Marketing</h4>
+          <h4>Publication 2: Multi-Channel Food Marketing</h4>
           <p><strong>AI and Machine Learning Enhance Multi-Channel Marketing Effectiveness in the Food Industry</strong></p>
           <p class="hidden-text">
             This research addresses a persistent challenge in the food and hospitality sector:
@@ -757,6 +751,7 @@ footer {
       <ul class="footer-links">
         <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+        <li><a href="location">📍London,United Kingdom</a></li>
       </ul>
     </div>
 
@@ -787,4 +782,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
