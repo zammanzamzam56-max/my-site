@@ -142,14 +142,9 @@
       gap: 40px;
     }
 
-  @media(max-width: 900px){
+    @media(max-width: 900px){
       .contact-wrapper { grid-template-columns: 1fr; }
     }
-    @media (max-width: 768px) {
-  .contact-left {
-    padding-left: 10px !important;
-  }
-}
 
     /* LEFT COLUMN */
     .contact-left h3 {
@@ -253,9 +248,7 @@
       display: block !important;
     }
 
-  
-
- 
+   @media (max-width: 768px) {
 
   /* Stack footer content */
   .footer-grid {
@@ -306,7 +299,14 @@
         opacity: 0.15;
       }
 }
-
+ @media(max-width: 900px){
+      .contact-wrapper { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+  .contact-left {
+    padding-left: 10px !important;
+  }
+}
   </style>
 </head>
 
@@ -426,8 +426,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
-
-
-
-
