@@ -224,38 +224,50 @@
     }
 
     /* Footer layout + watermark on mobile */
-    @media (max-width: 768px) {
-      .footer-grid {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 32px;
-      }
+   @media (max-width: 768px) {
 
-      .logo-img {
-        margin: 0 auto;
-      }
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
 
-      .footer-description {
-        margin: 10px auto;
-        text-align: center;
-        max-width: 90%;
-      }
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
 
-      .footer-grid div {
-        width: 100%;
-      }
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
 
-      .footer-links {
-        text-align: center;
-      }
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
 
-      .footer-links li a {
-        font-size: 1rem;
-      }
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
 
-      /* Keep watermark visible but centered and smaller on mobile */
-      .footer-watermark {
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+   .footer-watermark {
         position: relative;
         display: block;
         margin: 30px auto 0;
@@ -381,5 +393,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
