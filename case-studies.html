@@ -163,13 +163,16 @@
       .case-hero h1 { font-size:28px; }
       .case-hero p { font-size:15px; }
     }
-     .footer-watermark {
-        position: relative;
-        display: block;
-        margin: 30px auto 0;
-        height: 140px;
-        opacity: 0.15;
-      }
+     
+    .footer-watermark {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 260px;
+      opacity: 0.09;
+      pointer-events: none;
+    }
   </style>
 </head>
 
@@ -310,6 +313,8 @@ Papa John’s now operates with complete visibility and data-led decisions.
       <ul class="footer-links">
         <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
+         <li><a href="location">📍London,United Kingdom</a></li>
+      </ul>
       </ul>
     </div>
 
@@ -357,6 +362,7 @@ Papa John’s now operates with complete visibility and data-led decisions.
 
 </body>
 </html>
+
 
 
 
