@@ -187,7 +187,28 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
+  @media (max-width: 900px) {
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    .container {
+      width: 94% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 14px !important;
+    }
+
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block;
+    }
+  }
   @media (max-width: 768px) {
+
 
   /* Stack footer content */
   .footer-grid {
@@ -390,6 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
