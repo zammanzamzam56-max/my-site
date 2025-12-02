@@ -108,6 +108,58 @@
       margin-bottom: 6px;
     }
     /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
+    @media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+   .footer-watermark {
+        position: relative;
+        display: block;
+        margin: 30px auto 0;
+        height: 140px;
+        opacity: 0.15;
+      }
+}
+
 .footer-grid > div:first-child {
   display: flex;
   flex-direction: column;
@@ -362,6 +414,7 @@ Papa John’s now operates with complete visibility and data-led decisions.
 
 </body>
 </html>
+
 
 
 
