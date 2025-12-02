@@ -9,105 +9,18 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    html, body { overflow-x: hidden; margin: 0; padding: 0; }
-    body { background:#0a0f1a; color:white; font-family:system-ui, sans-serif; }
+    body { background:#0a0f1a; overflow-x:hidden; }
     img { max-width:100%; display:block; }
-    .container { width:100%; max-width:1180px; margin:0 auto; padding:0 20px; box-sizing:border-box; }
+    .container { max-width:1180px; margin:auto; padding:0 20px; }
 
     /* HEADER */
     .site-header {
       padding:10px 0;
       background:white;
       box-shadow:0 2px 6px rgba(0,0,0,0.05);
-      position:sticky !important;
-      top:0; z-index:50;
+      position:sticky; top:0; z-index:50;
     }
-     .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .nav { display:flex; justify-content:space-between; align-items:center; }
-    .logo img { height:85px; object-fit:contain; }
-    nav.menu a { padding:8px 14px; border-radius:6px; transition:.25s; }
-    nav.menu a:hover { background:#ff8c3a; color:white !important; }
-    nav.menu a.active { color:#ff8c3a !important; font-weight:700; }
-    nav.menu a.btn { background:#0a1a3a; color:white !important; padding:10px 18px; }
-    nav.menu a.btn:hover { background:#ff8c3a; }
-
-    /* HERO */
-    .case-hero { color:white; padding:90px 0 40px; text-align:left; }
-    .case-hero h1 { font-size:46px; font-weight:800; }
-    .case-hero p { opacity:.7; font-size:18px; }
-
-    /* GRID */
-    .case-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
-      gap:36px;
-      margin-bottom:60px;
-    }
-
-    /* CARD */
-    .case-card {
-      position:relative; border-radius:18px; overflow:hidden; min-height:460px; height:auto; cursor:pointer;
-    }
-    .case-card img { width:100%; height:100%; object-fit:cover; transition:opacity .4s ease; }
-    .case-card:hover img { opacity:0.15; }
-    .case-overlay {
-      position:absolute; inset:0; padding:30px;
-      display:flex; flex-direction:column; justify-content:flex-end;
-      opacity:0; transition:.4s; background:rgba(0,0,0,0);
-    }
-    .case-card:hover .case-overlay { opacity:1; background:rgba(0,0,0,0.65); }
-    .case-tag { font-size:12px; color:#ff8c3a; font-weight:700; }
-    .case-title { color:white; font-size:26px; font-weight:700; margin:10px 0; }
-    .case-preview { color:#ddd; font-size:15px; margin-bottom:10px; }
-
-    /* FULL TEXT SCROLLABLE */
-    .case-full {
-      max-height:0;
-      overflow:hidden;
-      overflow-y:auto;
-      color:#ccc;
-      font-size:14px;
-      line-height:1.5;
-      transition:max-height .6s ease;
-      white-space:pre-line;
-      padding-right:4px;
-    }
-
-    .case-link {
-      margin-top:10px;
-      color:#4ea0ff;
-      font-weight:600;
-      text-decoration:none;
-      cursor:pointer;
-    }
-
-   footer {
-      position: relative;
-      background: #001437;
-      color:white;
-      padding-top: 40px;
-      padding-bottom: 50px;
-    }
-
-    .logo-img {
-      height: 120px !important;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      margin-bottom: 6px;
-    }
-      /* =========================================
+     /* =========================================
    FIX FOOTER MOBILE VIEW ONLY (INLINE VERSION)
 ========================================= */
 @media (max-width: 768px) {
@@ -130,7 +43,6 @@
     margin: 10px auto !important;
     text-align: center !important;
     max-width: 90% !important;
-    padding-left: 25px !important;
   }
 
   /* Center all sections */
@@ -162,23 +74,101 @@
         opacity: 0.15;
       }
 }
-   
+    .nav { display:flex; justify-content:space-between; align-items:center; }
+    .logo img { height:85px; object-fit:contain; }
+    nav.menu a { padding:8px 14px; border-radius:6px; transition:.25s; }
+    nav.menu a:hover { background:#ff8c3a; color:white !important; }
+    nav.menu a.active { color:#ff8c3a !important; font-weight:700; }
+    nav.menu a.btn { background:#0a1a3a; color:white !important; padding:10px 18px; }
+    nav.menu a.btn:hover { background:#ff8c3a; }
 
-.footer-grid > div:first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;        /* centers logo + tagline */
-  text-align: center;
-}
+    /* HERO */
+    .case-hero { color:white; padding:90px 0 40px; }
+    .case-hero h1 { font-size:46px; font-weight:800; }
+    .case-hero p { opacity:.7; font-size:18px; }
 
-.footer-description {
-  margin-top:-10px !important;  /* space below logo */
-  margin-left: 0 !important;
-  max-width: 260px;
-  line-height: 1.3;
-  color: #ffffff;
-}
+    /* GRID */
+    .case-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
+      gap:36px;
+      padding-bottom:0;        /* we’ll control space with margin */
+      margin-bottom:60px;      /* ⬅ gap above footer */
+    }
 
+    /* CARD */
+    .case-card {
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      min-height: 460px;
+      height:auto;
+      cursor:pointer;
+    }
+    .case-card img {
+      width:100%; height:100%; object-fit:cover;
+      transition:opacity .4s ease;
+    }
+    .case-card:hover img { opacity:0.15; }
+
+    .case-overlay {
+      position:absolute; inset:0;
+      padding:30px;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      opacity:0; transition:.4s;
+      background:rgba(0,0,0,0);
+    }
+    .case-card:hover .case-overlay {
+      opacity:1; background:rgba(0,0,0,0.65);
+    }
+
+    .case-tag { font-size:12px; color:#ff8c3a; font-weight:700; }
+    .case-title { color:white; font-size:26px; font-weight:700; margin:10px 0; }
+
+    /* PREVIEW TEXT */
+    .case-preview { color:#ddd; font-size:15px; margin-bottom:10px; }
+
+    /* FULL TEXT (hidden initially) */
+    .case-full {
+      max-height:0;
+      overflow:hidden;
+      color:#ccc;
+      font-size:14px;
+      line-height:1.5;
+      transition:max-height .5s ease;
+      white-space:pre-line;
+    }
+
+    .case-link {
+      margin-top:10px;
+      color:#4ea0ff;
+      font-weight:600;
+      text-decoration:none;
+      cursor:pointer;
+    }
+footer {
+      position: relative;
+      background: #001437;
+      color:white;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+
+    .logo-img {
+      height: 120px !important;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .footer-description {
+      font-size: 12px;
+      color: #ffffff;
+      margin-top:-20px; 
+      margin-left:-23px;
+      line-height: 1.3;
+      max-width: 260px;
+    }
     .footer-links a { color: #ff8c3a; }
     .tiny {
       color: #ff8c3a !important;
@@ -197,30 +187,69 @@
       opacity: 0.09;
       pointer-events: none;
     }
-
-    /* RESPONSIVE FIXES */
-    @media (max-width:900px) {
-      .container { max-width:100%; padding:0 16px; }
-
-      .case-hero { padding:80px 0 30px; text-align:center; }
-      .case-hero h1 { font-size:32px; }
-      .case-hero p { font-size:16px; max-width:520px; margin:10px auto 0; }
-
-      .case-grid { grid-template-columns:1fr; }
-
-      .case-card img { opacity:0.35; }
-      .case-card:hover img { opacity:0.35; }
-
-      .case-overlay { opacity:1; background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.35)); }
-      .case-card:hover .case-overlay { opacity:1; background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.35)); }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
     }
 
-    @media (max-width:600px) {
-      .case-hero h1 { font-size:28px; }
-      .case-hero p { font-size:15px; }
-    }
-     
- 
+    .footer-links a { color:#ff8c3a; }
+
+    .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
+    @media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+  .footer-watermark {
+    display: none !important;
+  }
+}
   </style>
 </head>
 
@@ -230,7 +259,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html"><img src="assets/img/logo.png"></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <button class="menu-toggle">☰</button>
 
     <nav class="menu">
       <a href="index.html">Home</a>
@@ -253,15 +282,18 @@
 <!-- CASE STUDIES -->
 <section class="case-grid container">
 
-  <!-- Ankara -->
+  <!-- ====================== ANKARA TAKEAWAY ====================== -->
   <div class="case-card">
     <img src="assets/img/Restaurant.jpg">
+
     <div class="case-overlay">
       <span class="case-tag">CASE STUDY</span>
       <div class="case-title">Ankara Takeaway (UK)</div>
+
       <div class="case-preview">
         Marketing was strong, but conversions were weak. No clarity on what was driving sales…
       </div>
+
       <div class="case-full" id="ankara-full">
 When Ankara Takeaway approached us, their marketing performance was inconsistent across channels. Despite strong food quality and a loyal local customer base, the business struggled to understand which online and offline touchpoints were influencing sales.
 
@@ -281,19 +313,24 @@ Within 90 days:
 
 Today, the brand operates fully data-driven with no guesswork.
       </div>
+
       <a class="case-link" onclick="toggleFull('ankara-full', this)">Read full case study →</a>
     </div>
   </div>
 
-  <!-- Papa John's -->
+
+  <!-- ====================== PAPA JOHN'S UK ====================== -->
   <div class="case-card">
     <img src="assets/img/PAPA JOHNS.jpg">
+
     <div class="case-overlay">
       <span class="case-tag">CASE STUDY</span>
       <div class="case-title">Papa John's UK</div>
+
       <div class="case-preview">
         A national brand with fragmented data, unclear ROI, and duplicated spending…
       </div>
+
       <div class="case-full" id="papa-full">
 Papa John’s UK was struggling with channel fragmentation. Social media, email, app offers, paid ads, and delivery partners all worked in silos.
 
@@ -318,21 +355,20 @@ Regional Director: “This is a clarity engine for our entire organisation.”
 
 Papa John’s now operates with complete visibility and data-led decisions.
       </div>
+
       <a class="case-link" onclick="toggleFull('papa-full', this)">Read full case study →</a>
     </div>
   </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer fade-up">
   <div class="container footer-grid">
 
-    <!-- WRAP LOGO + TAGLINE TOGETHER -->
-    <div class="footer-brand">
-      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass logo">
-      <p class="footer-description">
-        Know what works , Where to invest.
-      </p>
+    <div>
+      <img src="assets/img/logo.png" class="logo-img">
+      <p class="footer-description">Know what works, Where to invest.</p>
     </div>
 
     <div>
@@ -342,7 +378,7 @@ Papa John’s now operates with complete visibility and data-led decisions.
         <li><a href="about.html">About</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="success-stories.html">Success Stories</a></li>
-        <li><a href="research.html">R&amp;D</a></li>
+        <li><a href="research.html">R&D</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -360,64 +396,33 @@ Papa John’s now operates with complete visibility and data-led decisions.
       <h4>Get in touch</h4>
       <ul class="footer-links">
         <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
-        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
-         <li><a href="location">📍London,United Kingdom</a></li>
-      </ul>
+        <li><a href="tel:+447482771421">📞+44 7482 771421</a></li>
+        <li><a href="location">📍London,United Kingdom</a></li>
       </ul>
     </div>
 
   </div>
 
-  <!-- WATERMARK -->
-  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass watermark">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark">
 
-  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
+  <div class="container tiny">©️ <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
-
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Expand/collapse with scrolling enabled
   function toggleFull(id, btn) {
     const section = document.getElementById(id);
-    if (!section) return;
 
-    if (section.classList.contains("open")) {
+    if (section.style.maxHeight && section.style.maxHeight !== "0px") {
       section.style.maxHeight = "0px";
-      section.classList.remove("open");
       btn.textContent = "Read full case study →";
     } else {
-      section.style.maxHeight = section.scrollHeight + "px";
-      section.classList.add("open");
+      section.style.maxHeight = "600px";
       btn.textContent = "Show less ↑";
-      section.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
-    if (btn && menu) {
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", !expanded);
-        menu.classList.toggle("open");
-      });
-    }
-  });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
