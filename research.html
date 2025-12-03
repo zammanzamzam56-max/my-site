@@ -20,15 +20,14 @@
     /* FIX read-more toggle in mobile */
 
 
-/* Fix container overflow on mobile */
-@media (max-width: 768px) {
-  .publication-card,
-  .publication-section,
-  .info-card {
-    overflow: visible !important;
-    height: auto !important;
-  }
+.publication-full {
+  max-height: 0;
+  overflow: hidden;
+  display: none;
+  transition: max-height 0.4s ease;
+  white-space: normal;
 }
+
 
     /* ================= HEADER ================= */
     .site-header {
@@ -694,35 +693,37 @@ footer {
         </p>
       </div>
 
-      <div class="pub-list">
-        <!-- Publication 1 -->
-        <article class="pub-card">
-          <h4>Publication 1: Ethical AI in Marketing</h4>
-          <p><strong>AI in Marketing: Ethical Challenges and Solutions for Consumers and Society</strong></p>
-          <p><strong>Authors:</strong> Danyal Mohiuddin &amp; Dr. Naureen Farhan (Ravensbourne University London)</p>
-          <p class="hidden-text">
-            This study explores how consumers evaluate the morality of AI-powered marketing,
-            highlighting risks around privacy, manipulation, and transparency.
-            It also proposes practical frameworks for building trustworthy AI systems
-            that respect consumer rights while still driving commercial outcomes.
-          </p>
-         <a class="pub-link" onclick="togglePub('pub1', this)">Read more →</a>
+      <article class="pub-card">
+  <h4>Publication 1: Ethical AI in Marketing</h4>
 
-        </article>
+  <p><strong>AI in Marketing: Ethical Challenges and Solutions for Consumers and Society</strong></p>
+  <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan (Ravensbourne University London)</p>
 
-        <!-- Publication 2 -->
-        <article class="pub-card">
-          <h4>Publication 2: Multi-Channel Food Marketing</h4>
-          <p><strong>AI and Machine Learning Enhance Multi-Channel Marketing Effectiveness in the Food Industry</strong></p>
-          <p class="hidden-text">
-            This research addresses a persistent challenge in the food and hospitality sector:
-            fragmented data across delivery apps, in-store sales, and digital ads.
-            The paper shows how predictive models and attribution algorithms improve
-            campaign performance, reduce waste, and reveal which channels really move revenue.
-          </p>
-         <a class="pub-link" onclick="togglePub('pub1', this)">Read more →</a>
+  <div class="publication-full" id="pub1">
+    This study explores how consumers evaluate the morality of AI-powered marketing,
+    highlighting risks around privacy, manipulation, and transparency.
+    It also proposes practical frameworks for building trustworthy AI systems
+    that respect consumer rights while still driving commercial outcomes.
+  </div>
 
-        </article>
+  <a class="pub-link" onclick="togglePub('pub1', this)">Read more →</a>
+</article>
+
+      <article class="pub-card">
+  <h4>Publication 2: Multi-Channel Food Marketing</h4>
+
+  <p><strong>AI and Machine Learning Enhance Multi-Channel Marketing Effectiveness in the Food Industry</strong></p>
+
+  <div class="publication-full" id="pub2">
+    This research addresses a persistent challenge in the food and hospitality sector:
+    fragmented data across delivery apps, in-store sales, and digital ads.
+    The paper shows how predictive models and attribution algorithms improve
+    campaign performance, reduce waste, and reveal which channels really move revenue.
+  </div>
+
+  <a class="pub-link" onclick="togglePub('pub2', this)">Read more →</a>
+</article>
+
       </div>
 
       <div class="highlights">
@@ -793,34 +794,44 @@ footer {
 
 <script>
 function togglePub(id, btn) {
-  const section = document.getElementById(id);
+  const box = document.getElementById(id);
 
-  // Mobile: always fully expand
-  if (window.innerWidth < 768) {
-    section.style.maxHeight = "none";
+  // If closed → open it
+  if (box.style.maxHeight === "0px" || !box.style.maxHeight) {
+    box.style.maxHeight = "1000px";  /* enough for full text */
+    box.style.display = "block";
     btn.textContent = "Show less ↑";
-    btn.onclick = function(){
-      section.style.maxHeight = "0px";
-      btn.textContent = "Read more →";
-      btn.onclick = function(){ togglePub(id, btn); };
-    };
-    return;
-  }
+  } 
 
-  // Desktop logic
-  if (section.style.maxHeight && section.style.maxHeight !== "0px") {
-    section.style.maxHeight = "0px";
+  // If open → close it
+  else {
+    box.style.maxHeight = "0px";
+    box.style.display = "none";
     btn.textContent = "Read more →";
-  } else {
-    section.style.maxHeight = "800px";  // more space for desktop
-    btn.textContent = "Show less ↑";
   }
 }
+  document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+  const y = document.getElementById("year");
+
+  if (y) y.textContent = new Date().getFullYear();
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      menu.classList.toggle("open");
+    });
+  }
+});
+
 
 </script>
 
 </body>
 </html>
+
 
 
 
