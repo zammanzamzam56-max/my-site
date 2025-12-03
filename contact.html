@@ -16,8 +16,7 @@
     body {
       overflow-x: hidden;
       background: #ffffff;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
+      font-family: system-ui, sans-serif;
       color: #03102b;
     }
     img { max-width: 100%; display: block; }
@@ -37,6 +36,7 @@
       top: 0;
       z-index: 999;
     }
+
     .nav {
       display: flex;
       justify-content: space-between;
@@ -82,23 +82,6 @@
       background: #ff8c3a !important;
     }
 
-    /* Mobile menu fix */
-    @media(max-width: 768px){
-      nav.menu {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        display: none;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      }
-      nav.menu.open { display: block; }
-      nav.menu a { display: block; margin-bottom: 10px; }
-      .logo img { height: 60px !important; padding-top: 0 !important;}
-    }
-
     /* ---------------- HERO ---------------- */
     .contact-hero {
       position: relative;
@@ -128,27 +111,34 @@
       color: #eeeeee;
       line-height: 1.6;
     }
+
     @media(max-width: 768px){
       .contact-hero { padding: 120px 0; }
       .contact-hero h2 { font-size: 2.2rem; }
     }
 
-    /* ---------------- CONTACT FORM (NTT STYLE) ---------------- */
+    /* ---------------- CONTACT SECTION ---------------- */
     .contact-wrapper {
-      max-width: 1100px;
-      margin: 60px auto 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       gap: 40px;
+      padding: 40px 0;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1180px;
     }
 
-    /* LEFT COLUMN */
+    /* Left Column: "Let’s Start a Conversation" + Contact Info */
+    .contact-left {
+      flex: 1;
+    }
+
     .contact-left h3 {
       font-size: 32px;
       font-weight: 800;
       margin-bottom: 18px;
       color: #03102b;
     }
+
     .contact-left p {
       font-size: 1.05rem;
       margin-bottom: 12px;
@@ -156,7 +146,37 @@
       line-height: 1.6;
     }
 
-    /* FORM (right column) */
+    .contact-info {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #03102b;
+    }
+
+    .contact-info ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .contact-info ul li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    /* Right Column: Contact Form */
+    .contact-form-container {
+      flex: 1;
+    }
+
     .contact-form {
       background: white;
       padding: 30px;
@@ -164,12 +184,14 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
       border: 1px solid #e5e5e5;
     }
+
     .contact-form label {
       font-weight: 600;
       margin-top: 18px;
       margin-bottom: 6px;
       display: block;
     }
+
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -178,7 +200,6 @@
       border: 1px solid #ccc;
       font-size: 1rem;
     }
-    .contact-form textarea { resize: none; }
 
     .contact-form button {
       margin-top: 20px;
@@ -196,8 +217,23 @@
       background: #ff8c3a;
     }
 
-    /* ---------------- FOOTER (MATCHED EXACTLY) ---------------- */
-    footer {
+    /* ---------------- MOBILE VIEW ---------------- */
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .contact-left, .contact-form-container {
+        max-width: 100%;
+      }
+
+      .contact-info {
+        padding: 20px;
+        margin-top: 30px;
+      }
+    }
+      footer {
       position: relative;
       background: #001437;
       color: white;
@@ -285,117 +321,6 @@
   .footer-grid div:last-child ul li {
     font-size: 18px !important;
   }
-
-  
- @media(max-width: 900px){
-      .contact-wrapper { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-  .contact-left {
-    padding-left: 10px !important;
-  }
-}
-     /* Style for the contact information */
-.contact-info {
-  margin-top: 30px; /* Add space between form and contact info */
-  padding: 20px;
-  background: #f9fafb; /* Light background color */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.contact-info h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #03102b;
-}
-
-.contact-info ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.contact-info ul li {
-  font-size: 1rem;
-  margin-bottom: 8px;
-  color: #333;
-}
-      @media(max-width:768px){
-      .footer-watermark { display: block !important; height: 180px; top: auto; bottom: 10px; opacity: .15; }
-      .footer-grid { text-align: center; }
-      .footer-links a { font-size: 18px; }
-    }
-    /* For the Contact Form Page */
-
-/* Ensuring full width and no white space on mobile */
-@media (max-width: 768px) {
-  .contact-wrapper {
-    padding: 0 10px; /* Reduces padding on mobile */
-    margin: 0 auto;
-    width: 100%; /* Ensures the form uses full width */
-  }
-  
-  .contact-left {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  /* Removes extra white space on mobile */
-  .contact-form {
-    width: 100%; /* Ensure form takes up full width */
-    box-sizing: border-box; /* Ensures no overflow */
-  }
-
-  /* Ensure text stays above form */
-  .contact-left h3 {
-    margin-bottom: 15px;
-    font-size: 22px; /* Adjusted for mobile */
-    text-align: center; /* Centers the text */
-  }
-
-  .contact-left p {
-    text-align: center;
-    font-size: 16px; /* Adjusted for mobile */
-    margin-bottom: 20px;
-  }
-
-  /* Stack form and text vertically */
-  .contact-wrapper {
-    display: block;
-    padding-top: 0;
-  }
-}
-
-/* For desktop layout */
-@media (min-width: 768px) {
-  .contact-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-  }
-
-  .contact-left {
-    flex: 1;
-    margin-bottom: 0;
-  }
-
-  .contact-form {
-    flex: 1;
-  }
-
-  /* Keeps text above form on desktop */
-  .contact-left h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-
-  .contact-left p {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-}
-
   </style>
 </head>
 
@@ -404,17 +329,16 @@
 <!-- ---------------- HEADER ---------------- -->
 <header class="site-header">
   <div class="container nav">
-    <a class="logo" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="SaleCompass Logo"></a>
     <button class="menu-toggle" aria-expanded="false">☰</button>
-
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="case-studies.html">Case Studies</a>
-      <a href="research.html">R&amp;D</a>
+      <a class="active" href="research.html">R&amp;D</a>
       <a href="success-stories.html">Success Stories</a>
-      <a class="active btn primary" href="contact.html">Contact</a>
+      <a class="btn primary" href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -428,23 +352,24 @@
 </section>
 
 <!-- ---------------- CONTACT SECTION ---------------- -->
-<div class="contact-left">
-  <h3>Let’s Start a Conversation</h3>
-  <p>Our team is here to help you understand your data, improve your marketing performance, and unlock confident growth.</p>
-  <p>Fill out the form and we’ll get back to you shortly.</p>
+<section class="contact-wrapper">
+  <!-- Left Column: Contact Info -->
+  <div class="contact-left">
+    <h3>Let’s Start a Conversation</h3>
+    <p>Our team is here to help you understand your data, improve your marketing performance, and unlock confident growth.</p>
+    <p>Fill out the form and we’ll get back to you shortly.</p>
 
-  <!-- Add your contact information here -->
-  <div class="contact-info">
-    <h4>Contact Info:</h4>
-    <ul>
-      <li><strong>Email:</strong>📧 hello@salecompass.uk</li>
-      <li><strong>Phone:</strong>📞 +44 123 456 7890</li>
-      <li><strong>Address:</strong>📍 London, United Kingdom</li>
-    </ul>
+    <div class="contact-info">
+      <h4>Contact Info:</h4>
+      <ul>
+        <li><strong>Email:</strong> 📧salecompass.uk@gmail.com</li>
+        <li><strong>Phone:</strong> 📞+44 123 456 7890</li>
+        <li><strong>Address:</strong> 📍London, United Kingdom</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-
+  <!-- Right Column: Contact Form -->
   <div class="contact-form">
     <form action="https://formspree.io/f/movobzbg" method="POST">
       <label>Your Name</label>
@@ -464,7 +389,6 @@
       <button type="submit">Send Message</button>
     </form>
   </div>
-
 </section>
 
 <!-- ---------------- FOOTER ---------------- -->
@@ -527,8 +451,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
-
-
-
-
