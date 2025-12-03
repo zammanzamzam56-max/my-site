@@ -306,26 +306,63 @@ footer {
   white-space: pre-line;
 }
 
-/* MOBILE FIXES */
-@media (max-width: 768px) {
+/* ================================
+   GLOBAL MOBILE / TABLET FIX
+   Fixes overflow + centering + smooth scroll
+================================ */
 
-  .case-grid {
-    grid-template-columns: 1fr !important;
-    gap: 30px !important;
-  }
-
-  .case-card img {
-    height: auto !important;
-  }
-
-  .case-overlay {
-    padding: 20px !important;
-  }
-
-  .case-title {
-    font-size: 22px !important;
-  }
+/* 1 — Prevent horizontal overflow from any element */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
 }
+
+/* 2 — Ensure all containers stay centered and never overflow */
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  overflow-x: hidden;
+}
+
+/* 3 — Fix images and absolutely positioned elements */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix elements that break layout on tablet/mobile */
+.case-card,
+.tech-box,
+.feature-card,
+.pricing-card,
+.about-card,
+.about-photo {
+  overflow: hidden !important;
+}
+
+/* Ensure grids wrap safely */
+.case-grid,
+.tech-grid,
+.features-grid,
+.pricing-grid {
+  width: 100% !important;
+  margin: 0 auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix footer watermark overflow */
+.footer-watermark {
+  max-width: 60% !important;
+  right: 0 !important;
+}
+
   </style>
 </head>
 
