@@ -17,6 +17,28 @@
       max-width: 1180px;
       margin: 0 auto;
     }
+    /* FIX read-more toggle in mobile */
+.publication-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.publication-full.open {
+  max-height: 2000px !important;   /* enough for long text */
+  overflow-y: visible !important;
+}
+
+/* Fix container overflow on mobile */
+@media (max-width: 768px) {
+  .publication-card,
+  .publication-section,
+  .info-card {
+    overflow: visible !important;
+    height: auto !important;
+  }
+}
+
     
 
     /* ================= HEADER ================= */
@@ -782,4 +804,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
