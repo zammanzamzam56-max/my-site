@@ -18,16 +18,7 @@
       margin: 0 auto;
     }
     /* FIX read-more toggle in mobile */
-.publication-full {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .5s ease;
-}
 
-.publication-full.open {
-  max-height: 2000px !important;   /* enough for long text */
-  overflow-y: visible !important;
-}
 
 /* Fix container overflow on mobile */
 @media (max-width: 768px) {
@@ -38,8 +29,6 @@
     height: auto !important;
   }
 }
-
-    
 
     /* ================= HEADER ================= */
     .site-header {
@@ -574,6 +563,22 @@ footer {
       opacity: 0.09;
       pointer-events: none;
     }
+    /* Allow publication body to expand on phones */
+.publication-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  white-space: normal !important;
+}
+
+/* Mobile fix: allow expansion */
+@media(max-width: 768px) {
+  .publication-full {
+    max-height: none !important;   /* FULLY EXPANDS */
+    overflow: visible !important;  /* SHOW TEXT */
+  }
+}
+
   </style>
 </head>
 
@@ -701,7 +706,8 @@ footer {
             It also proposes practical frameworks for building trustworthy AI systems
             that respect consumer rights while still driving commercial outcomes.
           </p>
-          <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
+         <a class="pub-link" onclick="togglePub('pub1', this)">Read more →</a>
+
         </article>
 
         <!-- Publication 2 -->
@@ -714,7 +720,8 @@ footer {
             The paper shows how predictive models and attribution algorithms improve
             campaign performance, reduce waste, and reveal which channels really move revenue.
           </p>
-          <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
+         <a class="pub-link" onclick="togglePub('pub1', this)">Read more →</a>
+
         </article>
       </div>
 
@@ -785,25 +792,36 @@ footer {
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-  const y = document.getElementById("year");
+function togglePub(id, btn) {
+  const section = document.getElementById(id);
 
-  if (y) y.textContent = new Date().getFullYear();
-
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
-    });
+  // Mobile: always fully expand
+  if (window.innerWidth < 768) {
+    section.style.maxHeight = "none";
+    btn.textContent = "Show less ↑";
+    btn.onclick = function(){
+      section.style.maxHeight = "0px";
+      btn.textContent = "Read more →";
+      btn.onclick = function(){ togglePub(id, btn); };
+    };
+    return;
   }
-});
+
+  // Desktop logic
+  if (section.style.maxHeight && section.style.maxHeight !== "0px") {
+    section.style.maxHeight = "0px";
+    btn.textContent = "Read more →";
+  } else {
+    section.style.maxHeight = "800px";  // more space for desktop
+    btn.textContent = "Show less ↑";
+  }
+}
+
 </script>
 
 </body>
 </html>
+
 
 
 
