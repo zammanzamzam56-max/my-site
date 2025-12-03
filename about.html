@@ -17,6 +17,23 @@
       padding:0 20px;
       box-sizing: border-box;
     }
+    /* Reduce space above the mission and vision boxes on desktop */
+.mission-vision-section {
+  margin-top: 20px; /* Reduced margin */
+}
+
+.mission-vision-section .mission-box, 
+.mission-vision-section .vision-box {
+  padding-top: 10px; /* Adjust padding to reduce extra space */
+}
+
+/* On mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .mission-box {
+    margin-top: 10px; /* Reduce space above mission box only on mobile */
+  }
+}
+
 
     /* =============================== HEADER =============================== */
     .site-header {
@@ -115,7 +132,8 @@
     /* =============================== ABOUT - TWO COLUMN =============================== */
     .about-section {
       padding:80px 0;
-      background:#f9fafb;
+     background:#03101f;
+       color: #e4ecf7
     }
 
     .about-flex {
@@ -126,7 +144,7 @@
 
     .about-card {
       flex:0 0 48%;
-      background:white;
+     background:rgb(6, 1, 29);
       padding:32px;
       border-radius:16px;
       box-shadow:0 6px 25px rgba(0,0,0,0.07);
@@ -729,6 +747,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
