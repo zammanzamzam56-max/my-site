@@ -455,12 +455,66 @@
 </header>
 
 <!-- ========================= HERO (UPDATED) ========================= -->
+<!-- ========================= HERO (UPDATED) ========================= -->
 <section class="services-hero fade-up"> 
   <div class="hero-content">
     <h1 class="services-title">OUR SERVICES</h1>
     <p class="services-tagline">AI-powered tools that simplify marketing, boost performance, and maximise ROI.</p>
   </div>
 </section>
+
+<!-- ========================= DASHBOARD SECTION ========================= -->
+<section class="dashboard-section fade-up">
+  <div class="container">
+    <h2>Our Dashboard</h2>
+    <div class="dashboard-container">
+      <object type="image/svg+xml" data="path/to/Dashboard.svg" class="dashboard-svg">
+        Your browser does not support SVGs.
+      </object>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ========================= DASHBOARD STYLING ========================= */
+  .dashboard-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;  /* Light background to distinguish the section */
+  }
+
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .dashboard-svg {
+    width: 100%;
+    max-width: 1200px;  /* Controls max width of the SVG */
+    height: auto;  /* Maintain aspect ratio */
+  }
+
+  .dashboard-section h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #001437;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 768px) {
+  .dashboard-svg {
+    max-width: 90%; /* Slightly smaller size on mobile */
+    margin: 0 auto; /* Centers the image */
+  }
+
+  .dashboard-section h2 {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+}
+
+</style>
+
 
 <!-- ========================= CORE FEATURES ========================= -->
 <section class="core-features fade-up">
@@ -745,6 +799,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
