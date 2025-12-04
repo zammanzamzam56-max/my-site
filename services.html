@@ -20,47 +20,10 @@
       margin:auto;
       padding:0 20px;
     }
-
-    /* ========================= HEADER (MATCHES INDEX) ========================= */
-    .site-header {
-      padding:10px 0 !important;
-      background:white;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
-    }
-    .nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .logo img {
-      height:85px;
-      object-fit:contain;
-      display:block;
-      padding-top: 10%;
-    }
-    nav.menu a {
-      padding:8px 14px;
-      border-radius:6px;
-      transition:.25s;
-    }
-    nav.menu a:hover {
-      background:#ff8c3a;
-      color:white !important;
-    }
-    nav.menu a.btn.primary {
-      background:#0a1a3a;
-      color:white ;
-    }
-    nav.menu a.btn.primary:hover {
-      background:#ff8c3a !important;
-      color:white !important;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
+      /* =========================================
+   FIX FOOTER MOBILE VIEW ONLY (INLINE VERSION)
+========================================= */
+@media (max-width: 768px) {
 
   /* Stack footer content */
   .footer-grid {
@@ -103,11 +66,89 @@
   }
 
   /* Hide huge watermark */
-  .footer-watermark {
-    display: none !important;
-  }
+   .footer-watermark {
+        position: relative;
+        display: block;
+        margin: 30px auto 0;
+        height: 140px;
+        opacity: 0.15;
+      }
 }
 
+    /* =============================== FOOTER (MATCHED TO CASE STUDIES) =============================== */
+    footer {
+      position: relative;
+      background: #001437;
+      color:white;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+
+    .logo-img {
+      height: 120px !important;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+    /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
+.footer-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers logo + tagline */
+  text-align: center;
+}
+
+.footer-description {
+      font-size:12px;
+      color:#ffffff;
+      margin-top:-10px !important;
+      line-height:1.3;
+      margin-left:-23px;
+      max-width:280px;
+    }
+
+    
+
+    /* ========================= HEADER (MATCHES INDEX) ========================= */
+    .site-header {
+      padding:10px 0 !important;
+      background:white;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo img {
+      height:85px;
+      object-fit:contain;
+      display:block;
+      padding-top: 10%;
+    }
+    nav.menu a {
+      padding:8px 14px;
+      border-radius:6px;
+      transition:.25s;
+    }
+    nav.menu a:hover {
+      background:#ff8c3a;
+      color:white !important;
+    }
+    nav.menu a.btn.primary {
+      background:#0a1a3a;
+      color:white ;
+    }
+    nav.menu a.btn.primary:hover {
+      background:#ff8c3a !important;
+      color:white !important;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
 
     /* ========================= SERVICES HERO (UPDATED) ========================= */
     .services-hero {
@@ -163,7 +204,7 @@
     }
 
     .feature-box {
-      background:white;
+      background:rgb(255, 255, 255);
       padding:26px;
       border-radius:16px;
       box-shadow:0 4px 20px rgba(0,0,0,0.06);
@@ -195,7 +236,7 @@
 
     /* ========================= PRICING ========================= */
     .pricing-section { padding:60px 0 20px;background: rgb(2, 2, 48); }
-    .pricing-heading { text-align:center; margin-bottom:28px;color: #d1d5db; }
+    .pricing-heading { text-align:center;color: #d1d5db; margin-bottom:28px; }
     .pricing-heading h2 { font-size:32px; font-weight:800; }
 
     .pricing-main-heading {
@@ -204,9 +245,7 @@
       text-align:center;
       margin-bottom:10px;
       color:#bbbfc7;
-      
     }
-   
 
     .billing-toggle {
       margin-bottom:20px;
@@ -219,7 +258,7 @@
       height:22px;
       display:inline-block;
       margin:0 10px;
-    }
+    } 
 
     .billing-switch input { opacity:0; width:0; height:0; }
 
@@ -241,10 +280,7 @@
       border-radius:50%;
       transition:.3s;
     }
-    .billing-switch input:checked + .billing-slider {
-      background:#0077ff;
-    }
-      /* Change the color of the Monthly text */
+    /* Change the color of the Monthly text */
 .billing-toggle span:first-child {
   color: #ff8c3a;  /* Choose your desired color for "Monthly" */
 }
@@ -254,6 +290,9 @@
   color: #ff8c3a;  /* Choose your desired color for "Annual" */
 }
 
+    .billing-switch input:checked + .billing-slider {
+      background:#0077ff;
+    }
     .billing-switch input:checked + .billing-slider::before {
       transform:translateX(22px);
     }
@@ -305,6 +344,7 @@
     .tech-section {
       padding:30px 0 80px; /* top reduced already */
       text-align:center;
+      
     }
     .tech-heading {
       font-size:36px;
@@ -432,15 +472,6 @@
   list-style-type: none;
 }
 
-    .footer-watermark {
-      position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 260px;
-      opacity: 0.09;
-      pointer-events: none;
-    }
   </style>
 </head>
 
@@ -467,7 +498,7 @@
 </header>
 
 <!-- ========================= HERO (UPDATED) ========================= -->
-<!-- ========================= HERO (UPDATED) ========================= -->
+
 <section class="services-hero fade-up"> 
   <div class="hero-content">
     <h1 class="services-title">OUR SERVICES</h1>
@@ -480,7 +511,7 @@
   <div class="container">
     <h2>Our Dashboard</h2>
     <div class="dashboard-container">
-      <object type="image/svg+xml" data="assets/img/Dashboard.svg" class="dashboard-svg">
+      <object type="image/svg+xml" data="assets/img//Dashboard.svg" class="dashboard-svg">
         Your browser does not support SVGs.
       </object>
     </div>
@@ -514,17 +545,6 @@
     color: #001437;
     margin-bottom: 20px;
   }
-  @media (max-width: 768px) {
-  .dashboard-svg {
-    max-width: 90%; /* Slightly smaller size on mobile */
-    margin: 0 auto; /* Centers the image */
-  }
-
-  .dashboard-section h2 {
-    font-size: 28px; /* Adjust font size for smaller screens */
-  }
-}
-
 </style>
 
 
@@ -639,7 +659,7 @@
           <li>✔ Access to Review & Sentiment Summary</li>
           <li>✖ Predictive Analytics </li>
           <li>✖ Automated Recommendations</li>
-          <li>✖ Real-Time Alerts </li>
+          <li>✖ Real-Time Alerts</li>
         </ul>
 
         <button class="plan-button current">Current Plan</button>
@@ -661,7 +681,7 @@
           <li>✔ AI Trend Detection (Basic)</li>
           <li>✔ Automated Weekly Reports</li>
           <li>✔ Priority Email Support</li>
-          <li>✖ Real-Time Alerts on time</li>
+          <li>✖ Real-Time Alerts</li>
           <li>✖ Predictive Demand Forecasting</li>
         </ul>
 
@@ -679,7 +699,7 @@
         <ul class="plan-features">
           <li>✔ All Starter Features</li>
           <li>✔ 10 Integrations</li>
-          <li>✔ Real-Time Alerts on Time</li>
+          <li>✔ Real-Time Alerts</li>
           <li>✔ 5,000 Monthly AI Insights</li>
           <li>✔ Advanced Multi-Touch Attribution</li>
           <li>✔ Campaign Optimisation Suggestions</li>
@@ -764,22 +784,18 @@
     <div>
       <h4>Services</h4>
       <ul class="footer-links">
-       <li><a href="services.html">Attribution Engine</a></li>
+        <li><a href="services.html">Attribution Engine</a></li>
         <li><a href="services.html">Predictive Analytics</a></li>
-        <li><a href="services.html">Sentiment Intelligence</a></li>
-        <li><a href="services.html"> Real-Time Dashboards</a></li>
-        <li><a href="services.html">Seamless Integrations</a></li>
-        <li><a href="services.html">Automation Engine</a></li>
+        <li><a href="services.html">Dashboards</a></li>
       </ul>
     </div>
 
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">📧salecompass.uk@gmail.com</a></li>
+        <li><a href="mailto:hello@salecompass.uk">📧hello@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
-         <li><a href="location">📍London,United Kingdom</a></li>
-      </ul>
+        <li><a href="location">📍London,United Kingdom</a></li>
       </ul>
     </div>
 
@@ -790,35 +806,27 @@
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
-<!-- JS -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-  const y = document.getElementById("year");
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  if (y) y.textContent = new Date().getFullYear();
+  const billingToggle = document.getElementById("billingToggle");
+  const priceEls = document.querySelectorAll(".plan-price");
+  const periodEls = document.querySelectorAll(".plan-period");
 
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !expanded);
-      menu.classList.toggle("open");
+  billingToggle?.addEventListener("change", () => {
+    const yearly = billingToggle.checked;
+
+    priceEls.forEach(el => {
+      el.textContent = yearly
+        ? el.getAttribute("data-year")
+        : el.getAttribute("data-month");
     });
-  }
-});
+
+    periodEls.forEach(el => {
+      el.textContent = yearly ? "/ year" : "/ month";
+    });
+  });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
