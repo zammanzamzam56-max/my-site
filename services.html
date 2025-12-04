@@ -194,8 +194,8 @@
     }
 
     /* ========================= PRICING ========================= */
-    .pricing-section { padding:60px 0 20px; }
-    .pricing-heading { text-align:center; margin-bottom:28px; }
+    .pricing-section { padding:60px 0 20px;background: rgb(2, 2, 48); }
+    .pricing-heading { text-align:center; margin-bottom:28px;color: #d1d5db; }
     .pricing-heading h2 { font-size:32px; font-weight:800; }
 
     .pricing-main-heading {
@@ -203,8 +203,19 @@
       font-weight:900;
       text-align:center;
       margin-bottom:10px;
-      color:#001437;
+      color:#bbbfc7;
+      
     }
+     /* Change the color of the Monthly text */
+.billing-toggle span:first-child {
+  color: #ff8c3a;  /* Choose your desired color for "Monthly" */
+}
+
+/* Change the color of the Annual text */
+.billing-toggle span:last-child {
+  color: #ff8c3a;  /* Choose your desired color for "Annual" */
+}
+
 
     .billing-toggle {
       margin-bottom:20px;
@@ -799,6 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
