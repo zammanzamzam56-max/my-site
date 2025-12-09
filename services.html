@@ -325,15 +325,29 @@
     .plan-period { font-size:14px; color:#6b7280; margin-bottom:14px; }
     .plan-features li { margin-bottom:6px; }
     .plan-button {
-      padding:12px;
-      width:100%;
-      border-radius:6px;
-      border:2px solid #0a1a3a;
-      background:white;
-      font-weight:600;
-      transition:.25s;
-      cursor:pointer;
-    }
+  padding:12px;
+  width:100%;
+  border-radius:6px;
+  border:2px solid #0a1a3a;
+  background:white;
+  font-weight:600;
+  transition:.25s;
+  cursor:pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #0a1a3a;
+  font-size: 16px;
+}
+.subscribe-btn {
+   background: #0a1a3a;
+ color: rgb(250, 241, 241);
+}
+
+.subscribe-btn:hover {
+  background: #da6505;
+  color: rgb(250, 241, 241);
+}
     .plan-button:hover {
       background:#0a1a3a;
       color:white;
@@ -685,7 +699,7 @@
           <li>✖ Predictive Demand Forecasting</li>
         </ul>
 
-        <button class="plan-button subscribe-btn" data-plan="Starter">Subscribe</button>
+        <a href="payment.html" class="plan-button subscribe-btn">Subscribe</a>
       </article>
 
       <!-- GROWTH -->
@@ -707,7 +721,7 @@
           <li>✔ Chat + Priority Support</li>
         </ul>
 
-        <button class="plan-button subscribe-btn" data-plan="Growth">Subscribe</button>
+        <a href="payment.html" class="plan-button subscribe-btn">Subscribe</a>
       </article>
 
       <!-- PREMIUM -->
@@ -729,7 +743,7 @@
           <li>✔ Onboarding & Strategy Call</li>
         </ul>
 
-        <button class="plan-button subscribe-btn" data-plan="Premium">Subscribe</button>
+        <a href="payment.html" class="plan-button subscribe-btn">Subscribe</a>
       </article>
 
     </div>
@@ -844,9 +858,17 @@
     });
   }
 });
+// Add payment redirect for subscribe buttons
+document.querySelectorAll('.subscribe-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const plan = this.getAttribute('data-plan');
+    // Store selected plan and redirect to payment
+    localStorage.setItem('selectedPlan', plan);
+    window.location.href = 'payment.html';
+  });
+});
 </script>
 
 </body>
 </html>
-
 
