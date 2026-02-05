@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research & Development | SaleCompass</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
 
   <link rel="stylesheet" href="assets/styles.css" />
 
@@ -115,6 +116,7 @@
       font-size: 28px;
       font-weight: 800;
       margin: 0 0 20px;  /* no top margin to avoid extra gap under hero */
+      margin-top: -50px ;
     }
 
     .two-col {
@@ -221,7 +223,8 @@ section.alt {
 .founder-card {
  background: #02060e;         /* navy */
   color: #ffffff;
-  border-radius: 0px;
+  
+   border-radius: 0px;
   padding: 32px 36px;
   display: flex;
   align-items: center;
@@ -229,6 +232,9 @@ section.alt {
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
   transition: 0.35s ease;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  height: 400px;
+  width: 1200px;
+  margin-bottom: 10px;
 }
 
 .founder-card:hover {
@@ -241,10 +247,11 @@ section.alt {
 }
 
 .founder-photo img {
-  width: 100%;
+  width: 80%;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  height: 380px;
 }
 
 .founder-content {
@@ -293,6 +300,7 @@ section.alt {
     .intro-card {
       margin-bottom: 20px;
       margin-top:10px;
+      
     }
 
 
@@ -611,48 +619,13 @@ footer {
 </section>
 
 <main>
-  <!-- SECTION 1: Market Interviews -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
-      <div class="two-col">
-        <div class="info-card">
-          <h3>Understanding the Real Problems Before Building the Solution</h3>
-          <p>
-            At SaleCompass, research began long before a single line of code.
-            Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
-            market interviews, discovery meetings, and surveys.
-          </p>
-          <ul>
-            <li>CEOs of food businesses</li>
-            <li>Restaurant owners & managers</li>
-            <li>Marketing teams & agencies</li>
-            <li>UK SME founders</li>
-          </ul>
-          <p><strong>Recurring pattern: Data everywhere, zero clarity.</strong></p>
-        </div>
-
-        <!-- photo1 + photo2 back, stacked -->
-        <div class="photo-grid">
-          <figure class="photo-card">
-            <img src="assets/img/photo1.png" alt="Market research session 1">
-          </figure>
-          <figure class="photo-card">
-            <img src="assets/img/photo2.png" alt="Market research session 2">
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 2: Founder -->
-  <section class="section-alt">
+   <section class="section-alt">
   <div class="container founder-wrapper">
     <h2 class="section-title" style="margin-bottom: 18px;">About the Founder</h2>
 
     <div class="founder-card">
       <div class="founder-photo">
-        <img src="assets/img/photo4.png" alt="Danyal Mohiuddin">
+        <img src="assets/img/photo4.jpeg" alt="Danyal Mohiuddin">
       </div>
 
       <div class="founder-content">
@@ -682,6 +655,41 @@ footer {
     </div>
   </div>
 </section>
+  <!-- SECTION 1: Market Interviews -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
+      <div class="two-col">
+        <div class="info-card">
+          <h3>Understanding the Real Problems Before Building the Solution</h3>
+          <p>
+            At SaleCompass, research began long before a single line of code.
+            Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
+            market interviews, discovery meetings, and surveys.
+          </p>
+          <ul>
+            <li>CEOs of food businesses</li>
+            <li>Restaurant owners & managers</li>
+            <li>Marketing teams & agencies</li>
+            <li>UK SME founders</li>
+          </ul>
+          
+        </div>
+
+        <!-- photo1 + photo2 back, stacked -->
+        <div class="photo-grid">
+          <figure class="photo-card">
+            <img src="assets/img/photo1.png" alt="Market research session 1">
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/img/photo2.png" alt="Market research session 2">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
 
   <!-- SECTION 3: Scientific Foundations & Publications -->
   <section>
@@ -756,7 +764,7 @@ footer {
     <div>
       <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass Logo">
       <p class="footer-description">
-        Know what works , Where to invest.
+        Your Compass for Smarter Growth.
       </p>
     </div>
 
@@ -787,7 +795,7 @@ footer {
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">📧salecompass.uk@gmail.com</a></li>
+        
         <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
@@ -841,5 +849,4 @@ function togglePub(id, btn) {
 
 </body>
 </html>
-
 
