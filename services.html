@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | SaleCompass</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
 
   <link rel="stylesheet" href="assets/styles.css" />
 
@@ -300,7 +301,7 @@
     .pricing-grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:26px;
+      gap:20px;
     }
 
     .pricing-card {
@@ -311,11 +312,14 @@
       box-shadow:0 4px 16px rgba(0,0,0,0.03);
       border-left:6px solid transparent;
       transition:.25s;
+      height: 470px;
+      line-height: 1.1;
+      max-width: 300px;
     }
     .pricing-card:hover {
       transform:translateY(-6px);
-      background:#fff7ef;
-      border-left:6px solid #ff8c3a;
+      background:white;
+      
       box-shadow:0 12px 30px rgba(0,0,0,0.12);
     }
 
@@ -338,10 +342,14 @@
   text-decoration: none;
   color: #0a1a3a;
   font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
 }
 .subscribe-btn {
    background: #0a1a3a;
  color: rgb(250, 241, 241);
+ 
 }
 
 .subscribe-btn:hover {
@@ -353,6 +361,7 @@
       color:white;
     }
     .current { background:#0a1a3a; color:white; }
+   
 
     /* ========================= TECHNOLOGIES ========================= */
     .tech-section {
@@ -559,6 +568,11 @@
     color: #001437;
     margin-bottom: 20px;
   }
+  ul, li {
+  list-style: none !important;
+}
+ul { padding-left: 0 !important; margin-left: 0 !important; }
+
 </style>
 
 
@@ -570,63 +584,63 @@
     <div class="features-grid">
 
       <div class="feature-box">
-        <h3>1️⃣ Multi-Channel Attribution Engine</h3>
+        <h3> Multi-Channel Attribution Engine</h3>
         <ul>
           <li>See ROI of Instagram, Google, TikTok, email, SMS & offline.</li>
           <li>Track customer journeys across all touchpoints.</li>
           <li>Identify top channels & eliminate wasted spend.</li>
         </ul>
-        <p class="outcome">Outcome: Smarter budget allocation & higher ROAS.</p>
+      
       </div>
 
       <div class="feature-box">
-        <h3>2️⃣ Predictive Analytics (AI Forecasting)</h3>
+        <h3>Predictive Analytics (AI Forecasting)</h3>
         <ul>
           <li>Forecast demand, peak hours & trending products.</li>
           <li>Detect emerging patterns & viral opportunities.</li>
           <li>Predict perfect timing for ads & promotions.</li>
         </ul>
-        <p class="outcome">Outcome: Better planning, less uncertainty & higher revenue.</p>
+       
       </div>
 
       <div class="feature-box">
-        <h3>3️⃣ POS + Offline Data Integration</h3>
+        <h3> POS + Offline Data Integration</h3>
         <ul>
           <li>Connect POS, footfall counters & offline promos.</li>
           <li>Combine online + offline data for full visibility.</li>
           <li>Attribute real revenue impact to marketing.</li>
         </ul>
-        <p class="outcome">Outcome: Accurate offline conversion tracking.</p>
+       
       </div>
 
       <div class="feature-box">
-        <h3>4️⃣ Customer Sentiment & Review Intelligence</h3>
+        <h3> Customer Sentiment & Review Intelligence</h3>
         <ul>
           <li>Analyse reviews from social media & delivery apps.</li>
           <li>Detect trending complaints & sentiment shifts.</li>
           <li>Identify what customers love or dislike.</li>
         </ul>
-        <p class="outcome">Outcome: Higher ratings & better customer loyalty.</p>
+       
       </div>
 
       <div class="feature-box">
-        <h3>5️⃣ Real-Time Dashboards & Alerts</h3>
+        <h3> Real-Time Dashboards & Alerts</h3>
         <ul>
           <li>Live metrics: ROI, spend, campaigns, trends.</li>
           <li>Instant alerts for spikes or underperformance.</li>
           <li>Fast decision-making without delays.</li>
         </ul>
-        <p class="outcome">Outcome: Immediate action & reduced wasted spend.</p>
+        
       </div>
 
       <div class="feature-box">
-        <h3>6️⃣ Integrations + Automation Engine</h3>
+        <h3> Integrations + Automation Engine</h3>
         <ul>
           <li>Integrate Google Ads, Meta, TikTok, POS & CRM.</li>
           <li>AI-led recommendations for scaling campaigns.</li>
           <li>Audience insights, optimisation & automation.</li>
         </ul>
-        <p class="outcome">Outcome: More automation, less manual work.</p>
+       
       </div>
 
     </div>
@@ -670,7 +684,7 @@
           <li>✔ 200 Monthly AI Insights</li>
           <li>✔ Basic Attribution Model</li>
           <li>✔ POS Upload (Manual)</li>
-          <li>✔ Access to Review & Sentiment Summary</li>
+         
           <li>✖ Predictive Analytics </li>
           <li>✖ Automated Recommendations</li>
           <li>✖ Real-Time Alerts</li>
@@ -717,7 +731,7 @@
           <li>✔ 5,000 Monthly AI Insights</li>
           <li>✔ Advanced Multi-Touch Attribution</li>
           <li>✔ Campaign Optimisation Suggestions</li>
-          <li>✔ Campaign Optimisation Suggestions</li>
+          <li>✔ Campaign Optimisation </li>
           <li>✔ Chat + Priority Support</li>
         </ul>
 
@@ -740,7 +754,7 @@
           <li>✔ Full Customer Journey Mapping</li>
           <li>✔ API Access (Full)</li>
           <li>✔ Dedicated Account Support</li>
-          <li>✔ Onboarding & Strategy Call</li>
+          
         </ul>
 
         <a href="payment.html" class="plan-button subscribe-btn">Subscribe</a>
@@ -780,7 +794,7 @@
 
     <div>
       <img src="assets/img/logo.png" class="logo-img">
-      <p class="footer-description">Know what works , Where to invest.</p>
+      <p class="footer-description">Your Compass for Smarter Growth.</p>
     </div>
 
     <div>
@@ -810,7 +824,6 @@
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="mailto:hello@salecompass.uk">📧salecompass.uk@gmail.com</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
@@ -873,7 +886,6 @@ document.querySelectorAll('.subscribe-btn').forEach(btn => {
 
 </body>
 </html>
-
 
 
 
