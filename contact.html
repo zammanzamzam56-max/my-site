@@ -128,7 +128,7 @@
       max-width: 1180px;
     }
 
-    /* Left Column: "Let’s Start a Conversation" + Contact Info */
+    /* Left Column */
     .contact-left {
       flex: 1;
     }
@@ -146,7 +146,7 @@
       margin-bottom: 12px;
       color: #333;
       line-height: 1.6;
-       padding-left:10px;
+      padding-left:10px;
     }
 
     .contact-info {
@@ -175,11 +175,16 @@
       color: #f3e2e2;
     }
 
-    /* Right Column: Contact Form */
-    .contact-form-container {
+    /* Right Column wrapper (Form + Booking Calendar) */
+    .contact-right {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-width: 0;
     }
 
+    /* Contact Form card */
     .contact-form {
       background: white;
       padding: 30px;
@@ -220,6 +225,68 @@
       background: #ff8c3a;
     }
 
+    /* ---------------- BOOKING CALENDAR (date + time) ---------------- */
+    .booking-card{
+      background:#fff;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.06);
+      border:1px solid #e5e5e5;
+      min-width: 0;
+    }
+    .booking-card h3{
+      font-size:24px;
+      font-weight:800;
+      margin-bottom:8px;
+      color:#03102b;
+    }
+    .booking-card p{
+      margin-bottom:14px;
+      color:#333;
+      line-height:1.6;
+    }
+    .booking-form label{
+      font-weight:600;
+      margin-top:14px;
+      margin-bottom:6px;
+      display:block;
+    }
+    .booking-form input,
+    .booking-form textarea{
+      width:100%;
+      padding:14px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      font-size:1rem;
+    }
+    .booking-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .booking-form button{
+      margin-top:18px;
+      width:100%;
+      background:#03102b;
+      color:#fff;
+      padding:14px;
+      font-size:1.1rem;
+      border-radius:10px;
+      border:none;
+      cursor:pointer;
+      transition:.3s ease;
+    }
+    .booking-form button:hover{
+      background:#ff8c3a;
+    }
+    .booking-note{
+      display:block;
+      margin-top:10px;
+      color:#666;
+      font-size:12px;
+      line-height:1.4;
+    }
+
     /* ---------------- MOBILE VIEW ---------------- */
     @media (max-width: 768px) {
       .contact-wrapper {
@@ -227,8 +294,17 @@
         gap: 30px;
       }
 
-      .contact-left, .contact-form-container {
+      .contact-left, .contact-right {
         max-width: 100%;
+      }
+
+      .contact-form,
+      .booking-card {
+        padding: 18px;
+      }
+
+      .booking-grid{
+        grid-template-columns:1fr;
       }
 
       .contact-info {
@@ -236,7 +312,8 @@
         margin-top: 30px;
       }
     }
-      footer {
+
+    footer {
       position: relative;
       background: #001437;
       color: white;
@@ -248,7 +325,7 @@
       grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
       gap: 30px;
     }
-     .logo-img {
+    .logo-img {
       height: 120px !important;
       width: auto;
       object-fit: contain;
@@ -283,99 +360,59 @@
       display: block !important;
     }
 
-   @media (max-width: 768px) {
+    @media (max-width: 768px) {
+      .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 32px !important;
+      }
+      .footer-grid .logo-img {
+        margin: 0 auto !important;
+      }
+      .footer-description {
+        margin: 10px auto !important;
+        text-align: center !important;
+        max-width: 90% !important;
+      }
+      .footer-grid div {
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .footer-links {
+        text-align: center !important;
+      }
+      .footer-links li a {
+        font-size: 18px !important;
+        padding: 6px 0 !important;
+      }
+      .footer-grid div:last-child ul li {
+        font-size: 18px !important;
+      }
 
-  /* Stack footer content */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
-
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
-
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
-
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
-
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
-     /* Prevent horizontal scrolling */
-html, body {
-  width: 100%;
-  overflow-x: hidden !important; /* Stop horizontal scroll */
-}
-
-/* Ensure containers fit within the viewport */
-.container {
-  width: 100%;
-  max-width: 100% !important;
-  padding: 0 20px; /* Keep some padding */
-}
-
-/* Ensure images don't overflow */
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Prevent content overflow in flex or grid layouts */
-.contact-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* Flex layout fix for mobile */
-@media (max-width: 768px) {
-  .contact-wrapper {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-/* Ensure no overflow in sections */
-section {
-  overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  section {
-    overflow: visible;
-  }
-}
-
+      html, body {
+        width: 100%;
+        overflow-x: hidden !important;
+      }
+      .container {
+        width: 100%;
+        max-width: 100% !important;
+        padding: 0 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+      section {
+        overflow: visible;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- ---------------- HEADER ---------------- -->
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="SaleCompass Logo"></a>
@@ -392,7 +429,6 @@ section {
   </div>
 </header>
 
-<!-- ---------------- HERO ---------------- -->
 <section class="contact-hero">
   <div class="container">
     <h2>Get in Touch</h2>
@@ -400,9 +436,7 @@ section {
   </div>
 </section>
 
-<!-- ---------------- CONTACT SECTION ---------------- -->
 <section class="contact-wrapper">
-  <!-- Left Column: Contact Info -->
   <div class="contact-left">
     <h3>Let’s Start a Conversation</h3>
     <p>Our team is here to help you understand your data, improve your marketing performance, and unlock confident growth.</p>
@@ -414,35 +448,66 @@ section {
         <li><strong>Email:</strong> 📧Danyal.mohiuddin@salecompass.uk</li>
         <li><strong>Email:</strong> 📧info@salecompass.uk</li>
         <li><strong>Email:</strong> 📧careers@salecompass.uk</li>
-        
         <li><strong>Address:</strong> 📍London, United Kingdom</li>
       </ul>
     </div>
   </div>
 
-  <!-- Right Column: Contact Form -->
-  <div class="contact-form">
-    <form action="https://formspree.io/f/movobzbg" method="POST">
-      <label>Your Name</label>
-      <input type="text" name="name" required>
+  <div class="contact-right">
+    <div class="contact-form">
+      <form action="https://formspree.io/f/movobzbg" method="POST">
+        <label>Your Name</label>
+        <input type="text" name="name" required>
 
-      <label>Email Address</label>
-      <input type="email" name="email" required>
+        <label>Email Address</label>
+        <input type="email" name="email" required>
 
-      <label>Country</label>
-      <textarea name="Select a country"  required></textarea>
+        <label>Country</label>
+        <textarea name="country" rows="1" required></textarea>
+
+        <label>Your Message</label>
+        <textarea name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Booking Calendar (date + time) -->
+    <div class="booking-card">
+      <h3>Book a reservation</h3>
+      <p>Select a date and time and send your request.</p>
+
+      <form class="booking-form" action="https://formspree.io/f/movobzbg" method="POST">
+        <input type="hidden" name="form_type" value="Reservation Request">
+
+        <label for="bookName">Your Name</label>
+        <input id="bookName" name="reservation_name" type="text" required>
+
+        <label for="bookEmail">Email Address</label>
+        <input id="bookEmail" name="reservation_email" type="email" required>
+
+        <div class="booking-grid">
+          <div>
+            <label for="bookDate">Select Date</label>
+            <input id="bookDate" name="reservation_date" type="date" required>
+          </div>
+          <div>
+            <label for="bookTime">Select Time</label>
+            <input id="bookTime" name="reservation_time" type="time" required>
+          </div>
+        </div>
+
+        <label for="bookNote">Notes (optional)</label>
+        <textarea id="bookNote" name="reservation_notes" rows="3"></textarea>
+
+        <button type="submit">Request Reservation</button>
+      </form>
+
       
-  
-      
-       <label>Your Message</label>
-      <textarea name="message" rows="4" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+    </div>
   </div>
 </section>
 
-<!-- ---------------- FOOTER ---------------- -->
 <footer class="site-footer fade-up">
   <div class="container footer-grid">
     <div>
@@ -474,10 +539,9 @@ section {
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        
-      <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
+        <li><a href="mailto:hello@salecompass.uk">📧Danyal.mohiuddin@salecompass.uk</a></li>
+        <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
-        <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
         <li><a href="#">📍London,United Kingdom</a></li>
       </ul>
     </div>
@@ -504,8 +568,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
-
-
-
-
