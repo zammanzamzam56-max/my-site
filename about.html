@@ -3,44 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | SaleCompass</title>
+  <title>Research & Development | SaleCompass</title>
   <link rel="icon" type="image/png" href="assets/img/logo.png">
 
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    body { overflow-x: hidden; background:white; }
-    img { max-width:100%; display:block; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { overflow-x: hidden; background: #ffffff; font-family: system-ui, sans-serif; color: #03102b; }
+    img { max-width: 100%; display: block; }
 
     .container {
-      max-width:1180px;
-      margin:auto;
-      padding:0 20px;
-      box-sizing: border-box;
+      width: 92%;
+      max-width: 1180px;
+      margin: 0 auto;
     }
-    /* Reduce space above the mission and vision boxes on desktop */
-.mission-vision-section {
-  margin-top: 20px; /* Reduced margin */
-}
+    /* FIX read-more toggle in mobile */
 
-.mission-vision-section .mission-box, 
-.mission-vision-section .vision-box {
-  padding-top: 10px; /* Adjust padding to reduce extra space */
-}
 
-/* On mobile (max-width: 768px) */
-@media (max-width: 768px) {
-  .mission-box {
-    margin-top: 10px; /* Reduce space above mission box only on mobile */
-  }
+.publication-full {
+  max-height: 0;
+  overflow: hidden;
+  display: none;
+  transition: max-height 0.4s ease;
+  white-space: normal;
 }
 
 
-    /* =============================== HEADER =============================== */
+    /* ================= HEADER ================= */
     .site-header {
-      padding:10px 0 !important;
-      background:white;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+      padding: 10px 0;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
     }
     .logo img {
       height: 85px;
@@ -54,278 +62,459 @@
       overflow: visible !important;
       align-items: center;
     }
-
-    .nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .logo img {
-      height:85px;
-      object-fit:contain;
-    }
-
     nav.menu a {
-      padding:8px 14px;
-      border-radius:6px;
-      transition:.25s ease;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #03102b;
+      transition: 0.25s ease;
+      text-decoration: none;
     }
     nav.menu a:hover {
-      background:#ff8c3a;
-      color:white !important;
+      background: #ff8c3a;
+      color: #ffffff !important;
     }
-
-    nav.menu a.active {
-      font-weight:700;
-      color:#ff8c3a !important;
-    }
-
     nav.menu a.btn.primary {
-      background:#03102b;
-      color:white !important;
-      padding:10px 18px;
-      border-radius:6px;
+      background: #03102b;
+      color: #ffffff !important;
+      padding: 10px 18px;
+      border-radius: 6px;
     }
     nav.menu a.btn.primary:hover {
-      background:#ff8c3a !important;
+      background: #ff8c3a !important;
     }
 
-    /* =============================== HERO =============================== */
-    .about-hero {
-      position:relative;
-      background:url("assets/img/about-bg.png") center/cover no-repeat;
-      min-height:420px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:white;
+    /* ================ HERO SECTION ================ */
+    .page-hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)),
+        url("assets/img/R&D.png") center/cover no-repeat;
+      padding: 140px 0 120px; /* slightly reduced */
+      text-align: center;
+      color: #f8eded;
+    }
+    .page-hero h1 {
+      font-size: 46px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .page-hero p.lead {
+      font-size: 20px;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #f8eded;
     }
 
-    .about-hero::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(1,3,8,0.82);
+    /* ================ SECTIONS ================ */
+    section {
+      padding: 60px 0; /* reduced from 80 to tighten page */
+    }
+    section.alt {
+      background: #f9fafb;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 20px;  /* no top margin to avoid extra gap under hero */
+      margin-top: -50px ;
     }
 
-    .about-hero .container {
-      position:relative;
-      z-index:2;
+    .two-col {
+      display: grid;
+      grid-template-columns: 2fr 0.9fr;
+      gap: 40px;
+      align-items: start;
     }
 
-    .about-hero h1 {
-      font-size:48px;
-      font-weight:800;
-      margin-bottom:12px;
-      color:white !important;
+    .info-card {
+      background: #ffffff;
+      padding: 48px 42px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      box-sizing:content-box;
+    }
+    .info-card:hover {
+      transform: translateY(-6px);
+      border-left: 6px solid #ff8c3a;
+      background: #fff9f3;
+      padding: 48px 42px;
+    }
+    .info-card ul {
+      margin: 12px 0;
+      padding-left: 18px;
+      line-height: 1.6;
     }
 
-    .hero-subtext {
-      font-size:20px;
-      max-width:760px;
-      margin:0 auto;
-      line-height:1.6;
-      color:white !important;
+    /* ===== RIGHT COLUMN PHOTOS (PHOTO1 + PHOTO2) ===== */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .photo-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
     }
 
-    /* =============================== ABOUT - TWO COLUMN =============================== */
-    .about-section {
-      padding:80px 0;
-     background:#03101f;
-       color: #e4ecf7
+    /* ================ FOUNDER SECTION ================ */
+    .founder-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .founder-card {
+     background: #02060e; 
+      color: #ffffff;
+      border-radius: 0px;
+      padding: 30px 24px;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+    }
+    .founder-card:hover {
+      background: #ff8c3a;
+      color: #ffffff;
+      transform: translateY(-6px);
+    }
+    
+    .founder-card h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .founder-card p {
+      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 12px;
     }
 
-    .about-flex {
-      display:flex;
-      align-items:center;
-      gap:40px;
+    .founder-image {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      max-width: 420px;          /* smaller image */
+      margin-left: auto;
     }
-
-    .about-card {
-      flex:0 0 48%;
-     background:rgb(6, 1, 29);
-      padding:32px;
-      border-radius:16px;
-      box-shadow:0 6px 25px rgba(0,0,0,0.07);
+    .founder-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
-
-    .about-photo {
-      flex:0 0 52%;
-    }
-    .about-photo img {
-      width:85%;
-      margin:auto;
-      border-radius:16px;
-      box-shadow:0 6px 25px rgba(0,0,0,0.08);
-    }
-
-    @media(max-width:900px) {
-      .about-flex {
-        flex-direction:column;
-        text-align:center;
-      }
-      .about-card, .about-photo {
-        flex:100%;
-      }
-      .about-photo img {
-        width:100%;
-      }
-    }
-
-    /* =============================== GRID SECTIONS =============================== */
-    .mv-section {
-      padding:60px 0 40px;      /* bottom reduced to tighten space before Core Values */
-      background:#f9fafb;
-    }
-
-    .values-section {
-      padding:40px 0 50px;      /* reduced top spacing */
-      background:radial-gradient(circle at top, #024065 0%, #022443 55%, #010a1f 100%);
-      color:#ffffff;
-    }
-
-    .why-section {
-      padding:40px 0 60px;      /* reduced top spacing */
-      background:#f9fafb;
-    }
-
-    .mv-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:28px;
-    }
-
-    .mv-card {
-      background:white;
-      padding:32px;
-      border-radius:16px;
-      box-shadow:0 6px 25px rgba(0,0,0,0.07);
-      transition:.3s ease;
-      overflow:hidden;
-    }
-
-    .mv-card img {
-      width:100%;
-      border-radius:12px 12px 0 0;
-      margin-bottom:16px;
-      display:block;
-      height:300px;
-      width:600px
-
-    }
-
-    .mv-card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 12px 30px rgba(0,0,0,0.12);
-    }
-
-    .center-title {
-      font-size:34px;
-      font-weight:800;
-      text-align:center;
-      color:#010a1f;
-      margin-bottom:30px;
-    }
-
-    /* Core Values heading like screenshot */
-    .values-section .center-title {
-      color:#ffffff;
-      margin-bottom:10px;
-    }
-    .values-subtitle {
-      text-align:center;
-      max-width:620px;
-      margin:0 auto 30px;
-      font-size:16px;
-      line-height:1.6;
-      color:#e4ecf7;
-    }
-
-    .values-grid, .why-grid {
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:28px;
-    }
-
-    @media(max-width:1024px) {
-      .values-grid, .why-grid { grid-template-columns:repeat(2,1fr); }
-    }
-    @media(max-width:600px) {
-      .values-grid, .why-grid { grid-template-columns:1fr; }
-    }
-
-    .value-card,
-    .why-card {
-      border-radius:16px;
-      padding:32px;
-      box-shadow:0 6px 25px rgba(0,0,0,0.07);
-      transition:0.3s ease;
-    }
-
-   /* ======================= CORE VALUES IMPROVEMENTS ======================= */
-.value-card {
-  background: #ffffff;
-  text-align: center;
-  border-radius: 16px;
-  padding: 32px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s ease;
-  cursor: default;
+    /* Tighter spacing around founder section */
+section.alt {
+  background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);
+  padding: 40px 0 50px !important; /* tightened spacing */
 }
 
-.value-card > div:first-child {
-  font-size: 42px;
+/* ===== FOUNDER CARD (image + text in one container) ===== */
+.founder-wrapper {
+  margin-top: 0px;
+}
+
+.founder-card {
+ background: #02060e;         /* navy */
+  color: #ffffff;
+  
+   border-radius: 0px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+  transition: 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  height: 400px;
+  width: 1200px;
   margin-bottom: 10px;
 }
 
-.value-card h4 {
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: #03102b;
+.founder-card:hover {
+  background: #00060f;             /* orange on hover */
+  transform: translateY(-6px);
+}
+
+.founder-photo {
+  flex: 0 0 40%;
+}
+
+.founder-photo img {
+  width: 80%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  height: 380px;
+}
+
+
+.founder-content {
+  flex: 1;
+}
+
+.founder-content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
-.value-card p {
-  font-size: 15px;
-  color: #050653;
-  line-height: 1.6;
-  margin: 0;
-  opacity: 1; /* text now fully visible */
+.founder-content p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin-bottom: 10px;
 }
 
-/* Hover effect similar to Salesloft style */
-.value-card:hover {
-  transform: translateY(-6px);
-  background: linear-gradient(135deg, #ad6303 0%, #08012e 100%);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+.founder-meta {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
-.value-card:hover h4,
-.value-card:hover p,
-.value-card:hover div:first-child {
-  color: #ffffff !important;
-  opacity: 1 !important;
+/* Mobile layout: stack image above text */
+
+/* MOBILE FIX: About the Founder section */
+
+@media (max-width: 768px) {
+
+  /* Container spacing */
+  .about-founder,
+  .founder-card {
+    padding: 16px;
+    height: 500px;
+  }
+
+  /* Image wrapper */
+  .founder-image-wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  /* Image itself */
+  .founder-image-wrapper img,
+  .founder-card img {
+    width: 700px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    
+  }
+
+  /* Prevent image cropping */
+  .founder-card {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+  }
+
+  /* Text spacing */
+  .founder-text {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Heading spacing */
+  .about-founder h2 {
+    margin-bottom: 12px;
+  }
+  .founder-card{
+  width: 100%;
+  max-width: 520px;          /* increase card size on desktop */
+  background: #0b0b0b;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: auto;              /* IMPORTANT: no fixed height */
+  box-sizing: border-box;
+}
 }
 
-    /* ======================= WHY SECTION GRADIENT EFFECT ======================= */
-    .why-card {
-      background:white;
-    }
-    .why-card:hover {
-      background:linear-gradient(135deg, #ad6303 0%,#08012e 100%);
-      color:white !important;
-      transform:translateY(-6px);
-      box-shadow:0 12px 30px rgba(0,0,0,0.18);
-    }
-    .why-card:hover h4,
-    .why-card:hover p {
-      color:white !important;
+
+
+    /* ================ PUBLICATIONS SECTION ================ */
+    .intro-card {
+      margin-bottom: 20px;
+      margin-top:10px;
+      
     }
 
-    /* ======================= FOOTER ======================= */
-   @media (max-width: 768px) {
+
+    .pub-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 24px;
+      margin-top: 6px;
+    }
+    .pub-card {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+    .pub-card:hover {
+      transform: translateY(-6px);
+      border-left: 6px solid #ff8c3a;
+      background: #fff9f3;
+    }
+    .pub-card h4 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    .pub-card p {
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+    .hidden-text {
+      display: none;
+    }
+    .read-more-btn {
+      cursor: pointer;
+      font-weight: 600;
+      color: #004c99;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 24px; /* reduced */
+    }
+    .highlight-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      text-align: left;
+    }
+    .highlight-card:hover {
+      transform: translateY(-6px);
+      border-left: 6px solid #ff8c3a;
+      background: #fff9f3;
+    }
+
+    /* ================ FOOTER (MATCH OTHER PAGES) ================ */
+    footer {
+      position: relative;
+      background: #001437;
+      color: #ffffff;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+    .logo-img {
+      height: 120px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .footer-description {
+      font-size: 12px;
+      color: #ffffff;
+      margin-top: -10px;
+      line-height: 1.3;
+      max-width: 260px;
+    }
+    .footer-links a {
+      color: #ff8c3a;
+      text-decoration: none;
+    }
+    .tiny {
+      color: #ff8c3a;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .footer-watermark {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 260px;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+
+    /* ================ MOBILE FIX ================ */
+    html, body {
+      width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        width: 94% !important;
+        max-width: 100% !important;
+        padding: 0 14px !important;
+      }
+
+      .page-hero {
+        padding: 120px 0 80px;
+      }
+      .page-hero h1 {
+        font-size: 30px;
+      }
+      .page-hero p.lead {
+        font-size: 16px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .photo-grid {
+        gap: 14px;
+      }
+
+      .founder-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .founder-image {
+        margin: 0 auto;
+        max-width: 360px;
+      }
+
+      .pub-list {
+        grid-template-columns: 1fr;
+      }
+
+      .highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-description {
+        margin-top: 4px;
+        max-width: 100%;
+      }
+      .footer-watermark {
+        display: none;
+      }
+    }
+    @media (max-width: 768px) {
 
   /* Stack footer content */
   .footer-grid {
@@ -372,9 +561,7 @@
     display: none !important;
   }
 }
-
-    /* =============================== FOOTER (MATCHED TO CASE STUDIES) =============================== */
-    footer {
+footer {
       position: relative;
       background: #001437;
       color:white;
@@ -396,7 +583,6 @@
   align-items: center;        /* centers logo + tagline */
   text-align: center;
 }
-    
 
 .footer-description {
       font-size:12px;
@@ -429,272 +615,204 @@
       opacity: 0.09;
       pointer-events: none;
     }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
+    /* Allow publication body to expand on phones */
+.publication-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  white-space: normal !important;
+}
 
-    
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
-
-    .footer-links a { color:#ff8c3a; }
-
-    .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
-
-    /* =============================== MOBILE & TABLET FIXES =============================== */
-    @media (max-width: 900px) {
-      .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 16px;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
-
-      .site-header .nav {
-        gap: 12px;
-      }
-
-      .hero {
-        height: auto;
-        min-height: 80vh;
-        padding: 80px 0 40px;
-        background-position: center;
-      }
-
-      .hero-content h1 {
-        font-size: 30px;
-      }
-
-      .hero-content p {
-        font-size: 16px;
-      }
-
-      .ps-grid {
-        padding: 40px 0;
-      }
-
-      .ps-row-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-        padding-bottom: 50px;
-      }
-
-      .who-grid {
-        grid-template-columns:1fr;
-      }
-
-      .client-track {
-        gap:40px;
-      }
-
-      .footer-watermark {
-        position: relative;
-        display: block;
-        margin: 30px auto 0;
-        height: 140px;
-        opacity: 0.15;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero-content h1 {
-        font-size: 26px;
-      }
-      .hero-content p {
-        font-size: 15px;
-      }
-      .hero-cta {
-        flex-direction: column;
-      }
-      .hero-cta .btn {
-        width: 100%;
-        max-width: 260px;
-        margin: 0 auto;
-      }
-    } 
-
-    /* =============================== MOBILE FIXES =============================== */
-    @media (max-width: 900px) {
-      .container {
-        width: 94% !important;
-        margin: 0 auto !important;
-        padding: 0 14px !important;
-        overflow-x: hidden;
-      }
-      body {
-        overflow-x: hidden !important;
-      }
-    }
-
+/* Mobile fix: allow expansion */
+@media(max-width: 768px) {
+  .publication-full {
+    max-height: none !important;   /* FULLY EXPANDS */
+    overflow: visible !important;  /* SHOW TEXT */
+  }
+}
 
   </style>
 </head>
 
 <body>
 
-<!-- ======================== HEADER ======================== -->
 <header class="site-header">
   <div class="container nav">
-    <a class="logo" href="index.html"><img src="assets/img/logo.png"></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="SaleCompass Logo"></a>
     <button class="menu-toggle" aria-expanded="false">☰</button>
     <nav class="menu">
       <a href="index.html">Home</a>
-      <a class="active" href="about.html">About</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="case-studies.html">Case Studies</a>
-      <a href="research.html">R&amp;D</a>
+      <a class="active" href="research.html">R&amp;D</a>
       <a href="success-stories.html">Success Stories</a>
       <a class="btn primary" href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- ======================== HERO ======================== -->
-<section class="about-hero">
+<!-- HERO -->
+<section class="page-hero">
   <div class="container">
-    <h1>About SaleCompass</h1>
-    <p class="hero-subtext">
-      A modern AI-powered marketing intelligence platform helping SMEs understand what truly drives performance.
+    <p class="kicker">Research & Development</p>
+    <h1>Built on real market needs. Backed by scientific research.</h1>
+    <p class="lead">
+      SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.
     </p>
   </div>
 </section>
 
 <main>
+   <section class="section-alt">
+  <div class="container founder-wrapper">
+    <h2 class="section-title" style="margin-bottom: 18px;">About the Founder</h2>
 
-<!-- ======================== WHAT IS SALECOMPASS ======================== -->
-<section class="about-section">
-  <div class="container about-flex">
-    <div class="about-card">
-      <h2>What is SaleCompass?</h2>
-      <p>SaleCompass helps SMEs understand what truly works by unifying all digital and offline data into one intelligent dashboard backed by AI-driven analytics.</p>
-      <p>From predictive analytics to multi-touch attribution, SaleCompass removes guesswork and empowers every business to make confident, data-backed decisions.</p>
-    </div>
-    <div class="about-photo">
-      <img src="assets/img/Who we are.jpg" alt="Who We Are">
-    </div>
-  </div>
-</section>
-
-<!-- ======================== MISSION / VISION ======================== -->
-<section class="mv-section">
-  <div class="container mv-grid">
-
-    <div class="mv-card">
-      <img src="assets/img/Our mission.jpg" alt="Our Mission">
-      <h3>Our Mission</h3>
-      <p>Empower SMEs with enterprise-grade marketing intelligence that is simple, affordable, and effective.</p>
-      <p class="hidden-text">We believe every business deserves clarity and confidence.</p>
-      
-    </div>
-
-    <div class="mv-card">
-      <img src="assets/img/Our vision.jpg" alt="Our Vision">
-      <h3>Our Vision</h3>
-      <p>To become the world’s most accurate, accessible, and AI-powered marketing intelligence platform.</p>
-      <p class="hidden-text">Our goal is to democratize data-driven growth.</p>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ======================== VALUES ======================== -->
-<section class="values-section">
-  <div class="container">
-    <h2 class="center-title">Our Core Values</h2>
-    <p class="values-subtitle">
-      Our values guide how we think, collaborate, and deliver results for every customer we work with.
-    </p>
-
-    <div class="values-grid">
-      <div class="value-card">
-        <div>✨</div>
-        <h4>Simplicity</h4>
-        <p>We turn complex signals into clear, actionable insights.</p>
+    <div class="founder-card">
+      <div class="founder-photo">
+        <img src="assets/img/photo4.jpeg" alt="Danyal Mohiuddin">
       </div>
 
-      <div class="value-card">
-        <div>🔍</div>
-        <h4>Transparency</h4>
-        <p>No black boxes just honest, explainable data stories.</p>
-      </div>
-
-      <div class="value-card">
-        <div>📊</div>
-        <h4>Accuracy</h4>
-        <p>Every recommendation is grounded in real performance data.</p>
-      </div>
-
-      <div class="value-card">
-        <div>🚀</div>
-        <h4>Innovation</h4>
-        <p>We continuously experiment so our customers stay ahead.</p>
+      <div class="founder-content">
+        <p>
+          Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics, and
+          marketing science forms the backbone of SaleCompass. His research has been
+          published and presented in IEEE conferences and journals, with a focus on
+          how AI can be used responsibly in real-world marketing.
+        </p>
+        <p>
+          Drawing from interviews with SME founders, food businesses, and marketing
+          teams across the UK and beyond, he designed SaleCompass to solve one
+          recurring problem: data everywhere, but no clarity. The platform is built
+          to give business owners confidence in every marketing decision.
+        </p>
+        <div class="founder-meta">
+          <strong>Vision:</strong> To democratise marketing intelligence so that
+          small and mid-sized businesses can access the kind of insight that was
+          once reserved only for large enterprises.
+          
+          <div class="founder-contact">
+            
+            <strong>Contact at:</strong>📧Danyal.mohiuddin@salecompass.uk</a></li>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+  <!-- SECTION 1: Market Interviews -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
+      <div class="two-col">
+        <div class="info-card">
+          <h3>Understanding the Real Problems Before Building the Solution</h3>
+          <p>
+            At SaleCompass, research began long before a single line of code.
+            Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
+            market interviews, discovery meetings, and surveys.
+          </p>
+          <ul>
+            <li>CEOs of food businesses</li>
+            <li>Restaurant owners & managers</li>
+            <li>Marketing teams & agencies</li>
+            <li>UK SME founders</li>
+          </ul>
+          
+        </div>
 
-<!-- ======================== WHY US ======================== -->
-<section class="why-section">
-  <div class="container">
-    <h2 class="center-title">Why Businesses Choose SaleCompass</h2>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <h4>All Data in One Place</h4>
-        <p>Every touchpoint unified in a single dashboard.</p>
-      </div>
-
-      <div class="why-card">
-        <h4>Real-Time Insights</h4>
-        <p>Live analytics and predictive alerts.</p>
-      </div>
-
-      <div class="why-card">
-        <h4>AI Recommendations</h4>
-        <p>Optimize spend using real data.</p>
-      </div>
-
-      <div class="why-card">
-        <h4>Built for SMEs</h4>
-        <p>Enterprise tools without the enterprise complexity.</p>
+        <!-- photo1 + photo2 back, stacked -->
+        <div class="photo-grid">
+          <figure class="photo-card">
+            <img src="assets/img/photo1.png" alt="Market research session 1">
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/img/photo2.png" alt="Market research session 2">
+          </figure>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  
+
+  <!-- SECTION 3: Scientific Foundations & Publications -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">SECTION 2: Scientific Foundations</h2>
+
+      <div class="info-card intro-card">
+        <h3>Academic Rigor That Fuels Technological Innovation</h3>
+        <p>
+          SaleCompass is rooted in the founder’s scientific research in AI, machine learning,
+          marketing analytics, ethics, and consumer behaviour. This work has been
+          published and presented in IEEE conferences and journals, ensuring that
+          the platform is grounded in evidence – not guesswork.
+        </p>
+      </div>
+
+      <article class="pub-card">
+  <h4>Publication 1: Ethical AI in Marketing</h4>
+
+  <p><strong>AI in Marketing: Ethical Challenges and Solutions for Consumers and Society</strong></p>
+  <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan (Ravensbourne University London)</p>
+
+  <div class="publication-full" id="pub1">
+    This study explores how consumers evaluate the morality of AI-powered marketing,
+    highlighting risks around privacy, manipulation, and transparency.
+    It also proposes practical frameworks for building trustworthy AI systems
+    that respect consumer rights while still driving commercial outcomes.
+  </div>
+
+  <a class="pub-link" onclick="togglePub('pub1', this)">Read more →</a>
+</article>
+
+      <article class="pub-card">
+  <h4>Publication 2: Multi-Channel Food Marketing</h4>
+
+  <p><strong>AI and Machine Learning Enhance Multi-Channel Marketing Effectiveness in the Food Industry</strong></p>
+
+  <div class="publication-full" id="pub2">
+    This research addresses a persistent challenge in the food and hospitality sector:
+    fragmented data across delivery apps, in-store sales, and digital ads.
+    The paper shows how predictive models and attribution algorithms improve
+    campaign performance, reduce waste, and reveal which channels really move revenue.
+  </div>
+
+  <a class="pub-link" onclick="togglePub('pub2', this)">Read more →</a>
+</article>
+
+      </div>
+
+      <div class="highlights">
+        <div class="highlight-card">
+          <h4>Ethical AI</h4>
+          <p>Transparent, privacy-aware analytics that respect both customers and brands.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Marketing Analytics</h4>
+          <p>Unifies online and offline touchpoints into one interpretable model.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Continuous R&amp;D</h4>
+          <p>Ongoing experiments and publications keep SaleCompass ahead of the curve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- ======================== FOOTER ======================== -->
-<footer class="site-footer fade-up">
+<!-- FOOTER (same style as other pages) -->
+<footer class="site-footer">
   <div class="container footer-grid">
+
     <div>
-      <img src="assets/img/logo.png" class="logo-img">
-      <p class="footer-description">Your Compass for Smarter Growth.</p>
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass Logo">
+      <p class="footer-description">
+        Your Compass for Smarter Growth.
+      </p>
     </div>
+
     <div>
       <h4>Links</h4>
       <ul class="footer-links">
@@ -706,10 +824,11 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
+
     <div>
       <h4>Services</h4>
       <ul class="footer-links">
-       <li><a href="services.html">Attribution Engine</a></li>
+        <li><a href="services.html">Attribution Engine</a></li>
         <li><a href="services.html">Predictive Analytics</a></li>
         <li><a href="services.html">Sentiment Intelligence</a></li>
         <li><a href="services.html"> Real-Time Dashboards</a></li>
@@ -717,6 +836,7 @@
         <li><a href="services.html">Automation Engine</a></li>
       </ul>
     </div>
+
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
@@ -724,17 +844,36 @@
         <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
         <li><a href="tel:+441234567890">📞+44 123 456 7890</a></li>
-         <li><a href="location">📍London,United Kingdom</a></li>
+        <li><a href="location">📍London,United Kingdom</a></li>
       </ul>
     </div>
+
   </div>
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
+
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass watermark">
+
   <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
 </footer>
 
-<!-- JS -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+function togglePub(id, btn) {
+  const box = document.getElementById(id);
+
+  // If closed → open it
+  if (box.style.maxHeight === "0px" || !box.style.maxHeight) {
+    box.style.maxHeight = "1000px";  /* enough for full text */
+    box.style.display = "block";
+    btn.textContent = "Show less ↑";
+  } 
+
+  // If open → close it
+  else {
+    box.style.maxHeight = "0px";
+    box.style.display = "none";
+    btn.textContent = "Read more →";
+  }
+}
+  document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
   const y = document.getElementById("year");
@@ -749,15 +888,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
 
