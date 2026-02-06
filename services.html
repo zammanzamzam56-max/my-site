@@ -545,6 +545,33 @@
         opacity: 0.15;
       }
 }
+    /* FIX EMAIL ICON POSITION – ICON BEFORE TEXT */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-item img,
+.contact-item svg {
+  order: 0;
+  flex-shrink: 0;
+}
+
+.contact-item span,
+.contact-item a {
+  order: 1;
+  white-space: nowrap;
+}
+
+/* MOBILE SAFETY */
+@media (max-width: 768px) {
+  .contact-item {
+    justify-content: flex-start;
+  }
+}
+
 
   </style>
 </head>
@@ -875,10 +902,10 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
+        
          <li><a href="mailto:hello@salecompass.uk">📧Danyal.mohiuddin@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
-        
         <li><a href="location">📍London,United Kingdom</a></li>
       </ul>
     </div>
@@ -938,6 +965,7 @@ document.querySelectorAll('.subscribe-btn').forEach(btn => {
 
 </body>
 </html>
+
 
 
 
