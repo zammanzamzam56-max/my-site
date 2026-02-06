@@ -471,12 +471,14 @@ span {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
+   
 }
 
 .pricing-card {
   flex: 1 1 300px;
   max-width: 360px;
   min-width: 280px;
+  margin-left:15px;
 }
 
 /* =========================
@@ -586,6 +588,7 @@ section,
 div {
   max-width: 100%;
 }
+
 
 
 
