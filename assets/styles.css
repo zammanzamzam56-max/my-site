@@ -398,5 +398,194 @@ footer.site-footer .container {
     padding-right: 20px;
   }
 }
+/* =========================
+   GLOBAL RESPONSIVE BASE
+   ========================= */
+
+/* Box model + overflow safety */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Media elements */
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography scaling */
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+p,
+li,
+a,
+span {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* =========================
+   FLEX & GRID DEFAULTS
+   ========================= */
+
+.flex {
+  display: flex;
+  gap: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* =========================
+   PRICING SECTION
+   ========================= */
+
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.pricing-card {
+  flex: 1 1 300px;
+  max-width: 360px;
+  min-width: 280px;
+}
+
+/* =========================
+   FOUNDER SECTION
+   ========================= */
+
+.founder-card {
+  overflow: hidden;
+}
+
+.founder-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.founder-text {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* =========================
+   CONTACT / FOOTER
+   ========================= */
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item img,
+.contact-item svg {
+  flex-shrink: 0;
+}
+
+.contact-item span,
+.contact-item a {
+  white-space: nowrap;
+}
+
+/* =========================
+   BREAKPOINTS
+   ========================= */
+
+/* Large laptops (≤1366px) */
+@media (max-width: 1366px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+/* Small laptops / tablets landscape */
+@media (max-width: 1200px) {
+  .founder-container {
+    flex-direction: column;
+  }
+
+  .pricing-container {
+    justify-content: center;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .contact-item {
+    justify-content: flex-start;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+}
+
+/* =========================
+   LAST-RESORT SAFETY
+   ========================= */
+
+/* Prevent layout breaking on weird screens */
+section,
+div {
+  max-width: 100%;
+}
+
 
 
