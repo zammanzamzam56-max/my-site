@@ -319,5 +319,84 @@ footer.site-footer .container {
   background: rgba(0, 32, 82, 0.55);
   z-index: -1;
 }
+/* ===== PRICING PLANS ROW ISSUE ===== */
+.pricing-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.pricing-card {
+  flex: 1 1 300px;
+  max-width: 360px;
+  min-width: 280px;
+}
+
+/* fallback for smaller laptops */
+@media (max-width: 1200px) {
+  .pricing-container {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== FOUNDER BOX TEXT OVERFLOW ===== */
+.founder-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.founder-text {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.founder-text p {
+  line-height: 1.6;
+}
+
+/* prevent text spilling outside */
+.founder-card {
+  overflow: hidden;
+}
+
+/* stack cleanly on smaller laptops */
+@media (max-width: 1100px) {
+  .founder-container {
+    flex-direction: column;
+  }
+}
+
+/* ===== EMAIL ICON NOT ALIGNING BEHIND TEXT ===== */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item img,
+.contact-item svg {
+  flex-shrink: 0;
+}
+
+.contact-item span,
+.contact-item a {
+  white-space: nowrap;
+}
+
+/* ===== GENERAL LAPTOP SAFETY NET ===== */
+@media (max-width: 1366px) {
+  .container,
+  .section,
+  .pricing-container,
+  .founder-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 
