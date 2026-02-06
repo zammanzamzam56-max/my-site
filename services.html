@@ -494,84 +494,6 @@
 .plan-features li {
   list-style-type: none;
 }
-    @media (max-width: 768px) {
-
-  /* Stack footer content */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
-
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
-
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
-
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
-
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
-
-  /* Hide huge watermark */
-   .footer-watermark {
-        position: relative;
-        display: block;
-        margin: 30px auto 0;
-        height: 140px;
-        opacity: 0.15;
-      }
-}
-    /* FIX EMAIL ICON POSITION – ICON BEFORE TEXT */
-.contact-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.contact-item img,
-.contact-item svg {
-  order: 0;
-  flex-shrink: 0;
-}
-
-.contact-item span,
-.contact-item a {
-  order: 1;
-  white-space: nowrap;
-}
-
-/* MOBILE SAFETY */
-@media (max-width: 768px) {
-  .contact-item {
-    justify-content: flex-start;
-  }
-}
-
 
   </style>
 </head>
@@ -762,7 +684,6 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✔ 200 Monthly AI Insights</li>
           <li>✔ Basic Attribution Model</li>
           <li>✔ POS Upload (Manual)</li>
-         
           <li>✖ Predictive Analytics </li>
           <li>✖ Automated Recommendations</li>
           <li>✖ Real-Time Alerts</li>
@@ -902,8 +823,7 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-        
-         <li><a href="mailto:hello@salecompass.uk">📧Danyal.mohiuddin@salecompass.uk</a></li>
+         <li><a href="mailto:hello@salecompass.uk">📧danyal.mohiuddin@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
         <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
         <li><a href="location">📍London,United Kingdom</a></li>
@@ -965,9 +885,6 @@ document.querySelectorAll('.subscribe-btn').forEach(btn => {
 
 </body>
 </html>
-
-
-
 
 
 
