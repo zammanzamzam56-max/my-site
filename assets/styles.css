@@ -478,7 +478,7 @@ span {
   flex: 1 1 300px;
   max-width: 360px;
   min-width: 280px;
-  margin-left:15px;
+  margin-left:25px;
 }
 
 /* =========================
@@ -588,6 +588,7 @@ section,
 div {
   max-width: 100%;
 }
+
 
 
 
