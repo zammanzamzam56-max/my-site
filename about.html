@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | SaleCompass</title>
   <link rel="icon" type="image/png" href="assets/img/logo.png">
-
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
@@ -102,6 +101,7 @@
       text-align:center;
       color:white;
       height: 500px;
+       height: 80vh;
     }
 
     .about-hero::before {
@@ -134,7 +134,7 @@
     /* =============================== ABOUT - TWO COLUMN =============================== */
     .about-section {
       padding:80px 0;
-     background:#03101f;
+     background:#010f23;
        color: #e4ecf7
     }
 
@@ -374,15 +374,7 @@
   }
 }
 
-    /* =============================== FOOTER (MATCHED TO CASE STUDIES) =============================== */
-    footer {
-      position: relative;
-      background: #001437;
-      color:white;
-      padding-top: 40px;
-      padding-bottom: 50px;
-    }
-
+   
     .logo-img {
       height: 120px !important;
       width: auto;
@@ -391,45 +383,17 @@
       margin-bottom: 6px;
     }
     /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
-.footer-grid > div:first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;        /* centers logo + tagline */
-  text-align: center;
-}
+
     
 
-.footer-description {
-      font-size:12px;
-      color:#ffffff;
-      margin-top:-10px !important;
-      line-height:1.3;
-      margin-left:-23px;
-      max-width:280px;
-    }
+
 
     /* Ensure logo and tagline stack nicely */
 
 
 
-    .footer-links a { color: #ff8c3a; }
-    .tiny {
-      color: #ff8c3a !important;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 16px;
-    }
-
-    /* Watermark (matched exactly) */
-    .footer-watermark {
-      position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 260px;
-      opacity: 0.09;
-      pointer-events: none;
-    }
+   
+    
     .logo img {
       height: 85px;
       width: auto;
@@ -457,7 +421,7 @@
       align-items: center;
     }
 
-    .footer-links a { color:#ff8c3a; }
+    
 
     .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
 
@@ -549,8 +513,320 @@
         overflow-x: hidden !important;
       }
     }
+    /* ===== GLOBAL FOOTER FIX FOR ALL PAGES ===== */
 
+.site-footer {
+  background: #070c16 !important;
+  color: #ffffff !important;
+  padding: 80px 0 45px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
 
+.site-footer .container {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+}
+
+.footer-four-col,
+.footer-grid,
+.footer-fixed-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr 1.4fr 1.2fr !important;
+  gap: 60px !important;
+  align-items: start !important;
+}
+
+.site-footer h4 {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  margin-bottom: 20px !important;
+}
+
+.logo-img {
+  height: 95px !important;
+  width: auto !important;
+  margin-bottom: 18px !important;
+}
+
+.footer-description {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  max-width: 260px !important;
+}
+
+.footer-links {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 13px !important;
+}
+
+.footer-links li,
+.footer-links a,
+.footer-links span {
+  color: #f1f1f1 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  text-decoration: none !important;
+}
+
+.footer-links a:hover {
+  color: #ff8c3a !important;
+}
+
+.footer-social-col {
+  text-align: left !important;
+}
+
+.footer-social-icons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin-top: 18px !important;
+}
+
+.footer-social-icons a {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: #0097a9 !important;
+  color: #03102b !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-size: 19px !important;
+  font-weight: 900 !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-social-icons a:hover {
+  background: #00bcd4 !important;
+  transform: translateY(-3px) !important;
+}
+
+.footer-watermark {
+  position: absolute !important;
+  right: -20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  height: 260px !important;
+  opacity: 0.06 !important;
+  pointer-events: none !important;
+}
+
+.tiny {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  color: #ff8c3a !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin: 55px auto 0 !important;
+  padding-top: 25px !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .footer-four-col,
+  .footer-grid,
+  .footer-fixed-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 45px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 60px 0 35px !important;
+  }
+
+  .footer-four-col,
+  .footer-grid,
+  .footer-fixed-grid {
+    grid-template-columns: 1fr !important;
+    gap: 38px !important;
+    text-align: center !important;
+  }
+
+  .footer-description {
+    margin: 0 auto !important;
+  }
+
+  .footer-links {
+    align-items: center !important;
+  }
+
+  .footer-social-col {
+    text-align: center !important;
+  }
+
+  .footer-social-icons {
+    justify-content: center !important;
+  }
+
+  .footer-watermark {
+    display: none !important;
+  }
+}
+    
+/* ===== GLOBAL NAVBAR STYLE SAME AS INDEX PAGE ===== */
+
+.site-header {
+  padding: 10px 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 999 !important;
+}
+
+.site-header .container {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+.site-header .nav,
+.nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  height: 50px !important;
+  overflow: visible !important;
+}
+
+.logo img {
+  height: 85px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  padding-top: 10% !important;
+}
+
+nav.menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+nav.menu a {
+  color: #03102b !important;
+  text-decoration: none !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: 0.25s ease !important;
+}
+
+nav.menu a:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.active {
+  color: #ff8c3a !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+nav.menu a.active:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.btn,
+nav.menu a.btn.primary {
+  background: #03102b !important;
+  color: #ffffff !important;
+  padding: 10px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+
+nav.menu a.btn:hover,
+nav.menu a.btn.primary:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+.menu-toggle {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  font-size: 24px !important;
+  cursor: pointer !important;
+  color: #03102b !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+  }
+
+  nav.menu {
+    display: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    position: absolute !important;
+    top: 70px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 18px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+    z-index: 998 !important;
+  }
+
+  nav.menu.open {
+    display: flex !important;
+  }
+
+  nav.menu a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+.site-footer .footer-links li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.footer-contact-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  min-width: 18px !important;
+}
+.footer-description {
+    margin-top: -18px !important;
+    padding-top: 0 !important;
+    line-height: 1.3 !important;
+}
+
+/* If still too low, reduce further */
+.footer-grid > div:first-child {
+    gap: 0 !important;
+}
+
+.logo-img {
+    margin-bottom: -8px !important;
+}
   </style>
 </head>
 
@@ -565,9 +841,10 @@
       <a href="index.html">Home</a>
       <a class="active" href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="case-studies.html">Case Studies</a>
+      <a href="MeetFounder.html">Meet The Founder</a>
+      
       <a href="research.html">R&amp;D</a>
-      <a href="success-stories.html">Success Stories</a>
+       <a href="early-adopters.html">Early Adopters</a>
       <a class="btn primary" href="contact.html">Contact</a>
     </nav>
   </div>
@@ -578,26 +855,16 @@
   <div class="container">
     <h1>About SaleCompass</h1>
     <p class="hero-subtext">
-      A modern AI-powered marketing intelligence platform helping SMEs understand what truly drives performance.
+       <p>SaleCompass is a proprietary AI platform built to give SMEs the revenue intelligence they were never meant to have access to.</p>
+      <p>For too long, the tools to truly understand what drives revenue have been locked behind enterprise budgets and complex infrastructure. We built SaleCompass to change that creating an intelligence engine that connects every digital and offline touchpoint into one clear, real-time view, purpose-built for small and medium enterprises.</p>
+      <p>From predictive analytics to multi-touch attribution, SaleCompass removes guesswork and empowers SMEs to make confident, data-backed decisions. Our mission is simple: to level the playing field between SMEs and enterprise brands, one data insight at a time.</p>
     </p>
   </div>
 </section>
 
 <main>
 
-<!-- ======================== WHAT IS SALECOMPASS ======================== -->
-<section class="about-section">
-  <div class="container about-flex">
-    <div class="about-card">
-      <h2>What is SaleCompass?</h2>
-      <p>SaleCompass helps SMEs understand what truly works by unifying all digital and offline data into one intelligent dashboard backed by AI-driven analytics.</p>
-      <p>From predictive analytics to multi-touch attribution, SaleCompass removes guesswork and empowers every business to make confident, data-backed decisions.</p>
-    </div>
-    <div class="about-photo">
-      <img src="assets/img/Who we are.jpg" alt="Who We Are">
-    </div>
-  </div>
-</section>
+
 
 <!-- ======================== MISSION / VISION ======================== -->
 <section class="mv-section">
@@ -606,16 +873,16 @@
     <div class="mv-card">
       <img src="assets/img/Our mission.jpg" alt="Our Mission">
       <h3>Our Mission</h3>
-      <p>Empower SMEs with enterprise-grade marketing intelligence that is simple, affordable, and effective.</p>
-      <p class="hidden-text">We believe every business deserves clarity and confidence.</p>
+      <p>To level the playing field between SMEs and enterprise brands giving every business access to the revenue intelligence that was previously reserved for those with enterprise budgets.</p>
+      <p class="hidden-text">We believe clarity over data should not be a privilege. Every SME deserves to know exactly what drives their revenue, where to invest, and how to grow confidently.</p>
       
     </div>
 
     <div class="mv-card">
       <img src="assets/img/Our vision.jpg" alt="Our Vision">
       <h3>Our Vision</h3>
-      <p>To become the world’s most accurate, accessible, and AI-powered marketing intelligence platform.</p>
-      <p class="hidden-text">Our goal is to democratize data-driven growth.</p>
+      <p>To become the global standard for AI-powered revenue intelligence the platform that finally gives SMEs the same data advantage that enterprise brands have always had.</p>
+      <p class="hidden-text">We are building toward a world where no business decision is made in the dark.</p>
 
     </div>
 
@@ -661,27 +928,27 @@
 <!-- ======================== WHY US ======================== -->
 <section class="why-section">
   <div class="container">
-    <h2 class="center-title">Why Businesses Choose SaleCompass</h2>
+    <h2 class="center-title">Why SMEs Choose SaleCompass</h2>
 
     <div class="why-grid">
       <div class="why-card">
         <h4>All Data in One Place</h4>
-        <p>Every touchpoint unified in a single dashboard.</p>
+        <p>Every touchpoint  online and offline  unified in one real-time view.</p>
       </div>
 
       <div class="why-card">
         <h4>Real-Time Insights</h4>
-        <p>Live analytics and predictive alerts.</p>
+        <p>Live analytics and predictive alerts, before issues hit your revenue.</p>
       </div>
 
       <div class="why-card">
         <h4>AI Recommendations</h4>
-        <p>Optimize spend using real data.</p>
+        <p>Optimise spend automatically using real performance data</p>
       </div>
 
       <div class="why-card">
         <h4>Built for SMEs</h4>
-        <p>Enterprise tools without the enterprise complexity.</p>
+        <p>Enterprise-grade intelligence without the enterprise budget</p>
       </div>
     </div>
   </div>
@@ -689,48 +956,57 @@
 
 </main>
 
-<!-- ======================== FOOTER ======================== -->
 <footer class="site-footer fade-up">
-  <div class="container footer-grid">
+  <div class="container footer-grid footer-four-col">
+
     <div>
-      <img src="assets/img/logo.png" class="logo-img">
-      <p class="footer-description">Your Compass for Smarter Growth.</p>
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass Logo">
+      <p class="footer-description">Intelligence that moves revenue.</p>
     </div>
+
     <div>
       <h4>Links</h4>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="MeetFounder.html">Meet The Founder</a></li>
+        <li><a href="early-adopters.html">Early Adopters</a></li>
         <li><a href="research.html">R&amp;D</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-    <div>
-      <h4>Services</h4>
-      <ul class="footer-links">
-       <li><a href="services.html">Attribution Engine</a></li>
-        <li><a href="services.html">Predictive Analytics</a></li>
-        <li><a href="services.html">Sentiment Intelligence</a></li>
-        <li><a href="services.html"> Real-Time Dashboards</a></li>
-        <li><a href="services.html">Seamless Integrations</a></li>
-        <li><a href="services.html">Automation Engine</a></li>
-      </ul>
-    </div>
+
     <div>
       <h4>Get in touch</h4>
       <ul class="footer-links">
-         <li><a href="mailto:hello@salecompass.uk">📧Danyal.mohiuddin@salecompass.uk</a></li>
-        <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
-        <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
-        
-         <li><a href="location">📍London,United Kingdom</a></li>
+<li>
+  <a href="mailto:Danyal.mohiuddin@salecompass.uk">
+    <span class="footer-contact-icon">📧</span>
+    <span>Danyal.mohiuddin@salecompass.uk</span>
+  </a>
+</li>        <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
+        <li><a href="mailto:careers@salecompass.uk">📧 careers@salecompass.uk</a></li>
+        <li><a href="tel:+923462135026">📞 0092 3462135026</a></li>
+       
       </ul>
     </div>
+
+    <div class="footer-social-col">
+      <h4>Social media links</h4>
+
+      <div class="footer-social-icons">
+        <a href="https://www.facebook.com/people/SaleCompass/61585621962023/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.linkedin.com/company/salecompass/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/salecompass/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+      </div>
+    </div>
+
   </div>
-  <img src="assets/img/salecompass logo.png" class="footer-watermark">
-  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
+
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
+
+  <p class="tiny">© 2025 SaleCompass. All rights reserved.</p>
 </footer>
 
 <!-- JS -->
