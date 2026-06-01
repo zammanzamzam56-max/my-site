@@ -876,6 +876,105 @@ p {
 strong {
   font-weight: 700 !important;
 }
+/* ===== FINAL MOBILE GLOBAL FIXES ===== */
+
+@media (max-width: 768px) {
+
+  /* About page hero text fix */
+  .about-hero {
+    height: auto !important;
+    min-height: 78vh !important;
+    padding: 90px 18px 70px !important;
+    background-position: center !important;
+  }
+
+  .about-hero h1 {
+    font-size: 38px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 18px !important;
+    text-align: center !important;
+  }
+
+  .about-hero p,
+  .hero-subtext,
+  .about-card p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    text-align: center !important;
+  }
+
+  .about-card {
+    padding: 26px 18px !important;
+  }
+
+  /* Early adopters/footer logo placement fix */
+  .site-footer .footer-grid > div:first-child,
+  .site-footer .footer-four-col > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .site-footer .logo-img {
+    height: 110px !important;
+    width: auto !important;
+    margin: 0 auto -22px !important;
+    display: block !important;
+  }
+
+  /* Footer description placement fix on all pages */
+  .site-footer .footer-description {
+    margin: 0 auto 32px !important;
+    padding: 0 !important;
+    max-width: 300px !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    color: #ffffff !important;
+  }
+
+  /* Footer columns consistent on mobile */
+  .site-footer .footer-grid,
+  .site-footer .footer-four-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 34px !important;
+    text-align: center !important;
+  }
+
+  .site-footer h4 {
+    text-align: center !important;
+    margin-bottom: 18px !important;
+  }
+
+  .site-footer .footer-links {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .site-footer .footer-links li,
+  .site-footer .footer-links a,
+  .site-footer .footer-links span {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .site-footer .footer-social-col {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .site-footer .footer-social-icons {
+    justify-content: center !important;
+  }
+
+  .site-footer .footer-watermark {
+    display: none !important;
+  }
+}
 
 
 
