@@ -5,563 +5,612 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research & Development | SaleCompass</title>
   <link rel="icon" type="image/png" href="assets/img/logo.png">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { overflow-x: hidden; background: #ffffff; font-family: system-ui, sans-serif; color: #03102b; }
+    body { overflow-x: hidden; background: #ffffff; font-family: 'Outfit', system-ui, sans-serif; color: #03102b; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      width: 92%;
-      max-width: 1180px;
-      margin: 0 auto;
+    :root {
+      --sc-navy: #03102b;
+      --sc-navy-deep: #001437;
+      --sc-orange: #ff8c3a;
+      --sc-soft-orange: #fff4eb;
+      --sc-bg: #f7f9fc;
+      --sc-card: #ffffff;
+      --sc-border: rgba(3, 16, 43, 0.08);
+      --sc-shadow: 0 18px 45px rgba(3, 16, 43, 0.08);
+      --sc-shadow-hover: 0 24px 60px rgba(255, 140, 58, 0.18);
     }
-    /* FIX read-more toggle in mobile */
 
+    html, body { width: 100%; overflow-x: hidden !important; }
 
-.publication-full {
-  max-height: 0;
-  overflow: hidden;
-  display: none;
-  transition: max-height 0.4s ease;
-  white-space: normal;
-}
-
+    .container { width: 92%; max-width: 1180px; margin: 0 auto; }
 
     /* ================= HEADER ================= */
     .site-header {
-      padding: 10px 0;
-      background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      padding: 8px 0;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(3,16,43,0.06);
+      border-bottom: 1px solid rgba(3,16,43,0.06);
+      position: sticky; top: 0; z-index: 999;
     }
-    
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo img {
-      height: 70px;
-      width: auto;
-      object-fit: contain;
-    }
-    .logo img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      padding-top: 10%;
-    }
-    .site-header .nav {
-      height: 50px;
-      overflow: visible !important;
-      align-items: center;
-    }
+    .nav { display: flex; justify-content: space-between; align-items: center; height: 58px; }
+    .logo img { height: 85px; width: auto; object-fit: contain; display: block; }
     nav.menu a {
-      padding: 8px 14px;
-      border-radius: 6px;
-      color: #03102b;
-      transition: 0.25s ease;
-      text-decoration: none;
+      padding: 8px 14px; border-radius: 999px; color: #03102b;
+      transition: 0.25s ease; text-decoration: none; font-size: 14px; font-weight: 600;
     }
-    nav.menu a:hover {
-      background: #ff8c3a;
-      color: #ffffff !important;
-    }
+    nav.menu a:hover, nav.menu a.active { background: rgba(255,140,58,0.12); color: var(--sc-orange) !important; }
     nav.menu a.btn.primary {
-      background: #03102b;
-      color: #ffffff !important;
-      padding: 10px 18px;
-      border-radius: 6px;
+      background: #03102b; color: #ffffff !important;
+      padding: 10px 20px; border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(3,16,43,0.18);
     }
-    nav.menu a.btn.primary:hover {
-      background: #ff8c3a !important;
-    }
+    nav.menu a.btn.primary:hover { background: #ff8c3a !important; }
+    .menu-toggle { display: none; background: none; border: none; font-size: 22px; cursor: pointer; }
 
-    /* ================ HERO SECTION ================ */
+    /* ================ HERO ================ */
     .page-hero {
+      position: relative;
+      padding: 140px 0 120px;
       background:
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)),
+        linear-gradient(135deg, rgba(3,16,43,0.92) 0%, rgba(3,16,43,0.55) 48%, rgba(7, 7, 7, 0.28) 100%),
         url("assets/img/R&D.png") center/cover no-repeat;
-      padding: 140px 0 120px; /* slightly reduced */
-      text-align: center;
-      color: #f8eded;
+      text-align: center; color: #f8eded; overflow: hidden;
+    }
+    .page-hero::after {
+      content: ""; position: absolute; inset: auto 0 0;
+      height: 90px; pointer-events: none;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .kicker {
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 18px; padding: 8px 16px; border-radius: 999px;
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22);
+      color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; backdrop-filter: blur(10px);
+      font-size: 40px;
     }
     .page-hero h1 {
-      font-size: 46px;
-      font-weight: 800;
-      margin-bottom: 14px;
+      font-family: 'DM Serif Display', serif;
+      max-width: 900px; margin: 0 auto 18px;
+      font-size: clamp(38px, 5vw, 66px); line-height: 1.06; letter-spacing: -1px;
     }
     .page-hero p.lead {
-      font-size: 20px;
-      max-width: 760px;
-      margin: 0 auto;
-      line-height: 1.6;
-      color: #f8eded;
+      max-width: 720px; margin: 0 auto;
+      font-size: clamp(17px,1.8vw,21px); line-height: 1.65; opacity: 0.94; color: #f8eded;
     }
 
     /* ================ SECTIONS ================ */
-    section {
-      padding: 60px 0; /* reduced from 80 to tighten page */
-    }
-    section.alt {
-      background: #f9fafb;
-    }
+    main section { padding: 78px 0; position: relative; }
+    main section:nth-of-type(even) { background: linear-gradient(180deg,#f8fafc 0%,#ffffff 100%); }
+
     .section-title {
-      font-size: 28px;
-      font-weight: 800;
-      margin: 0 0 20px;  /* no top margin to avoid extra gap under hero */
-      margin-top: -50px ;
+      max-width: 930px; margin: 0 auto 26px; text-align: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(27px,3vw,42px); line-height: 1.16; letter-spacing: -0.5px;
+      background: linear-gradient(135deg,var(--sc-navy) 0%,#24426f 52%,var(--sc-orange) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    .two-col {
+    .section-alt {
+      background: linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+      padding: 64px 0 48px;
+    }
+    .founder-wrapper {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+    .founder-content {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 32px 40px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--sc-border);
+      border-radius: 24px;
+      box-shadow: var(--sc-shadow);
+      text-align: center;
+    }
+    .founder-content p { font-size: 18px; line-height: 1.8; color: #263347; }
+
+    .photo-gallery-section {
+      padding: 60px 0 40px;
+      background: #eef2f8;
+    }
+    .photo-gallery-grid {
       display: grid;
-      grid-template-columns: 2fr 0.9fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .info-card {
-      background: #ffffff;
-      padding: 48px 42px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-      box-sizing:content-box;
-    }
-    .info-card:hover {
-      transform: translateY(-6px);
-      border-left: 6px solid #ff8c3a;
-      background: #fff9f3;
-      padding: 48px 42px;
-    }
-    .info-card ul {
-      margin: 12px 0;
-      padding-left: 18px;
-      line-height: 1.6;
-    }
-
-    /* ===== RIGHT COLUMN PHOTOS (PHOTO1 + PHOTO2) ===== */
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin: 28px auto 0;
+      max-width: 980px;
     }
     .photo-card {
       background: #ffffff;
-      border-radius: 16px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      border: 1px solid rgba(3,16,43,0.08);
+      box-shadow: var(--sc-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .photo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sc-shadow-hover);
     }
     .photo-card img {
       width: 100%;
       height: auto;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ================ FOUNDER SECTION ================ */
-    .founder-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: center;
-    }
-    .founder-card {
-     background: #02060e; 
-      color: #ffffff;
-      border-radius: 0px;
-      padding: 30px 24px;
-      transition: all 0.4s ease;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.15);
-    }
-    .founder-card:hover {
-      background: #ff8c3a;
-      color: #ffffff;
-      transform: translateY(-6px);
-    }
-    
-    .founder-card h2 {
-      font-size: 26px;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    .founder-card p {
-      line-height: 1.7;
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
-
-    .founder-image {
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      max-width: 420px;          /* smaller image */
-      margin-left: auto;
-    }
-    .founder-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    /* Tighter spacing around founder section */
-section.alt {
-  background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);
-  padding: 40px 0 50px !important; /* tightened spacing */
-}
-
-/* ===== FOUNDER CARD (image + text in one container) ===== */
-.founder-wrapper {
-  margin-top: 0px;
-}
-
-.founder-card {
- background: #02060e;         /* navy */
-  color: #ffffff;
-  
-   border-radius: 0px;
-  padding: 32px 36px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
-  transition: 0.35s ease;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  height: 400px;
-  width: 1200px;
-  margin-bottom: 10px;
-}
-
-.founder-card:hover {
-  background: #00060f;             /* orange on hover */
-  transform: translateY(-6px);
-}
-
-.founder-photo {
-  flex: 0 0 40%;
-}
-
-.founder-photo img {
-  width: 80%;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  height: 380px;
-}
-
-
-.founder-content {
-  flex: 1;
-}
-
-.founder-content h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.founder-content p {
-  font-size: 15.5px;
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-
-.founder-meta {
-  margin-top: 8px;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* Mobile layout: stack image above text */
-
-/* MOBILE FIX: About the Founder section */
-
-@media (max-width: 768px) {
-
-  /* Container spacing */
-  .about-founder,
-  .founder-card {
-    padding: 16px;
-    height: 500px;
-  }
-
-  /* Image wrapper */
-  .founder-image-wrapper {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border-radius: 12px;
-  }
-
-  /* Image itself */
-  .founder-image-wrapper img,
-  .founder-card img {
-    width: 700px;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    
-  }
-
-  /* Prevent image cropping */
-  .founder-card {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-  }
-
-  /* Text spacing */
-  .founder-text {
-    margin-top: 12px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* Heading spacing */
-  .about-founder h2 {
-    margin-bottom: 12px;
-  }
-  .founder-card{
-  width: 100%;
-  max-width: 520px;          /* increase card size on desktop */
-  background: #0b0b0b;
-  border-radius: 18px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: auto;              /* IMPORTANT: no fixed height */
-  box-sizing: border-box;
-}
-}
-
-
-
-    /* ================ PUBLICATIONS SECTION ================ */
-    .intro-card {
-      margin-bottom: 20px;
-      margin-top:10px;
-      
-    }
-
-
-    .pub-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 24px;
-      margin-top: 6px;
-    }
-    .pub-card {
-      background: #ffffff;
-      padding: 22px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-    }
-    .pub-card:hover {
-      transform: translateY(-6px);
-      border-left: 6px solid #ff8c3a;
-      background: #fff9f3;
-    }
-    .pub-card h4 {
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-    .pub-card p {
-      margin-bottom: 6px;
-      line-height: 1.6;
-    }
-    .hidden-text {
-      display: none;
-    }
-    .read-more-btn {
-      cursor: pointer;
-      font-weight: 600;
-      color: #004c99;
-      margin-top: 6px;
-      display: inline-block;
-    }
-
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 22px;
-      margin-top: 24px; /* reduced */
-    }
-    .highlight-card {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-      text-align: left;
-    }
-    .highlight-card:hover {
-      transform: translateY(-6px);
-      border-left: 6px solid #ff8c3a;
-      background: #fff9f3;
-    }
-
-    /* ================ FOOTER (MATCH OTHER PAGES) ================ */
-    footer {
-      position: relative;
-      background: #001437;
-      color: #ffffff;
-      padding-top: 40px;
-      padding-bottom: 50px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
-    }
-    .logo-img {
-      height: 120px;
-      width: auto;
       object-fit: contain;
       display: block;
-      margin-bottom: 6px;
     }
-    .footer-description {
-      font-size: 12px;
-      color: #ffffff;
-      margin-top: -10px;
-      line-height: 1.3;
-      max-width: 260px;
+    .photo-card-stack {
+      display: grid;
+      gap: 20px;
+      padding: 24px 0;
     }
-    .footer-links a {
-      color: #ff8c3a;
-      text-decoration: none;
+    .photo-card-stack img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
     }
-    .tiny {
-      color: #ff8c3a;
+    .repo-photo img,
+    .research-collab-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .publication-photo-section {
+      padding: 72px 0 40px;
+      background: #f8fafc;
+    }
+    .publication-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .publication-photo-grid .photo-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .publication-photo-heading {
       text-align: center;
-      margin-top: 20px;
-      font-size: 16px;
+      max-width: 860px;
+      margin: 0 auto 20px;
+      color: #03102b;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 700;
     }
-    .footer-watermark {
-      position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 260px;
-      opacity: 0.09;
+
+    /* ================ CARDS ================ */
+    .info-card {
+      background: rgba(255,255,255,0.92); border: 1px solid var(--sc-border);
+      border-radius: 24px; box-shadow: var(--sc-shadow);
+      padding: 34px 36px; transition: all 0.35s ease;
+    }
+    .info-card:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(135deg,#ffffff 0%,var(--sc-soft-orange) 100%);
+      box-shadow: var(--sc-shadow-hover);
+    }
+    .info-card h3 { color: var(--sc-navy); font-size: 20px; margin-bottom: 10px; font-weight: 700; }
+    .info-card p { color: #334155; line-height: 1.78; margin-bottom: 12px; }
+
+    .intro-card {
+      max-width: 940px; margin: 0 auto 32px;
+      text-align: center; position: relative; overflow: hidden;
+      border-left: 0 !important;
+    }
+    .intro-card::before {
+      content: ""; position: absolute; left: 50%; top: 0;
+      width: 120px; height: 4px; transform: translateX(-50%);
+      border-radius: 0 0 999px 999px;
+      background: linear-gradient(90deg,var(--sc-navy),var(--sc-orange));
+    }
+
+    .two-col {
+  display: grid; grid-template-columns: 1fr 420px;
+  gap: 30px; align-items: stretch;
+}
+
+    /* ================ IEEE ICET PHOTO SECTION ================ */
+    /* Full-bleed attractive ICET image display */
+    .icet-section-inner {
+      max-width: 900px; margin: 0 auto;
+    }
+    .icet-text-card {
+      background: rgba(255,255,255,0.92); border: 1px solid var(--sc-border);
+      border-radius: 24px; box-shadow: var(--sc-shadow);
+      padding: 36px 40px; margin-bottom: 36px;
+      transition: all 0.35s ease;
+    }
+    .icet-text-card:hover {
+      transform: translateY(-5px); box-shadow: var(--sc-shadow-hover);
+      background: linear-gradient(135deg,#ffffff 0%,var(--sc-soft-orange) 100%);
+    }
+    .icet-text-card p { color: #334155; line-height: 1.78; margin-bottom: 14px; }
+    .icet-text-card p:last-child { margin-bottom: 0; }
+
+    /* The conference photo frame */
+    .icet-photo-showcase {
+      position: relative; border-radius: 28px; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(3,16,43,0.22);
+      background: #001437;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .icet-photo-showcase img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .icet-photo-showcase:hover img { transform: scale(1.02); }
+    .icet-photo-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 28px 32px;
+      background: linear-gradient(0deg, rgba(3,16,43,0.92) 0%, rgba(3,16,43,0.6) 60%, transparent 100%);
+      color: #ffffff;
+    }
+    .icet-photo-caption strong {
+      display: block; font-size: 17px; font-weight: 700; margin-bottom: 4px;
+    }
+    .icet-photo-caption span { font-size: 14px; opacity: 0.82; }
+
+    /* Badge strip on the photo */
+    .icet-badge-strip {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px;
+    }
+    .icet-badge {
+      padding: 5px 14px; border-radius: 999px;
+      background: rgba(255,140,58,0.25); border: 1px solid rgba(255,140,58,0.5);
+      color: #ffb97a; font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+    }
+
+    /* ================ IEEE PHOTO (right col) ================ */
+   .icet-photo-wrap {
+  width: 100%; border-radius: 22px; overflow: hidden;
+  box-shadow: 0 18px 45px rgba(3,16,43,0.14);
+  border: 1px solid var(--sc-border); background: transparent;
+  height: auto;
+}
+.icet-photo-wrap img {
+  width: 100%; height: 100%;;
+  object-fit: contain; display: block;
+}
+
+    /* ================ PUBLICATIONS ================ */
+    .pub-list {
+      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 24px; margin-top: 26px;
+    }
+    .pub-card {
+      background: rgba(255,255,255,0.92); border: 1px solid var(--sc-border);
+      border-radius: 24px; box-shadow: var(--sc-shadow);
+      padding: 30px; transition: all 0.35s ease;
+      position: relative; overflow: hidden;
+    }
+    .pub-card::before {
+      content: ""; position: absolute; inset: 0 auto auto 0;
+      width: 5px; height: 100%;
+      background: linear-gradient(180deg,var(--sc-orange),rgba(255,140,58,0));
+      opacity: 0.85;
+    }
+    .pub-card:hover {
+      transform: translateY(-6px); box-shadow: var(--sc-shadow-hover);
+      background: linear-gradient(135deg,#ffffff 0%,var(--sc-soft-orange) 100%);
+    }
+    .pub-card h4 { color: var(--sc-navy); font-size: 18px; margin-bottom: 10px; font-weight: 700; }
+    .pub-card p { color: #334155; line-height: 1.75; margin-bottom: 8px; }
+
+    .publication-full {
+      max-height: 0; overflow: hidden; display: none;
+      transition: max-height 0.4s ease; color: #334155; line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    .pub-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; color: var(--sc-orange); font-weight: 800;
+      text-decoration: none; cursor: pointer; font-size: 14px;
+      transition: gap 0.2s ease;
+    }
+    .pub-link:hover { gap: 10px; }
+
+    /* External link style */
+    .pub-ext-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; color: var(--sc-orange); font-weight: 800;
+      text-decoration: none; font-size: 14px; transition: gap 0.2s ease;
+    }
+    .pub-ext-link:hover { gap: 10px; }
+
+    .highlights {
+      display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 22px; margin-top: 30px;
+    }
+    .highlight-card {
+      background: rgba(255,255,255,0.92); border: 1px solid var(--sc-border);
+      border-radius: 24px; box-shadow: var(--sc-shadow);
+      padding: 28px 28px 28px 32px;
+      transition: all 0.35s ease; position: relative; overflow: hidden;
+      min-height: 170px;
+    }
+    .highlight-card::before {
+      content: ""; position: absolute; inset: 0 auto auto 0;
+      width: 5px; height: 100%;
+      background: linear-gradient(180deg,var(--sc-orange),rgba(255,140,58,0));
+      opacity: 0.85;
+    }
+    .highlight-card:hover {
+      transform: translateY(-6px); box-shadow: var(--sc-shadow-hover);
+      background: linear-gradient(135deg,#ffffff 0%,var(--sc-soft-orange) 100%);
+    }
+    .highlight-card h4 { color: var(--sc-navy); font-size: 18px; margin-bottom: 10px; font-weight: 700; }
+    .highlight-card p { color: #334155; line-height: 1.75; }
+
+    /* ================ CONFERENCE STAT STRIP ================ */
+    .conf-stats {
+      display: flex; gap: 0; margin: 32px 0 0;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 12px 36px rgba(3,16,43,0.12);
+    }
+    .conf-stat {
+      flex: 1; padding: 24px 20px; text-align: center;
+      background: var(--sc-navy); color: #ffffff;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .conf-stat:last-child { border-right: none; }
+    .conf-stat:hover { background: var(--sc-orange); }
+    .conf-stat strong { display: block; font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+    .conf-stat span { font-size: 12px; opacity: 0.75; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ================ FOOTER ================ */
+    footer.site-footer {
+      position: relative; background: linear-gradient(135deg,#001437 0%,#03102b 100%);
+      color: #ffffff; padding-top: 40px; padding-bottom: 50px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 40px; align-items: start; }
+    .footer-grid > div:first-child { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .logo-img { height: 120px; width: auto; object-fit: contain; display: block; margin-bottom: 6px; }
+    .footer-description { font-size: 12px; color: #ffffff; margin-top: -10px; line-height: 1.3; max-width: 260px; }
+    .footer-links a { color: #f0eeec; text-decoration: none; font-weight: bold; transition: color 0.25s ease; }
+    .footer-links a:hover { color: #ffffff; }
+    .tiny { color: #ff8c3a; text-align: center; margin-top: 20px; font-size: 16px; }
+    .footer-watermark { position: absolute; right: -20px; top: 50%; transform: translateY(-50%); height: 260px; opacity: 0.09; pointer-events: none; }
+
+    /* ================ SUPERVISORS ================ */
+    .supervisor-grid {
+      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 28px; margin-top: 28px;
+    }
+    .supervisor-card {
+      background: var(--sc-navy); color: #ffffff;
+      border-radius: 24px; padding: 36px 32px;
+      box-shadow: 0 20px 50px rgba(3,16,43,0.2);
+      transition: all 0.35s ease; position: relative; overflow: hidden;
+    }
+    .supervisor-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg,var(--sc-orange),rgba(255,140,58,0.3));
+    }
+    .supervisor-card:hover { background: #0a1f4e; transform: translateY(-6px); box-shadow: 0 28px 60px rgba(3,16,43,0.3); }
+    .supervisor-tag {
+      display: inline-block; padding: 4px 12px; border-radius: 999px;
+      background: rgba(255,140,58,0.18); border: 1px solid rgba(255,140,58,0.35);
+      color: #ffb97a; font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .supervisor-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 6px; color: #ffffff; }
+    .supervisor-card .role { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 18px; line-height: 1.5; }
+    .supervisor-card p { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.88); margin-bottom: 14px; }
+    .supervisor-card a { color: var(--sc-orange); font-weight: 700; text-decoration: none; font-size: 14px; }
+    .supervisor-card a:hover { color: #ffb97a; }
+
+    /* ================ CITATION IMPACT ================ */
+    .citation-box {
+      max-width: 860px; margin: 0 auto;
+      background: linear-gradient(135deg,var(--sc-navy) 0%,#0d2254 100%);
+      border-radius: 28px; padding: 48px 44px;
+      box-shadow: 0 24px 60px rgba(3,16,43,0.22);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .citation-box::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 20%,rgba(255,140,58,0.12),transparent 60%);
       pointer-events: none;
     }
+    .citation-box h3 { color: #ffffff; font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+    .citation-box p { color: rgba(255,255,255,0.78); line-height: 1.7; margin-bottom: 28px; font-size: 16px; }
+    .citation-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 999px;
+      background: var(--sc-orange); color: #ffffff;
+      font-weight: 800; font-size: 15px; text-decoration: none;
+      box-shadow: 0 10px 28px rgba(255,140,58,0.35);
+      transition: all 0.3s ease;
+    }
+    .citation-btn:hover { background: #e6742a; transform: translateY(-3px); box-shadow: 0 16px 36px rgba(255,140,58,0.4); }
 
-    /* ================ MOBILE FIX ================ */
-    html, body {
+    /* ================ OP-ED & MEDIA ================ */
+    .oped-card {
+      max-width: 860px; margin: 0 auto;
+      background: rgba(255,255,255,0.92); border: 1px solid var(--sc-border);
+      border-radius: 24px; box-shadow: var(--sc-shadow);
+      padding: 36px 40px; transition: all 0.35s ease;
+      position: relative; overflow: hidden;
+    }
+    .oped-card::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 5px; background: linear-gradient(180deg,var(--sc-orange),rgba(255,140,58,0));
+    }
+    .oped-card:hover { transform: translateY(-5px); box-shadow: var(--sc-shadow-hover); background: linear-gradient(135deg,#ffffff,var(--sc-soft-orange)); }
+    .oped-card .outlet-tag {
+      display: inline-block; padding: 4px 12px; border-radius: 999px;
+      background: rgba(255,140,58,0.1); border: 1px solid rgba(255,140,58,0.25);
+      color: var(--sc-orange); font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .oped-card h3 { color: var(--sc-navy); font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .oped-card p { color: #334155; line-height: 1.78; margin-bottom: 14px; }
+    .oped-card a.read-link { color: var(--sc-orange); font-weight: 800; text-decoration: none; font-size: 14px; }
+    .oped-card a.read-link:hover { text-decoration: underline; }
+
+    .media-grid {
+      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 24px; margin-top: 0;
+    }
+    .media-card {
+      background: rgba(255,255,255,0.92); border: 1px solid var(--sc-border);
+      border-radius: 24px; box-shadow: var(--sc-shadow);
+      padding: 32px 28px; transition: all 0.35s ease;
+      position: relative; overflow: hidden;
+    }
+    .media-card::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 5px; background: linear-gradient(180deg,var(--sc-orange),rgba(255,140,58,0));
+    }
+    .media-card:hover { transform: translateY(-6px); box-shadow: var(--sc-shadow-hover); background: linear-gradient(135deg,#ffffff,var(--sc-soft-orange)); }
+    .media-card .outlet-tag {
+      display: inline-block; padding: 4px 12px; border-radius: 999px;
+      background: rgba(255,140,58,0.1); border: 1px solid rgba(255,140,58,0.25);
+      color: var(--sc-orange); font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .media-card .date { font-size: 12px; color: #94a3b8; margin-bottom: 10px; }
+    .media-card h3 { color: var(--sc-navy); font-size: 17px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; }
+    .media-card p { color: #334155; line-height: 1.75; margin-bottom: 14px; font-size: 14px; }
+    .media-card a.read-link { color: var(--sc-orange); font-weight: 800; text-decoration: none; font-size: 14px; }
+    .media-card a.read-link:hover { text-decoration: underline; }
+
+    .media-feature {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .media-feature-photo {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--sc-shadow);
+      background: #fff;
+    }
+    .media-feature-photo img {
       width: 100%;
-      overflow-x: hidden !important;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .media-feature-copy {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--sc-border);
+      border-radius: 24px;
+      box-shadow: var(--sc-shadow);
+      padding: 34px 30px;
+    }
+    .media-recognition-text p {
+      font-size: 15px; line-height: 1.8; color: #334155; margin-bottom: 22px;
+    }
+    .media-recognition-text a {
+      color: var(--sc-orange); font-weight: 700; text-decoration: none;
+    }
+    .media-recognition-text a:hover {
+      text-decoration: underline;
+    }
+    .media-recognition-image {
+      width: 100%;
+      max-width: 940px;
+      margin: 0 auto 34px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--sc-shadow);
+      background: #fff;
+    }
+    .media-recognition-image img {
+      width: 100%; height: auto; display: block;
+      object-fit: contain;
+    }
+    .social-links-block {
+      max-width: 940px; margin: 42px auto 0;
+    }
+    .social-links {
+      display: grid; gap: 12px;
+    }
+    .social-link {
+      display: block; padding: 16px 18px; background: #ffffff;
+      border: 1px solid rgba(3,16,43,0.08); border-radius: 18px;
+      text-decoration: none; color: #03102b; font-weight: 700;
+      box-shadow: var(--sc-shadow); transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .social-link:hover {
+      transform: translateY(-2px); box-shadow: var(--sc-shadow-hover);
+      background: rgba(255,140,58,0.08);
+    }
+    .media-links-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+    .icon-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 18px; background: #ffffff;
+      border: 1px solid rgba(3,16,43,0.08); border-radius: 18px;
+      text-decoration: none; color: #03102b;
+      box-shadow: var(--sc-shadow); transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .icon-link:hover { transform: translateY(-4px); box-shadow: var(--sc-shadow-hover); }
+    .icon-link img { width: 30px; height: 30px; object-fit: contain; }
+
+    @media (max-width: 980px) {
+      .media-feature { grid-template-columns: 1fr; }
+      .media-links-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .media-links-row { grid-template-columns: 1fr; }
     }
 
+    /* ================ MOBILE ================ */
     @media (max-width: 900px) {
-      .container {
-        width: 94% !important;
-        max-width: 100% !important;
-        padding: 0 14px !important;
-      }
-
-      .page-hero {
-        padding: 120px 0 80px;
-      }
-      .page-hero h1 {
-        font-size: 30px;
-      }
-      .page-hero p.lead {
-        font-size: 16px;
-      }
-
-      .two-col {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .photo-grid {
-        gap: 14px;
-      }
-
-      .founder-section {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .founder-image {
-        margin: 0 auto;
-        max-width: 360px;
-      }
-
-      .pub-list {
-        grid-template-columns: 1fr;
-      }
-
-      .highlights {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .footer-description {
-        margin-top: 4px;
-        max-width: 100%;
-      }
-      .footer-watermark {
-        display: none;
-      }
+      .container { width: 94%; max-width: 100%; padding: 0 14px; }
+      .page-hero { padding: 100px 0 80px; }
+      .page-hero h1 { font-size: 30px; }
+      .page-hero p.lead { font-size: 16px; }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .pub-list { grid-template-columns: 1fr; }
+      .highlights { grid-template-columns: 1fr; }
+      .photo-gallery-grid { grid-template-columns: 1fr; }
+      .conf-stats { flex-direction: column; }
+      .conf-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      main section { padding: 56px 0; }
+      .supervisor-grid { grid-template-columns: 1fr; }
+      .media-grid { grid-template-columns: 1fr; }
+      .citation-box { padding: 32px 24px; }
+      .oped-card { padding: 28px 24px; }
     }
     @media (max-width: 768px) {
-
-  /* Stack footer content */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 32px !important;
-  }
-
-  /* Center logo */
-  .footer-grid .logo-img {
-    margin: 0 auto !important;
-  }
-
-  /* Center small tagline */
-  .footer-description {
-    margin: 10px auto !important;
-    text-align: center !important;
-    max-width: 90% !important;
-  }
-
-  /* Center all sections */
-  .footer-grid div {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Footer links vertical */
-  .footer-links {
-    text-align: center !important;
-  }
-  .footer-links li a {
-    font-size: 18px !important;
-    padding: 6px 0 !important;
-  }
-
-  /* “Get in touch” section */
-  .footer-grid div:last-child ul li {
-    font-size: 18px !important;
-  }
-
-  /* Hide huge watermark */
-  .footer-watermark {
-    display: none !important;
-  }
-}
-footer {
+      .footer-grid { display: flex; flex-direction: column; text-align: center; gap: 32px; }
+      .footer-description { margin: 10px auto; text-align: center; max-width: 90%; }
+      .footer-grid div { width: 100%; text-align: center; }
+      .footer-watermark { display: none; }
+      .menu-toggle { display: block; }
+      nav.menu { display: none; flex-direction: column; gap: 6px; position: absolute; top: 68px; left: 0; right: 0; background: #fff; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 998; }
+      nav.menu.open { display: flex; }
+    }
+      footer {
       position: relative;
       background: #001437;
       color:white;
@@ -569,6 +618,9 @@ footer {
       padding-bottom: 50px;
     }
 
+         .footer-links a {
+    font-weight: bold !important
+}
     .logo-img {
       height: 120px !important;
       width: auto;
@@ -615,25 +667,810 @@ footer {
       opacity: 0.09;
       pointer-events: none;
     }
-    /* Allow publication body to expand on phones */
-.publication-full {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  white-space: normal !important;
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    .footer-links a { color:#eae8e6; }
+
+    .tiny { text-align:center; color:#f6f2ef; margin-top:20px; }
+
+    /* ================= MENTORING PHOTO GRID ONLY ================= */
+    /* Keeps the rest of the page unchanged. Full photos remain visible, but the grid looks ordered. */
+    .publication-photo-section .publication-photo-grid {
+      width: 100%;
+      max-width: 1180px;
+      margin: 34px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .publication-photo-section .publication-photo-grid .photo-card {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(3,16,43,0.08);
+      box-shadow: var(--sc-shadow);
+    }
+
+    .publication-photo-section .publication-photo-grid .photo-card img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+      border-radius: 14px;
+      box-shadow: none;
+      border: none;
+      background: #ffffff;
+    }
+
+    .publication-photo-section .publication-photo-grid .photo-card:nth-child(7) {
+      grid-column: 2 / 3;
+    }
+
+    @media (max-width: 900px) {
+      .publication-photo-section .publication-photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .publication-photo-section .publication-photo-grid .photo-card:nth-child(7) {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .publication-photo-section .publication-photo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .publication-photo-section .publication-photo-grid .photo-card {
+        aspect-ratio: 4 / 3;
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      .publication-photo-section .publication-photo-grid .photo-card img {
+        border-radius: 12px;
+      }
+    }
+    /* IEEE conference photos: Gmail, Zoom call, Certificate stacked vertically */
+.conference-photo-stack {
+  width: 100%;
+  max-width: 920px;
+  margin: 34px auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
 }
 
-/* Mobile fix: allow expansion */
-@media(max-width: 768px) {
-  .publication-full {
-    max-height: none !important;   /* FULLY EXPANDS */
-    overflow: visible !important;  /* SHOW TEXT */
+.conference-photo-stack .photo-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(3,16,43,0.08);
+  box-shadow: 0 18px 45px rgba(3,16,43,0.10);
+}
+
+.conference-photo-stack .photo-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+}
+
+@media (max-width: 600px) {
+  .conference-photo-stack {
+    gap: 20px;
+  }
+
+  .conference-photo-stack .photo-card {
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  .conference-photo-stack .photo-card img {
+    border-radius: 12px;
+  }
+}
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.footer-socials a:hover {
+  background: #ff8c3a;
+  transform: translateY(-3px);
+}
+
+.footer-socials svg {
+  width: 19px;
+  height: 19px;
+  fill: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .footer-socials {
+    justify-content: center;
+  }
+}
+/* Footer social links fixed */
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f8f7f6;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.footer-social-link:hover {
+  color: #ff8c3a;
+}
+
+.footer-social-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.footer-social-url {
+  display: inline-block;
+  max-width: 520px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Make footer contact column wider */
+.footer-grid {
+  grid-template-columns: 1fr 0.8fr 1.8fr !important;
+}
+
+/* Put copyright line back at bottom center */
+.tiny {
+  width: 100%;
+  text-align: center !important;
+  margin: 36px auto 0 !important;
+  color: #ff8c3a !important;
+  font-size: 16px;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .footer-socials {
+    align-items: center;
+  }
+
+  .footer-social-link {
+    justify-content: center;
+    white-space: normal;
+    max-width: 95%;
+  }
+
+  .footer-social-url {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-overflow: unset;
+  }
+}
+/* Final footer social link fix */
+.footer-fixed-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 0.8fr 2.2fr !important;
+  gap: 56px !important;
+  align-items: start !important;
+}
+
+.footer-contact-fixed {
+  min-width: 0 !important;
+  text-align: left !important;
+}
+
+.footer-social-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin-top: 20px !important;
+  width: 100% !important;
+}
+
+.footer-social-list a {
+  display: grid !important;
+  grid-template-columns: 36px 1fr !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #f8f7f6 !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.footer-social-list a:hover {
+  color: #ff8c3a !important;
+}
+
+.footer-social-icon {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+.tiny {
+  width: 100% !important;
+  display: block !important;
+  text-align: center !important;
+  margin: 36px auto 0 !important;
+  color: #ff8c3a !important;
+  font-size: 16px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 900px) {
+  .footer-fixed-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .footer-contact-fixed {
+    text-align: center !important;
+  }
+
+  .footer-social-list a {
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    max-width: 92% !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+  }
+}
+.footer-four-col {
+  display: grid !important;
+  grid-template-columns: 220px 160px 280px minmax(390px, 1fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+.footer-social-col {
+  text-align: left !important;
+  min-width: 0 !important;
+}
+
+.footer-social-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin-top: 14px !important;
+}
+
+.footer-social-list a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #f8f7f6 !important;
+  text-decoration: none !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+}
+
+.footer-social-list a:hover {
+  color: #ff8c3a !important;
+}
+
+.footer-social-icon {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+.tiny {
+  width: 100% !important;
+  text-align: center !important;
+  margin: 36px auto 0 !important;
+  color: #ff8c3a !important;
+  font-size: 16px !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 1100px) {
+  .footer-four-col {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
+@media (max-width: 768px) {
+  .footer-four-col {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .footer-social-col {
+    text-align: center !important;
+  }
+
+  .footer-social-list {
+    align-items: center !important;
+  }
+
+  .footer-social-list a {
+    white-space: normal !important;
+    justify-content: center !important;
+    text-align: left !important;
+    max-width: 95% !important;
+  }
+}
+/* Remove white text container from hero intro and keep text readable */
+.page-hero {
+  position: relative !important;
+  padding: 150px 0 220px !important;
+  background:
+    linear-gradient(135deg, rgba(3,16,43,0.88) 0%, rgba(3,16,43,0.72) 50%, rgba(3,16,43,0.82) 100%),
+    url("assets/img/R&D.png") center/cover no-repeat !important;
+}
+
+/* Pull intro text into hero area */
+.section-alt {
+  background: transparent !important;
+  padding: 0 0 90px !important;
+  margin-top: -190px !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Make heading visible without a box */
+.section-alt .section-title {
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.55) !important;
+  max-width: 1050px !important;
+}
+
+/* Remove the white container/card */
+.founder-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 10px 0 0 !important;
+  max-width: 900px !important;
+}
+
+/* Make paragraph readable directly on hero background */
+.founder-content p {
+  color: #ffffff !important;
+  font-size: 19px !important;
+  line-height: 1.85 !important;
+  font-weight: 500 !important;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.65) !important;
+}
+
+/* Optional: make the Research & Development badge cleaner */
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 120px 0 210px !important;
+  }
+
+  .section-alt {
+    margin-top: -175px !important;
+    padding-bottom: 70px !important;
+  }
+
+  .founder-content p {
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+  }
+}
+
+/* Make both publication containers the same size */
+.pub-list {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 24px !important;
+  max-width: 940px !important;
+  margin: 26px auto 0 !important;
+}
+
+.pub-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 150px !important;
+  padding: 30px 34px !important;
+  margin: 0 auto !important;
+}
+
+/* Make both publication cards equal width */
+.pub-list .pub-card:first-child,
+.pub-list .pub-card:nth-child(2) {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Keep text aligned consistently */
+.pub-card h4,
+.pub-card p {
+  max-width: 100% !important;
+}
+/* Force both publication containers to the exact same width */
+.pub-list {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 24px !important;
+  width: 100% !important;
+  max-width: 940px !important;
+  margin: 26px auto 0 !important;
+}
+
+.pub-list .pub-card,
+.pub-list article.pub-card,
+.pub-list .pub-card:first-child,
+.pub-list .pub-card:nth-child(2) {
+  width: 100% !important;
+  max-width: 940px !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Prevent Publication 2 from stretching wider */
+.pub-list .pub-card:nth-child(2) {
+  align-self: center !important;
+}
+/* Force Publication 2 to same size as Publication 1 */
+.pub-list {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 24px !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 26px auto 0 !important;
+}
+
+.pub-list > .pub-card {
+  width: 940px !important;
+  max-width: 940px !important;
+  min-height: 155px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Specifically control Publication 2 */
+.pub-list > .pub-card:nth-child(2) {
+  width: 940px !important;
+  max-width: 940px !important;
+  align-self: center !important;
+  justify-self: center !important;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .pub-list > .pub-card,
+  .pub-list > .pub-card:nth-child(2) {
+    width: 92vw !important;
+    max-width: 92vw !important;
+  }
+}
+/* Final publication container fix */
+.pub-list {
+  width: 100% !important;
+  max-width: 940px !important;
+  margin: 26px auto 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+}
+
+.pub-list > .pub-card {
+  width: 100% !important;
+  max-width: 940px !important;
+  min-height: 155px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 980px) {
+  .pub-list {
+    max-width: 92vw !important;
+  }
+
+  .pub-list > .pub-card {
+    max-width: 92vw !important;
+  }
+}
+/* ===== GLOBAL NAVBAR STYLE SAME AS INDEX PAGE ===== */
+
+.site-header {
+  padding: 10px 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 999 !important;
+}
+
+.site-header .container {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+.site-header .nav,
+.nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  height: 50px !important;
+  overflow: visible !important;
+}
+
+.logo img {
+  height: 85px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  padding-top: 10% !important;
+}
+
+nav.menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+nav.menu a {
+  color: #03102b !important;
+  text-decoration: none !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: 0.25s ease !important;
+}
+
+nav.menu a:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.active {
+  color: #ff8c3a !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+nav.menu a.active:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.btn,
+nav.menu a.btn.primary {
+  background: #03102b !important;
+  color: #ffffff !important;
+  padding: 10px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+
+nav.menu a.btn:hover,
+nav.menu a.btn.primary:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+.menu-toggle {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  font-size: 24px !important;
+  cursor: pointer !important;
+  color: #03102b !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+  }
+
+  nav.menu {
+    display: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    position: absolute !important;
+    top: 70px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 18px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+    z-index: 998 !important;
+  }
+
+  nav.menu.open {
+    display: flex !important;
+  }
+
+  nav.menu a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+.site-footer .footer-links li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.footer-contact-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  min-width: 18px !important;
+}
+.footer-description {
+    margin-top: -18px !important;
+    padding-top: 0 !important;
+    line-height: 1.3 !important;
+}
+
+/* If still too low, reduce further */
+.footer-grid > div:first-child {
+    gap: 0 !important;
+}
+
+.logo-img {
+    margin-bottom: -8px !important;
+}
+.supervisor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.supervisor-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.research-collab-photo {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--sc-shadow);
+  background: #ffffff;
+}
+
+.research-collab-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .supervisor-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
-
 <body>
 
 <header class="site-header">
@@ -644,9 +1481,10 @@ footer {
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="case-studies.html">Case Studies</a>
+      <a href="MeetFounder.html">Meet The Founder</a>
+      
       <a class="active" href="research.html">R&amp;D</a>
-      <a href="success-stories.html">Success Stories</a>
+      <a href="early-adopters.html">Early Adopters</a>
       <a class="btn primary" href="contact.html">Contact</a>
     </nav>
   </div>
@@ -656,161 +1494,303 @@ footer {
 <section class="page-hero">
   <div class="container">
     <p class="kicker">Research & Development</p>
-    <h1>Built on real market needs. Backed by scientific research.</h1>
-    <p class="lead">
-      SaleCompass combines SME interviews and peer-reviewed AI research to build marketing intelligence that moves revenue.
-    </p>
+ <h2 >Built on evidence. Validated by the global research community.</h2>
+      <div class="founder-content">
+        <p>SaleCompass is not built on assumptions or intuition. It is a platform grounded in peer-reviewed research, international academic collaboration, real-world SME interviews, and a consistent body of published work that directly informed its architecture, methodology, design decisions, and every feature and framework you see today.</p>
+      
   </div>
 </section>
 
 <main>
-   <section class="section-alt">
-  <div class="container founder-wrapper">
-    <h2 class="section-title" style="margin-bottom: 18px;">About the Founder</h2>
 
-    <div class="founder-card">
-      <div class="founder-photo">
-        <img src="assets/img/photo4.jpeg" alt="Danyal Mohiuddin">
-      </div>
+ 
+  <section class="photo-gallery-section">
+  <div class="container">
 
-      <div class="founder-content">
-        <p>
-          Danyal Mohiuddin is a researcher whose work in AI, analytics, ethics, and
-          marketing science forms the backbone of SaleCompass. His research has been
-          published and presented in IEEE conferences and journals, with a focus on
-          how AI can be used responsibly in real-world marketing.
-        </p>
-        <p>
-          Drawing from interviews with SME founders, food businesses, and marketing
-          teams across the UK and beyond, he designed SaleCompass to solve one
-          recurring problem: data everywhere, but no clarity. The platform is built
-          to give business owners confidence in every marketing decision.
-        </p>
-        <div class="founder-meta">
-          <strong>Vision:</strong> To democratise marketing intelligence so that
-          small and mid-sized businesses can access the kind of insight that was
-          once reserved only for large enterprises.
-          
-          <div class="founder-contact">
-            
-            <strong>Contact at:</strong>📧Danyal.mohiuddin@salecompass.uk</a></li>
-          </div>
-        </div>
-      </div>
+    <h2 class="section-title">INTERNATIONAL CONFERENCE APPEARANCES</h2> 
+    <div class="info-card intro-card" style="margin-bottom:30px;"> <h3>IEEE International Conference on AI Innovations and Industry (ICAIII 2026)</h3> <p><strong>Jeddah, Saudi Arabia · IEEE · 2026</strong></p> 
+      <p> Presented original research titled "A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector" at the IEEE International Conference on AI Innovations and Industry, held in Jeddah, Saudi Arabia. IEEE is the world's largest technical professional organisation, with conferences recognised globally as the benchmark for engineering and technology research. The paper proposed an integrated AI-based analytics framework addressing a critical and underserved gap in how UK businesses connect digital marketing activity to real revenue outcomes. It was presented before an international audience of AI researchers, engineers, and industry practitioners.
+
+      <p style="margin-top:16px;">
+        <a href="https://doi.org/10.1109/ICAIII69475.2026.11521642"
+           target="_blank"
+           rel="noopener"
+           class="pub-ext-link">
+          View IEEE Publication ↗
+        </a>
+      </p>
     </div>
+
   </div>
 </section>
-  <!-- SECTION 1: Market Interviews -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">SECTION 1: Market Interviews & Need Analysis</h2>
-      <div class="two-col">
-        <div class="info-card">
-          <h3>Understanding the Real Problems Before Building the Solution</h3>
-          <p>
-            At SaleCompass, research began long before a single line of code.
-            Our founder <strong>Danyal Mohiuddin</strong> conducted extensive
-            market interviews, discovery meetings, and surveys.
-          </p>
-          <ul>
-            <li>CEOs of food businesses</li>
-            <li>Restaurant owners & managers</li>
-            <li>Marketing teams & agencies</li>
-            <li>UK SME founders</li>
-          </ul>
-          
-        </div>
-
-        <!-- photo1 + photo2 back, stacked -->
-        <div class="photo-grid">
-          <figure class="photo-card">
-            <img src="assets/img/photo1.png" alt="Market research session 1">
-          </figure>
-          <figure class="photo-card">
-            <img src="assets/img/photo2.png" alt="Market research session 2">
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
 
   
 
-  <!-- SECTION 3: Scientific Foundations & Publications -->
+    
+    
+
+  <div class="conference-photo-stack">
+
+  <article class="photo-card">
+    <img src="assets/img/Official paper acceptance email from IEEE ICAIII 2026 Publication.png" alt="Official paper acceptance email">
+  </article>
+
+  <article class="photo-card">
+    <img src="assets/img/photo1.png" alt="Zoom call research presentation photo">
+  </article>
+
+  <article class="photo-card">
+    <img src="assets/img/Certificate of Participation - IEEE ICAIII 2026.jpg" alt="Certificate of Participation">
+  </article>
+
+</div>
+
+  </div>
+</section>
+
+
+  <!-- SECTION 1B: ICET 2026 — REDESIGNED FOR FULL IMAGE VISIBILITY -->
+  <section style="background: linear-gradient(180deg,#f0f4f8 0%,#ffffff 100%); padding: 80px 0;">
+    <div class="container">
+      <h2 class="section-title" style="margin-top:0;">ICET 2026: Education &amp; Technology</h2>
+
+      <div class="info-card intro-card" style="margin-bottom:36px;">
+        <h3>8th International Conference on Education and Technology (ICET 2026)</h3>
+        <p><strong>Curtin University, Australia &nbsp;·&nbsp; Türkiye &nbsp;·&nbsp; Ukraine &nbsp;·&nbsp; 2026</strong></p>
+      <p> Presented "How SaleCompass Uses AI to Help Small Businesses Make Smarter Growth Decisions" at an international conference jointly organised with Curtin University, Australia, alongside partner institutions across Turkiye and Ukraine. The presentation brought SaleCompass before an audience of researchers, academics and industry practitioners from multiple countries, demonstrating how years of published research translated into a functioning AI revenue intelligence platform built specifically for SMEs. Where the IEEE paper established the academic framework, ICET 2026 proved the concept works in practice.</p>           
+        
+      </div>
+
+      
+
+       
+
+        <!-- Full-width conference photo showcase -->
+        <div class="icet-photo-showcase" style="margin-top:36px;">
+                    <img src="assets/img/ICET 2026 Certificate — Danyal Mohiuddin, CEO SaleCompass, UK.png" alt="ICET 2026 certificate">
+
+          <img src="assets/img/Live presentation at ICET 2026 — SaleCompass presented to   international academics including Prof. Dr. Iryna Sekret, IATELS Committee Chair.png" alt="Live presentation at ICET 2026">
+          <div class="icet-photo-caption">
+           
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: UK University Repository -->
   <section>
     <div class="container">
-      <h2 class="section-title">SECTION 2: Scientific Foundations</h2>
+      <h2 class="section-title">UK UNIVERSITY REPOSITORY </h2>
 
-      <div class="info-card intro-card">
-        <h3>Academic Rigor That Fuels Technological Innovation</h3>
-        <p>
-          SaleCompass is rooted in the founder’s scientific research in AI, machine learning,
-          marketing analytics, ethics, and consumer behaviour. This work has been
-          published and presented in IEEE conferences and journals, ensuring that
-          the platform is grounded in evidence – not guesswork.
-        </p>
-      </div>
-
-      <article class="pub-card">
-  <h4>Publication 1: Ethical AI in Marketing</h4>
-
-  <p><strong>AI in Marketing: Ethical Challenges and Solutions for Consumers and Society</strong></p>
-  <p><strong>Authors:</strong> Danyal Mohiuddin & Dr. Naureen Farhan (Ravensbourne University London)</p>
-
-  <div class="publication-full" id="pub1">
-    This study explores how consumers evaluate the morality of AI-powered marketing,
-    highlighting risks around privacy, manipulation, and transparency.
-    It also proposes practical frameworks for building trustworthy AI systems
-    that respect consumer rights while still driving commercial outcomes.
-  </div>
-
-  <a class="pub-link" onclick="togglePub('pub1', this)">Read more →</a>
-</article>
-
-      <article class="pub-card">
-  <h4>Publication 2: Multi-Channel Food Marketing</h4>
-
-  <p><strong>AI and Machine Learning Enhance Multi-Channel Marketing Effectiveness in the Food Industry</strong></p>
-
-  <div class="publication-full" id="pub2">
-    This research addresses a persistent challenge in the food and hospitality sector:
-    fragmented data across delivery apps, in-store sales, and digital ads.
-    The paper shows how predictive models and attribution algorithms improve
-    campaign performance, reduce waste, and reveal which channels really move revenue.
-  </div>
-
-  <a class="pub-link" onclick="togglePub('pub2', this)">Read more →</a>
-</article>
+      <div class="info-card intro-card" style="margin-bottom:30px;">
+        <h3>Officially Archived in the Ravensbourne University London Research Repository</h3>
+         <p>A co-authored paper with Dr. Naureen Farhan Course Leader for Computing & Emerging Technologies at Ravensbourne University London has been formally deposited in the university's official research repository, part of the GuildHE Research network supported by the University of London</p>
+          <p>This represents institutional recognition that goes beyond journal publication: the research has been formally accepted, archived, and made publicly accessible through a UK University's academic infrastructure. The paper is filed under the Department of Computing &amp; Emerging Technologies, placing it within the university's official body of academic knowledge.</p>
+          <div style="margin-top:24px;padding-top:24px;border-top:2px solid #e5e7eb;">
+            <p><strong>Paper:</strong></p>
+            <p style="margin:8px 0;color:#0a5ea0;font-style:italic;">Artificial Intelligence in Marketing: Ethical Challenges and Solutions for Consumers and Society</p>
+            <p><strong>Authors:</strong> Danyal Mohiuddin, Dr. Naureen Farhan, Ravensbourne University London</p>
+            <p style="margin-top:12px;">
+              <a href="https://rave.repository.guildhe.ac.uk/id/eprint/170/" target="_blank" rel="noopener" style="color:#ff8c3a;font-weight:700;text-decoration:none;">
+                View in Ravensbourne University Repository →
+              </a>
+            </p>
 
       </div>
 
-      <div class="highlights">
-        <div class="highlight-card">
-          <h4>Ethical AI</h4>
-          <p>Transparent, privacy-aware analytics that respect both customers and brands.</p>
+   
         </div>
-        <div class="highlight-card">
-          <h4>Marketing Analytics</h4>
-          <p>Unifies online and offline touchpoints into one interpretable model.</p>
-        </div>
-        <div class="highlight-card">
-          <h4>Continuous R&amp;D</h4>
-          <p>Ongoing experiments and publications keep SaleCompass ahead of the curve.</p>
+        <div class="repo-photo" style="margin-top:30px; border-radius:24px; overflow:hidden; box-shadow:var(--sc-shadow);">
+          <img src="assets/img/PaperArchived.jpeg" alt="Paper archived in Ravensbourne repository">
         </div>
       </div>
     </div>
   </section>
+
+  <section style="background: linear-gradient(180deg,#f0f4f8 0%,#ffffff 100%);">
+  <div class="container">
+    <h2 class="section-title">ACADEMIC SUPERVISORS </h2>
+
+    
+
+    <div class="supervisor-grid">
+
+      <div class="supervisor-item">
+        <div class="supervisor-card">
+          <span class="supervisor-tag">Academic Supervisor</span>
+          <h3>Dr. Naureen Farhan</h3>
+          <p class="role">Course Leader for MSc Information Technology Management at Ravensbourne University London. Specialises in AI, IoT, 5G, machine learning, and quantum computing</p>
+          <p>My collaboration with Dr. Naureen Farhan resulted in the co-authored publication "Artificial Intelligence in Marketing: Ethical Challenges and Solutions for Consumers and Society," permanently archived in Ravensbourne University London's official research repository. What makes this collaboration particularly significant is that the paper is housed under Ravensbourne's Department of Computing and Emerging Technology, a formal recognition by a UK institution of the work's academic merit and relevance to the digital technology field. The paper can be accessed and independently verified at: </p>
+          <a href="https://rave.repository.guildhe.ac.uk/id/eprint/170/" target="_blank" rel="noopener">View  Paper  →</a>
+        </div>
+
+        <div class="research-collab-photo">
+          <img src="assets/img/Research collaboration meeting with Dr. Naureen Farhan, Ravensbourne University London.png"
+               alt="Research collaboration meeting with Dr. Naureen Farhan">
+        </div>
+      </div>
+
+      <div class="supervisor-item">
+        <div class="supervisor-card">
+          <span class="supervisor-tag">Academic Supervisor</span>
+          <h3>Dr. Ayesha Anees Zaveri</h3>
+
+          <p class="role">
+             Lecturer, Universiti Kuala Lumpur (UniKL), Malaysia<br>
+            Specialises in AI, Software Engineering, Intelligent Systems &amp; Recommendation Agents
+          </p>
+
+          <p>
+            My collaboration with Ayesha Anees Zaveri led to the co-authored paper "A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector." The research tackled a real and pressing challenge, how UK food businesses integrate data across multiple channels. Drawing on Zaveri's expertise in intelligent systems and AI-driven software, we developed an integrated framework that brings these data streams together, offering a practical and academically grounded solution. The paper was presented and published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia, an internationally recognised, Scopus and Web of Science indexed venue. DOI: 
+          </p>
+
+          <a href="https://doi.org/10.1109/ICAIII69475.2026.11521642"
+             target="_blank"
+             rel="noopener">
+            View IEEE Publication →
+          </a>
+        </div>
+
+        <div class="research-collab-photo">
+          <img src="assets/img/Research collaboration meeting with Dr. Ayesha Anees Zaveri.jpeg"
+               alt="Research collaboration meeting with Dr. Ayesha Anees Zaveri">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: PUBLISHED RESEARCH -->
+<section>
+  <div class="container">
+    <h2 class="section-title">PUBLISHED RESEARCH</h2>
+
+    <div class="info-card intro-card">
+      <h3>Academic Rigour That Fuels Technological Innovation</h3>
+    </div>
+
+    <div class="pub-list">
+
+      <article class="pub-card">
+  <h4>Publication 1 · IEEE ICAIII 2026</h4>
+  <p>
+    <strong>
+      A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector. Published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia. DOI: 
+    </strong>
+  </p>
+
+  <div style="margin-top:14px;">
+    <a class="pub-ext-link"
+       href="https://doi.org/10.1109/ICAIII69475.2026.11521642"
+       target="_blank"
+       rel="noopener">
+      View IEEE Publication ↗
+    </a>
+  </div>
+</article>
+
+      <article class="pub-card">
+        <h4>Publication 2 · Ravensbourne University London</h4>
+        <p>
+          <strong>
+            Ravensbourne University London Repository · 2025 Artificial Intelligence in Marketing: 
+            Ethical Challenges and Solutions for Consumers and Society
+          </strong>
+        </p>
+        <div style="margin-top:14px;">
+          <a class="pub-ext-link" href="https://rave.repository.guildhe.ac.uk/id/eprint/170/" target="_blank" rel="noopener">
+            Read Paper ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="google-profile-box" style="margin-top:34px; padding:28px 30px; background: rgba(255,255,255,0.94); border:1px solid var(--sc-border); border-radius:24px; box-shadow:var(--sc-shadow); max-width:940px; margin-left:auto; margin-right:auto;">
+      <h3 style="margin-bottom:16px; font-size:22px;">Google Scholar Profile</h3>
+      <p style="margin-bottom:18px; color:#334155; line-height:1.75;">
+        Further peer-reviewed publications and citation metrics are available and independently verifiable on Google Scholar.
+      </p>
+      <a class="citation-btn" href="https://scholar.google.com/citations?user=7rShyMsAAAAJ&hl=en" target="_blank" rel="noopener">
+        View Full Profile on Google Scholar ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <section class="publication-photo-section">
+    <div class="container">
+      <div style="max-width:900px;margin:0 auto 24px;text-align:center;">
+        <h3 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,3vw,36px);margin-bottom:18px;color:#03102b;">Mentoring and Knowledge Sharing</h3>
+        <p style="margin:0 auto;color:#334155;line-height:1.85;font-size:18px;max-width:780px;">Beyond research and product development, Danyal is committed to giving back to the community. He has delivered AI literacy and digital skills programmes to students through a hybrid model of in-person and online sessions, helping the next generation understand and apply emerging technologies.He also mentors early-stage researchers and students, supporting them in their academic and professional journeys in technology and innovation.</p>
+        
+      </div>
+      <div class="publication-photo-grid">
+        <article class="photo-card"><img src="assets/img/M1.jpeg" alt="M1 research image"></article>
+        <article class="photo-card"><img src="assets/img/M2.jpeg" alt="M2 research image"></article>
+        <article class="photo-card"><img src="assets/img/M2b.jpeg" alt="M2b research image"></article>
+        <article class="photo-card"><img src="assets/img/Picture7.jpg" alt="Picture 7"></article>
+        <article class="photo-card"><img src="assets/img/Picture4.jpg" alt="Picture 4"></article>
+        <article class="photo-card"><img src="assets/img/picture3.png.jpg" alt="Picture 3"></article>
+        <article class="photo-card"><img src="assets/img/Picture5.png" alt="Picture 5"></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">AI BEYOND ACADEMIA</h2>
+      <div class="info-card intro-card" style="margin-bottom:32px;">
+        <p>Op-Ed: Mentoring the Next Generation in AI · The Frontier Post · National English Daily · Pakistan &amp; Washington D.C., USA</p>
+        <p>Beyond peer-reviewed research, Danyal has contributed to public discourse on AI through an op-ed titled "Mentoring the Next Generation in AI", published in The Frontier Post, a national English-language daily distributed across Pakistan and Washington D.C., USA. The piece addresses the critical role of mentorship and digital literacy in ensuring communities across the world benefit from the rapid advancement of artificial intelligence. It reached an international readership across two continents, positioning Danyal as a credible public voice on AI education and responsible technology adoption.</p>
+        <p style="margin-top:16px;"><a class="read-link" href="https://thefrontierpost.com/e-paper-archive/#flipbook-df_886293/7/" target="_blank" rel="noopener">Read the article here ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: MEDIA RECOGNITION -->
+  <section style="background: linear-gradient(180deg,#f0f4f8 0%,#ffffff 100%);">
+    <div class="container">
+      <h2 class="section-title">MEDIA RECOGNITION</h2>
+      <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
+        <p>SaleCompass has been independently covered by two separate publications, reflecting growing external interest in the platform and the research underpinning it.</p>
+        <p>Startup Pakistan published an editorial feature titled “From Pakistan to the World: The Story of SaleCompass An AI-Powered Revenue Intelligence Platform for Small Businesses” on 23 January 2026, authored by journalist Ameena Amin. The article profiled SaleCompass as a pioneering AI platform addressing one of the most significant challenges facing SMEs globally. Read the full article here: <a href="https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/" target="_blank" rel="noopener">https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/</a></p>
+      </div>
+
+      <div class="media-recognition-image">
+        <img src="assets/img/Startup Pakistan, January 23 2026, editorial feature by Ameena Amin.png" alt="Startup Pakistan feature">
+      </div>
+
+      <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
+        <p>Daily Todays Muslim published a named article titled “Turning Ambition into Innovation: Danyal's Global AI Success” on 22 February 2026, authored by journalist Bassam Khan. The article positioned SaleCompass within the broader context of AI reshaping industries worldwide. View the published article here: <a href="https://dailytodaysmuslim.com/uploads/2026-02-22/page-4.jpg" target="_blank" rel="noopener">https://dailytodaysmuslim.com/uploads/2026-02-22/page-4.jpg</a></p>
+      </div>
+
+      <div class="media-recognition-image">
+        <img src="assets/img/Daily Today's Muslim  article by Bassam Khan covering Danyal Mohiuddin and SaleCompass, 22 February 2026.png" alt="Daily Todays Muslim feature">
+      </div>
+
+     
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<!-- FOOTER (same style as other pages) -->
-<footer class="site-footer">
-  <div class="container footer-grid">
+<footer class="site-footer fade-up">
+  <div class="container footer-grid footer-four-col">
 
     <div>
       <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass Logo">
-      <p class="footer-description">
-        Your Compass for Smarter Growth.
-      </p>
+      <p class="footer-description">Intelligence that moves revenue.</p>
     </div>
 
     <div>
@@ -818,70 +1798,63 @@ footer {
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="MeetFounder.html">Meet The Founder</a></li>
+        <li><a href="early-adopters.html">Early Adopters</a></li>
         <li><a href="research.html">R&amp;D</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
     <div>
-      <h4>Services</h4>
+      <h4>Get in touch</h4>
       <ul class="footer-links">
-        <li><a href="services.html">Attribution Engine</a></li>
-        <li><a href="services.html">Predictive Analytics</a></li>
-        <li><a href="services.html">Sentiment Intelligence</a></li>
-        <li><a href="services.html"> Real-Time Dashboards</a></li>
-        <li><a href="services.html">Seamless Integrations</a></li>
-        <li><a href="services.html">Automation Engine</a></li>
+      <li>
+  <a href="mailto:Danyal.mohiuddin@salecompass.uk">
+    <span class="footer-contact-icon">📧</span>
+    <span>Danyal.mohiuddin@salecompass.uk</span>
+  </a>
+</li>
+        <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
+        <li><a href="mailto:careers@salecompass.uk">📧 careers@salecompass.uk</a></li>
+        <li><a href="tel:+923462135026">📞 0092 3462135026</a></li>
       </ul>
     </div>
 
-    <div>
-      <h4>Get in touch</h4>
-      <ul class="footer-links">
+    <div class="footer-social-col">
+      <h4>Social media links</h4>
 
-        
-        <li><a href="mailto:hello@salecompass.uk">📧Danyal.mohiuddin@salecompass.uk</a></li>
-        <li><a href="mailto:hello@salecompass.uk">📧info@salecompass.uk</a></li>
-        <li><a href="mailto:hello@salecompass.uk">📧careers@salecompass.uk</a></li>
-        
-        <li><a href="location">📍London,United Kingdom</a></li>
-      </ul>
+      <div class="footer-social-icons">
+        <a href="https://www.facebook.com/people/SaleCompass/61585621962023/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.linkedin.com/company/salecompass/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/salecompass/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+      </div>
     </div>
 
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="SaleCompass watermark">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
 
-  <div class="container tiny">© <span id="year"></span> SaleCompass. All rights reserved.</div>
+  <p class="tiny">© 2025 SaleCompass. All rights reserved.</p>
 </footer>
 
 <script>
 function togglePub(id, btn) {
   const box = document.getElementById(id);
-
-  // If closed → open it
-  if (box.style.maxHeight === "0px" || !box.style.maxHeight) {
-    box.style.maxHeight = "1000px";  /* enough for full text */
+  if (!box.style.maxHeight || box.style.maxHeight === "0px") {
     box.style.display = "block";
+    box.style.maxHeight = "1000px";
     btn.textContent = "Show less ↑";
-  } 
-
-  // If open → close it
-  else {
+  } else {
     box.style.maxHeight = "0px";
-    box.style.display = "none";
+    setTimeout(() => { box.style.display = "none"; }, 400);
     btn.textContent = "Read more →";
   }
 }
-  document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
-  const y = document.getElementById("year");
-
-  if (y) y.textContent = new Date().getFullYear();
-
   if (btn && menu) {
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") === "true";
@@ -890,10 +1863,6 @@ function togglePub(id, btn) {
     });
   }
 });
-
-
 </script>
-
 </body>
 </html>
-
