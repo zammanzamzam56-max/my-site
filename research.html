@@ -1469,6 +1469,23 @@ nav.menu a.btn.primary:hover {
     grid-template-columns: 1fr;
   }
 }
+/* R&D footer alignment fix */
+
+@media (min-width: 901px) {
+  .site-footer .footer-four-col,
+  .site-footer .footer-grid {
+    grid-template-columns: 1.1fr 0.8fr 1.45fr 1.3fr !important;
+    column-gap: 75px !important;
+  }
+
+  .site-footer .footer-grid > div:nth-child(3) {
+    margin-left: 35px !important;
+  }
+
+  .site-footer .footer-social-col {
+    margin-left: 45px !important;
+  }
+}
   </style>
 </head>
 <body>
