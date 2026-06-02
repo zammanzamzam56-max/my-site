@@ -942,6 +942,175 @@ nav.menu a.btn.primary:hover {
     font-size: 27px !important;
   }
 }
+.logo-img {
+  height: 150px !important;
+  width: 200px !important;
+  margin-bottom: 18px !important;
+}
+
+.footer-description {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  max-width: 260px !important;
+  margin-top:-40px !important;
+}
+.logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+nav.menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+nav.menu a {
+  color: #03102b !important;
+  text-decoration: none !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: 0.25s ease !important;
+}
+
+nav.menu a:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.active {
+  color: #ff8c3a !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+nav.menu a.active:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.btn,
+nav.menu a.btn.primary {
+  background: #03102b !important;
+  color: #ffffff !important;
+  padding: 10px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+
+nav.menu a.btn:hover,
+nav.menu a.btn.primary:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+@media (max-width: 900px) {
+  .site-header {
+    padding: 10px 0 !important;
+  }
+
+  .site-header .nav {
+    height: 76px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+  }
+  .logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 12px !important;
+    margin-right: auto !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: 58px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header-tagline {
+    font-size: 8px !important;
+    margin-top: -4px !important;
+    text-align: left !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 100000 !important;
+    margin-left: auto !important;
+    margin-right: 18px !important;
+    background: transparent !important;
+    color: #03102b !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+  }
+
+  .site-header nav.menu {
+    display: none !important;
+  }
+
+  .site-header nav.menu.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 96px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 22px 18px !important;
+    gap: 18px !important;
+    z-index: 99999 !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12) !important;
+  }
+  .logo img {
+  height: 150px !important;
+  width: 600px !important;
+  margin-bottom:20px !important;
+}
+}
+/* Mobile logo size fix */
+
+@media (max-width: 900px) {
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: none !important;
+    height: 85px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+  }
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 18px !important;
+  }
+
+  .site-header .nav {
+    height: 65px !important;
+  }
+
+  .menu-toggle {
+    margin-right: 24px !important;
+  }
+}
+
   </style>
 </head>
 
@@ -962,7 +1131,7 @@ nav.menu a.btn.primary:hover {
     <button class="menu-toggle" aria-expanded="false">☰</button>
 
     <nav class="menu">
-      <a href="index.html">Home</a>
+      <a href="Home.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a class="active" href="MeetFounder.html">Meet The Founder</a>
@@ -975,12 +1144,8 @@ nav.menu a.btn.primary:hover {
 </header>
 
 <section class="hero">
-  <div class="container">
-    <div class="hero-eyebrow">
-      <span></span>
-      SaleCompass Leadership
-      <span></span>
-    </div>
+  
+   
 
     <h1>Meet The Founder</h1>
 
@@ -1060,7 +1225,7 @@ nav.menu a.btn.primary:hover {
     <div>
       <h4>Links</h4>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="Home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="MeetFounder.html">Meet The Founder</a></li>
@@ -1082,6 +1247,7 @@ nav.menu a.btn.primary:hover {
 </li>
     <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
     <li><a href="mailto:careers@salecompass.uk">📧 careers@salecompass.uk</a></li>
+       <li><strong>Address:</strong> 📍 A 23 Sector 11 B North Karachi, Pakistan</li>
     <li><a href="tel:+923462135026">📞 0092 3462135026</a></li>
     
   </ul>
@@ -1100,7 +1266,7 @@ nav.menu a.btn.primary:hover {
       in
     </a>
 
-    <a href="https://www.instagram.com/salecompass/" target="_blank" rel="noopener" aria-label="Instagram">
+    <a href="https://www.instagram.com/salecompassuk?igsh=OHVqbHhtbWtpOW5z" target="_blank" rel="noopener" aria-label="Instagram">
       ◎
     </a>
   </div>
