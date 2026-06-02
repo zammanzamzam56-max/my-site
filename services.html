@@ -644,6 +644,53 @@ nav.menu a.btn.primary:hover {
     padding: 12px 14px !important;
   }
 }
+nav.menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+nav.menu a {
+  color: #03102b !important;
+  text-decoration: none !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: 0.25s ease !important;
+}
+
+nav.menu a:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.active {
+  color: #ff8c3a !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+nav.menu a.active:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.btn,
+nav.menu a.btn.primary {
+  background: #03102b !important;
+  color: #ffffff !important;
+  padding: 10px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+
+nav.menu a.btn:hover,
+nav.menu a.btn.primary:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
 
   </style>
 </head>
@@ -658,7 +705,7 @@ nav.menu a.btn.primary:hover {
     </a>
 <button class="menu-toggle" type="button" aria-expanded="false">☰</button>
     <nav class="menu">
-      <a href="index.html">Home</a>
+      <a href="Home.html">Home</a>
       <a href="about.html">About</a>
       <a class="active" href="services.html">Services</a>
       <a href="MeetFounder.html">Meet The Founder</a>
@@ -943,7 +990,128 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
     min-height: auto !important;
   }
 }
+.logo-img {
+  height: 150px !important;
+  width: 200px !important;
+  margin-bottom: 18px !important;
+}
 
+.footer-description {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  max-width: 260px !important;
+  margin-top:-40px !important;
+}
+.logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+@media (max-width: 900px) {
+  .site-header {
+    padding: 10px 0 !important;
+  }
+
+  .site-header .nav {
+    height: 76px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+  }
+  .logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 12px !important;
+    margin-right: auto !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: 58px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header-tagline {
+    font-size: 8px !important;
+    margin-top: -4px !important;
+    text-align: left !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 100000 !important;
+    margin-left: auto !important;
+    margin-right: 18px !important;
+    background: transparent !important;
+    color: #03102b !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+  }
+
+  .site-header nav.menu {
+    display: none !important;
+  }
+
+  .site-header nav.menu.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 96px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 22px 18px !important;
+    gap: 18px !important;
+    z-index: 99999 !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12) !important;
+  }
+  .logo img {
+  height: 150px !important;
+  width: 600px !important;
+  margin-bottom:20px !important;
+}
+}
+/* Mobile logo size fix */
+
+@media (max-width: 900px) {
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: none !important;
+    height: 85px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+  }
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 18px !important;
+  }
+
+  .site-header .nav {
+    height: 65px !important;
+  }
+
+  .menu-toggle {
+    margin-right: 24px !important;
+  }
+}
 
 </style>
 
@@ -971,12 +1139,12 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
         <ul class="plan-features">
           <li>✔ Multi-Channel Dashboard</li>
           <li>✔ 1 Integration</li>
-          <li>✔ 200 AI Insights</li>
-          <li>✔ 200 Monthly AI Insights</li>
-          <li>✔ Basic Attribution Model</li>
-          <li>✔ POS Upload Manual</li>
+          <li>✔ 200 AI Insights/mo</li>
+          <li>✔ Basic Attribution </li>
+          <li>✓ Manual POS Upload</li>
+          
           <li>✖ Predictive Analytics</li>
-          <li>✖ Automated Recommendations</li>
+          <li>✖ Auto Recommendations</li>
           <li>✖ Real-Time Alerts</li>
         </ul>
 
@@ -993,12 +1161,12 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✔ All Free Features</li>
           <li>✔ 5 Integrations</li>
           <li>✔ POS / CRM Sync</li>
-          <li>✔ 1,000 Monthly AI Insights</li>
-          <li>✔ AI Trend Detection Basic</li>
-          <li>✔ Automated Weekly Reports</li>
+          <li>✔ 1,000  AI Insights/mo</li>
+          <li>✔ AI Trend Detection </li>
+          <li>✔ Weekly Auto Reports </li>
           <li>✔ Priority Email Support</li>
           <li>✖ Real-Time Alerts</li>
-          <li>✖ Predictive Demand Forecasting</li>
+          <li>✖ Demand Forecasting</li>
         </ul>
 
         <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
@@ -1014,10 +1182,10 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✔ All Starter Features</li>
           <li>✔ 10 Integrations</li>
           <li>✔ Real-Time Alerts</li>
-          <li>✔ 5,000 Monthly AI Insights</li>
-          <li>✔ Advanced Multi-Touch Attribution</li>
-          <li>✔ Campaign Optimisation Suggestions</li>
-          <li>✔ Campaign Optimisation</li>
+          <li>✔ 5,000  AI Insights/mo</li>
+          <li>✔ Advanced  Attribution</li>
+          <li>✔ Campaign Optimisation </li>
+          
           <li>✔ Chat + Priority Support</li>
         </ul>
 
@@ -1034,9 +1202,9 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✔ All Growth Features</li>
           <li>✔ Unlimited Integrations</li>
           <li>✔ Unlimited AI Insights</li>
-          <li>✔ Personalised AI Recommendations Engine</li>
-          <li>✔ Full Customer Journey Mapping</li>
-          <li>✔ API Access Full</li>
+          <li>✔ Personalised AI  Engine</li>
+          <li>✔ Full  Journey Mapping</li>
+          <li>✔ Full API Access</li>
           <li>✔ Dedicated Account Support</li>
         </ul>
 
@@ -1088,7 +1256,7 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
     <div>
       <h4>Links</h4>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="Home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="MeetFounder.html">Meet The Founder</a></li>
@@ -1110,6 +1278,7 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
 </li>
     <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
     <li><a href="mailto:careers@salecompass.uk">📧 careers@salecompass.uk</a></li>
+       <li><strong>Address:</strong> 📍 A 23 Sector 11 B North Karachi, Pakistan</li>
     <li><a href="tel:+923462135026">📞 0092 3462135026</a></li>
   </ul>
 </div>
@@ -1127,7 +1296,7 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
       in
     </a>
 
-    <a href="https://www.instagram.com/salecompass/" target="_blank" rel="noopener" aria-label="Instagram">
+    <a href="https://www.instagram.com/salecompassuk?igsh=OHVqbHhtbWtpOW5z" target="_blank" rel="noopener" aria-label="Instagram">
       ◎
     </a>
   </div>
