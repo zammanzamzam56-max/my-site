@@ -845,36 +845,32 @@ nav.menu a.btn.primary:hover {
       </form>
     </div>
 
-    <!-- Booking Calendar (date + time) -->
-    <div class="booking-card">
-      <h3>Book a reservation</h3>
-      <p>Select a date and time and send your request.</p>
+   <form class="booking-form" action="https://formspree.io/f/mvznpobv" method="POST">
+  <input type="hidden" name="form_type" value="Reservation Request">
 
-      <form class="booking-form" action="https://formspree.io/f/mvznpobv" method="POST"></form>
-        <input type="hidden" name="form_type" value="Reservation Request">
+  <label for="bookName">Your Name</label>
+  <input id="bookName" name="reservation_name" type="text" required>
 
-        <label for="bookName">Your Name</label>
-        <input id="bookName" name="reservation_name" type="text" required>
+  <label for="bookEmail">Email Address</label>
+  <input id="bookEmail" name="reservation_email" type="email" required>
 
-        <label for="bookEmail">Email Address</label>
-        <input id="bookEmail" name="reservation_email" type="email" required>
+  <div class="booking-grid">
+    <div>
+      <label for="bookDate">Select Date</label>
+      <input id="bookDate" name="reservation_date" type="date" required>
+    </div>
 
-        <div class="booking-grid">
-          <div>
-            <label for="bookDate">Select Date</label>
-            <input id="bookDate" name="reservation_date" type="date" required>
-          </div>
-          <div>
-            <label for="bookTime">Select Time</label>
-            <input id="bookTime" name="reservation_time" type="time" required>
-          </div>
-        </div>
+    <div>
+      <label for="bookTime">Select Time</label>
+      <input id="bookTime" name="reservation_time" type="time" required>
+    </div>
+  </div>
 
-        <label for="bookNote">Notes (optional)</label>
-        <textarea id="bookNote" name="reservation_notes" rows="3"></textarea>
+  <label for="bookNote">Notes (optional)</label>
+  <textarea id="bookNote" name="reservation_notes" rows="3"></textarea>
 
-        <button type="submit">Request Reservation</button>
-      </form>
+  <button type="submit">Request Reservation</button>
+</form>
 
       
     </div>
