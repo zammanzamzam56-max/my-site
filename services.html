@@ -866,6 +866,84 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
     padding: 12px 14px !important;
   }
 }
+.pricing-section {
+  padding: 70px 0 !important;
+  background: #020230 !important;
+}
+
+.pricing-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+
+.pricing-card {
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  padding: 28px 24px !important;
+  min-height: 520px !important;
+  height: auto !important;
+  max-width: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.12) !important;
+}
+
+.plan-features {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 18px 0 24px !important;
+  width: 100% !important;
+}
+
+.plan-features li {
+  list-style: none !important;
+  margin-bottom: 9px !important;
+  font-size: 15px !important;
+  line-height: 1.35 !important;
+  color: #03102b !important;
+}
+
+.coming-soon-btn {
+  margin-top: auto !important;
+  width: 100% !important;
+  max-width: 230px !important;
+  height: 52px !important;
+  background: #03102b !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  cursor: not-allowed !important;
+  opacity: 0.9 !important;
+  pointer-events: none !important;
+}
+
+.coming-soon-btn:hover {
+  background: #03102b !important;
+  transform: none !important;
+}
+
+@media (max-width: 1100px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pricing-card {
+    min-height: auto !important;
+  }
+}
+
 
 </style>
 
@@ -880,40 +958,89 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
       <h2>Compare Plans</h2>
     </div>
 
-    <!-- BILLING TOGGLE -->
-    <div class="billing-toggle">
-      <span>Monthly</span>
-      <label class="billing-switch">
-        <input type="checkbox" id="billingToggle">
-        <span class="billing-slider"></span>
-      </label>
-      <span>Annual <span style="color:#16a34a">(2 months free)</span></span>
-    </div>
+   
 
     <div class="pricing-grid">
 
-      <!-- FREE -->
       <article class="pricing-card">
-        <div class="plan-name" style="font-size: 24px; margin-bottom: 16px;">Free</div>
-        <div style="font-size: 16px; color: #6b7280;">Coming Soon</div>
+        <div class="plan-title">Free</div>
+        <div class="plan-name">Free</div>
+        <div class="plan-price" data-month="£0" data-year="£0">£0</div>
+        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
+
+        <ul class="plan-features">
+          <li>✔ Multi-Channel Dashboard</li>
+          <li>✔ 1 Integration</li>
+          <li>✔ 200 AI Insights</li>
+          <li>✔ 200 Monthly AI Insights</li>
+          <li>✔ Basic Attribution Model</li>
+          <li>✔ POS Upload Manual</li>
+          <li>✖ Predictive Analytics</li>
+          <li>✖ Automated Recommendations</li>
+          <li>✖ Real-Time Alerts</li>
+        </ul>
+
+        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
       </article>
 
-      <!-- STARTER -->
       <article class="pricing-card">
-        <div class="plan-name" style="font-size: 24px; margin-bottom: 16px;">Starter</div>
-        <div style="font-size: 16px; color: #6b7280;">Coming Soon</div>
+        <div class="plan-title">Starter</div>
+        <div class="plan-name">Starter</div>
+        <div class="plan-price" data-month="£29" data-year="£290">£29</div>
+        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
+
+        <ul class="plan-features">
+          <li>✔ All Free Features</li>
+          <li>✔ 5 Integrations</li>
+          <li>✔ POS / CRM Sync</li>
+          <li>✔ 1,000 Monthly AI Insights</li>
+          <li>✔ AI Trend Detection Basic</li>
+          <li>✔ Automated Weekly Reports</li>
+          <li>✔ Priority Email Support</li>
+          <li>✖ Real-Time Alerts</li>
+          <li>✖ Predictive Demand Forecasting</li>
+        </ul>
+
+        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
       </article>
 
-      <!-- GROWTH -->
       <article class="pricing-card">
-        <div class="plan-name" style="font-size: 24px; margin-bottom: 16px;">Growth</div>
-        <div style="font-size: 16px; color: #6b7280;">Coming Soon</div>
+        <div class="plan-title">Growth</div>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price" data-month="£59" data-year="£590">£59</div>
+        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
+
+        <ul class="plan-features">
+          <li>✔ All Starter Features</li>
+          <li>✔ 10 Integrations</li>
+          <li>✔ Real-Time Alerts</li>
+          <li>✔ 5,000 Monthly AI Insights</li>
+          <li>✔ Advanced Multi-Touch Attribution</li>
+          <li>✔ Campaign Optimisation Suggestions</li>
+          <li>✔ Campaign Optimisation</li>
+          <li>✔ Chat + Priority Support</li>
+        </ul>
+
+        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
       </article>
 
-      <!-- PREMIUM -->
       <article class="pricing-card">
-        <div class="plan-name" style="font-size: 24px; margin-bottom: 16px;">Premium</div>
-        <div style="font-size: 16px; color: #6b7280;">Coming Soon</div>
+        <div class="plan-title">Premium</div>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price" data-month="£99" data-year="£990">£99</div>
+        <div class="plan-period" data-month="/ month" data-year="/ year">/ month</div>
+
+        <ul class="plan-features">
+          <li>✔ All Growth Features</li>
+          <li>✔ Unlimited Integrations</li>
+          <li>✔ Unlimited AI Insights</li>
+          <li>✔ Personalised AI Recommendations Engine</li>
+          <li>✔ Full Customer Journey Mapping</li>
+          <li>✔ API Access Full</li>
+          <li>✔ Dedicated Account Support</li>
+        </ul>
+
+        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
       </article>
 
     </div>
@@ -976,9 +1103,9 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
   <h4>Get in touch</h4>
   <ul class="footer-links" style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:10px;">
    <li>
-  <a href="mailto:Danyal.mohiuddin@salecompass.uk">
+  <a href="mailto:Danyal@salecompass.uk">
     <span class="footer-contact-icon">📧</span>
-    <span>Danyal.mohiuddin@salecompass.uk</span>
+    <span>Danyal@salecompass.uk</span>
   </a>
 </li>
     <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
