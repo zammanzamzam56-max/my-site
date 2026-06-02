@@ -612,7 +612,7 @@
     }
       footer {
       position: relative;
-      background: #001437;
+      background: #022561;
       color:white;
       padding-top: 40px;
       padding-bottom: 50px;
@@ -1510,6 +1510,160 @@ nav.menu a.btn.primary:hover {
   transform: none !important;
   filter: none !important;
 }
+.logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+nav.menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+nav.menu a {
+  color: #03102b !important;
+  text-decoration: none !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: 0.25s ease !important;
+}
+
+nav.menu a:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.active {
+  color: #ff8c3a !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+nav.menu a.active:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.btn,
+nav.menu a.btn.primary {
+  background: #03102b !important;
+  color: #ffffff !important;
+  padding: 10px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+
+nav.menu a.btn:hover,
+nav.menu a.btn.primary:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+@media (max-width: 900px) {
+  .site-header {
+    padding: 10px 0 !important;
+  }
+
+  .site-header .nav {
+    height: 76px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+  }
+  .logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 12px !important;
+    margin-right: auto !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: 58px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header-tagline {
+    font-size: 8px !important;
+    margin-top: -4px !important;
+    text-align: left !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 100000 !important;
+    margin-left: auto !important;
+    margin-right: 18px !important;
+    background: transparent !important;
+    color: #03102b !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+  }
+
+  .site-header nav.menu {
+    display: none !important;
+  }
+
+  .site-header nav.menu.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 96px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 22px 18px !important;
+    gap: 18px !important;
+    z-index: 99999 !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12) !important;
+  }
+  .logo img {
+  height: 150px !important;
+  width: 600px !important;
+  margin-bottom:20px !important;
+}
+}
+/* Mobile logo size fix */
+
+@media (max-width: 900px) {
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: none !important;
+    height: 85px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+  }
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 18px !important;
+  }
+
+  .site-header .nav {
+    height: 65px !important;
+  }
+
+  .menu-toggle {
+    margin-right: 24px !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -1519,7 +1673,7 @@ nav.menu a.btn.primary:hover {
     <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="SaleCompass Logo"></a>
     <button class="menu-toggle" aria-expanded="false">☰</button>
     <nav class="menu">
-      <a href="index.html">Home</a>
+      <a href="Home.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="MeetFounder.html">Meet The Founder</a>
@@ -1550,7 +1704,7 @@ nav.menu a.btn.primary:hover {
 
     <h2 class="section-title">INTERNATIONAL CONFERENCE APPEARANCES</h2> 
     <div class="info-card intro-card" style="margin-bottom:30px;"> <h3>IEEE International Conference on AI Innovations and Industry (ICAIII 2026)</h3> <p><strong>Jeddah, Saudi Arabia · IEEE · 2026</strong></p> 
-      <p> Presented original research titled "A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector" at the IEEE International Conference on AI Innovations and Industry, held in Jeddah, Saudi Arabia. IEEE is the world's largest technical professional organisation, with conferences recognised globally as the benchmark for engineering and technology research. The paper proposed an integrated AI-based analytics framework addressing a critical and underserved gap in how UK businesses connect digital marketing activity to real revenue outcomes. It was presented before an international audience of AI researchers, engineers, and industry practitioners.
+      <p> Presented original research titled "A Systematic Literature Review of Multi-Channel Analytics Linked to POS and Connected to Food Business in the UK " at the IEEE International Conference on AI Innovations and Industry, held in Jeddah, Saudi Arabia. IEEE is the world's largest technical professional organisation, with conferences recognised globally as the benchmark for engineering and technology research. The paper proposed an integrated AI-based analytics framework addressing a critical and underserved gap in how UK businesses connect digital marketing activity to real revenue outcomes. It was presented before an international audience of AI researchers, engineers, and industry practitioners.The paper has been formally published in IEEE proceedings. 
 
       <p style="margin-top:16px;">
         <a href="https://doi.org/10.1109/ICAIII69475.2026.11521642"
@@ -1642,11 +1796,7 @@ nav.menu a.btn.primary:hover {
       </div>
 
    
-        </div>
-        <div class="repo-photo" style="margin-top:30px; border-radius:24px; overflow:hidden; box-shadow:var(--sc-shadow);">
-          <img src="assets/img/PaperArchived.jpeg" alt="Paper archived in Ravensbourne repository">
-        </div>
-      </div>
+       
     </div>
   </section>
 
@@ -1684,7 +1834,7 @@ nav.menu a.btn.primary:hover {
           </p>
 
           <p>
-            My collaboration with Ayesha Anees Zaveri led to the co-authored paper "A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector." The research tackled a real and pressing challenge, how UK food businesses integrate data across multiple channels. Drawing on Zaveri's expertise in intelligent systems and AI-driven software, we developed an integrated framework that brings these data streams together, offering a practical and academically grounded solution. The paper was presented and published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia, an internationally recognised, Scopus and Web of Science indexed venue.  
+            My collaboration with Ayesha Anees Zaveri led to the co-authored paper "A Systematic Literature Review of Multi-Channel Analytics Linked to POS and Connected to Food Businesses in the UK." The research tackled a real and pressing challenge, how UK food businesses integrate data across multiple channels. Drawing on Zaveri's expertise in intelligent systems and AI-driven software, we developed an integrated framework that brings these data streams together, offering a practical and academically grounded solution. The paper was presented and published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia, an internationally recognised, Scopus and Web of Science indexed venue.  
           </p>
 
           <a href="https://doi.org/10.1109/ICAIII69475.2026.11521642"
@@ -1723,7 +1873,7 @@ nav.menu a.btn.primary:hover {
   <h4>Publication 1 · IEEE ICAIII 2026</h4>
   <p>
     <strong>
-      A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector. Published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia. DOI: 
+      A Systematic Literature Review of Multi-Channel Analytics Linked to POS and Connected to Food Businesses in the UK. Published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia. 
     </strong>
   </p>
 
@@ -1741,7 +1891,7 @@ nav.menu a.btn.primary:hover {
         <h4>Publication 2 · Ravensbourne University London</h4>
         <p>
           <strong>
-            Ravensbourne University London Repository · 2025 Artificial Intelligence in Marketing: 
+            Ravensbourne University London Repository  Artificial Intelligence in Marketing: 
             Ethical Challenges and Solutions for Consumers and Society
           </strong>
         </p>
@@ -1803,7 +1953,7 @@ nav.menu a.btn.primary:hover {
       <h2 class="section-title">MEDIA RECOGNITION</h2>
       <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
         <p>SaleCompass has been independently covered by two separate publications, reflecting growing external interest in the platform and the research underpinning it.</p>
-        <p>Startup Pakistan published an editorial feature titled “From Pakistan to the World: The Story of SaleCompass An AI-Powered Revenue Intelligence Platform for Small Businesses” on 23 January 2026, authored by journalist Ameena Amin. The article profiled SaleCompass as a pioneering AI platform addressing one of the most significant challenges facing SMEs globally. Read the full article here: <a href="https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/" target="_blank" rel="noopener">View Article</a></p>
+        <p><strong>Startup Pakistan</strong> published an editorial feature titled “From Pakistan to the World: The Story of SaleCompass An AI-Powered Revenue Intelligence Platform for Small Businesses” on 23 January 2026, authored by journalist Ameena Amin. The article profiled SaleCompass as a pioneering AI platform addressing one of the most significant challenges facing SMEs globally. Read the full article here: <a href="https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/" target="_blank" rel="noopener">View Article</a></p>
       </div>
 
       <div class="media-recognition-image">
@@ -1811,7 +1961,7 @@ nav.menu a.btn.primary:hover {
       </div>
 
       <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
-        <p>Daily Todays Muslim published a named article titled “Turning Ambition into Innovation: Danyal's Global AI Success” on 22 February 2026, authored by journalist Bassam Khan. The article positioned SaleCompass within the broader context of AI reshaping industries worldwide. View the published article here: <a href="https://dailytodaysmuslim.com/uploads/2026-02-22/page-4.jpg" target="_blank" rel="noopener">View Article</a></p>
+        <p><strong>Daily Todays Muslim</strong> published a named article titled “Turning Ambition into Innovation: Danyal's Global AI Success” on 22 February 2026, authored by journalist Bassam Khan. The article positioned SaleCompass within the broader context of AI reshaping industries worldwide. View the published article here: <a href="https://dailytodaysmuslim.com/uploads/2026-02-22/page-4.jpg" target="_blank" rel="noopener">View Article</a></p>
       </div>
 
       <div class="media-recognition-image">
@@ -1837,7 +1987,7 @@ nav.menu a.btn.primary:hover {
     <div>
       <h4>Links</h4>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="Home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="MeetFounder.html">Meet The Founder</a></li>
@@ -1858,6 +2008,7 @@ nav.menu a.btn.primary:hover {
 </li>
         <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
         <li><a href="mailto:careers@salecompass.uk">📧 careers@salecompass.uk</a></li>
+           <li><strong>Address:</strong> 📍 A 23 Sector 11 B North Karachi, Pakistan</li>
         <li><a href="tel:+923462135026">📞 0092 3462135026</a></li>
       </ul>
     </div>
@@ -1868,7 +2019,7 @@ nav.menu a.btn.primary:hover {
       <div class="footer-social-icons">
         <a href="https://www.facebook.com/people/SaleCompass/61585621962023/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
         <a href="https://www.linkedin.com/company/salecompass/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a href="https://www.instagram.com/salecompass/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+        <a href="https://www.instagram.com/salecompassuk?igsh=OHVqbHhtbWtpOW5z" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
       </div>
     </div>
 
