@@ -1,0 +1,1176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Revenue Intelligence for SMEs | SaleCompass</title>
+
+
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <style>
+    html, body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    body { 
+      background:white; 
+       font-family: 'Syne', sans-serif;
+    }
+    img { max-width: 100%; display: block; }
+    a, button { text-decoration:none !important; border:none !important; outline:none !important; }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    /* =============================== HEADER (MATCHED TO ABOUT) =============================== */
+    .site-header {
+      padding: 10px 0 !important;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img {
+      height: 130px !important;
+      width: 300px !important;
+      margin-bottom:20px !important;
+      margin-left: -25px !important;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+      margin-left:160px !important;
+      font-weight: 500!important;
+    }
+    nav.menu a {
+      transition: 0.25s ease;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #333 !important;
+    }
+    nav.menu a:hover {
+      background: #ff8c3a;
+      color: white !important;
+    }
+    nav.menu a.btn.primary:hover {
+      background:#ff8c3a !important;
+      color:white !important;
+    }
+
+    /* =============================== HERO =============================== */
+    .hero {
+      position: relative;
+      height: 85vh;
+      background: url("assets/img/Ai image.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      color: white;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 0 !important;
+    }
+    .hero-content h1,
+    .hero-content p {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .hero-content h1 {
+      font-size: 48px;
+      font-weight: 800;
+    }
+    .hero-content p {
+      font-size: 20px;
+      color: white !important;
+    }
+    .hero-cta {
+      margin-top: 12px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn {
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: 0.25s ease;
+    }
+    .btn.primary,
+    .btn.outline {
+      background:#06172b;
+      color: white;
+    }
+    .btn.primary:hover,
+    .btn.outline:hover {
+      background:#ff8c3a !important;
+      color:white !important;
+      opacity:1 !important;
+    }
+
+    /* =============================== TRUSTED CLIENTS =============================== */
+    .clients-section {
+      background:#f7f8fc;
+      padding:50px 0;
+    }
+    .clients-section h2 {
+      text-align:center;
+      font-size:32px;
+      font-weight:800;
+      margin-bottom:24px;
+      color:#0a1a3a;
+    }
+    .client-carousel {
+      overflow:hidden;
+      max-width:900px;
+      margin:0 auto;
+    }
+    .client-track {
+      display:flex;
+      align-items:center;
+      gap:60px;
+      animation:logo-scroll 18s linear infinite;
+    }
+    .client-logo {
+      flex:0 0 auto;
+      min-width:160px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      filter:grayscale(0.1);
+      opacity:0.9;
+    }
+    .client-logo img {
+      max-height:70px;
+      width:auto;
+    }
+    @keyframes logo-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =============================== WHO WE ARE =============================== */
+    .who-section {
+      padding:60px 0 40px;
+    }
+    .who-grid {
+      display:grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap:40px;
+      align-items:center;
+    }
+    .who-text h2 {
+      font-size:32px;
+      font-weight:800;
+      color:#cf5b0e;
+      margin-bottom:14px;
+    }
+    .who-text p {
+      font-size:17px;
+      line-height:1.6;
+      color:#333;
+      margin:0;
+    }
+    .who-image img {
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* =============================== PROBLEM SECTION =============================== */
+    .ps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+      padding: 70px 0;
+    }
+    .ps-row-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 26px;
+    }
+    .ps-box {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-left: 6px solid  #0a1a3a;
+      transition: .25s;
+      color: #0a1a3a;
+      position: relative;
+    }
+    .ps-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      border-left: 6px solid #ff8c3a;
+    }
+    .ps-box.target {
+      background: linear-gradient(135deg, #001437,  #001437);
+      color: white;
+      border-left: 6px solid #ff8c3a;
+      margin-bottom: 30px;
+    }
+    /* Remove dots from problem-solution lists */
+.ps-box ul,
+.ps-box li {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+    
+    .ps-box.target p {
+      color:white;
+    }
+    .ps-box.target:hover {
+      background: linear-gradient(135deg, #001437, #001437) !important;
+      color:rgb(247, 239, 239) !important;
+      transform:none !important;
+    }
+
+    /* =============================== FEATURES =============================== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      padding-bottom: 80px;
+    }
+    .feature-card {
+      text-align: center;
+      border-radius: 16px;
+      padding: 26px;
+      background:#001437;
+      color:white;
+      box-shadow: 0 4px 22px rgba(0,0,0,0.06);
+      transition: .25s ease;
+      border-left: 6px solid #004c99;
+    }
+    .feature-card:hover {
+      background:#ff8c3a !important;
+      color:white !important;
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      border-left: 6px solid #ff8c3a;
+    }
+    .feature-card img {
+      height: 70px;
+      margin: auto;
+      margin-bottom: 16px;
+    }
+    .read-more {
+      margin-top: 12px;
+      display: inline-block;
+      background:#0a1a3a;
+      color:white;
+      padding:10px 18px;
+      border-radius:6px;
+      transition:.25s;
+    }
+    .read-more:hover {
+      background:#ff8c3a;
+      color:white;
+    }
+
+    /* =============================== FAQ SECTION =============================== */
+    .faq-section {
+      background:#f7f8fc;
+      padding:60px 0;
+    }
+    .faq-section h2 {
+      text-align:center;
+      font-size:32px;
+      font-weight:800;
+      margin-bottom:28px;
+      color:#0a1a3a;
+    }
+    .faq-list {
+      max-width:900px;
+      margin:0 auto;
+    }
+    .faq-item {
+      margin-bottom:12px;
+      border-radius:10px;
+      background:white;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+      overflow:hidden;
+    }
+    .faq-item details {
+      padding:14px 18px;
+      cursor:pointer;
+    }
+    .faq-item summary {
+      font-weight:600;
+      font-size:15px;
+      list-style:none;
+    }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item summary::after {
+      content:"+";
+      float:right;
+      font-weight:bold;
+    }
+    .faq-item details[open] summary::after {
+      content:"−";
+    }
+    .faq-item p {
+      margin-top:8px;
+      font-size:14px;
+      color:#333;
+    }
+    /* =========================================
+   FIX FOOTER MOBILE VIEW ONLY (INLINE VERSION)
+========================================= */
+@media (max-width: 768px) {
+
+  /* Stack footer content */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  /* Center logo */
+  .footer-grid .logo-img {
+    margin: 0 auto !important;
+  }
+
+  /* Center small tagline */
+  .footer-description {
+    margin: 10px auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+
+  /* Center all sections */
+  .footer-grid div {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Footer links vertical */
+  .footer-links {
+    text-align: center !important;
+  }
+  .footer-links li a {
+    font-size: 18px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* “Get in touch” section */
+  .footer-grid div:last-child ul li {
+    font-size: 18px !important;
+  }
+
+  /* Hide huge watermark */
+   .footer-watermark {
+        position: relative;
+        display: block;
+        margin: 30px auto 0;
+        height: 140px;
+        opacity: 0.15;
+      }
+}
+
+    /* =============================== FOOTER (MATCHED TO CASE STUDIES) =============================== */
+    footer {
+      position: relative;
+      background: #001437;
+      color:white;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+
+         .footer-links a {
+    font-weight: bold !important
+}
+    .logo-img {
+      height: 120px !important;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+    /* === FIX FOOTER TAGLINE POSITION UNDER LOGO === */
+.footer-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers logo + tagline */
+  text-align: center;
+}
+
+.footer-description {
+      font-size:12px;
+      color:#ffffff;
+      margin-top:-10px !important;
+      line-height:1.3;
+      margin-left:-23px;
+      max-width:280px;
+    }
+
+    /* Ensure logo and tagline stack nicely */
+
+
+
+    .footer-links a { color: #ff8c3a; }
+    .tiny {
+      color: #ff8c3a !important;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    /* Watermark (matched exactly) */
+    .footer-watermark {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 260px;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    
+    .logo img {
+      height: 85px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      padding-top: 10%;
+    }
+    .site-header .nav {
+      height: 50px;
+      overflow: visible !important;
+      align-items: center;
+    }
+
+    .footer-links a { color:#ff8c3a; }
+
+    .tiny { text-align:center; color:#ff8c3a; margin-top:20px; }
+
+    /* =============================== MOBILE & TABLET FIXES =============================== */
+    @media (max-width: 900px) {
+      .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 16px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .site-header .nav {
+        gap: 12px;
+      }
+
+      .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 80px 0 40px;
+        background-position: center;
+      }
+
+      .hero-content h1 {
+        font-size: 30px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .ps-grid {
+        padding: 40px 0;
+      }
+
+      .ps-row-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 50px;
+      }
+
+      .who-grid {
+        grid-template-columns:1fr;
+      }
+
+      .client-track {
+        gap:40px;
+      }
+
+      .footer-watermark {
+        right: 0;
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 26px;
+      }
+      .hero-content p {
+        font-size: 15px;
+      }
+      .hero-cta {
+        flex-direction: column;
+      }
+      .hero-cta .btn {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+      }
+    } 
+   .site-footer .footer-links li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.footer-contact-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  min-width: 18px !important;
+}
+.footer-description {
+    margin-top: -18px !important;
+    padding-top: 0 !important;
+    line-height: 1.3 !important;
+}
+
+/* If still too low, reduce further */
+.footer-grid > div:first-child {
+    gap: 0 !important;
+}
+
+.logo-img {
+    margin-bottom: -8px !important;
+}
+.logo-img {
+  height: 150px !important;
+  width: 200px !important;
+  margin-bottom: 18px !important;
+}
+
+.footer-description {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  max-width: 260px !important;
+  margin-top:-40px !important;
+}
+.logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+nav.menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+nav.menu a {
+  color: #03102b !important;
+  text-decoration: none !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: 0.25s ease !important;
+}
+
+nav.menu a:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.active {
+  color: #ff8c3a !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+nav.menu a.active:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+
+nav.menu a.btn,
+nav.menu a.btn.primary {
+  background: #03102b !important;
+  color: #ffffff !important;
+  padding: 10px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+
+nav.menu a.btn:hover,
+nav.menu a.btn.primary:hover {
+  background: #ff8c3a !important;
+  color: #ffffff !important;
+}
+/* ===== FINAL MOBILE MENU CLOSED BY DEFAULT FIX ===== */
+
+@media (max-width: 900px) {
+  .site-header nav.menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .site-header nav.menu.open {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 24px 18px !important;
+    gap: 18px !important;
+    z-index: 99999 !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12) !important;
+  }
+
+  .site-header .menu-toggle {
+    display: block !important;
+    position: relative !important;
+    z-index: 100000 !important;
+  }
+}
+/* ===== FINAL MOBILE HEADER FIX ===== */
+
+@media (max-width: 900px) {
+  .site-header {
+    padding: 10px 0 !important;
+  }
+
+  .site-header .nav {
+    height: 76px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+  }
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 12px !important;
+    margin-right: auto !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: 58px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header-tagline {
+    font-size: 8px !important;
+    margin-top: -4px !important;
+    text-align: left !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 100000 !important;
+    margin-left: auto !important;
+    margin-right: 18px !important;
+    background: transparent !important;
+    color: #03102b !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+  }
+
+  .site-header nav.menu {
+    display: none !important;
+  }
+
+  .site-header nav.menu.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 96px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 22px 18px !important;
+    gap: 18px !important;
+    z-index: 99999 !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12) !important;
+  }
+}
+@media (max-width: 900px) {
+  .site-header {
+    padding: 10px 0 !important;
+  }
+
+  .site-header .nav {
+    height: 76px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+  }
+  .logo img {
+  height: 130px !important;
+  width: 300px !important;
+  margin-bottom:20px !important;
+}
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 12px !important;
+    margin-right: auto !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: 58px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header-tagline {
+    font-size: 8px !important;
+    margin-top: -4px !important;
+    text-align: left !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 100000 !important;
+    margin-left: auto !important;
+    margin-right: 18px !important;
+    background: transparent !important;
+    color: #03102b !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+  }
+
+  .site-header nav.menu {
+    display: none !important;
+  }
+
+  .site-header nav.menu.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 96px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    padding: 22px 18px !important;
+    gap: 18px !important;
+    z-index: 99999 !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12) !important;
+  }
+  .logo img {
+  height: 150px !important;
+  width: 600px !important;
+  margin-bottom:20px !important;
+}
+}
+/* Mobile logo size fix */
+
+@media (max-width: 900px) {
+  .site-header .logo img,
+  .site-header .header-brand img {
+    max-height: none !important;
+    height: 85px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+  }
+
+  .site-header .logo,
+  .site-header .header-brand {
+    margin-left: 18px !important;
+  }
+
+  .site-header .nav {
+    height: 65px !important;
+  }
+
+  .menu-toggle {
+    margin-right: 24px !important;
+  }
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="Home.html">
+      <img src="assets/img/logo.png" alt="SaleCompass logo">
+    </a>
+
+    <button class="menu-toggle" aria-expanded="false">☰</button>
+
+    <nav class="menu">
+      <a class="active" href="Home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="MeetFounder.html">Meet The Founder</a>
+     
+      <a href="research.html">R&D</a>
+       <a href="early-adopters.html">Early Adopters</a>
+     
+      <a class="btn primary" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>AI-Powered Revenue Intelligence for Small and Medium Enterprises (SMEs)</h1>
+
+    <div class="hero-cta">
+      <a class="btn primary" href="contact.html">Book a demo</a>
+      <a class="btn outline" href="services.html">Explore features</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- WHO WE ARE -->
+<section class="who-section">
+  <div class="container who-grid">
+    <div class="who-text">
+      <h2>Who We Are </h2>
+      <p>
+        SaleCompass is a proprietary AI platform purpose-built to solve a problem that enterprise software has long ignored SMEs have no reliable way to know what actually drives their revenue. 
+        We built the intelligence layer that connects every touchpoint ads, social, delivery apps, POS and CRM into one clear, real-time view, so business owners can invest confidently and compete on data, not instinct.
+      </p>
+    </div>
+    <div class="who-image">
+      <img src="assets/img/Who we are.jpeg" alt="AI marketing analytics dashboard">
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="container">
+
+  <div class="ps-grid">
+
+    <div class="ps-box target">
+      <h2>What Problem Does SaleCompass Solve?</h2>
+      <p>
+        Revenue data is fragmented. Customers move between Instagram, Google, websites, email, delivery apps, and more visits  yet most SMEs have no way to connect these journeys into a single, coherent picture. The result is wasted spend, poor decisions, and growth left on the table.
+      </p>
+      <p>
+        This is not a tools problem. SMEs already have access to Google Analytics, Meta Ads Manager, and POS systems. SMEs need these to operate in silos. No single platform was built to unify them for businesses operating below enterprise scale. That gap is what SaleCompass was built to close.
+      </p>
+      <p>
+        We built a unified revenue intelligence engine for SMEs giving them the same data advantage that enterprise brands have always had. One platform. Every touchpoint. A single source of truth.
+      </p>
+    </div>
+
+    <div class="ps-row-2">
+
+      <div class="ps-box">
+        <h2>❌ The Real Reason SMEs Struggle to Grow</h2>
+        <p>Most SMEs don't fail at execution  they fail at knowing what's actually working. Without unified data, every decision is a gamble. They have no reliable answer to:</p>
+        <ul>
+          <li>❌ Which channel delivers the highest return on investment</li>
+          <li>❌ What truly influences a customer's buying decision</li>
+          <li>❌ How many touchpoints it takes before a sale is made</li>
+          <li>❌ Why some campaigns succeed and others silently drain budget</li>
+          <li>❌ Which customer segments are shifting and what to do about it</li>
+        </ul>
+      </div>
+
+      <div class="ps-box">
+        <h2>✔️ The SaleCompass Solution</h2>
+        <p>SaleCompass unifies every revenue and sales signal  digital and physical into one real-time AI-powered revenue intelligence engine. For the first time, SMEs can see the complete picture of what drives their growth.</p>
+        <ul>
+          <li>✔ Track the full customer journey across every channel  online and offline</li>
+          <li>✔ Measure real conversions, not vanity metrics</li>
+          <li>✔ Predict customer preferences, demand shifts, and emerging trends</li>
+          <li>✔ Optimise spend automatically with AI-driven recommendations</li>
+          <li>✔ Unify offline and online behaviour into a single, actionable view</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CORE FEATURES -->
+<section class="container">
+  <h2 style="text-align:center; font-size:34px; margin-bottom:20px;">Core Features</h2>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <img src="assets/img/icon 1.png" alt="Attribution Engine icon">
+      <h3>Attribution Engine</h3>
+      <p>Know exactly what drives revenue, not just clicks.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon 2.png" alt="Predictive Analytics icon">
+      <h3>Predictive Analytics</h3>
+      <p>Forecast demand, behaviour and trends before they happen.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon 3.png" alt="Sentiment Intelligence icon">
+      <h3>Sentiment Intelligence</h3>
+      <p>Understand what customers truly feel  in real time.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon 4.png" alt="Real-Time Dashboards icon">
+      <h3>Real-Time Dashboards</h3>
+      <p>Your entire business. One live view. Zero lag.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon 5.png" alt="Integrations icon">
+      <h3>Seamless Integrations</h3>
+      <p>Google, Meta, TikTok, POS, CRM all connected.</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="assets/img/icon 6.png" alt="Automation Engine icon">
+      <h3>Automation Engine</h3>
+      <p>AI that acts on your data automatically, so you don't have to.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <details>
+          <summary>1. How does SaleCompass unify online and offline data? </summary>
+          <p>We connect directly to your digital platforms  Google, Meta, TikTok, delivery apps  and your offline systems like POS and CRM, pulling everything into one real-time view.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>2.Which platforms does SaleCompass integrate with?  </summary>
+          <p>Google Ads, Meta, TikTok, major POS systems, CRM platforms and delivery apps. We continuously add new integrations as we grow.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>3. How quickly can an SME get started?  </summary>
+          <p>Most businesses are up and running within 48 hours. We handle the technical setup so you can focus on the insights from day one</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>4.How does the Attribution Engine work? </summary>
+          <p>It traces every customer interaction from first touchpoint to final sale so you know exactly which channels are driving revenue, not just traffic.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>5. Is SaleCompass suitable for multi-location businesses?</summary>
+          <p>Yes. You get a unified view across all locations, with the ability to drill down site by site.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>6.How does SaleCompass handle data privacy and GDPR?  </summary>
+          <p>We are fully GDPR compliant. All data is stored securely under UK data protection laws. We never share or sell client data.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>7. What makes SaleCompass different from other analytics tools? </summary>
+          <p>Most tools show you one channel at a time. SaleCompass connects everything online and offline into one intelligence engine built specifically for SMEs.</p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>8. . Can SaleCompass scale as my business grows? </summary>
+          <p>Yes, our platform is designed to grow with your business needsYes. Whether you are a single location business or a growing franchise, SaleCompass scales with you..</p>
+        </details>
+      </div>
+
+      
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer fade-up">
+  <div class="container footer-grid footer-four-col">
+
+    <div>
+      <img src="assets/img/logo.png" class="logo-img" alt="SaleCompass Logo">
+      <p class="footer-description">Intelligence that moves revenue.</p>
+    </div>
+
+    <div>
+      <h4>Links</h4>
+      <ul class="footer-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="MeetFounder.html">Meet The Founder</a></li>
+        <li><a href="early-adopters.html">Early Adopters</a></li>
+        <li><a href="research.html">R&amp;D</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer-links">
+ <li>
+  <a href="mailto:Danyal@salecompass.uk">
+    <span class="footer-contact-icon">📧</span>
+    <span>Danyal@salecompass.uk</span>
+  </a>
+</li> 
+        <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
+        <li><a href="mailto:careers@salecompass.uk">📧 careers@salecompass.uk</a></li>
+           <li><strong>Address:</strong> 📍 A 23 Sector 11 B North Karachi, Pakistan</li>
+        <li><a href="tel:+923462135026">📞 0092 3462135026</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="footer-social-col">
+      <h4>Social media links</h4>
+
+      <div class="footer-social-icons">
+        <a href="https://www.facebook.com/people/SaleCompass/61585621962023/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.linkedin.com/company/salecompass/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/salecompassuk?igsh=OHVqbHhtbWtpOW5z" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+      </div>
+    </div>
+
+  </div>
+
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
+
+  <p class="tiny">© 2025 SaleCompass. All rights reserved.</p>
+</footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("nav.menu");
+
+  if (!btn || !menu) return;
+
+  menu.classList.remove("open");
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("type", "button");
+
+  btn.addEventListener("click", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    menu.classList.toggle("open");
+
+    const isOpen = menu.classList.contains("open");
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
