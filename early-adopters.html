@@ -807,6 +807,36 @@ nav.menu a.btn.primary:hover {
     margin-right: 24px !important;
   }
 }
+.collab-strip {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 45px !important;
+  flex-wrap: nowrap !important;
+}
+
+.collab-divider {
+  width: 120px !important;
+  height: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.handshake-img {
+  width: 95px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin-left:-50px !important;
+}
+
+@media (max-width: 600px) {
+  .collab-strip {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+}
 
   </style>
 </head>
@@ -854,21 +884,23 @@ nav.menu a.btn.primary:hover {
       </div>
       <div class="adopter-card-body">
         <p>
-         Max Green Energy is a leading commercial and industrial solar energy company serving a diverse portfolio of clients across Pakistan. Following a live demonstration of SaleCompass, Max Green Energy has formally committed to using the platform when it launches, recognising its potential to address real revenue intelligence challenges their business faces every day.
-
+          Max Green Energy is a leading commercial and industrial solar energy company serving a diverse portfolio of clients across Pakistan. Following a live demonstration of SaleCompass, Max Green Energy has formally committed to adopting the platform when it launches, recognising its potential to address real revenue intelligence challenges their business faces every day.
         </p>
 
-        <div class="collab-strip">
-          <div class="collab-logo-box">
-            <img src="assets/img/logo.png" alt="SaleCompass Logo" class="collab-logo">
-            
-          </div>
-          <div class="collab-divider">
-            <div class="handshake-icon">🤝</div>
-            
-          </div>
-          <div class="collab-logo-box">
-            <img src="assets/img/Max-Green-Logo-01.png" alt="Max Green Energy Logo" class="collab-logo">
+<div class="collab-strip">
+  <div class="collab-logo-box">
+    <img src="assets/img/logo.png" alt="SaleCompass Logo" class="collab-logo">
+  </div>
+
+  <div class="collab-divider">
+    <img src="assets/img/handshake-icon.png" alt="Handshake Icon" class="handshake-img">
+  </div>
+
+  <div class="collab-logo-box">
+    <img src="assets/img/Max-Green-Logo-01.png" alt="Max Green Energy Logo" class="collab-logo">
+  </div>
+</div>
+         
             
           </div>
         </div>
