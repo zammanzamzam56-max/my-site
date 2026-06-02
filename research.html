@@ -1485,6 +1485,30 @@ nav.menu a.btn.primary:hover {
   .site-footer .footer-social-col {
     margin-left: 45px !important;
   }
+
+}
+/* Remove dark overlay/effect from ICET thank-you photo */
+
+.icet-photo-showcase::before,
+.icet-photo-showcase::after,
+.icet-photo-caption {
+  display: none !important;
+}
+
+.icet-photo-showcase {
+  background: transparent !important;
+  box-shadow: 0 18px 45px rgba(3,16,43,0.12) !important;
+}
+
+.icet-photo-showcase img {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.icet-photo-showcase:hover img {
+  transform: none !important;
+  filter: none !important;
 }
   </style>
 </head>
@@ -1652,7 +1676,7 @@ nav.menu a.btn.primary:hover {
       <div class="supervisor-item">
         <div class="supervisor-card">
           <span class="supervisor-tag">Academic Supervisor</span>
-          <h3>Dr. Ayesha Anees Zaveri</h3>
+          <h3> Ayesha Anees Zaveri</h3>
 
           <p class="role">
              Lecturer, Universiti Kuala Lumpur (UniKL), Malaysia<br>
@@ -1660,7 +1684,7 @@ nav.menu a.btn.primary:hover {
           </p>
 
           <p>
-            My collaboration with Ayesha Anees Zaveri led to the co-authored paper "A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector." The research tackled a real and pressing challenge, how UK food businesses integrate data across multiple channels. Drawing on Zaveri's expertise in intelligent systems and AI-driven software, we developed an integrated framework that brings these data streams together, offering a practical and academically grounded solution. The paper was presented and published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia, an internationally recognised, Scopus and Web of Science indexed venue. DOI: 
+            My collaboration with Ayesha Anees Zaveri led to the co-authored paper "A Systematic Literature Review of Multi-Channel Analytics and Point-of-Sale (POS) Integration in the UK Food Sector." The research tackled a real and pressing challenge, how UK food businesses integrate data across multiple channels. Drawing on Zaveri's expertise in intelligent systems and AI-driven software, we developed an integrated framework that brings these data streams together, offering a practical and academically grounded solution. The paper was presented and published in the proceedings of the IEEE International Conference on AI Innovations and Industry (ICAIII 2026), Jeddah, Saudi Arabia, an internationally recognised, Scopus and Web of Science indexed venue.  
           </p>
 
           <a href="https://doi.org/10.1109/ICAIII69475.2026.11521642"
@@ -1779,7 +1803,7 @@ nav.menu a.btn.primary:hover {
       <h2 class="section-title">MEDIA RECOGNITION</h2>
       <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
         <p>SaleCompass has been independently covered by two separate publications, reflecting growing external interest in the platform and the research underpinning it.</p>
-        <p>Startup Pakistan published an editorial feature titled “From Pakistan to the World: The Story of SaleCompass An AI-Powered Revenue Intelligence Platform for Small Businesses” on 23 January 2026, authored by journalist Ameena Amin. The article profiled SaleCompass as a pioneering AI platform addressing one of the most significant challenges facing SMEs globally. Read the full article here: <a href="https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/" target="_blank" rel="noopener">https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/</a></p>
+        <p>Startup Pakistan published an editorial feature titled “From Pakistan to the World: The Story of SaleCompass An AI-Powered Revenue Intelligence Platform for Small Businesses” on 23 January 2026, authored by journalist Ameena Amin. The article profiled SaleCompass as a pioneering AI platform addressing one of the most significant challenges facing SMEs globally. Read the full article here: <a href="https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/" target="_blank" rel="noopener">View Article</a></p>
       </div>
 
       <div class="media-recognition-image">
@@ -1787,7 +1811,7 @@ nav.menu a.btn.primary:hover {
       </div>
 
       <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
-        <p>Daily Todays Muslim published a named article titled “Turning Ambition into Innovation: Danyal's Global AI Success” on 22 February 2026, authored by journalist Bassam Khan. The article positioned SaleCompass within the broader context of AI reshaping industries worldwide. View the published article here: <a href="https://dailytodaysmuslim.com/uploads/2026-02-22/page-4.jpg" target="_blank" rel="noopener">https://dailytodaysmuslim.com/uploads/2026-02-22/page-4.jpg</a></p>
+        <p>Daily Todays Muslim published a named article titled “Turning Ambition into Innovation: Danyal's Global AI Success” on 22 February 2026, authored by journalist Bassam Khan. The article positioned SaleCompass within the broader context of AI reshaping industries worldwide. View the published article here: <a href="https://dailytodaysmuslim.com/uploads/2026-02-22/page-4.jpg" target="_blank" rel="noopener">View Article</a></p>
       </div>
 
       <div class="media-recognition-image">
@@ -1827,9 +1851,9 @@ nav.menu a.btn.primary:hover {
       <h4>Get in touch</h4>
       <ul class="footer-links">
       <li>
-  <a href="mailto:Danyal.mohiuddin@salecompass.uk">
+  <a href="mailto:Danyal@salecompass.uk">
     <span class="footer-contact-icon">📧</span>
-    <span>Danyal.mohiuddin@salecompass.uk</span>
+    <span>Danyal@salecompass.uk</span>
   </a>
 </li>
         <li><a href="mailto:info@salecompass.uk">📧 info@salecompass.uk</a></li>
