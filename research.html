@@ -1733,6 +1733,53 @@ nav.menu a.btn.primary:hover {
   max-width: 520px !important;
   margin: 0 auto !important;
 }
+/* ICET certificate and presentation spacing fix */
+
+.icet-photo-showcase {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 60px !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.icet-photo-showcase img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+}
+.icet-photo-showcase {
+  display: block !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background: transparent !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.icet-single-photo {
+  width: 100% !important;
+  margin-bottom: 70px !important;
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 45px rgba(3,16,43,0.12) !important;
+}
+
+.icet-single-photo:last-child {
+  margin-bottom: 0 !important;
+}
+
+.icet-single-photo img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
   </style>
 </head>
 <body>
@@ -1831,10 +1878,14 @@ nav.menu a.btn.primary:hover {
 
         <!-- Full-width conference photo showcase -->
         <div class="icet-photo-showcase" style="margin-top:36px;">
-                    <img src="assets/img/ICET 2026 Certificate — Danyal Mohiuddin, CEO SaleCompass, UK.png" alt="ICET 2026 certificate">
+  <div class="icet-single-photo">
+    <img src="assets/img/ICET 2026 Certificate — Danyal Mohiuddin, CEO SaleCompass, UK.png" alt="ICET 2026 certificate">
+  </div>
 
-          <img src="assets/img/Live presentation at ICET 2026 — SaleCompass presented to   international academics including Prof. Dr. Iryna Sekret, IATELS Committee Chair.png" alt="Live presentation at ICET 2026">
-          <div class="icet-photo-caption">
+  <div class="icet-single-photo">
+    <img src="assets/img/Live presentation at ICET 2026 — SaleCompass presented to   international academics including Prof. Dr. Iryna Sekret, IATELS Committee Chair.png" alt="Live presentation at ICET 2026">
+  </div>
+</div>
            
           </div>
         </div>
