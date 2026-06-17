@@ -1780,6 +1780,47 @@ nav.menu a.btn.primary:hover {
   display: block !important;
   object-fit: contain !important;
 }
+/* Media Recognition Gallery */
+
+.media-gallery {
+    max-width: 750px; /* reduced from 900px */
+    margin: 50px auto 0;
+}
+
+.media-gallery-item {
+    margin-bottom: 40px;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    padding: 12px;
+}
+
+.media-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .media-gallery {
+        max-width: 100%;
+        padding: 0 15px;
+        margin-top: 30px;
+    }
+
+    .media-gallery-item {
+        margin-bottom: 30px;
+        padding: 10px;
+    }
+
+    .media-gallery-item img {
+        border-radius: 10px;
+    }
+}
   </style>
 </head>
 <body>
@@ -2068,16 +2109,47 @@ nav.menu a.btn.primary:hover {
   </section>
 
   <!-- SECTION: MEDIA RECOGNITION -->
-  <section style="background: linear-gradient(180deg,#f0f4f8 0%,#ffffff 100%);">
+  
+      <!-- Media Recognition & Community Impact Gallery -->
+<div class="media-gallery">
+
+  
+
+  <div class="media-gallery-item">
+    <img src="assets/img/5 R&D.png" alt="Community engagement and recognition">
+  </div>
+
+  <div class="media-gallery-item">
+    <img src="assets/img/6 R&D.png" alt="Academic collaboration">
+  </div>
+
+  <div class="media-gallery-item">
+    <img src="assets/img/11 R&D.jpeg" alt="Professional recognition">
+  </div>
+
+  <div class="media-gallery-item">
+    <img src="assets/img/7 R&D.png" alt="Research and teaching activity">
+  </div>
+
+  <div class="media-gallery-item">
+    <img src="assets/img/13 R&D.jpeg" alt="Technology mentoring">
+  </div>
+
+  <div class="media-gallery-item">
+    <img src="assets/img/12 R&D.png" alt="AI training session">
+  </div>
+
+</div>
+<section style="background: linear-gradient(180deg,#f0f4f8 0%,#ffffff 100%);">
     <div class="container">
       <h2 class="section-title">MEDIA RECOGNITION</h2>
       <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
         <p>SaleCompass has been independently covered by two separate publications, reflecting growing external interest in the platform and the research underpinning it.</p>
-        <p><strong>Startup Pakistan</strong> published an editorial feature titled “From Pakistan to the World: The Story of SaleCompass An AI-Powered Revenue Intelligence Platform for Small Businesses” on 23 January 2026, authored by journalist Ameena Amin. The article profiled SaleCompass as a pioneering AI platform addressing one of the most significant challenges facing SMEs globally. Read the full article here: <a href="https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/" target="_blank" rel="noopener">View Article</a></p>
+        <p><strong>Startup Pakistan</strong> published an editorial feature titled “From Pakistan to the World: The Story of SaleCompass An AI-Powered Revenue Intelligence Platform for Small Businesses authored by journalist Ameena Amin. The article profiled SaleCompass as a pioneering AI platform addressing one of the most significant challenges facing SMEs globally. Read the full article here: <a href="https://startuppakistan.com.pk/from-pakistan-to-the-world-the-story-of-salecompass-ai-powered-revenue-intelligence-platform-for-small-businesses/" target="_blank" rel="noopener">View Article</a></p>
       </div>
 
       <div class="media-recognition-image">
-        <img src="assets/img/Startup Pakistan, January 23 2026, editorial feature by Ameena Amin.png" alt="Startup Pakistan feature">
+        <img src="assets/img/1 Startup Pakistan Replace photo.png" alt="Startup Pakistan feature">
       </div>
 
       <div class="info-card intro-card media-recognition-text" style="margin-bottom:32px; text-align:left;">
