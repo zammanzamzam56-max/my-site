@@ -1988,28 +1988,116 @@ nav.menu a.btn.primary:hover {
     max-height: 320px;
   }
 }
-/* =========================================
-   Frontier Post Screenshot
-========================================= */
+/* ==========================================
+   MEDIA RECOGNITION - MATCH GALLERY SIZE
+========================================== */
 
-.frontier-image-section{
-    padding:0 0 80px;
+.media-gallery{
+    max-width:1100px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
 }
 
-.frontier-image-card{
-    max-width:900px;
-    margin:0 auto;
+.media-gallery-item{
+    height:420px;
     background:#fff;
-    border-radius:20px;
+    border-radius:22px;
+    padding:12px;
     overflow:hidden;
-    box-shadow:0 18px 45px rgba(3,16,43,.10);
-    border:1px solid rgba(0,0,0,.06);
+    border:1px solid rgba(3,16,43,.08);
+    box-shadow:0 14px 36px rgba(3,16,43,.10);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.frontier-image-card img{
-    display:block;
+.media-gallery-item img{
     width:100%;
-    height:auto;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+    border-radius:14px;
+}
+
+/* Last image centered (6+1 layout) */
+.media-gallery-item:last-child{
+    grid-column:1 / -1;
+    width:calc((100% - 28px)/2);
+    justify-self:center;
+}
+
+/* Tablet */
+@media (max-width:900px){
+
+    .media-gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:22px;
+    }
+
+    .media-gallery-item{
+        height:340px;
+    }
+
+    .media-gallery-item:last-child{
+        width:calc((100% - 22px)/2);
+    }
+}
+
+/* Mobile */
+@media (max-width:600px){
+
+    .media-gallery{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .media-gallery-item{
+        height:300px;
+    }
+
+    .media-gallery-item:last-child{
+        width:100%;
+        grid-column:auto;
+    }
+}
+.media-gallery-item:last-child{
+    grid-column:1 / -1;
+    justify-self:center;
+}
+.media-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+    max-width:1100px;
+    margin:50px auto;
+}
+
+.media-gallery-item{
+    height:420px;
+    border-radius:22px;
+    overflow:hidden;
+    background:#fff;
+    padding:12px;
+    box-shadow:0 14px 36px rgba(0,0,0,.08);
+}
+
+.media-gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:14px;
+}
+
+/* Remove any previous last-child styling */
+.media-gallery-item:last-child{
+    grid-column:auto;
+    width:100%;
+    justify-self:stretch;
 }
   </style>
 </head>
@@ -2335,8 +2423,8 @@ nav.menu a.btn.primary:hover {
       <p>
         I have written an op-ed titled <strong>"The Real AI Skills Gap"</strong>, which has been published on
         <strong>The Frontier Post</strong>, a Pakistani English-language platform having an established presence in
-        <strong>Washington D.C., USA</strong>. It was published on
-        <strong>5 July 2026</strong>.
+        Washington D.C., USA. It was published on
+        5th July 2026.
       </p>
 
       <p>
@@ -2454,19 +2542,21 @@ nav.menu a.btn.primary:hover {
     © 2025 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
   </p>
 
-  <p>
-    Registered with the Securities and Exchange Commission of Pakistan (SECP)
-    <span class="divider">|</span>
-    <strong>CUIN:</strong> 0342667
-    <span class="divider">|</span>
+ <p>
+  Registered with the Securities and Exchange Commission of Pakistan (SECP)
+  <span class="divider">|</span>
 
-    <a href="https://drive.google.com/file/d/17LTBf808GFf6GclisCgs5dhqvtDGwFfY/view?usp=sharing"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="footer-certificate-link">
-       Certificate of Incorporation
-    </a>
-  </p>
+  <strong>CUIN:</strong> 0342667
+
+  <span class="divider">|</span>
+
+  <a href="assets/img/documents/Certificate-of-Incorporation.pdf"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="footer-certificate-link">
+    <strong><em>Certificate of Incorporation</em></strong>
+  </a>
+</p>
 </div>
 </footer>
 
