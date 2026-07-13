@@ -1114,6 +1114,60 @@ nav.menu a.btn.primary:hover {
   content: none !important;
   display: none !important;
 }
+/* ===============================
+   Founder Video
+================================= */
+
+.founder-video-section{
+    margin-top:40px;
+}
+
+.founder-video-section h3{
+    font-family:"DM Serif Display", serif;
+    font-size:30px;
+    color:#03102b;
+    margin:12px 0 24px;
+}
+
+.founder-video-wrapper{
+    position:relative;
+    width:100%;
+    padding-bottom:56.25%; /* 16:9 */
+    overflow:hidden;
+    border-radius:22px;
+    background:#000;
+    box-shadow:0 18px 45px rgba(3,16,43,.12);
+}
+
+.founder-video-wrapper iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:0;
+    border-radius:22px;
+}
+
+@media (max-width:768px){
+
+    .founder-video-section{
+        margin-top:30px;
+    }
+
+    .founder-video-section h3{
+        font-size:24px;
+        margin-bottom:18px;
+    }
+
+    .founder-video-wrapper{
+        border-radius:16px;
+    }
+
+    .founder-video-wrapper iframe{
+        border-radius:16px;
+    }
+}
 
   </style>
 </head>
@@ -1178,7 +1232,7 @@ nav.menu a.btn.primary:hover {
   <p>
     During my postgraduate studies at the University of Northampton, UK, I kept encountering the same problem SMEs had no reliable way of knowing what was actually driving their revenue. That gap became my obsession and the foundation of everything I have built since.
   </p>
-  <p class="quote-source">— Danyal Mohiuddin, Founder &amp; CEO</p>
+  <p class="quote-source">— Founder & CEO · SaleCompass (SMC-Private) Limited</p>
 </div>
 
 <div class="founder-background">
@@ -1211,6 +1265,22 @@ nav.menu a.btn.primary:hover {
     SaleCompass is a proprietary AI platform that connects every touchpoint to real revenue outcomes,
     built specifically for SMEs who have never had access to this kind of intelligence before.
   </p>
+  <!-- Founder Video -->
+<div class="founder-video-section">
+
+  <div class="card-label">Founder Introduction</div>
+
+  <h3>Meet the Founder</h3>
+
+  <div class="founder-video-wrapper">
+    <iframe
+      src="https://drive.google.com/file/d/1I8z9DXzCXA0KxBOhj7DHYzQ7s2I6SrTN/preview"
+      allow="autoplay"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</div>
 </div>
       </div>
 
@@ -1280,8 +1350,26 @@ nav.menu a.btn.primary:hover {
 
   <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
 
-  <div class="container tiny">
-    © 2025 SaleCompass. All rights reserved.
+  
+   <div class="footer-bottom">
+  <p>
+    © 2025 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
+  </p>
+
+  <p>
+    Registered with the Securities and Exchange Commission of Pakistan (SECP)
+    <span class="divider">|</span>
+    <strong>CUIN:</strong> 0342667
+    <span class="divider">|</span>
+
+    <a href="https://drive.google.com/file/d/17LTBf808GFf6GclisCgs5dhqvtDGwFfY/view?usp=sharing"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="footer-certificate-link">
+       Certificate of Incorporation
+    </a>
+  </p>
+</div>
   </div>
 </footer>
 
