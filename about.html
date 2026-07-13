@@ -1096,6 +1096,182 @@ nav.menu a.btn.primary:hover {
     line-height: 1.5 !important;
   }
 }
+/* ================= LEGAL REGISTRATION ================= */
+
+.legal-registration-section{
+    padding:90px 0;
+    background:#ffffff;
+}
+
+.legal-card{
+    max-width:1050px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:20px;
+    padding:45px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.legal-card h3{
+    font-size:30px;
+    color:#03102b;
+    margin-bottom:30px;
+    font-weight:700;
+}
+
+.certificate-wrapper{
+    margin-bottom:35px;
+}
+
+.certificate-wrapper img{
+    width:100%;
+    max-width:900px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+    border:1px solid #d9d9d9;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    /* IMPORTANT: keeps full certificate including QR code */
+    object-fit:contain;
+}
+
+.legal-text{
+    max-width:760px;
+    margin:0 auto;
+}
+
+.legal-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:#475569;
+    margin:10px 0;
+}
+
+.legal-text strong{
+    color:#03102b;
+}
+
+@media (max-width:768px){
+
+    .legal-registration-section{
+        padding:60px 0;
+    }
+
+    .legal-card{
+        padding:25px 18px;
+    }
+
+    .legal-card h3{
+        font-size:24px;
+    }
+
+    .legal-text p{
+        font-size:16px;
+    }
+
+    .certificate-wrapper img{
+        width:100%;
+        border-radius:8px;
+    }
+}
+/*==============================
+  ABOUT COMPANY SECTION
+==============================*/
+
+.about-company-section{
+    padding:80px 0;
+    background:#f8fafc;
+}
+
+.about-company-card{
+    max-width:900px;
+    margin:0 auto;
+    background:#ffffff;
+    padding:55px;
+    border-radius:26px;
+    text-align:center;
+    box-shadow:0 18px 50px rgba(3,16,43,.08);
+    border:1px solid rgba(3,16,43,.06);
+}
+
+.about-badge{
+    display:inline-block;
+    background:#03102b;
+    color:#ffffff;
+    padding:8px 18px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    margin-bottom:22px;
+}
+
+.about-company-card h2{
+    font-family:"DM Serif Display",serif;
+    font-size:42px;
+    color:#03102b;
+    margin-bottom:24px;
+}
+
+.about-company-card p{
+    font-size:18px;
+    line-height:1.9;
+    color:#475569;
+    max-width:700px;
+    margin:0 auto 35px;
+}
+
+.about-company-card strong{
+    color:#03102b;
+}
+
+.certificate-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 34px;
+    background:#03102b;
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:10px;
+    transition:.3s ease;
+}
+
+.certificate-btn:hover{
+    background:#ff8c3a;
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(255,140,58,.3);
+}
+
+@media(max-width:768px){
+
+    .about-company-section{
+        padding:60px 0;
+    }
+
+    .about-company-card{
+        padding:35px 24px;
+        border-radius:20px;
+    }
+
+    .about-company-card h2{
+        font-size:32px;
+    }
+
+    .about-company-card p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .certificate-btn{
+        width:100%;
+        padding:15px;
+    }
+}
   </style>
 </head>
 
@@ -1132,11 +1308,40 @@ nav.menu a.btn.primary:hover {
 </section>
 
 <main>
+  <!-- ======================== ABOUT SALECOMPASS ======================== -->
+<section class="about-company-section">
+  <div class="container">
+
+    <div class="about-company-card">
+
+      <h2>About SaleCompass</h2>
+
+      <p>
+        SaleCompass is operated by
+        <strong>SaleCompass (SMC-Private) Limited</strong>, a company
+        registered with the
+        <strong>Securities and Exchange Commission of Pakistan (SECP)</strong>,
+        <strong>CUIN: 0342667</strong>.
+      </p>
+
+      <a href="https://drive.google.com/file/d/17LTBf808GFf6GclisCgs5dhqvtDGwFfY/view?usp=sharing"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="certificate-btn">
+          View Certificate of Incorporation
+      </a>
+
+    </div>
+
+  </div>
+</section>
+  
 
 
 
 <!-- ======================== MISSION / VISION ======================== -->
 <section class="mv-section">
+  
   <div class="container mv-grid">
 
     <div class="mv-card">
@@ -1222,6 +1427,34 @@ nav.menu a.btn.primary:hover {
     </div>
   </div>
 </section>
+<!-- ======================== LEGAL REGISTRATION ======================== -->
+<section class="legal-registration-section">
+  <div class="container">
+
+    <h2 class="center-title">Legal Registration</h2>
+
+    <div class="legal-card">
+
+      <h3>Certificate of Incorporation</h3>
+
+      <div class="certificate-wrapper">
+        <img src="assets/img/Incorporation Letter for 20260618_44753177 (3).png"
+             alt="Certificate of Incorporation">
+      </div>
+
+      <div class="legal-text">
+        <p>
+          This company is officially registered with the
+          <strong>Securities and Exchange Commission of Pakistan (SECP)</strong>.
+        </p>
+
+        <p><strong>CUIN:</strong> 0342667</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 </main>
 
@@ -1276,7 +1509,25 @@ nav.menu a.btn.primary:hover {
 
   <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
 
-  <p class="tiny">© 2025 SaleCompass. All rights reserved.</p>
+<div class="footer-bottom">
+  <p>
+    © 2025 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
+  </p>
+
+  <p>
+    Registered with the Securities and Exchange Commission of Pakistan (SECP)
+    <span class="divider">|</span>
+    <strong>CUIN:</strong> 0342667
+    <span class="divider">|</span>
+
+    <a href="https://drive.google.com/file/d/17LTBf808GFf6GclisCgs5dhqvtDGwFfY/view?usp=sharing"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="footer-certificate-link">
+       Certificate of Incorporation
+    </a>
+  </p>
+</div>
 </footer>
 
 <!-- JS -->
