@@ -1234,7 +1234,7 @@ nav.menu a.btn.primary:hover {
     justify-content:center;
     padding:15px 34px;
     
-    color:#FFA500;
+    color:#ffffff;
     text-decoration:none;
     font-weight:700;
     border-radius:10px;
@@ -1267,6 +1267,40 @@ nav.menu a.btn.primary:hover {
         width:100%;
         padding:15px;
     }
+}
+.legal-registration-image {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.legal-registration-image img {
+
+    width: 100%;
+    max-width: 700px;   /* Change to 600px if you want it smaller */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.12);
+}
+.legal-registration img{
+    display:block;
+    width:100%;
+    max-width:700px;
+    height:auto;
+    margin:0 auto;
+}
+.certificate-wrapper{
+    max-width:700px;   /* Reduce to 600px if you want it smaller */
+    margin:40px auto;
+}
+
+.certificate-wrapper iframe{
+    width:100%;
+    height:900px;
+    border:none;
+    border-radius:16px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
   </style>
 </head>
@@ -1307,13 +1341,12 @@ nav.menu a.btn.primary:hover {
         <strong>CUIN: 0342667</strong>.
       </p>
 
-      <a href="assets/img/documents/Certificate-of-Incorporation.pdf"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="certificate-btn">
-        View Certificate of Incorporation
-      </a>
-    </p>
+    <div class="certificate-wrapper">
+    <iframe
+        src="assets/img/documents/Certificate-of-Incorporation.pdf"
+        loading="lazy">
+    </iframe>
+</div>
   </div>
 </section>
 
