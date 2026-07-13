@@ -877,5 +877,166 @@ strong {
   font-weight: 700 !important;
 }
 
+.footer-certificate-link{
+    font-weight:700;
+    font-style:italic;
+    color:#ffffff;          /* Change to #0d6efd or your brand color if footer has a light background */
+    text-decoration:underline;
+    transition:0.3s ease;
+}
 
+.footer-certificate-link:hover{
+    color:#ff8a3d;          /* Brand accent color */
+    text-decoration:none;
+}
+/* ===============================
+   Footer Bottom
+================================= */
+
+.footer-bottom{
+    margin-top:55px;
+    padding-top:28px;
+    border-top:1px solid rgba(255,255,255,.12);
+    text-align:center;
+}
+
+.footer-bottom p{
+    margin:8px 0;
+    color:#c8d0db;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.footer-bottom strong{
+    color:#fff;
+    font-weight:600;
+}
+
+.footer-bottom .divider{
+    margin:0 10px;
+    color:#4d5b73;
+}
+
+.footer-certificate-link{
+    color:#3FC3F7;
+    font-weight:700;
+    font-style:italic;
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:.25s;
+}
+
+.footer-certificate-link:hover{
+    color:#ff8a3d;
+    border-bottom-color:#ff8a3d;
+}
+
+@media (max-width:768px){
+
+    .footer-bottom{
+        margin-top:40px;
+        padding:22px 20px 0;
+    }
+
+    .footer-bottom p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .footer-bottom .divider{
+        display:none;
+    }
+}
+/* ===== Compact Footer ===== */
+
+.footer{
+    padding:55px 0 25px !important;
+}
+
+.footer .container{
+    max-width:1200px;
+}
+
+.footer-content{
+    gap:40px !important;
+}
+
+.footer-logo img{
+    width:130px !important;
+}
+
+.footer-logo p{
+    font-size:17px !important;
+    margin-top:10px !important;
+}
+
+.footer h3,
+.footer h4{
+    font-size:20px !important;
+    margin-bottom:18px !important;
+}
+
+.footer ul li,
+.footer p,
+.footer a{
+    font-size:16px !important;
+    line-height:1.6 !important;
+    margin-bottom:10px !important;
+}
+
+.footer-social{
+    gap:12px !important;
+}
+
+.footer-social a{
+    width:48px !important;
+    height:48px !important;
+    font-size:18px !important;
+}
+
+.footer-bottom{
+    margin-top:35px !important;
+    padding-top:18px !important;
+}
+
+.footer-bottom p{
+    font-size:14px !important;
+    line-height:1.6 !important;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .footer{
+        padding:45px 0 20px !important;
+    }
+
+    .footer-content{
+        gap:28px !important;
+    }
+
+    .footer-logo img{
+        width:110px !important;
+    }
+
+    .footer h3,
+    .footer h4{
+        font-size:18px !important;
+    }
+
+    .footer ul li,
+    .footer p,
+    .footer a{
+        font-size:15px !important;
+    }
+
+    .footer-social a{
+        width:44px !important;
+        height:44px !important;
+    }
+
+    .footer-bottom{
+        margin-top:28px !important;
+    }
+}
 
