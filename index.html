@@ -859,8 +859,77 @@ nav.menu a.btn.primary:hover {
     margin-right: 24px !important;
   }
 }
+.footer-certificate-link{
+    font-weight:700;
+    font-style:italic;
+    color:#ffffff;          /* Change to #0d6efd or your brand color if footer has a light background */
+    text-decoration:underline;
+    transition:0.3s ease;
+}
 
+.footer-certificate-link:hover{
+    color:#ff8a3d;          /* Brand accent color */
+    text-decoration:none;
+}
 
+/* ===============================
+   Footer Bottom
+================================= */
+
+.footer-bottom{
+    margin-top:55px;
+    padding-top:28px;
+    border-top:1px solid rgba(255,255,255,.12);
+    text-align:center;
+}
+
+.footer-bottom p{
+    margin:8px 0;
+    color:#c8d0db;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.footer-bottom strong{
+    color:#fff;
+    font-weight:600;
+}
+
+.footer-bottom .divider{
+    margin:0 10px;
+    color:#4d5b73;
+}
+
+.footer-certificate-link{
+    color:#3FC3F7;
+    font-weight:700;
+    font-style:italic;
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:.25s;
+}
+
+.footer-certificate-link:hover{
+    color:#ff8a3d;
+    border-bottom-color:#ff8a3d;
+}
+
+@media (max-width:768px){
+
+    .footer-bottom{
+        margin-top:40px;
+        padding:22px 20px 0;
+    }
+
+    .footer-bottom p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .footer-bottom .divider{
+        display:none;
+    }
+}
 
   </style>
 </head>
@@ -916,7 +985,7 @@ nav.menu a.btn.primary:hover {
       </p>
     </div>
     <div class="who-image">
-      <img src="assets/img/Who we are.jpeg" alt="AI marketing analytics dashboard">
+      <img src="assets/img/Home Page.png" alt="AI marketing analytics dashboard">
     </div>
   </div>
 </section>
@@ -1135,8 +1204,25 @@ nav.menu a.btn.primary:hover {
   </div>
 
   <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
+<div class="footer-bottom">
+  <p>
+    © 2025 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
+  </p>
 
-  <p class="tiny">© 2025 SaleCompass. All rights reserved.</p>
+  <p>
+    Registered with the Securities and Exchange Commission of Pakistan (SECP)
+    <span class="divider">|</span>
+    <strong>CUIN:</strong> 0342667
+    <span class="divider">|</span>
+
+    <a href="https://drive.google.com/file/d/17LTBf808GFf6GclisCgs5dhqvtDGwFfY/view?usp=sharing"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="footer-certificate-link">
+       Certificate of Incorporation
+    </a>
+  </p>
+</div>
 </footer>
 
 
