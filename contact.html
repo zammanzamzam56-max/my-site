@@ -945,8 +945,8 @@ nav.menu a.btn.primary:hover {
         <label>Email Address</label>
         <input type="email" name="email" required>
 
-        <label>Country</label>
-        <input type="text" name="country" required>
+        <label>Company Name</label>
+        <input type="text" name="company_name" required>
 
         <label>Your Message</label>
         <textarea name="message" rows="4" required></textarea>
@@ -955,37 +955,6 @@ nav.menu a.btn.primary:hover {
       </form>
     </div>
 
-    <div class="booking-card">
-      <h3>Book a reservation</h3>
-      <p>Select a date and time and send your request.</p>
-
-      <form class="booking-form" action="https://formspree.io/f/mvznpobv" method="POST">
-        <input type="hidden" name="form_type" value="Reservation Request">
-
-        <label for="bookName">Your Name</label>
-        <input id="bookName" name="reservation_name" type="text" required>
-
-        <label for="bookEmail">Email Address</label>
-        <input id="bookEmail" name="reservation_email" type="email" required>
-
-        <div class="booking-grid">
-          <div>
-            <label for="bookDate">Select Date</label>
-            <input id="bookDate" name="reservation_date" type="date" required>
-          </div>
-
-          <div>
-            <label for="bookTime">Select Time</label>
-            <input id="bookTime" name="reservation_time" type="time" required>
-          </div>
-        </div>
-
-        <label for="bookNote">Notes (optional)</label>
-        <textarea id="bookNote" name="reservation_notes" rows="3"></textarea>
-
-        <button type="submit">Request Reservation</button>
-      </form>
-    </div>
   </div>
 
       
@@ -1066,11 +1035,11 @@ nav.menu a.btn.primary:hover {
 
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="" loading="eager" fetchpriority="high" decoding="async">
 
 <div class="footer-bottom">
   <p>
-    © 2025 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
+    © 2025–2026 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
   </p>
 
  <p>
