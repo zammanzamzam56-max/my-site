@@ -157,6 +157,27 @@
       position: relative;
       z-index: 1;
     }
+    .adopter-title-row {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .adopter-title-row h2 {
+      max-width: calc(100% - 220px);
+      flex: 0 1 auto;
+    }
+    .adopter-inline-logo {
+      height: 200px;
+      width: auto;
+      max-width: 360px;
+      object-fit: contain;
+      display: block;
+      margin-left: -16px;
+      flex-shrink: 0;
+    }
     .adopter-card-body { padding: 40px 48px; }
     .adopter-card-body p {
       font-size: 17px;
@@ -868,7 +889,7 @@ nav.menu a.btn.primary:hover {
   <div class="container">
     <p class="label">Early Adopters</p>
     <h1>Businesses that<br>believe in what's next</h1>
-    <p>Forward-thinking companies committed to SaleCompass before launch.</p>
+    <p>Forward-thinking companies that backed SaleCompass from the start.</p>
   </div>
 </section>
 
@@ -884,7 +905,7 @@ nav.menu a.btn.primary:hover {
       </div>
       <div class="adopter-card-body">
         <p>
-          Max Green Energy is a leading commercial and industrial solar energy company serving a diverse portfolio of clients across Pakistan. Following a live demonstration of SaleCompass, Max Green Energy has formally committed to adopting the platform when it launches, recognising its potential to address real revenue intelligence challenges their business faces every day.
+          Max Green Energy is a leading commercial and industrial solar energy company serving a diverse portfolio of clients across Pakistan. Following a live demonstration of SaleCompass, Max Green Energy committed to the platform before launch and has since become one of its first paying customers.
         </p>
 
 <div class="collab-strip">
@@ -893,17 +914,32 @@ nav.menu a.btn.primary:hover {
   </div>
 
   <div class="collab-divider">
-    <img src="assets/img/handshake-icon.png" alt="Handshake Icon" class="handshake-img">
+    <img src="assets/img/handshake-icon.png" alt="Handshake Icon" class="handshake-img" loading="lazy" decoding="async">
   </div>
 
   <div class="collab-logo-box">
-    <img src="assets/img/Max-Green-Logo-01.png" alt="Max Green Energy Logo" class="collab-logo">
+    <img src="assets/img/Max-Green-Logo-01.png" alt="Max Green Energy Logo" class="collab-logo" loading="lazy" decoding="async">
   </div>
 </div>
          
             
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="adopter-card">
+      <div class="adopter-card-top">
+        <span class="adopter-number">Early Adopter </span>
+        <div class="adopter-title-row">
+          <h2>Inspiring Time Leaders (Pvt.) Ltd.</h2>
+          <img src="assets/img/inspiring.jpg" alt="Inspiring Time Leaders logo" class="adopter-inline-logo" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="adopter-card-body">
+        <p>
+          Inspiring Time Leaders (Pvt.) Ltd. is a Karachi-based company working in professional training, workshops and consultancy, reaching clients through corporate partnerships, referrals and institutional relationships. Following a live demonstration of SaleCompass, the company committed to the platform and has since become one of its first paying customers.
+        </p>
       </div>
     </div>
 
@@ -962,11 +998,11 @@ nav.menu a.btn.primary:hover {
 
   </div>
 
-  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="">
+  <img src="assets/img/salecompass logo.png" class="footer-watermark" alt="" loading="eager" fetchpriority="high" decoding="async">
 
   <div class="footer-bottom">
   <p>
-    © 2025 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
+    © 2025–2026 <strong>SaleCompass (SMC-Private) Limited</strong>. All rights reserved.
   </p>
 
  <p>
