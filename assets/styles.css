@@ -33,17 +33,32 @@ img { max-width: 100%; display: block; }
   z-index: 1000;
 }
 
-.nav {
+.site-header .container.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
+  gap: 16px;
+  min-height: 86px;
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-.logo img {
-  height: 130px !important;
-  width: 300px !important;
-  margin-bottom:20px !important;
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin: 0;
+  line-height: 0;
+}
+
+.site-header .logo img {
+  height: 112px !important;
+  width: auto !important;
+  max-width: 260px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  display: block;
 }
 
 /* MENU */
@@ -51,6 +66,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 22px;
+  margin-left: auto;
   transition: all .3s ease;
 }
 
@@ -59,6 +75,7 @@ img { max-width: 100%; display: block; }
   color: #1a1a1a;
   font-size: 15px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .menu a.active { color: #06172b; }
@@ -90,24 +107,61 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .site-header .container.nav {
+    min-height: 72px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-header .logo img {
+    height: 84px !important;
+    width: auto !important;
+    max-width: 200px !important;
+  }
+
   .menu-toggle { display: block; }
 
   .menu {
     position: absolute;
-    top: 60px;
+    top: 100%;
+    left: 0;
     right: 0;
     width: 100%;
     flex-direction: column;
     gap: 12px;
     background: #ffffff;
-    padding: 20px 0;
-    display: none; /* default closed */
+    padding: 18px 16px;
+    display: none;
+    border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
   }
 
   .menu.open {
     display: flex !important;
+  }
+
+  .menu a {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .menu a.btn.primary {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .container.nav {
+    min-height: 66px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-header .logo img {
+    height: 72px !important;
+    max-width: 170px !important;
   }
 }
 
@@ -520,8 +574,201 @@ span {
 }
 
 /* =========================
-   BREAKPOINTS
+   R&D PHOTO LAYOUT FIXES
    ========================= */
+.publication-photo-section .publication-photo-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  align-items: start !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+
+.publication-photo-section .photo-card {
+  padding: 16px !important;
+  background: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 24px !important;
+}
+
+.publication-photo-section .photo-card img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.publication-photo-section .photo-card:last-child {
+  grid-column: 1 / -1 !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+}
+
+.icet-photo-showcase {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+.icet-single-photo {
+  margin-bottom: 28px !important;
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 45px rgba(3,16,43,0.12) !important;
+}
+
+.icet-single-photo:last-child {
+  margin-bottom: 0 !important;
+}
+
+.research-collab-photo,
+.repo-photo {
+  max-width: 740px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  .publication-photo-section .publication-photo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .publication-photo-section .photo-card:last-child {
+    grid-column: auto !important;
+    max-width: 100% !important;
+  }
+
+  .icet-single-photo {
+    margin-bottom: 20px !important;
+  }
+}
+
+/* =========================
+   RESPONSIVE SITE-WIDE IMPROVEMENTS
+   ========================= */
+
+@media (max-width: 1200px) {
+  .container {
+    width: 94%;
+  }
+
+  .hero .container,
+  .problem-section .container,
+  .core-features .container,
+  .about-hero .container,
+  .contact-wrapper {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    font-size: 15px;
+  }
+
+  .hero,
+  .problem-section,
+  .core-features,
+  .about-hero,
+  .contact-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero .container,
+  .problem-section .container,
+  .core-features .container,
+  .about-hero .container,
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .feature-grid,
+  .footer-grid,
+  .footer-four-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 0 12px;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-text h1,
+  .problem-section h2,
+  .about-hero h1,
+  .core-title {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+    line-height: 1.2;
+  }
+
+  .lead,
+  .problem-section p.intro,
+  .about-hero .hero-subtext {
+    font-size: 1rem;
+  }
+
+  .feature-grid,
+  .footer-grid,
+  .footer-four-col,
+  .pricing-container {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .pricing-card,
+  .feature-card,
+  .solution-box,
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta a,
+  .btn.primary,
+  .btn.outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 0;
+  }
+
+  .problem-section,
+  .core-features,
+  .about-hero {
+    padding: 40px 0;
+  }
+
+  .feature-card,
+  .solution-box,
+  .contact-form,
+  .booking-card {
+    padding: 16px;
+  }
+}
 
 /* Large laptops (≤1366px) */
 @media (max-width: 1366px) {
