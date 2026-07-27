@@ -312,19 +312,18 @@
       box-shadow:0 4px 16px rgba(0,0,0,0.03);
       border-left:6px solid transparent;
       transition:.25s;
-      height: 200px;
+      min-height: 430px;
       line-height: 1.1;
       max-width: 300px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
+      align-items: stretch;
       text-align: center;
     }
     .pricing-card:hover {
       transform:translateY(-6px);
       background:white;
-      
       box-shadow:0 12px 30px rgba(0,0,0,0.12);
     }
 
@@ -1112,6 +1111,34 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
     margin-right: 24px !important;
   }
 }
+.btn,
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.btn:hover,
+.service-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+.service-btn:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
 
 </style>
 
@@ -1148,7 +1175,11 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✖ Real-Time Alerts</li>
         </ul>
 
-        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
+       <a href="contact.html" class="btn">
+  Book a Demo
+</a>
+
+
       </article>
 
       <article class="pricing-card">
@@ -1169,7 +1200,11 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✖ Demand Forecasting</li>
         </ul>
 
-        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
+        <a href="contact.html" class="btn">
+  Book a Demo
+</a>
+
+
       </article>
 
       <article class="pricing-card">
@@ -1189,7 +1224,10 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✔ Chat + Priority Support</li>
         </ul>
 
-        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
+        <a href="contact.html" class="btn">
+  Book a Demo
+</a>
+
       </article>
 
       <article class="pricing-card">
@@ -1208,7 +1246,11 @@ ul { padding-left: 0 !important; margin-left: 0 !important; }
           <li>✔ Dedicated Account Support</li>
         </ul>
 
-        <button class="coming-soon-btn" type="button" disabled>Coming Soon</button>
+        <a href="contact.html" class="btn">
+  Book a Demo
+</a>
+
+
       </article>
 
     </div>
