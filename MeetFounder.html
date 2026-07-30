@@ -812,19 +812,30 @@ nav.menu a.btn.primary:hover {
   width: 18px !important;
   min-width: 18px !important;
 }
-.footer-description {
-    margin-top: -18px !important;
-    padding-top: 0 !important;
-    line-height: 1.3 !important;
-}
-
-/* If still too low, reduce further */
 .footer-grid > div:first-child {
-    gap: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 6px !important;
 }
 
 .logo-img {
-    margin-bottom: -8px !important;
+    height: 120px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin-bottom: 6px !important;
+}
+
+.footer-description {
+    color: #ffffff !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    margin: 0 auto !important;
+    max-width: 260px !important;
+    text-align: center !important;
+    padding: 0 !important;
 }
 /* ===== MEET THE FOUNDER MOBILE FIX ===== */
 
@@ -1221,6 +1232,26 @@ nav.menu a.btn.primary:hover {
     height: 100%;
     transform: none;
   }
+}
+.logo-img {
+  height: 150px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.footer-description {
+  color: #ffffff !important;
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+  margin: 0 auto !important;
+  max-width: 260px !important;
+  text-align: center !important;
+  padding: 0 !important;
+  margin-top:-45px !important;
+  margin-bottom: 6px !important;
+
 }
   </style>
 </head>
